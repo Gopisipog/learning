@@ -1,0 +1,1354 @@
+{
+  "1. Two Pointers": [
+    {
+      "question": "What is the primary advantage of the Two Pointers technique?",
+      "options": [
+        "It can only be used with linked lists.",
+        "It reduces time complexity, often to O(n).",
+        "It increases space complexity.",
+        "It is easy to implement for beginners."
+      ],
+      "answer": "It reduces time complexity, often to O(n)."
+    },
+    {
+      "question": "The Two Pointers pattern is most effective on which type of data structure?",
+      "options": [
+        "Unsorted arrays",
+        "Hash maps",
+        "Sorted arrays or linked lists",
+        "Trees"
+      ],
+      "answer": "Sorted arrays or linked lists"
+    },
+    {
+      "question": "Which of the following problems is a classic example of the Two Pointers pattern?",
+      "options": [
+        "Finding the shortest path in a graph",
+        "Sorting a list of numbers",
+        "Finding a pair with a target sum in a sorted array",
+        "Counting the number of islands in a matrix"
+      ],
+      "answer": "Finding a pair with a target sum in a sorted array"
+    },
+    {
+      "question": "What is a common drawback of the Two Pointers technique?",
+      "options": [
+        "It is not very efficient.",
+        "Its applicability is limited to specific types of problems.",
+        "It always requires extra space.",
+        "It is a very new and untested pattern."
+      ],
+      "answer": "Its applicability is limited to specific types of problems."
+    },
+    {
+      "question": "In a typical Two Pointers approach on a sorted array, how do the pointers move?",
+      "options": [
+        "Both pointers start at the beginning and move forward.",
+        "One pointer is fixed while the other moves.",
+        "They start at opposite ends and move towards each other.",
+        "They move randomly."
+      ],
+      "answer": "They start at opposite ends and move towards each other."
+    }
+  ],
+  "2. Island (Matrix Traversal) Pattern": [
+    {
+      "question": "What is the primary goal of the Island (Matrix Traversal) pattern?",
+      "options": [
+        "To sort the elements of a matrix",
+        "To find the shortest path between two cells",
+        "To identify and process contiguous groups of elements",
+        "To reverse the rows of a matrix"
+      ],
+      "answer": "To identify and process contiguous groups of elements"
+    },
+    {
+      "question": "The Island pattern is most suitable for which type of problem?",
+      "options": [
+        "String manipulation",
+        "Grid-based problems",
+        "Sorting algorithms",
+        "Dynamic programming"
+      ],
+      "answer": "Grid-based problems"
+    },
+    {
+      "question": "Which search algorithms are commonly used to implement the Island pattern?",
+      "options": [
+        "Binary Search",
+        "Breadth-First Search (BFS) or Depth-First Search (DFS)",
+        "Ternary Search",
+        "Linear Search"
+      ],
+      "answer": "Breadth-First Search (BFS) or Depth-First Search (DFS)"
+    },
+    {
+      "question": "What is a potential disadvantage of the Island pattern?",
+      "options": [
+        "It is not very versatile.",
+        "It can have a high space overhead.",
+        "It is only applicable to 1D arrays.",
+        "It is very slow."
+      ],
+      "answer": "It can have a high space overhead."
+    },
+    {
+      "question": "Which of the following problems can be solved using the Island pattern?",
+      "options": [
+        "Finding the median of a number stream",
+        "Counting the number of islands in a 2D matrix",
+        "Merging two sorted lists",
+        "Finding the longest common prefix of a set of strings"
+      ],
+      "answer": "Counting the number of islands in a 2D matrix"
+    }
+  ],
+  "3. Fast & Slow Pointers": [
+    {
+      "question": "What is the main characteristic of the Fast & Slow Pointers technique?",
+      "options": [
+        "Two pointers move at the same speed.",
+        "Two pointers move through a data structure at different speeds.",
+        "It can only be used with arrays.",
+        "It requires a lot of extra space."
+      ],
+      "answer": "Two pointers move through a a data structure at different speeds."
+    },
+    {
+      "question": "The Fast & Slow Pointers pattern is particularly useful for which type of problem?",
+      "options": [
+        "Sorting",
+        "Cycle detection in a linked list",
+        "Searching in a sorted array",
+        "String matching"
+      ],
+      "answer": "Cycle detection in a linked list"
+    },
+    {
+      "question": "What is a key advantage of the Fast & Slow Pointers technique?",
+      "options": [
+        "It is very easy to implement.",
+        "It is space-efficient (O(1) space complexity).",
+        "It is faster than other patterns.",
+        "It can be used with any data structure."
+      ],
+      "answer": "It is space-efficient (O(1) space complexity)."
+    },
+    {
+      "question": "Which of the following problems can be solved using the Fast & Slow Pointers pattern?",
+      "options": [
+        "Finding the maximum sum subarray",
+        "Finding the middle of a linked list",
+        "Merging two sorted arrays",
+        "Topological sorting of a graph"
+      ],
+      "answer": "Finding the middle of a linked list"
+    },
+    {
+      "question": "What is a potential challenge when using the Fast & Slow Pointers technique?",
+      "options": [
+        "It is not very versatile.",
+        "Understanding how to move the pointers can be tricky at first.",
+        "It is not very efficient.",
+        "It requires a lot of extra memory."
+      ],
+      "answer": "Understanding how to move the pointers can be tricky at first."
+    }
+  ],
+  "4. Sliding Window": [
+    {
+      "question": "What does the 'window' in the Sliding Window pattern represent?",
+      "options": [
+        "A fixed-size data structure",
+        "A portion of data that slides across a larger dataset",
+        "A type of graphical user interface element",
+        "A way to visualize data"
+      ],
+      "answer": "A portion of data that slides across a larger dataset"
+    },
+    {
+      "question": "The Sliding Window pattern is most useful for which type of problems?",
+      "options": [
+        "Problems involving contiguous subarrays or sublists",
+        "Graph traversal problems",
+        "Recursive problems",
+        "Problems involving sorting"
+      ],
+      "answer": "Problems involving contiguous subarrays or sublists"
+    },
+    {
+      "question": "What is a major benefit of the Sliding Window pattern?",
+      "options": [
+        "It reduces time complexity, often from O(n^2) to O(n).",
+        "It is very easy to understand for beginners.",
+        "It can be applied to any type of problem.",
+        "It does not require any extra space."
+      ],
+      "answer": "It reduces time complexity, often from O(n^2) to O(n)."
+    },
+    {
+      "question": "Which of the following problems can be solved using the Sliding Window pattern?",
+      "options": [
+        "Finding the factorial of a number",
+        "Finding the maximum sum subarray of a given size",
+        "Reversing a linked list",
+        "Searching for an element in a balanced binary tree"
+      ],
+      "answer": "Finding the maximum sum subarray of a given size"
+    },
+    {
+      "question": "What is a potential difficulty when implementing the Sliding Window pattern?",
+      "options": [
+        "It is not very efficient.",
+        "It is not versatile.",
+        "Understanding how to adjust the window size can be challenging.",
+        "It requires a lot of memory."
+      ],
+      "answer": "Understanding how to adjust the window size can be challenging."
+    }
+  ],
+  "5. Merge Intervals": [
+    {
+      "question": "What is the primary purpose of the Merge Intervals pattern?",
+      "options": [
+        "To sort a list of numbers",
+        "To deal with overlapping intervals or ranges",
+        "To find the shortest path in a graph",
+        "To search for an element in an array"
+      ],
+      "answer": "To deal with overlapping intervals or ranges"
+    },
+    {
+      "question": "What is a prerequisite for using the Merge Intervals pattern?",
+      "options": [
+        "The intervals must be of the same size.",
+        "The intervals must be sorted beforehand.",
+        "The intervals must not overlap.",
+        "The intervals must be in a linked list."
+      ],
+      "answer": "The intervals must be sorted beforehand."
+    },
+    {
+      "question": "Which of the following problems can be solved using the Merge Intervals pattern?",
+      "options": [
+        "Finding the factorial of a number",
+        "Merging overlapping intervals",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Merging overlapping intervals"
+    },
+    {
+      "question": "What is a potential drawback of the Merge Intervals pattern?",
+      "options": [
+        "It is not very efficient.",
+        "The sorting overhead can add to the time complexity.",
+        "It is not very versatile.",
+        "It requires a lot of extra space."
+      ],
+      "answer": "The sorting overhead can add to the time complexity."
+    },
+    {
+      "question": "The Merge Intervals pattern is particularly useful for which type of problems?",
+      "options": [
+        "String manipulation problems",
+        "Time-based problems and scheduling",
+        "Graph traversal problems",
+        "Recursive problems"
+      ],
+      "answer": "Time-based problems and scheduling"
+    }
+  ],
+  "6. Cyclic Sort": [
+    {
+      "question": "What is the main idea behind the Cyclic Sort algorithm?",
+      "options": [
+        "To sort numbers by repeatedly swapping them to their correct positions.",
+        "To use a hash map to sort numbers.",
+        "To use a recursive approach to sort numbers.",
+        "To use a divide-and-conquer strategy to sort numbers."
+      ],
+      "answer": "To sort numbers by repeatedly swapping them to their correct positions."
+    },
+    {
+      "question": "Cyclic Sort is most suitable for which type of problems?",
+      "options": [
+        "Sorting strings",
+        "Sorting arrays of numbers in a specific range",
+        "Sorting linked lists",
+        "Sorting large datasets"
+      ],
+      "answer": "Sorting arrays of numbers in a specific range"
+    },
+    {
+      "question": "What is a key advantage of the Cyclic Sort algorithm?",
+      "options": [
+        "It is a stable sorting algorithm.",
+        "It is very fast for all types of data.",
+        "It sorts in-place, requiring O(1) extra space.",
+        "It is easy to implement for beginners."
+      ],
+      "answer": "It sorts in-place, requiring O(1) extra space."
+    },
+    {
+      "question": "Which of the following problems can be solved using the Cyclic Sort pattern?",
+      "options": [
+        "Finding the shortest path in a graph",
+        "Finding a missing number in a given range",
+        "Merging two sorted arrays",
+        "Reversing a linked list"
+      ],
+      "answer": "Finding a missing number in a given range"
+    },
+    {
+      "question": "What is a limitation of the Cyclic Sort algorithm?",
+      "options": [
+        "It is not very efficient.",
+        "It is best suited for problems involving numbers in a specific range.",
+        "It requires a lot of extra memory.",
+        "It is not a well-known pattern."
+      ],
+      "answer": "It is best suited for problems involving numbers in a specific range."
+    }
+  ],
+  "7. In-place Reversal of a Linked List": [
+    {
+      "question": "What is the main goal of the In-place Reversal of a Linked List pattern?",
+      "options": [
+        "To reverse the elements of a linked list using extra memory.",
+        "To reverse the elements of a linked list without using additional memory.",
+        "To sort the elements of a linked list.",
+        "To find the middle element of a linked list."
+      ],
+      "answer": "To reverse the elements of a linked list without using additional memory."
+    },
+    {
+      "question": "What is a key advantage of this pattern?",
+      "options": [
+        "It is very fast.",
+        "It is space-efficient (O(1) space complexity).",
+        "It is easy to implement.",
+        "It can be used with any data structure."
+      ],
+      "answer": "It is space-efficient (O(1) space complexity)."
+    },
+    {
+      "question": "What is a potential challenge when implementing this pattern?",
+      "options": [
+        "It is not very versatile.",
+        "Careful manipulation of pointers is required, which can be error-prone.",
+        "It is not very efficient.",
+        "It requires a lot of extra memory."
+      ],
+      "answer": "Careful manipulation of pointers is required, which can be error-prone."
+    },
+    {
+      "question": "Which of the following problems can be solved using this pattern?",
+      "options": [
+        "Finding the maximum sum subarray",
+        "Reversing a sub-list within a linked list",
+        "Merging two sorted arrays",
+        "Topological sorting of a graph"
+      ],
+      "answer": "Reversing a sub-list within a linked list"
+    },
+    {
+      "question": "This pattern can be extended to solve which other problem?",
+      "options": [
+        "Finding if a linked list is a palindrome",
+        "Finding the shortest path in a graph",
+        "Sorting a list of numbers",
+        "Searching for an element in a balanced binary tree"
+      ],
+      "answer": "Finding if a linked list is a palindrome"
+    }
+  ],
+  "8. Tree Breadth First Search": [
+    {
+      "question": "How does the Tree Breadth First Search (BFS) pattern traverse a tree?",
+      "options": [
+        "It goes as deep as possible down one branch before exploring others.",
+        "It traverses the tree level by level.",
+        "It traverses the tree in a random order.",
+        "It only visits the leaf nodes."
+      ],
+      "answer": "It traverses the tree level by level."
+    },
+    {
+      "question": "What data structure is typically used to implement Tree BFS?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Array",
+        "Hash map"
+      ],
+      "answer": "Queue"
+    },
+    {
+      "question": "Tree BFS is ideal for which type of problems?",
+      "options": [
+        "Finding the longest path in a tree",
+        "Finding the minimum depth of a tree",
+        "Sorting the elements of a tree",
+        "Searching for an element in a sorted array"
+      ],
+      "answer": "Finding the minimum depth of a tree"
+    },
+    {
+      "question": "What is a potential disadvantage of Tree BFS?",
+      "options": [
+        "It is not very efficient.",
+        "It requires additional space for the queue.",
+        "It is not very versatile.",
+        "It is difficult to implement."
+      ],
+      "answer": "It requires additional space for the queue."
+    },
+    {
+      "question": "Which of the following problems can be solved using Tree BFS?",
+      "options": [
+        "Finding the factorial of a number",
+        "Performing a level order traversal of a binary tree",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Performing a level order traversal of a binary tree"
+    }
+  ],
+  "9. Tree Depth First Search": [
+    {
+      "question": "How does the Tree Depth First Search (DFS) pattern traverse a tree?",
+      "options": [
+        "It traverses the tree level by level.",
+        "It goes as deep as possible down one branch before exploring others.",
+        "It traverses the tree in a random order.",
+        "It only visits the root node."
+      ],
+      "answer": "It goes as deep as possible down one branch before exploring others."
+    },
+    {
+      "question": "What data structure is typically used to implement Tree DFS iteratively?",
+      "options": [
+        "Queue",
+        "Stack",
+        "Array",
+        "Hash map"
+      ],
+      "answer": "Stack"
+    },
+    {
+      "question": "Tree DFS is ideal for which type of problems?",
+      "options": [
+        "Finding the shortest path in an unweighted tree",
+        "Finding a path with certain properties in a tree",
+        "Performing a level order traversal of a tree",
+        "Finding the minimum depth of a tree"
+      ],
+      "answer": "Finding a path with certain properties in a tree"
+    },
+    {
+      "question": "What is a key advantage of Tree DFS for a balanced tree?",
+      "options": [
+        "It is faster than BFS.",
+        "It uses less space than BFS.",
+        "It is easier to implement than BFS.",
+        "It is more versatile than BFS."
+      ],
+      "answer": "It uses less space than BFS."
+    },
+    {
+      "question": "Which of the following problems can be solved using Tree DFS?",
+      "options": [
+        "Finding the factorial of a number",
+        "Finding all root-to-leaf paths that sum to a given number",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Finding all root-to-leaf paths that sum to a given number"
+    }
+  ],
+  "10. Two Heaps": [
+    {
+      "question": "What is the main purpose of the Two Heaps pattern?",
+      "options": [
+        "To sort a list of numbers",
+        "To maintain a running balance or median of a set of numbers",
+        "To find the shortest path in a graph",
+        "To search for an element in an array"
+      ],
+      "answer": "To maintain a running balance or median of a set of numbers"
+    },
+    {
+      "question": "What data structures are used in the Two Heaps pattern?",
+      "options": [
+        "Two stacks",
+        "Two queues",
+        "Two priority queues (heaps)",
+        "Two arrays"
+      ],
+      "answer": "Two priority queues (heaps)"
+    },
+    {
+      "question": "The Two Heaps pattern is perfect for which type of problems?",
+      "options": [
+        "String manipulation problems",
+        "Finding the running median of a number stream",
+        "Graph traversal problems",
+        "Recursive problems"
+      ],
+      "answer": "Finding the running median of a number stream"
+    },
+    {
+      "question": "What is a potential challenge when implementing the Two Heaps pattern?",
+      "options": [
+        "It is not very efficient.",
+        "Implementation can be complex due to the need to balance the two heaps.",
+        "It is not very versatile.",
+        "It requires a lot of extra memory."
+      ],
+      "answer": "Implementation can be complex due to the need to balance the two heaps."
+    },
+    {
+      "question": "What is a key advantage of the Two Heaps pattern?",
+      "options": [
+        "It is very easy to implement.",
+        "It provides a way to efficiently find the median in O(log N) time.",
+        "It does not require any extra space.",
+        "It can be used with any data structure."
+      ],
+      "answer": "It provides a way to efficiently find the median in O(log N) time."
+    }
+  ],
+  "11. Subsets": [
+    {
+      "question": "What is the primary goal of the Subsets pattern?",
+      "options": [
+        "To sort a set of elements",
+        "To generate all possible combinations or subsets of a set",
+        "To find the largest element in a set",
+        "To search for an element in a set"
+      ],
+      "answer": "To generate all possible combinations or subsets of a set"
+    },
+    {
+      "question": "The Subsets pattern is useful for which type of problems?",
+      "options": [
+        "String manipulation problems",
+        "Combinatorial problems",
+        "Graph traversal problems",
+        "Recursive problems"
+      ],
+      "answer": "Combinatorial problems"
+    },
+    {
+      "question": "What is a potential drawback of the Subsets pattern?",
+      "options": [
+        "It is not very efficient.",
+        "It can lead to exponential time complexity.",
+        "It is not very versatile.",
+        "It is difficult to implement."
+      ],
+      "answer": "It can lead to exponential time complexity."
+    },
+    {
+      "question": "Which of the following problems can be solved using the Subsets pattern?",
+      "options": [
+        "Finding the factorial of a number",
+        "Generating all distinct subsets of a set",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Generating all distinct subsets of a set"
+    },
+    {
+      "question": "The Subsets pattern is a form of what kind of search?",
+      "options": [
+        "Binary search",
+        "Exhaustive search",
+        "Linear search",
+        "Ternary search"
+      ],
+      "answer": "Exhaustive search"
+    }
+  ],
+  "12. Modified Binary Search": [
+    {
+      "question": "What is the main idea behind the Modified Binary Search pattern?",
+      "options": [
+        "To adapt the classic binary search algorithm to solve various problems.",
+        "To use a linear search approach.",
+        "To use a recursive approach to search.",
+        "To use a hash map to search."
+      ],
+      "answer": "To adapt the classic binary search algorithm to solve various problems."
+    },
+    {
+      "question": "The Modified Binary Search pattern is most effective on which type of data structure?",
+      "options": [
+        "Unsorted arrays",
+        "Sorted arrays",
+        "Linked lists",
+        "Trees"
+      ],
+      "answer": "Sorted arrays"
+    },
+    {
+      "question": "What is a key advantage of the Modified Binary Search pattern?",
+      "options": [
+        "It is very easy to implement.",
+        "It provides a logarithmic time complexity solution.",
+        "It does not require any extra space.",
+        "It can be used with any data structure."
+      ],
+      "answer": "It provides a logarithmic time complexity solution."
+    },
+    {
+      "question": "Which of the following problems can be solved using the Modified Binary Search pattern?",
+      "options": [
+        "Finding the factorial of a number",
+        "Finding the ceiling of a number in a sorted array",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Finding the ceiling of a number in a sorted array"
+    },
+    {
+      "question": "What is a potential challenge when implementing the Modified Binary Search pattern?",
+      "options": [
+        "It is not very efficient.",
+        "Requires careful implementation to handle edge cases.",
+        "It is not very versatile.",
+        "It requires a lot of extra memory."
+      ],
+      "answer": "Requires careful implementation to handle edge cases."
+    }
+  ],
+  "13. Bitwise XOR": [
+    {
+      "question": "What is the main purpose of the Bitwise XOR pattern?",
+      "options": [
+        "To sort a list of numbers",
+        "To solve problems related to finding missing or duplicate numbers",
+        "To find the shortest path in a graph",
+        "To search for an element in an array"
+      ],
+      "answer": "To solve problems related to finding missing or duplicate numbers"
+    },
+    {
+      "question": "What is a key property of the XOR operator?",
+      "options": [
+        "It returns 1 when two bits are the same.",
+        "It returns 1 when two bits are different.",
+        "It is not a binary operator.",
+        "It is not very efficient."
+      ],
+      "answer": "It returns 1 when two bits are different."
+    },
+    {
+      "question": "What is a key advantage of the Bitwise XOR pattern?",
+      "options": [
+        "It is very easy to implement.",
+        "It provides a constant space solution for certain problems.",
+        "It is very fast for all types of data.",
+        "It can be used with any data structure."
+      ],
+      "answer": "It provides a constant space solution for certain problems."
+    },
+    {
+      "question": "Which of the following problems can be solved using the Bitwise XOR pattern?",
+      "options": [
+        "Finding the factorial of a number",
+        "Finding the single number that appears once in an array where every other number appears twice",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Finding the single number that appears once in an array where every other number appears twice"
+    },
+    {
+      "question": "What is a limitation of the Bitwise XOR pattern?",
+      "options": [
+        "It is not very efficient.",
+        "It is mainly beneficial for specific problems involving missing or duplicate numbers.",
+        "It requires a lot of extra memory.",
+        "It is not a well-known pattern."
+      ],
+      "answer": "It is mainly beneficial for specific problems involving missing or duplicate numbers."
+    }
+  ],
+  "14. Top 'K' Elements": [
+    {
+      "question": "What is the primary goal of the Top 'K' Elements pattern?",
+      "options": [
+        "To sort an entire array",
+        "To find the 'K' largest or smallest elements in a dataset",
+        "To find the median of a dataset",
+        "To search for a specific element"
+      ],
+      "answer": "To find the 'K' largest or smallest elements in a dataset"
+    },
+    {
+      "question": "What data structure is commonly used to implement the Top 'K' Elements pattern?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Heap (Priority Queue)",
+        "Array"
+      ],
+      "answer": "Heap (Priority Queue)"
+    },
+    {
+      "question": "What is a key advantage of using a heap for the Top 'K' Elements pattern?",
+      "options": [
+        "It is easy to implement.",
+        "It has a time complexity of O(N log K).",
+        "It uses O(1) space.",
+        "It works on any data structure."
+      ],
+      "answer": "It has a time complexity of O(N log K)."
+    },
+    {
+      "question": "Which of the following problems can be solved using the Top 'K' Elements pattern?",
+      "options": [
+        "Finding the factorial of a number",
+        "Finding the 'K' closest points to the origin",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Finding the 'K' closest points to the origin"
+    },
+    {
+      "question": "What is a limitation of the Top 'K' Elements pattern?",
+      "options": [
+        "It is not very efficient.",
+        "It only maintains information about the top 'K' elements.",
+        "It requires a lot of extra memory.",
+        "It is not a well-known pattern."
+      ],
+      "answer": "It only maintains information about the top 'K' elements."
+    }
+  ],
+  "15. K-way Merge": [
+    {
+      "question": "What is the primary purpose of the K-way Merge pattern?",
+      "options": [
+        "To sort a single array",
+        "To merge multiple sorted arrays or lists into a single sorted list",
+        "To find the median of a dataset",
+        "To search for a specific element"
+      ],
+      "answer": "To merge multiple sorted arrays or lists into a single sorted list"
+    },
+    {
+      "question": "What data structure is commonly used to implement the K-way Merge pattern?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Heap (Priority Queue)",
+        "Array"
+      ],
+      "answer": "Heap (Priority Queue)"
+    },
+    {
+      "question": "What is a key advantage of the K-way Merge pattern?",
+      "options": [
+        "It is easy to implement.",
+        "It has a time complexity of O(N log K).",
+        "It uses O(1) space.",
+        "It works on any data structure."
+      ],
+      "answer": "It has a time complexity of O(N log K)."
+    },
+    {
+      "question": "Which of the following problems can be solved using the K-way Merge pattern?",
+      "options": [
+        "Finding the factorial of a number",
+        "Merging 'K' sorted linked lists",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Merging 'K' sorted linked lists"
+    },
+    {
+      "question": "What is a prerequisite for the K-way Merge pattern?",
+      "options": [
+        "The arrays must be unsorted.",
+        "The arrays must be sorted.",
+        "The arrays must be of the same size.",
+        "The arrays must be in a linked list."
+      ],
+      "answer": "The arrays must be sorted."
+    }
+  ],
+  "16. Topological Sort": [
+    {
+      "question": "What is the main goal of the Topological Sort pattern?",
+      "options": [
+        "To sort the vertices of a graph in a random order",
+        "To linearly order the vertices of a directed graph",
+        "To find the shortest path in a graph",
+        "To find the minimum spanning tree of a graph"
+      ],
+      "answer": "To linearly order the vertices of a directed graph"
+    },
+    {
+      "question": "Topological Sort is applicable to which type of graphs?",
+      "options": [
+        "Undirected graphs",
+        "Directed acyclic graphs (DAGs)",
+        "Complete graphs",
+        "Bipartite graphs"
+      ],
+      "answer": "Directed acyclic graphs (DAGs)"
+    },
+    {
+      "question": "What does Topological Sort help in detecting?",
+      "options": [
+        "The shortest path",
+        "Cycles in a directed graph",
+        "The number of connected components",
+        "The degree of each vertex"
+      ],
+      "answer": "Cycles in a directed graph"
+    },
+    {
+      "question": "Which of the following problems can be solved using Topological Sort?",
+      "options": [
+        "Finding the factorial of a number",
+        "Task scheduling with dependencies",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Task scheduling with dependencies"
+    },
+    {
+      "question": "What is a common approach to implement Topological Sort?",
+      "options": [
+        "Using a priority queue",
+        "Using Kahn's algorithm (based on in-degrees) or DFS",
+        "Using a stack",
+        "Using a hash map"
+      ],
+      "answer": "Using Kahn's algorithm (based on in-degrees) or DFS"
+    }
+  ],
+  "17. Trie": [
+    {
+      "question": "What is a Trie also known as?",
+      "options": [
+        "A binary search tree",
+        "A prefix tree",
+        "A heap",
+        "A hash map"
+      ],
+      "answer": "A prefix tree"
+    },
+    {
+      "question": "A Trie is particularly useful for which type of problems?",
+      "options": [
+        "Sorting numbers",
+        "Word-based problems like autocomplete and spell checking",
+        "Graph traversal",
+        "Dynamic programming"
+      ],
+      "answer": "Word-based problems like autocomplete and spell checking"
+    },
+    {
+      "question": "What is a key advantage of using a Trie for string keys?",
+      "options": [
+        "It uses less space than other data structures.",
+        "It provides fast retrieval and prefix searching.",
+        "It is easy to implement.",
+        "It is a very new data structure."
+      ],
+      "answer": "It provides fast retrieval and prefix searching."
+    },
+    {
+      "question": "What is a potential disadvantage of a Trie?",
+      "options": [
+        "It is not very efficient.",
+        "It can have a high space overhead.",
+        "It is not very versatile.",
+        "It is difficult to understand."
+      ],
+      "answer": "It can have a high space overhead."
+    },
+    {
+      "question": "Which of the following problems can be solved using a Trie?",
+      "options": [
+        "Finding the factorial of a number",
+        "Implementing an autocomplete feature",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Implementing an autocomplete feature"
+    }
+  ],
+  "18. Backtracking": [
+    {
+      "question": "What is the main idea behind the Backtracking algorithm?",
+      "options": [
+        "To find the optimal solution by making locally optimal choices.",
+        "To explore all possible configurations of a search space.",
+        "To use a divide-and-conquer strategy.",
+        "To use a greedy approach."
+      ],
+      "answer": "To explore all possible configurations of a search space."
+    },
+    {
+      "question": "Backtracking is particularly useful for which type of problems?",
+      "options": [
+        "String manipulation problems",
+        "Combinatorial problems and puzzle solving",
+        "Graph traversal problems",
+        "Sorting problems"
+      ],
+      "answer": "Combinatorial problems and puzzle solving"
+    },
+    {
+      "question": "What is a potential drawback of the Backtracking algorithm?",
+      "options": [
+        "It is not very efficient.",
+        "It can lead to exponential time complexity.",
+        "It is not very versatile.",
+        "It is difficult to implement."
+      ],
+      "answer": "It can lead to exponential time complexity."
+    },
+    {
+      "question": "Which of the following problems can be solved using Backtracking?",
+      "options": [
+        "Finding the factorial of a number",
+        "Solving the N-Queens problem",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Solving the N-Queens problem"
+    },
+    {
+      "question": "What is a key advantage of the Backtracking algorithm?",
+      "options": [
+        "It is very fast.",
+        "It is space-efficient as it only stores the current state.",
+        "It is easy to implement.",
+        "It can be used with any data structure."
+      ],
+      "answer": "It is space-efficient as it only stores the current state."
+    }
+  ],
+  "19. Monotonic Stack": [
+    {
+      "question": "What is the defining characteristic of a Monotonic Stack?",
+      "options": [
+        "It maintains elements in a random order.",
+        "It maintains elements in a sorted order.",
+        "It can only store numbers.",
+        "It is a very new data structure."
+      ],
+      "answer": "It maintains elements in a sorted order."
+    },
+    {
+      "question": "A Monotonic Stack is particularly useful for which type of problems?",
+      "options": [
+        "Sorting problems",
+        "Finding the next greater or smaller element in an array",
+        "Graph traversal problems",
+        "Dynamic programming problems"
+      ],
+      "answer": "Finding the next greater or smaller element in an array"
+    },
+    {
+      "question": "What is a key advantage of the Monotonic Stack?",
+      "options": [
+        "It is very easy to implement.",
+        "It provides a linear time solution for certain problems.",
+        "It does not require any extra space.",
+        "It can be used with any data structure."
+      ],
+      "answer": "It provides a linear time solution for certain problems."
+    },
+    {
+      "question": "Which of the following problems can be solved using a Monotonic Stack?",
+      "options": [
+        "Finding the factorial of a number",
+        "Finding the largest rectangular area under a histogram",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "Finding the largest rectangular area under a histogram"
+    },
+    {
+      "question": "What is a potential challenge when using a Monotonic Stack?",
+      "options": [
+        "It is not very efficient.",
+        "Understanding how and when to use it can take some time.",
+        "It requires a lot of extra memory.",
+        "It is not a well-known pattern."
+      ],
+      "answer": "Understanding how and when to use it can take some time."
+    }
+  ],
+  "20. 0/1 Knapsack (Dynamic Programming)": [
+    {
+      "question": "What is the main goal of the 0/1 Knapsack problem?",
+      "options": [
+        "To sort a list of items",
+        "To determine the maximum value that can be accommodated in a knapsack",
+        "To find the shortest path in a graph",
+        "To search for an element in an array"
+      ],
+      "answer": "To determine the maximum value that can be accommodated in a knapsack"
+    },
+    {
+      "question": "The 0/1 Knapsack problem is a classic example of which algorithmic paradigm?",
+      "options": [
+        "Greedy algorithms",
+        "Dynamic Programming",
+        "Divide and Conquer",
+        "Backtracking"
+      ],
+      "answer": "Dynamic Programming"
+    },
+    {
+      "question": "What does the '0/1' in the name of the problem signify?",
+      "options": [
+        "You can take 0 or 1 of each item.",
+        "The items have a weight of 0 or 1.",
+        "The items have a value of 0 or 1.",
+        "The problem has a time complexity of O(1)."
+      ],
+      "answer": "You can take 0 or 1 of each item."
+    },
+    {
+      "question": "What is a potential drawback of the naive implementation of the 0/1 Knapsack problem?",
+      "options": [
+        "It is not very efficient.",
+        "It has a time and space complexity of O(nW).",
+        "It is not very versatile.",
+        "It is difficult to implement."
+      ],
+      "answer": "It has a time and space complexity of O(nW)."
+    },
+    {
+      "question": "Which of the following problems can be solved using the 0/1 Knapsack pattern?",
+      "options": [
+        "Finding the factorial of a number",
+        "The Equal Subset Sum Partition problem",
+        "Reversing a string",
+        "Finding the median of a number stream"
+      ],
+      "answer": "The Equal Subset Sum Partition problem"
+    }
+  ],
+  "3. Sliding Window": [
+    {
+      "question": "What is the main advantage of the Sliding Window technique?",
+      "options": [
+        "It works only on sorted arrays",
+        "It reduces time complexity from O(n*k) to O(n) for subarray problems",
+        "It requires extra space proportional to input size",
+        "It can only find maximum values"
+      ],
+      "answer": "It reduces time complexity from O(n*k) to O(n) for subarray problems"
+    },
+    {
+      "question": "Which type of problems is the Sliding Window pattern most suitable for?",
+      "options": [
+        "Graph traversal problems",
+        "Dynamic programming problems",
+        "Subarray/substring problems with contiguous elements",
+        "Tree traversal problems"
+      ],
+      "answer": "Subarray/substring problems with contiguous elements"
+    },
+    {
+      "question": "In a fixed-size sliding window, how do we move the window?",
+      "options": [
+        "Add new element and remove the oldest element simultaneously",
+        "Only add new elements",
+        "Only remove old elements",
+        "Recalculate the entire window each time"
+      ],
+      "answer": "Add new element and remove the oldest element simultaneously"
+    },
+    {
+      "question": "What is the key difference between fixed and variable sliding window?",
+      "options": [
+        "Fixed window has constant size, variable window size changes based on conditions",
+        "Fixed window is faster than variable window",
+        "Variable window only works on strings",
+        "There is no difference"
+      ],
+      "answer": "Fixed window has constant size, variable window size changes based on conditions"
+    },
+    {
+      "question": "Which problem is a classic example of sliding window technique?",
+      "options": [
+        "Binary search in sorted array",
+        "Maximum sum subarray of size K",
+        "Finding shortest path in graph",
+        "Sorting an array"
+      ],
+      "answer": "Maximum sum subarray of size K"
+    }
+  ],
+  "4. Binary Search": [
+    {
+      "question": "What is the time complexity of binary search?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(log n)",
+        "O(1)"
+      ],
+      "answer": "O(log n)"
+    },
+    {
+      "question": "What is the prerequisite for applying binary search?",
+      "options": [
+        "Array must be sorted",
+        "Array must contain unique elements",
+        "Array size must be even",
+        "Array must be of integers only"
+      ],
+      "answer": "Array must be sorted"
+    },
+    {
+      "question": "In binary search, how do we calculate the middle index to avoid overflow?",
+      "options": [
+        "mid = (left + right) / 2",
+        "mid = left + (right - left) / 2",
+        "mid = right - left",
+        "mid = left * right / 2"
+      ],
+      "answer": "mid = left + (right - left) / 2"
+    },
+    {
+      "question": "What happens when the target is not found in binary search?",
+      "options": [
+        "Return -1 or null",
+        "Return the closest element",
+        "Throw an exception",
+        "Return the middle element"
+      ],
+      "answer": "Return -1 or null"
+    },
+    {
+      "question": "Which variation of binary search is used to find the first occurrence of a target?",
+      "options": [
+        "Standard binary search",
+        "Lower bound binary search",
+        "Upper bound binary search",
+        "Exponential search"
+      ],
+      "answer": "Lower bound binary search"
+    }
+  ],
+  "5. Tree Traversal": [
+    {
+      "question": "What are the three main types of depth-first tree traversal?",
+      "options": [
+        "Pre-order, In-order, Post-order",
+        "Left, Right, Root",
+        "BFS, DFS, Iterative",
+        "Forward, Backward, Circular"
+      ],
+      "answer": "Pre-order, In-order, Post-order"
+    },
+    {
+      "question": "Which traversal method visits nodes level by level?",
+      "options": [
+        "Pre-order traversal",
+        "In-order traversal",
+        "Post-order traversal",
+        "Breadth-first traversal (BFS)"
+      ],
+      "answer": "Breadth-first traversal (BFS)"
+    },
+    {
+      "question": "What data structure is typically used for BFS tree traversal?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Array",
+        "Hash table"
+      ],
+      "answer": "Queue"
+    },
+    {
+      "question": "In a binary search tree, which traversal gives nodes in sorted order?",
+      "options": [
+        "Pre-order",
+        "Post-order",
+        "In-order",
+        "Level-order"
+      ],
+      "answer": "In-order"
+    },
+    {
+      "question": "What is the space complexity of recursive tree traversal?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n) for balanced trees, O(n) for skewed trees",
+        "O(n log n)"
+      ],
+      "answer": "O(log n) for balanced trees, O(n) for skewed trees"
+    }
+  ],
+  "6. Dynamic Programming (1D)": [
+    {
+      "question": "What are the two main approaches to dynamic programming?",
+      "options": [
+        "Recursion and Iteration",
+        "Top-down (Memoization) and Bottom-up (Tabulation)",
+        "Forward and Backward",
+        "Greedy and Optimal"
+      ],
+      "answer": "Top-down (Memoization) and Bottom-up (Tabulation)"
+    },
+    {
+      "question": "What is the key principle behind dynamic programming?",
+      "options": [
+        "Divide and conquer",
+        "Optimal substructure and overlapping subproblems",
+        "Greedy choice property",
+        "First-in-first-out processing"
+      ],
+      "answer": "Optimal substructure and overlapping subproblems"
+    },
+    {
+      "question": "Which classic problem is often used to introduce dynamic programming?",
+      "options": [
+        "Binary search",
+        "Fibonacci sequence",
+        "Sorting algorithms",
+        "Graph traversal"
+      ],
+      "answer": "Fibonacci sequence"
+    },
+    {
+      "question": "What is memoization in dynamic programming?",
+      "options": [
+        "A way to sort arrays",
+        "Storing results of expensive function calls to avoid recomputation",
+        "A graph traversal technique",
+        "A method to find shortest paths"
+      ],
+      "answer": "Storing results of expensive function calls to avoid recomputation"
+    },
+    {
+      "question": "In the coin change problem, what does dp[i] typically represent?",
+      "options": [
+        "The i-th coin denomination",
+        "The minimum number of coins needed to make amount i",
+        "The maximum amount possible with i coins",
+        "The number of ways to arrange i coins"
+      ],
+      "answer": "The minimum number of coins needed to make amount i"
+    }
+  ],
+  "7. Fast & Slow Pointers": [
+    {
+      "question": "What is the Fast & Slow Pointers technique also known as?",
+      "options": [
+        "Two Pointers technique",
+        "Floyd's Cycle Detection Algorithm or Tortoise and Hare",
+        "Binary search pointers",
+        "Sliding window technique"
+      ],
+      "answer": "Floyd's Cycle Detection Algorithm or Tortoise and Hare"
+    },
+    {
+      "question": "In the fast & slow pointers technique, how do the pointers typically move?",
+      "options": [
+        "Both move at the same speed",
+        "Fast pointer moves 2 steps, slow pointer moves 1 step",
+        "Fast pointer moves 3 steps, slow pointer moves 1 step",
+        "Pointers move randomly"
+      ],
+      "answer": "Fast pointer moves 2 steps, slow pointer moves 1 step"
+    },
+    {
+      "question": "What happens when there's a cycle in a linked list using fast & slow pointers?",
+      "options": [
+        "Both pointers will reach null",
+        "The pointers will eventually meet inside the cycle",
+        "The fast pointer will skip over the slow pointer",
+        "The algorithm will run infinitely"
+      ],
+      "answer": "The pointers will eventually meet inside the cycle"
+    },
+    {
+      "question": "How can fast & slow pointers find the middle of a linked list?",
+      "options": [
+        "When fast pointer reaches the end, slow pointer is at the middle",
+        "Count all nodes first, then move to middle",
+        "Use recursion to find the middle",
+        "It cannot find the middle"
+      ],
+      "answer": "When fast pointer reaches the end, slow pointer is at the middle"
+    },
+    {
+      "question": "What is the space complexity of the fast & slow pointers technique?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(1)",
+        "O(n²)"
+      ],
+      "answer": "O(1)"
+    }
+  ],
+  "8. Graph Algorithms": [
+    {
+      "question": "What are the two main graph traversal algorithms?",
+      "options": [
+        "Binary search and Linear search",
+        "Depth-First Search (DFS) and Breadth-First Search (BFS)",
+        "Quick sort and Merge sort",
+        "Dynamic programming and Greedy"
+      ],
+      "answer": "Depth-First Search (DFS) and Breadth-First Search (BFS)"
+    },
+    {
+      "question": "Which data structure is typically used for DFS implementation?",
+      "options": [
+        "Queue",
+        "Stack (or recursion)",
+        "Array",
+        "Hash table"
+      ],
+      "answer": "Stack (or recursion)"
+    },
+    {
+      "question": "What is the time complexity of DFS and BFS?",
+      "options": [
+        "O(V) where V is vertices",
+        "O(E) where E is edges",
+        "O(V + E) where V is vertices and E is edges",
+        "O(V * E)"
+      ],
+      "answer": "O(V + E) where V is vertices and E is edges"
+    },
+    {
+      "question": "Which algorithm is better for finding the shortest path in an unweighted graph?",
+      "options": [
+        "DFS",
+        "BFS",
+        "Both are equally good",
+        "Neither can find shortest path"
+      ],
+      "answer": "BFS"
+    },
+    {
+      "question": "What is a topological sort used for?",
+      "options": [
+        "Sorting numbers in ascending order",
+        "Ordering vertices in a directed acyclic graph (DAG)",
+        "Finding cycles in a graph",
+        "Calculating shortest distances"
+      ],
+      "answer": "Ordering vertices in a directed acyclic graph (DAG)"
+    }
+  ]
+}
