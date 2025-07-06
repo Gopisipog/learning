@@ -1,0 +1,23 @@
+Gap Analysis:
+
+The selected items represent all possible options for data structures where the Two Pointers technique might be applied:
+- Unsorted arrays
+- Hash maps
+- Sorted arrays or linked lists
+- Trees
+
+The gap in understanding here is about which of these data structures the Two Pointers pattern is MOST effective on.
+
+Based on the code examples and patterns in your codebase:
+1. The Two Pointers technique is primarily designed for linear data structures
+2. It works best when there's a natural ordering that can be exploited
+3. Sorted arrays and linked lists allow for efficient pointer movement based on values or positions
+
+While Two Pointers can sometimes be applied to unsorted arrays for specific problems (like partitioning), 
+it's most powerful and commonly used with sorted arrays or linked lists where the ordering provides 
+information that guides pointer movement decisions.
+
+Hash maps and trees, being non-linear data structures, don't naturally lend themselves to the 
+Two Pointers pattern in most cases.
+
+
