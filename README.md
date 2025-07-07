@@ -21,17 +21,46 @@ Each pattern includes 6+ carefully selected problems that demonstrate the core c
 ### **Prerequisites**
 - .NET 6.0 or later
 - C# development environment (Visual Studio, VS Code, or Rider)
+- Node.js 16+ (for React app and server)
+- Perplexity AI API key (optional, for AI-powered features)
 
-### **Running the Examples**
+### **Setup Instructions**
+
+#### **1. Clone and Setup**
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/coding-patterns-csharp.git
-cd coding-patterns-csharp
+git clone https://github.com/Gopisipog/learning.git
+cd learning
 
+# Setup environment variables
+cp .env.example .env
+# Edit .env and add your Perplexity API key
+```
+
+#### **2. Running C# Examples**
+```bash
 # Run any pattern implementation
 dotnet run --project . TwoPointersPatternCS.cs
 dotnet run --project . SlidingWindowPatternCS.cs
 dotnet run --project . DynamicProgrammingPatternCS.cs
+```
+
+#### **3. Running React Application**
+```bash
+# Install dependencies and start React app
+cd react-app
+npm install
+npm start
+# App will be available at http://localhost:3006
+```
+
+#### **4. Running Node.js Server (Optional)**
+```bash
+# Install dependencies and start server
+cd server
+npm install
+npm start
+# Server will be available at http://localhost:3001
 ```
 
 ## 📖 **Pattern Overview**
@@ -175,6 +204,20 @@ Contributions are welcome! Please feel free to:
 - Implement additional coding patterns
 - Improve educational explanations
 - Add more test cases and examples
+
+## 🔐 **Security & Environment Setup**
+
+### **API Key Security**
+- **Never commit API keys** to version control
+- Use the provided `.env.example` as a template
+- Copy `.env.example` to `.env` and add your actual API keys
+- The `.env` file is already included in `.gitignore`
+
+### **Getting Perplexity API Key**
+1. Visit [Perplexity AI Settings](https://www.perplexity.ai/settings/api)
+2. Create an account or sign in
+3. Generate a new API key
+4. Add it to your `.env` file: `PERPLEXITY_API_KEY=your_key_here`
 
 ## 📝 **License**
 
