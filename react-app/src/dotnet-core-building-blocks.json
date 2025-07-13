@@ -1,0 +1,42 @@
+{
+  "title": ".NET Core Building Blocks",
+  "sections": [
+    {
+      "title": ".NET SDK Installation and Setup",
+      "points": [
+        "Installing the .NET SDK on different operating systems (Windows, macOS, Linux).",
+        "Understanding the difference between the .NET SDK and the .NET Runtime.",
+        "Verifying the installation and checking the version."
+      ]
+    },
+    {
+      "title": "Basic .NET CLI Commands",
+      "points": [
+        "Creating new projects (console, web API) using `dotnet new`.",
+        "Restoring project dependencies with `dotnet restore`.",
+        "Building a project with `dotnet build`.",
+        "Running applications with `dotnet run`.",
+        "Executing tests with `dotnet test`."
+      ]
+    },
+    {
+      "title": "Project and Dependency Management",
+      "points": [
+        "Adding and removing NuGet packages.",
+        "Listing project packages and their versions.",
+        "Managing project-to-project references.",
+        "Using solution files (`.sln`) to manage multiple projects."
+      ]
+    },
+    {
+      "title": "Advanced .NET CLI Topics",
+      "points": [
+        "Using .NET global tools.",
+        "Creating custom project templates.",
+        "Publishing applications with `dotnet publish`.",
+        "Managing user secrets for development.",
+        "Creating and packing NuGet packages."
+      ]
+    }
+  ]
+}

@@ -48,6 +48,10 @@ namespace CodingPatterns
             AskQuestion6_Implementation();
             Console.WriteLine();
 
+            // Question 7: Development Environment
+            AskQuestion7_DevEnvironment();
+            Console.WriteLine();
+
             // Provide comprehensive explanation
             ProvideCQRSExplanation();
         }
@@ -219,6 +223,33 @@ namespace CodingPatterns
                 Console.WriteLine("❌ INCORRECT. The correct answer is B.");
                 Console.WriteLine("   💡 Commands change state, Queries read state");
                 Console.WriteLine("   💡 Events bridge the command and query sides");
+            }
+        }
+
+        private void AskQuestion7_DevEnvironment()
+        {
+            Console.WriteLine("📝 QUESTION 7: Where can you find a guide to set up your .NET development environment?");
+            Console.WriteLine();
+            Console.WriteLine("A) In the project's README file");
+            Console.WriteLine("B) In the DotNetCoreDevGuide.md file");
+            Console.WriteLine("C) On the official Microsoft documentation website");
+            Console.WriteLine("D) All of the above");
+            Console.WriteLine();
+
+            Console.Write("Your answer (A/B/C/D): ");
+            var answer = Console.ReadLine()?.ToUpper();
+
+            if (answer == "B")
+            {
+                Console.WriteLine("✅ CORRECT! The DotNetCoreDevGuide.md file provides a comprehensive guide.");
+                Console.WriteLine("   📖 It covers everything from SDK installation to advanced CLI usage.");
+                Console.WriteLine("   🚀 A great resource for getting started with .NET development.");
+            }
+            else
+            {
+                Console.WriteLine("❌ INCORRECT. The correct answer is B.");
+                Console.WriteLine("   💡 The DotNetCoreDevGuide.md file is located in the root of this project.");
+                Console.WriteLine("   💡 It's designed to be a quick and easy reference for developers.");
             }
         }
 
