@@ -14,6 +14,7 @@ import DotNetCoreLearningGuide from './DotNetCoreLearningGuide';
 import DotNetCoreBuildingBlocks from './DotNetCoreBuildingBlocks';
 import DotNetCoreConcepts from './DotNetCoreConcepts';
 import SystemDesignConcepts from './SystemDesignConcepts';
+import DotNetInterfaces from './DotNetInterfaces';
 import './App.css';
 
 function App() {
@@ -55,6 +56,9 @@ function App() {
             <li>
               <Link to="/system-design">System Design Concepts</Link>
             </li>
+            <li>
+              <Link to="/dotnet-interfaces">.NET Common Interfaces</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
@@ -72,6 +76,7 @@ function App() {
           <Route path="/dotnet-core-building-blocks" element={<DotNetCoreBuildingBlocks />} />
           <Route path="/dotnet-core-concepts" element={<DotNetCoreConcepts />} />
           <Route path="/system-design" element={<SystemDesignConcepts />} />
+          <Route path="/dotnet-interfaces" element={<DotNetInterfaces />} />
         </Routes>
       </div>
     </Router>
