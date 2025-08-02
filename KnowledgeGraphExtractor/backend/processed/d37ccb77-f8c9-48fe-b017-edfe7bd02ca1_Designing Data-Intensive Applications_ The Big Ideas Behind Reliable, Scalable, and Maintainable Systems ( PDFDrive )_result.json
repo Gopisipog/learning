@@ -1,0 +1,138 @@
+{
+  "success": true,
+  "file_id": "d37ccb77-f8c9-48fe-b017-edfe7bd02ca1_Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems ( PDFDrive )",
+  "filename": "Designing Data-Intensive Applications_ The Big Ideas Behind Reliable, Scalable, and Maintainable Systems ( PDFDrive ).pdf",
+  "total_chapters": 3,
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Chapter 1: Introduction",
+      "content_preview": "This document introduces the concept of artificial intelligence and machine learning.\nJohn Smith, a researcher at MIT, has been working on neural networks.\nThe company Google has developed TensorFlow for deep learning applications.\nPython programming language is widely used in AI development.\n",
+      "word_count": 43,
+      "knowledge_graph": {
+        "nodes": [
+          {
+            "id": "John Smith",
+            "label": "John Smith",
+            "type": "PERSON",
+            "description": "Detected person",
+            "size": 15
+          },
+          {
+            "id": "Google",
+            "label": "Google",
+            "type": "ORG",
+            "description": "Detected org",
+            "size": 16
+          },
+          {
+            "id": "Python",
+            "label": "Python",
+            "type": "PRODUCT",
+            "description": "Detected product",
+            "size": 17
+          }
+        ],
+        "edges": [
+          {
+            "source": "John Smith",
+            "target": "Google",
+            "relation": "related_to",
+            "sentence": "Found relationship between John Smith and Google"
+          },
+          {
+            "source": "John Smith",
+            "target": "Python",
+            "relation": "related_to",
+            "sentence": "Found relationship between John Smith and Python"
+          },
+          {
+            "source": "Google",
+            "target": "Python",
+            "relation": "related_to",
+            "sentence": "Found relationship between Google and Python"
+          }
+        ],
+        "stats": {
+          "total_nodes": 3,
+          "total_edges": 3,
+          "density": 1
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Chapter 2: Methodology",
+      "content_preview": "The research methodology involves data collection and analysis.\nMachine learning algorithms are implemented using various frameworks.\nThe dataset contains information about different neural network architectures.\nStanford University has contributed significantly to this field.\n",
+      "word_count": 34,
+      "knowledge_graph": {
+        "nodes": [
+          {
+            "id": "Machine",
+            "label": "Machine",
+            "type": "CONCEPT",
+            "description": "Detected concept",
+            "size": 15
+          },
+          {
+            "id": "Stanford University",
+            "label": "Stanford University",
+            "type": "CONCEPT",
+            "description": "Detected concept",
+            "size": 16
+          }
+        ],
+        "edges": [
+          {
+            "source": "Machine",
+            "target": "Stanford University",
+            "relation": "related_to",
+            "sentence": "Found relationship between Machine and Stanford University"
+          }
+        ],
+        "stats": {
+          "total_nodes": 2,
+          "total_edges": 1,
+          "density": 1
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Chapter 3: Results",
+      "content_preview": "The results show significant improvements in accuracy.\nThe model achieved 95% accuracy on the test dataset.\nFuture work will focus on optimization and deployment.\nMicrosoft has also invested heavily in AI research.\n",
+      "word_count": 33,
+      "knowledge_graph": {
+        "nodes": [
+          {
+            "id": "Future",
+            "label": "Future",
+            "type": "CONCEPT",
+            "description": "Detected concept",
+            "size": 15
+          },
+          {
+            "id": "Microsoft",
+            "label": "Microsoft",
+            "type": "ORG",
+            "description": "Detected org",
+            "size": 16
+          }
+        ],
+        "edges": [
+          {
+            "source": "Future",
+            "target": "Microsoft",
+            "relation": "related_to",
+            "sentence": "Found relationship between Future and Microsoft"
+          }
+        ],
+        "stats": {
+          "total_nodes": 2,
+          "total_edges": 1,
+          "density": 1
+        }
+      }
+    }
+  ]
+}

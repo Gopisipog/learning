@@ -6,9 +6,10 @@
   gap: 10px;
   margin: 20px 0;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .mode-btn {
@@ -16,22 +17,25 @@
   padding: 12px 20px;
   border: 2px solid transparent;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  color: #2d3748;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
 .mode-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
+  color: #1a202c;
 }
 
 .mode-btn.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-color: #fff;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+  color: white;
 }
 
 /* Category Tabs */
@@ -45,23 +49,28 @@
 
 .tab-button {
   padding: 12px 24px;
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  color: #2d3748;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
+  backdrop-filter: blur(5px);
 }
 
 .tab-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #1a202c;
 }
 
 .tab-button.active {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(237, 137, 54, 0.4);
+  color: white;
 }
 
 /* Overview Mode */
@@ -72,24 +81,28 @@
 .category-header {
   text-align: center;
   margin-bottom: 30px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .category-header h2 {
-  margin: 0 0 10px 0;
-  font-size: 2rem;
+  margin: 0 0 15px 0;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: white;
+  color: #1a202c;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .category-description {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 1.2rem;
   margin: 0;
-  color: white;
+  color: #2d3748;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 /* Patterns Grid */
@@ -241,13 +254,19 @@
 .flashcard-header {
   text-align: center;
   margin-bottom: 30px;
-  color: white;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .flashcard-header h3 {
   margin: 0 0 15px 0;
   font-size: 2rem;
   font-weight: 700;
+  color: #1a202c;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .progress-info {
@@ -255,20 +274,24 @@
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  color: #2d3748;
+  font-weight: 600;
 }
 
 .progress-bar {
   width: 300px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .progress-fill {
   height: 100%;
   background: linear-gradient(90deg, #48bb78 0%, #38a169 100%);
   transition: width 0.3s ease;
+  box-shadow: 0 2px 4px rgba(72, 187, 120, 0.3);
 }
 
 .flashcard-container {
@@ -447,12 +470,17 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .nav-btn, .flip-btn-alt {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+  color: #1a202c;
+  border: 2px solid rgba(255, 255, 255, 0.4);
   padding: 12px 20px;
   border-radius: 25px;
   font-weight: 600;
@@ -462,27 +490,37 @@
 }
 
 .nav-btn:hover, .flip-btn-alt:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
+  color: #000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* No Patterns Message */
 .no-patterns {
   text-align: center;
   padding: 60px 20px;
-  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 20px 0;
 }
 
 .no-patterns h3 {
   margin: 0 0 15px 0;
   font-size: 2rem;
   font-weight: 700;
+  color: #1a202c;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .no-patterns p {
   font-size: 1.1rem;
-  opacity: 0.9;
   margin: 0;
+  color: #2d3748;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 /* Animations */
@@ -509,16 +547,20 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  color: white;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .quiz-header h3 {
   margin: 0;
   font-size: 1.8rem;
   font-weight: 700;
+  color: #1a202c;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .quiz-progress {
@@ -527,6 +569,7 @@
   gap: 5px;
   text-align: right;
   font-weight: 600;
+  color: #2d3748;
 }
 
 .quiz-question {
@@ -730,22 +773,28 @@
 .print-header {
   text-align: center;
   margin-bottom: 30px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  color: white;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .print-header h3 {
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   font-size: 2rem;
   font-weight: 700;
+  color: #1a202c;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .print-header p {
   margin: 0 0 20px 0;
   font-size: 1.1rem;
-  opacity: 0.9;
+  color: #2d3748;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .print-controls {
@@ -773,10 +822,13 @@
 }
 
 .pattern-count {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
+  color: #1a202c;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
 }
 
 /* Printable Cards */

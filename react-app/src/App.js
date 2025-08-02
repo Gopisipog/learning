@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from './MainPage';
 import History from './History';
 import CQRSPattern from './CQRSPattern';
@@ -9,6 +9,9 @@ import SlidingWindowPattern from './patterns/SlidingWindowPattern';
 import BinarySearchPattern from './patterns/BinarySearchPattern';
 import DotNetCoreHomePage from './DotNetCoreHomePage';
 import DotNetCoreLearningGuide from './DotNetCoreLearningGuide';
+
+// Components
+import Navigation from './components/Navigation';
 
 // Microfrontend imports
 import MicrofrontendRouter from './microfrontends/MicrofrontendRouter';
@@ -28,52 +31,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">.NET Core 8.0 Learning</Link>
-            </li>
-            <li>
-              <Link to="/guide">Learning Guide</Link>
-            </li>
-            <li>
-              <Link to="/microfrontends">🚀 Microfrontend Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/mcqs">MCQs</Link>
-            </li>
-            <li>
-              <Link to="/history">Today's History</Link>
-            </li>
-            <li>
-              <Link to="/cqrs">CQRS Pattern</Link>
-            </li>
-            <li>
-              <Link to="/patterns">🎯 Coding Patterns (Microfrontend)</Link>
-            </li>
-            <li>
-              <Link to="/educational-coverage">C# Learning Materials</Link>
-            </li>
-            <li>
-              <Link to="/relationships">🔗 Relationships & Normalization (Microfrontend)</Link>
-            </li>
-            <li>
-              <Link to="/dotnet-core-building-blocks">🧱 .NET Core Building Blocks (Microfrontend)</Link>
-            </li>
-            <li>
-              <Link to="/dotnet-core-concepts">⚙️ .NET Core Concepts (Microfrontend)</Link>
-            </li>
-            <li>
-              <Link to="/system-design">🏗️ System Design Concepts (Microfrontend)</Link>
-            </li>
-            <li>
-              <Link to="/dotnet-interfaces">🔌 .NET Common Interfaces (Microfrontend)</Link>
-            </li>
-            <li>
-              <Link to="/distributed-patterns">🏗️ Distributed Systems Patterns (Microfrontend)</Link>
-            </li>
-          </ul>
-        </nav>
+        <Navigation />
         <Routes>
           <Route path="/" element={<DotNetCoreHomePage />} />
           <Route path="/guide" element={<DotNetCoreLearningGuide />} />

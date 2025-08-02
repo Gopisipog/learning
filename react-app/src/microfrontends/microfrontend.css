@@ -148,6 +148,10 @@
   background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
 }
 
+.microfrontend-container[data-microfrontend="distributed-systems-patterns"] {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .microfrontend-container {
