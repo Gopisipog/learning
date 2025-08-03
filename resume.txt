@@ -1,0 +1,167 @@
+
+1
+. 
+. 
+      
+Gopinath Muthukrishnan 
+Coimbatore, India 641015  |  +919150442199  |  gopicool.m@gmail.com   
+  
+Summary 
+Accomplished Senior Front-End Developer and Full Stack Developer with extensive experience in designing and 
+implementing scalable microservices architectures using .NET Core, ReactJS, and Node.js. Proven track record of 
+enhancing system flexibility, reducing development time through reusable code libraries, and improving user 
+satisfaction by analysing feedback and implementing necessary changes. Adept at collaborating with cross-
+functional teams to ensure seamless integration of new features and maintaining high-quality standards through 
+rigorous testing frameworks. Skilled in cloud-based platforms like AWS and Azure, API development, automation tools 
+such as Python and Robot Framework, and modern JavaScript frameworks including Angular. Committed to staying 
+current on industry trends to provide innovative solutions that meet user needs and improve productivity. 
+  
+Experience 
+SOFTWARE ENGINEER 2 /PROJECT LEAD| 03/2025 - Current  
+mphasis - hyderabad, india  
+• Collaborated with cross-functional teams to identify system requirements, improving software functionality and 
+user experience. 
+• Developed and implemented new software applications, enhancing company productivity and client 
+satisfaction. 
+• Monitored system performance post-deployment, addressing any issues promptly to maintain high levels of 
+operational efficiency. 
+• Coordinated with product managers to define clear project scopes, ensuring alignment with business goals and 
+objectives. 
+• Delivered comprehensive documentation for all software development projects, enhancing team 
+understanding and project continuity. 
+• Applied expert problem-solving skills to tackle complex software challenges, maintaining high standards of 
+quality and innovation. 
+• Designed and developed software automation based on the initial brief. 
+• Engaged in client consultations to gather precise requirements, ensuring the delivery of customised software 
+solutions. 
+• Proactively identified opportunities for process improvement, contributing to more efficient and cost-effective 
+operations. 
+• Developed standard procedures for testing and validating software. 
+• Coded software updates to add new features, close security holes and resolve defects. 
+• Facilitated knowledge-sharing sessions among client-side engineers, fostering a collaborative, innovative work 
+environment. 
+• Gathered requirements from users and wrote definition documents. 
+• Evaluated functionality and performance of existing software to best target new releases. 
+• Assisted in the development and setup of new team members technically, building a highly skilled, motivated 
+software engineering team. 
+SENIOR FRONT STACK DEVELOPER \ SENIOR SOFTWARE DEV | 03/2023 – 01/2025  
+Global Client Technology \ Nations Benefits - texas, remote  
+• Designed and implemented Components for various services, allowing seamless communication within the 
+design system 
+• Participated in regular code reviews, ensuring high-quality standards were consistently met across all 
+development efforts 
+. 
+. 
+• Adapted quickly to new technologies and programming languages, enhancing overall team productivity 
+• Worked closely with clients to gather requirements and translate them into technical specifications for 
+implementation 
+• Collaborated with cross-functional teams to ensure seamless integration of new features 
+• Continuously updated skills through training courses, workshops, and self-study—staying current on industry trends 
+and emerging technologies 
+• Reduced development time by creating reusable code libraries for future projects 
+• Developed software for desktop and mobile operating systems 
+• Estimated work hours and tracked progress using Scrum methodology 
+• Analyzed work to generate logic for new systems, procedures and tests 
+• Designed and developed forward-thinking systems that meet user needs and improve productivity 
+SENIOR FULL STACK DEVELOPER \ TECH LEAD | 04/2022 - 12/2022  
+Equadriga software \ Breas Medicals - Massachusetts, remote  
+• Developed microservices architecture using, Net Core and ReactJS to enhance the scalability and 
+maintainability of the application 
+• Led the implementation of microservices architecture, which improved system flexibility and scalability 
+• Analyzed end-user feedback to identify areas of improvement and implement necessary changes that 
+enhanced overall user satisfaction 
+• Worked closely with the team to define and document API contracts and standards for microservices 
+development, ensuring consistency and interoperability 
+• Utilized cloud-based platforms such as AWS or Azure for deploying scalable infrastructure components in a cost-
+effective manner 
+• Conducted unit and integration testing using Node.js and Java, ensuring software reliability and reducing bugs 
+before deployment 
+• Streamlined application development by implementing efficient coding practices and software design patterns 
+• Reduced application bugs by implementing rigorous unit testing frameworks alongside comprehensive test 
+coverage 
+• Added value as a test architect for designing tests for automated tests using python and robot framework 
+moving away from java and selenium 
+• Designed robust RESTful APIs for seamless integration between front-end applications and back-end services 
+• Reviewed code, debugged problems, and corrected issues 
+• Worked with back-end developers to design APIs 
+• Developed unit test cases for testing and automation 
+• Used NodeJS, ORM and SQL/No-SQL to develop and manage databases 
+• Collaborated with fellow engineers to evaluate software and hardware interfaces 
+• Developed user-friendly web forms with validation and error handling 
+• Collected, defined and translated user requirements into project designs and implementation plans 
+SENIOR FRONT END DEVELOPER | 01/2022 - 04/2022  
+Coducer Tech - Bangalore, India  
+• Developed microservices-based modules within the larger application architecture, enhancing modularity and 
+scalability 
+• Designed and implemented RESTful APIs for inter-service communication, improving data exchange efficiency 
+• Integrated monitoring and alerting solutions to proactively identify and address issues, reducing downtime and 
+improving reliability at least to keep frontend system reliable 
+• Streamlined codebase by refactoring and modularizing CSS, HTML, and JavaScript files 
+• Enhanced user experience by optimizing website performance and implementing responsive designs 
+• Led front-end development projects from inception to completion, resulting in successful launches of various 
+web applications 
+• Collaborated with UX designers to create seamless user interfaces for web applications 
+• Reduced page load time significantly with advanced optimization techniques like lazy loading, minification, and 
+caching strategies 
+• Mentored junior developers by providing guidance on best practices and industry standards in front-end 
+development 
+• Collaborated closely with back-end developers to integrate RESTful API endpoints into front-end architecture 
+seamlessly 
+. 
+. 
+• Stayed up-to-date on industry trends and emerging technologies to continuously improve skills and provide 
+innovative solutions for clients 
+• Contributed valuable input during project planning and design phases, resulting in a more efficient development 
+process 
+• Implemented responsive design principles to ensure optimal display on various devices, improving overall 
+usability for users on both desktops and mobile devices 
+• Designed and updated layouts to meet usability and performance requirements 
+• Researched emerging web technologies and trends for possible incorporation into sites 
+• Employed coding practices based on commonly accepted standards to establish site layout and user interface 
+• Completed full redesigns of existing websites to improve navigation, enhance visuals and strengthen search 
+engine rankings 
+• Planned and engineered RESTful web services to manipulate dynamic datasets 
+• Planned unit and integration testing using automation tools, ensuring code quality and reducing bugs 
+SENIOR FRONT-END DEVELOPER / SENIOR FULL STACK DEVELOPER / TRAINEE SOFTWARE ENGINEER / TECHNICAL 
+ARCHITECT | 01/2010 - 12/2021  
+Tata Consultancy Services Ltd. - Bangalore, India  
+• Utilized API gateway for routing and filtering requests to microservices, improving request handling efficiency and 
+system performance 
+• Streamlined codebase by refactoring and modularizing CSS, HTML, and JavaScript files 
+• Contributed valuable input during project planning and design phases, resulting in a more efficient development 
+process 
+• Developed reusable UI components using modern JavaScript frameworks like React or Angular, increasing 
+productivity of the entire development team 
+• Led front-end development projects from inception to completion, resulting in successful launches of various 
+web applications 
+• Stayed up-to-date on industry trends and emerging technologies to continuously improve skills and provide 
+innovative solutions for clients 
+• Coded using HTML, CSS, and JavaScript to develop features for both mobile and desktop platforms 
+• Employed coding practices based on commonly accepted standards to establish site layout and user interface 
+• Planned and engineered RESTful web services to manipulate dynamic datasets 
+• Proved successful working within tight deadlines and a fast-paced environment 
+• Championed adoption of Agile methodologies within the development team resulting in increased efficiency 
+during project delivery cycles 
+• Managed version control systems like Git for tracking code changes, enabling streamlined collaboration among 
+team members 
+• Analyzed end-user feedback to identify areas of improvement and implement necessary changes that 
+enhanced overall user satisfaction 
+• Collaborated with multi-disciplinary teams to deliver high-quality products on time and within budget constraints 
+• Mentored junior developers in adopting industry-standard practices while fostering a collaborative learning 
+environment within the team 
+• Improved application security by regularly conducting vulnerability assessments and employing best practices in 
+secure coding techniques 
+• Led architecture design decisions to ensure application scalability, modularity, and maintainability in the long run 
+• Reviewed code, debugged problems, and corrected issues 
+• Discussed project progress with customers, collected feedback on different stages and directly addressed 
+concerns 
+• Developed user-oriented visuals and features using front-end languages to increase site traffic 
+• Delivered user support to clients to train, educate and answer questions 
+• Enhanced user experience by designing intuitive user interfaces and incorporating user feedback into software 
+updates 
+• Developed efficient software solutions by analyzing user requirements and implementing appropriate coding 
+techniques 
+• Participated in regular sprint planning sessions, contributing valuable insights that helped shape project 
+roadmaps and ensure alignment with business objectives 
+• Worked with developers to identify and remove software bugs 
+• Wrote clear, clean code for various projects 

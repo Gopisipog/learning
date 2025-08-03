@@ -65,6 +65,7 @@
 ### 📚 Constructor and Method Injection
 
 1.  **Constructor Injection (Primary Method)**: You have been using this in the previous exercises. Explain why constructor injection is the most common and preferred method for DI. What does it make clear about a class's dependencies?
+
 2.  **Action Method Injection**:
     *   Create a new action method in a controller.
     *   Instead of injecting a service into the constructor, inject it directly into the action method's parameters using the `[FromServices]` attribute.

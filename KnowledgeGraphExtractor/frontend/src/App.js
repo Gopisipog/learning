@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,6 +8,9 @@ import './App.css';
 import Header from './components/Header';
 import DataIntensiveAppsNotes from './components/DataIntensiveAppsNotes';
 import DataModelsNotes from './components/DataModelsNotes';
+import HolubDesignPatterns from './components/HolubDesignPatterns';
+import CSharpLearningEnvironment from './components/CSharpLearningEnvironment';
+import SoftwareArchitectureHardParts from './components/SoftwareArchitectureHardParts';
 import ChapterViewer from './components/ChapterViewer';
 import KnowledgeGraphViewer from './components/KnowledgeGraphViewer';
 import jsonData from './data.json';
@@ -36,6 +39,9 @@ function App() {
           <Routes>
             <Route path="/data-intensive-apps" element={<DataIntensiveAppsNotes />} />
             <Route path="/data-models" element={<DataModelsNotes />} />
+            <Route path="/holub-patterns" element={<HolubDesignPatterns />} />
+            <Route path="/csharp-learning" element={<CSharpLearningEnvironment />} />
+            <Route path="/software-architecture" element={<SoftwareArchitectureHardParts />} />
             <Route path="/" element={
               <div className="app-container">
                 {processedData && (
