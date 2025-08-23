@@ -1,0 +1,5296 @@
+
+ 
+
+
+
+
+ABOUT THE BOOK
+Part I	- This book contains 250 very important .NET interview questions. Part II - Next part of this book contains 250 more interview questions.
+
+ABOUT THE AUTHOR
+Happy Rawat has around 15 years of experience in software development. He helps candidates in clearing technical interview in tech companies.
+ 
+Chapters
+ 
+Chapter 1 : OOPS & C# - Basics
+
+Q1. What is C#? What Is the difference between C# and .NET? Q2. What is OOPS? What are the main concepts of OOPS?V Imp Q3. What are the advantages of OOPSV? Imp
+Q4. What are the limitations of OOPS? Q5. What are Classes and Objects?
+Q6. What are the types of classes in C#?
+Q7. Is it possible to prevent object creation of a class in C#? Q8. What is Property?
+Q9. What is the difference between Property and Function? Q10. What are Namespaces?
+
+Back to main index
+ 
+
+
+
+	C# is an object-oriented programming language
+which runs on the .NET framework.
+	.NET is a framework for building and running software's and applications.
+
+
+
+ 
+
+
+
+
+	OOP stands for Object-Oriented Programming, which means it is a way to create software around objects.
+	OOPs provide a clear structure for the software's and web applications.
+ 
+ 
+
+	Advantages of OOPS:
+1.	Reuse of code using inheritance.
+2.	Flexibility of code using polymorphism.
+3.	Secure application by using Encapsulation.
+4.	Easily scalable from small to large applications.
+5.	Easier troubleshooting of code because of modularity.
+ 
+ 
+
+
+	Disadvantage of OOPS:
+
+1.	It is not suitable for small applications.
+ 
+ 
+
+	A class is a LOGICAL UNIT or BLUEPRINT. It contains fields, methods and properties.
+
+	Class members are:
+1. A constructor is a method in the class which gets executed when a class object is created.
+
+2. A field is a variable of any type. It is basically the data.
+
+3. A property is a member that provides helps in read and write of private field.
+
+4. A method is a code block that contains a series of statements.
+ 
+ 
+
+	Object - An object is an INSTANCE of a class.
+
+
+ 
+
+
+
+
+
+
+
+ 	 
+ 
+
+
+
+
+	Object creation of a class can be prevented by:
+1.	Abstract Class
+2.	Private Class
+3.	Static Class
+ 
+
+
+
+
+	A property is a class member that provides a flexible mechanism to read and write private field.
+ 
+Q9	What is the difference between Property and Function?
+
+
+	Property is a specialized function only.
+	Specialized means properties are used
+only to get and set field values.
+ 
+
+
+
+
+	A namespace is a container for a set of related classes and other types.
+
+
+
+
+
+
+
+
+
+ 
+Chapter 2 : OOPS & C# - Inheritance, Abstraction, Encapsulation & Polymorphism
+
+Q11. What is Inheritance? When to use Inheritance?
+ 
+Q12. What are the different types of Inheritance?
+Q13. Does C# support Multiple Inheritance?
+Q14. How to prevent a class from being Inherited?
+ 
+V Imp
+ 
+Q15. Are private class members inherited to the derived class?
+Q16. What is Abstraction? How to implement abstraction?	V Imp
+Q17. What is Encapsulation? How to implement encapsulation?	V Imp
+Q18. What is the difference between Abstraction and Encapsulation?
+Q19. What is Polymorphism and what are its types? When to use polymorphism? Q20. What is Method Overloading? In how many ways a method can be overloaded? Q21. When should you use method overloading in real applications?
+Q22. If two methods are same except return type, then methods are overloaded or what willl happen?
+ 
+Q23. What is the difference between Overloading and Overriding? Q24. What is the use of Overriding?
+ 
+V Imp
+ 
+Q25. If a method is marked as virtual, do we must have to "override" it from the child class? Q26. What is the difference between Method Overriding and Method Hiding?
+ 
+
+Back to main index
+ 
+Q11
+ 
+What is Inheritance? When to use Inheritance?
+ 
+
+t	When to use
+	Inheritance is creating a PARENT-CHILD
+relationship between two classes, where child class will automatically get the properties and methods of the parent.
+
+
+	Inheritance is good for: REUSABILITY and
+ABSTRACTION of code
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 	 	 	 
+
+ 
+
+
+
+
+	NO
+
+	C# support inheritance by using multiple Interfaces. This is an alternative way of multiple inheritance.
+ 
+ 
+	By using SEALED keyword in class
+
+
+
+
+
+
+
+
+
+
+	By using STATIC keyword in base class
+
+
+
+	Difference between sealed & static is, you can create the object of sealed class, but you cannot create the object of static class.
+ 
+
+
+
+
+	No, the private members cannot be inherited to derived class.
+	Only public and protected class members can be inherited.
+ 
+
+
+
+	Abstraction means showing only required things and hide the BACKGROUND details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Mostly we use abstract classes and interfaces
+for implementing abstraction.
+ 
+
+ 
+Q17
+ 
+What is Encapsulation? How to implement encapsulation in real applications?
+ 
+
+	Encapsulation means WRAPPING of data
+and methods into a single unit.
+
+
+
+ 
+ 
+
+
+
+
+
+ 
+	Abstraction means showing only required things and hide the BACKGROUND details.
+ 
+	Encapsulation means WRAPPING of data and methods into a single unit.
+ 
+
+ 
+ 
+
+
+
+	Polymorphism is the ability of a variable, object, or function to take on MULTIPLE FORMS.
+
+
+ 
+
+
+
+	Method overloading is a type of polymorphism in which we can create multiple methods of the same name in the same class, and all methods work in different ways.
+ 
+
+
+
+
+
+
+ 	 
+ 
+
+
+
+
+	No, this will show compile time error.
+
+
+
+ 
+
+
+
+ing?
+	Method Overriding
+1.	Multiple methods of same name are in different class.
+2.	Inheritance is used, as it is in different class.
+3.	Both methods have same signature.
+4.	It’s a run time polymorphism.
+5.	Virtual & override keywords.
+
+
+ 
+ 
+
+
+ 
+	Method Overloading
+1.	Multiple methods of same name in single class.
+2.	No need of inheritance, as it is in single class.
+3.	All methods have different signature.
+4.	It’s a compile time polymorphism.
+5.	No special keyword used.
+ 
+	Method Overriding
+1.	Multiple methods of same name in different class.
+2.	Inheritance is used, as it is in different class.
+3.	All methods have same signature.
+4.	It’s a run time polymorphism.
+5.	Virtual & override keywords.
+ 
+
+
+
+	Overriding is used to modify and provide a new implementation of the method inherited from a base class.
+ 
+
+
+
+	NO. Overriding virtual method is optional.
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+	QI2n6M. Wethhaot ids Hhiedingfe, ryeonucecabne completehlyodhide the
+implementation of the methods of a base class
+from the derived class using the new keyword.
+
+
+ 
+Chapter 3 : OOPS & C# - Abstract Class & Interface
+
+Q27. What is the difference between Abstract class and an Interface?	V Imp
+
+ 
+Q28. When to use Interface and when Abstract class in real applications? Q29. Why to create Interfaces in real applications?
+ 
+V Imp
+ 
+Q30. Can we define body of Interfaces methods? When to define methods in Interfaces? Q31. Can you create an instance of an Abstract class or an Interface?
+Q32. Do Interface can have a Constructor? Q33. Do abstract class have Constructors in C#?
+ 
+Q34. What is the difference between abstraction and abstract class? Q35. Can Abstract class be Sealed or Static in C#?
+Q36. Can you declare abstract methods as private in C#? Q37. Does Abstract class support multiple Inheritance?
+ 
+V Imp
+ 
+
+
+
+Back to main index
+ 
+
+
+
+
+
+
+ 
+1.	Abstract class contains both DECLARATION & DEFINITION of methods.
+ 
+1.	Interface should contain DECLARATION of methods.
+
+	With C# 8.0, you can now have default implementations/ definition of methods in an interface. But that is recommended in special case*.
+ 
+
+
+
+
+
+
+
+
+
+
+2.	Abstract class keyword: ABSTRACT	2. Interface keyword: INTERFACE
+ 
+
+ 
+Q27
+ 
+What is the difference between an Abstract class and an Interface (atleast 4)?
+ 
+
+3.	Abstract class does not support multiple inheritance	3. Interface supports multiple inheritance.
+
+
+
+ 
+
+
+
+4.	Abstract class can have constructors.	4. Interface do not have constructors.
+
+
+
+
+ 
+
+
+
+
+
+
+
+Abstract Class	Interface
+1. Abstract class contains both
+DECLARATION & DEFINITION of methods.	Mostly Interfaces contain DECLARATION of methods. From C# 8.0 definition is also possible.
+2. Abstract class keyword: ABSTRACT	2. Interface keyword: INTERFACE
+3. Abstract class does not support
+multiple inheritance	3. Interface supports multiple inheritance.
+4. Abstract class can have constructors.	4. Interface do not have constructors.
+ 
+
+
+
+	When to use Interface?
+An interface is a good choice when you know a method has to be there, but it can be implemented DIFFERENTLY by independent derived classes.
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+	When to use Abstract class?
+Abstract class is a good choice when you are sure some methods are concrete/defined and must be implemented in the SAME WAY in all derived classes.
+
+
+	Normally we prefer Interface because it gives us the flexibility to modify the behavior at later stage.
+ 
+
+
+
+
+
+
+ 	 
+	Benefits of Interfaces:
+1.	Help in defining the contract of the system.
+2.	Unit testing is easy in application having interfaces.
+3.	Used for implementing dependency injection.
+ 
+
+
+
+	Yes. From C# 8.0 it is possible to put method bodies in Interfaces.
+ 
+
+
+
+	No. Abstract class and interface purpose is to act as base class via inheritance. There object creation is not possible.
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+Q32
+ 
+Do Interface can have a constructor?
+ 
+
+
+	NO. Interface can only be used for inheritance, so constructor is not required.
+ 
+
+
+
+	YES, Abstract class can have constructors.
+
+	The reason is, when the abstract class is inherited in the derived class, and whenever the object of the derived class is created then FIRST the constructor of the abstract/ base class will be called and then only the constructor of derived class will be called.
+
+
+
+
+
+ 
+
+
+
+
+	Abstraction means showing only required things and hide the BACKGROUND details.
+
+	Abstract class is one of the ways to implement abstraction.
+ 
+
+
+
+	NO. Abstract class are used for inheritance, but sealed and static both will not allow the class to be inherited.
+
+
+
+ 
+
+
+
+	NO. Abstract methods are only declaration, and they must be implemented in the derive class, therefore they can not be private.
+
+
+ 
+
+
+
+	NO. Only at maximum one abstract class can be used for inheritance.
+
+	But multiple interfaces can be used.
+
+
+ 
+Chapter 4 : OOPS & C# - Access Specifiers, Boxing, Unboxing, String & StringBuilder
+
+
+
+
+ 
+Q38. What are Access Specifiers?
+ 
+V Imp
+ 
+Q39. What is internal access modifier? Show example? Q40. What is the default access modifier in a class?
+ 
+Q41. What is Boxing and Unboxing?
+ 
+V Imp
+ 
+
+ 
+Q42. Which one is explicit Boxing or Unboxing? Q43. Is Boxing and Unboxing good for performance? Q44. What are the basic string operations in C#?
+Q45. What is the difference between “String” and “StringBuilder”?
+ 
+
+
+
+
+V Imp
+ 
+Q46. When to use String and when StringBuilder in real applications?
+Q47. What is String Interpolation in C#?
+
+
+Back to main index
+ 
+
+
+
+	Access specifiers are keywords to specify the
+accessibility of a class, method, property, field.
+	The keywords are – Public, Private, Protected, Internal, Protected Internal.
+
+
+ 
+
+ 
+Q39
+ 
+What is internal access modifier? Show example.
+ 
+
+	Internal modifier is used to tell that access is limited to the current assembly.
+
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+	Boxing - Boxing is the process of converting from value type to reference type.
+
+	Unboxing - Unboxing is the process of
+converting reference type to value type.
+ 
+
+
+
+
+	We internally use boxing when item is added to Arraylist. And we use unboxing when item is extracted from Arraylist.
+ 
+
+
+
+
+	Unboxing is explicit conversion process.
+ 
+
+
+
+
+	No, it is recommended to use boxing and unboxing when it is necessary only.
+	Converting from one type to another type is not good from performance point of view.
+ 
+
+
+
+
+
+ 
+What are
+	Concatenate:
+Two strings can be concatenated either by using a System.String.Concat or by using + operator.
+
+string str1 = "This is one"; string str2 = "This is two"; string str2 = str1 + str2;
+//Output: This is one This is two
+
+
+	Replace:
+Replace(a,b) is used to replace a string with
+another string.
+
+string str1 = "This is one";
+string str2 = str1.Replace(“one”, “two”);
+//Output: This is two
+ 
+	Trim:
+Trim() is used to trim the white spaces in a string at the end.
+string str1 = "This is one	"; str1.Trim();
+//Output: "This is one“
+
+
+	Contains:
+Check if a string contains a pattern of substring or not.
+string str = "This is test";
+bool result = str.Contains("test");
+
+//Output: true
+ 
+
+
+
+45 What is the difference be
+	String is IMMUTABLE in C#.	 StringBuilder is MUTABLE in C#.
+
+ 
+It means if you defined one string then you couldn’t modify it. Every time you will assign some value to it, it will create a new string.
+ 
+This means if any manipulation will be done on string, then it will not create a new instance every time.
+ 
+
+
+
+ 	 
+ 
+
+
+
+
+	If you want to change a string multiple times, then StringBuilder is a better option from performance point of view because it will not require new memory every time.
+
+
+
+
+
+
+
+ 
+
+
+
+	String interpolation is a technique that enables you to insert expression values into strings.
+ 
+Chapter 5 : OOPS & C# - Loops, Conditions, Exception Handling
+
+Q48. What are the Loop types in C#? When to use what in real applications?
+Q49. What is the difference between “continue” and “break” statement?	V Imp
+Q50. What are the alternative ways of writing if-else conditions? When to use what?
+
+ 
+Q51. How to implement Exception Handling in C#? Q52. Can we execute multiple Catch blocks?
+Q53. When to use Finally in real applications?
+ 
+V Imp
+ 
+
+ 
+Q54. Can we have only “Try” block without “Catch” block in real applications? Q55. What is the difference between Finally and Finalize?
+Q56. What is the difference between “throw ex” and “throw”? Which one to use in real applications?
+ 
+
+
+V Imp
+ 
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+
+
+ 	 
+ 
+
+ 
+Q49
+ 
+What is the difference between “continue” and “break” statement?
+ 
+
+
+
+ 
+	Continue statement end the loop iteration and transfer the control to the beginning of the loop.
+ 
+		Break statement end the loop iteration and exit the loop.
+ 
+
+
+
+ 	 
+
+
+ 
+//Output:
+Print: 0
+Print: 1
+Print: 2
+Print: 4
+ 
+//Output:
+Print: 0
+Print: 1
+Print: 2
+ 
+
+
+
+	Switch statement	 If-else if-else statement
+
+	Ternary Operator ?:
+
+ 
+
+ 
+Q51
+ 
+How to implement Exception Handling in C#?
+ 
+
+
+	Exception handling in Object-Oriented Programming is used to MANAGE ERRORS.
+
+1.	TRY − A try block is a block of code inside which any error can occur.
+
+1.	CATCH − When any error occur in TRY block then it is passed to catch block to handle it.
+
+2.	FINALLY − The finally block is used to execute a given set of statements, whether an exception occur or not.
+ 
+
+
+
+	NO
+We can write multiple catch blocks but when we will run the application and if any error occur, only one out of them will execute based on the type of error.
+ 
+
+
+
+	Finally block is mostly used to dispose the unwanted objects when they are no more required. This is good for performance, otherwise you have to wait for garbage collector to dispose them.
+ 
+
+
+
+in real applications?
+	YES - We can have only try block without catch block, but then we must have finally block with try block.
+ 
+
+
+
+
+	Finally, is used in exception handling.
+	Finalize is a method which is automatically called by the
+garbage collector to dispose the no longer needed objects.
+ 
+
+
+
+one to use in real applications?
+	Throw ex will change the stack trace, where as
+throw will preserve the whole stack trace.
+
+Error:
+at Throw_ex	and	throw.Program.DivideZerobyZero() in D:\InterviewHappy\_InterviewHappy-Hindi\31-Oct- 2022\OOP_CSharp_Code\Throw_ex_Throw\Program.cs:line 32
+at Throw_ex	and	throw.Program.Main(String[] args) in D:\InterviewHappy\_InterviewHappy-Hindi\31-Oct- 2022\OOP_CSharp_Code\Throw_ex_Throw\Program.cs:line 15
+ 
+
+
+
+	Throw ex will change the stack trace, where as
+throw will preserve the whole stack trace.
+
+Error:
+at Throw_ex	and	throw.Program.DivideZerobyZero() in D:\InterviewHappy\_InterviewHappy-Hindi\31-Oct- 2022\OOP_CSharp_Code\Throw_ex_Throw\Program.cs:line 28
+at Throw_ex	and	throw.Program.Main(String[] args) in D:\InterviewHappy\_InterviewHappy-Hindi\31-Oct- 2022\OOP_CSharp_Code\Throw_ex_Throw\Program.cs:line 15
+
+
+
+	Its a best practice to use throw as it preserve the whole stack trace.
+ 
+Chapter 6 : OOPS & C# - Generics & Collections
+
+
+
+
+
+
+ 
+Q57. Explain Generics in C#? When and why to use?
+ 
+V Imp
+ 
+
+ 
+Q58. What are Collections in C# and what are their types?
+Q59. What is the difference between Array and ArrayList (atleast 2)? Q60. What is the difference between Arraylist and Hashtable?
+Q61. What is the difference between List and Dictionary Collections? Q62. What is IEnumerable in C#?
+ 
+
+V Imp V Imp
+ 
+Q63. What is the difference between IEnumerable and IEnumerator in C#?
+
+ 
+Q64. What is the difference between IEnumerable and IQueryable in C#?
+ 
+V Imp
+ 
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+	Generics allows us to make classes and methods - type independent or type safe.
+
+
+
+
+
+
+
+
+
+
+	The problem is, it involves Boxing from converting string (value) to object (reference) type. This will impact the performance.
+ 
+
+
+
+
+
+
+ 
+	Generics allows us to make classes and methods - type independent or type safe.
+ 
+	Generic Method
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+ 
+	Generics allows us to make classes and methods - type independent or type safe.
+ 
+	Generic Class
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+	C# collection are used to store, manage and manipulate data.
+	For example ArrayList, Dictionary, List, Hashtable etc.
+ 
+
+
+
+	Array	  ArrayList
+
+
+ 
+
+
+
+
+
+
+
+ 
+	In Arraylist we can only add Items/ Values to the list.
+ 
+	In Hashtable we can add Items/Values with the Keys.
+ 
+
+
+ 	 
+ 
+
+
+
+
+	List is a collection of items.
+	It is the generic version of Arraylist.
+
+
+
+
+
+
+	Dictionary is a collection of key value pair.
+	It is the generic version of Hashtable.
+ 
+
+
+
+	IEnumerable interface is used when we want to ITERATE among our collection classes using a FOREACH loop.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+	IEnumerable internally uses IEnumerator only to iterate the collection via forach loop.
+	IEnumerable simplifies the use of IEnumerator.
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 	 
+ 
+
+
+
+	IQueryable inherited from IEnumerable interface only, so anything you can do with a IEnumerable, you can also do with an IQueryable also.
+
+	For example, iterating the collection can be done
+by both IEnumerable and IQueryable.
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+ 
+Q64
+ 
+What is the difference between IEnumerable and IQueryable in C#? Why to use IQueryable for sql queries?
+ 
+
+	IEnumerable is used with in-memory collection.
+
+	IQueryable is better in getting result from database.
+
+
+
+
+
+
+
+ 
+Q64
+ 
+What is the difference between IEnumerable and IQueryable in C#? Why to use IQueryable for sql queries?
+ 
+
+	IQueryable inherited from IEnumerable interface only, so anything you can do with a IEnumerable, you can also do with an IQueryable also.
+
+
+	IEnumerable bring all result from database and then filter it at code side, which is a network load and performance issue.
+
+	IQueryable filter the result at database only and then get only filtered result, therefore less network load and better performance.
+
+	IQueryable is under SYSTEM.LINQ namespace. IEnuberable is under System.Collections namespace.
+ 
+Chapter 7 : OOPS & C# - Constructors
+Q65. What is a Constructor? When to use constructor in real applications?
+
+ 
+Q66. What are the types of constructor? Q67. What is Default constructor?
+Q68. What is Parameterized constructor?
+ 
+V Imp
+ 
+
+ 
+Q69. What is Static constructor? What is the use in real applications? Q70. Can we have parameters or access modifier in static constructor? Q71. What is Copy constructor?
+Q72. What is Private constructor? What is the use?
+Q73. What is Constructor overloading?
+Q74. What is Destructor?
+Q75. Can you create object of class with private constructor in C#?
+Q76. If base class and child class both have constructor which one will be called first, when derived class object is created?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+lications?
+	A constructor is a specialized method in the class which gets executed when a class object is created.
+	Constructor name will same as of Class name.
+	A constructor is used to set default values for the class.
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+	A default constructor is a constructor that is automatically created by the compiler, if no other constructors are defined in the class.
+
+
+
+
+
+
+
+
+ 
+
+
+
+	A constructor with at least one parameter is a parameterized constructor.
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+	Static constructor is used to be called before any static member of a class is called.
+ 
+
+
+
+tructor?
+	No, static constructor can not have parameters or access modifier.
+ 
+
+ 
+Q71
+ 
+What is Copy constructor?
+ 
+
+
+	The constructor which creates an object by copying variables from another object is called a copy constructor.
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+Q72
+ 
+What is Private constructor? What is the use?
+ 
+
+	When a constructor is created with a private specifier, it is not possible for other classes to derive from this class, neither is it possible to create an instance of this class.
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+	Constructor Overloading is a technique to define multiple constructors within a class with different sets of parameters.
+
+
+ 
+
+
+
+	Destructors in C# are methods inside the class used to destroy instances of that class when they are no longer needed.
+	The Destructor is called implicitly by the .NET Framework’s Garbage collector
+ 
+
+
+
+	No
+
+
+
+
+ 
+
+
+
+
+	Base class
+
+
+
+ 
+Chapter 8 : OOPS & C# - Method Parameters, Delegates & Events
+
+Q77. What is a Method in C#?
+Q78. What is the difference between Pass by Value and Pass by Reference Parameters?
+Q79. How to return more than one value from a method in C#?	V Imp
+Q80. What is the difference between “out” and “ref” parameters?	V Imp
+Q81. What is “params” keyword? When to use params keyword in real applications? Q82. What are optional parameters in a method?
+Q83. What are named parameters in a method?
+
+ 
+Q84. What are Extension Methods in C#? When to use extension methods? Q85. What are Delegates in C#? When to use delegates in real applications? Q86. What are Multicast Delegates?
+Q87. What are Anonymous Delegates in C#?
+ 
+V Imp V Imp
+ 
+Q88. What are the differences between Events and Delegates?	V Imp
+
+Back to main index
+ 
+
+
+
+	A method is a code block that contains a series of statements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+Q78. What is the difference between Pass by Value an	by Reference Parameters?
+ 
+
+
+
+C#?
+	By using ref and out keywords.
+	By using a List, Arraylist(any collection) in the return type.
+ 
+
+
+
+
+	When to use out and when to use ref?
+Use out parameter to return a new and fresh value and use ref to modify an existing value.
+ 
+
+
+
+	Params keyword is used as a parameter which can take the VARIABLE number of parameters.
+
+
+	It is useful when programmer don’t have any prior knowledge about the number of parameters to be used.
+ 
+
+
+
+	Optional parameters allow some arguments which are not mandatory to pass, and their default value is set.
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+	Named parameters are used to specify an argument based on the name of the argument and not the position
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+	Extension method allows you to add new methods in the existing class without modifying the source code of the original class.
+
+	Extension method must be static because this will be directly called from the class name, not by the object creation.
+
+	this keyword is used for binding this method with the main class.
+
+	USE - Use them when you want to add a method in a class which code you don’t have.
+ 
+
+
+
+	A Delegate is a variable that holds the
+reference to a method or Pointer to a method.
+	A delegate can refer to more than one methods of same return type and parameters.
+
+	When to use delegate?
+When we need to pass a method as a parameter.
+ 
+
+ 
+Q86
+ 
+What are Multicast Delegates?
+ 
+
+
+	A Multicast Delegate in C# is a delegate that holds the references of more than one function.
+ 
+
+
+
+
+	Delegates pointing methods without name are called anonymous delegates.
+ 
+
+ 
+Q88
+ 
+What are the differences between Events and Delegates?
+ 
+
+
+	The event is a notification mechanism that depends on delegates
+
+
+
+
+	An event is dependent on a delegate and cannot be
+created without delegates.
+	Event is like a wrapper over the delegate to improve its security.
+ 
+Chapter 9: OOPS & C# - Important Keywords
+
+Q89. What is ‘this’ keyword in C#? When to use it in real applications?
+Q90. What is the purpose of “using” keyword in C#?  V Imp
+Q91. Can we use Using keyword with other classes apart from DBConnection? Q92. What is the difference between “is” and “as” operators?
+ 
+Q93. What is the difference between “Readonly” and “Constant” variables? Q94. What is “Static" class? When to use static class in real application?
+Q95. What is the difference between “var” and “dynamic” in C#? Q96. What is Enum keyword used for?
+Q97. Is it possible to inherit Enum in C#? Q98. What is the use of Yield keyword in C#?
+ 
+V Imp
+ 
+
+
+
+Back to main index
+ 
+ 
+	this keyword is used to refer to the CURRENT INSTANCE of the class.
+
+
+
+
+
+	this keyword avoids the name confusion between class fields and constructor parameters.
+ 
+
+
+
+	There are two purpose of using keyword in C#:
+1.	USING DIRECTIVE
+
+
+2.	USING STATEMENT - The using statement ensures that DISPOSE() method of the class object is called even if an exception occurs.
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+	Yes, using keyword can be used with any class which is inherited from IDisposable class. For example, with StreamReader class.
+ 
+
+ 
+Q92
+ 
+What is the difference between “is” and “as” operators?
+ 
+
+
+
+ 
+	The IS operator is USED TO CHECK the
+type of an object.
+ 
+	AS operator is used to PERFORM CONVERSION
+between compatible reference type.
+ 
+
+ 	 
+
+	The IS operator will return boolean type.	 The AS operator is not of boolean type.
+ 
+
+
+	Constant	  Readonly
+
+
+1.	Using constant, we must assign values with declaration itself. But readonly fields can be assigned in declaration as well as in the constructor part.
+2.	Constant field value cannot be changed, but Readonly field value can be changed.
+3.	“const” keyword for Constant and “readonly” keyword is used for Readonly.
+4.	Constant is a COMPILE time constant, and ReadOnly is a RUNTIME constant.
+ 
+
+
+
+
+	A static class is a class which object can not be created, and which can not be inherited.
+
+
+	Use of static class:
+Static classes are used as containers for static members like methods, constructors and others.
+ 
+
+ 
+Q95
+ 
+What is the difference between “var” and “dynamic” in C#?
+ 
+
+
+
+ 
+	VAR - The type of the variable is decided by the compiler at compile time.
+ 
+	DYNAMIC - The type of the variable is decided at run time.
+ 
+
+
+
+ 	 
+ 
+
+ 
+Q96
+ 
+What is Enum keyword used for?
+ 
+
+num	for?
+	An enum is a special "class" that represents a
+group of constants.
+
+
+ 
+
+
+
+
+	Enum is a sealed class type, so it cannot be inherited.
+
+
+
+ 
+
+
+
+
+
+
+ 	 
+
+ 
+
+
+
+	The yield keyword will act as an iterator blocker and generate or return values.
+
+
+
+
+
+
+
+
+
+
+ 
+Chapter 10 : OOPS & C# - LINQ
+Q99. What is LINQ? When to use LINQ in real applications? Q100. What are the advantages & disadvantages of LINQ?
+Q101. What is Lambda Expressions? What is the use in real applications?
+Q102. What is the difference between First and FirstOrDefault methods in LINQ?	V Imp
+
+
+
+
+
+Back to main index
+ 
+
+
+
+	LINQ (Language Integrated Query) is uniform query syntax in C# to retrieve data from different sources.
+
+
+
+ 
+
+
+
+Advantages of LINQ
+1.	Easy and simple syntax to Learn
+2.	Improved code readability
+3.	Improved performance
+4.	Type safety
+
+
+Disadvantages of LINQ
+1.	Limited support for some data sources
+2.	Difficult to maintain and debug
+ 
+
+ 
+Q101
+ 
+What is Lambda Expressions? What is the use in real applications?
+ 
+
+	A lambda expression is used to simplify the syntax of anonymous methods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+	First method will return the first value, but it is not able to handle null values.
+	FirstOrDefault will return the first value, and it is able to handle null values also.
+
+
+
+
+
+
+
+
+ 
+Chapter 11 : .NET Framework - Basics
+
+Q103. What are the important components of .NET framework? V Imp
+Q104. What is an Assembly? What are the different types of assembly? Q105. What is GAC?
+Q106. What is Reflection?
+
+ 
+Q107. What are Serialization and Deserialization? Q108. What is meant by Globalization and Localization? Q109. What are Window Services?
+ 
+V Imp
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+
+
+ 
+	CLR (Common Language Runtime)
+	CLR manages the execution of programs for example operations like memory management, security checks etc.
+	CLR provides execution of managed code only (Code written in any
+.NET-supported language such as C#, Visual Basic .NET, or F#).
+
+	CTS(Common Type System)
+	CTS is a set of rules that define how types are declared, used, and managed in the .NET Framework. Types like int, string, double.
+
+	CLS(Common Language Specification)
+	CLS is a subset of CTS. It defines a set of rules that every language must follow which runs under .NET framework.
+	The benefit is, if you create same program logic in different languages of .NET, then the compiler will generate same dll.
+
+	FCL(Framework Class Library)
+	FCL is the collection of classes, namespaces, interfaces and value types that are used for .NET applications.
+	For example, String, Arraylist, List classes are provided by FCL only.
+ 
+ 
+
+
+
+
+
+
+back to chapter index
+ 
+
+
+
+
+
+
+ 
+	Assembly is unit of deployment like EXE or a DLL.
+When you create a code and build the solution, then the .NET Framework convert your code into Intermediate Language and that is placed inside the assembly(dll), which you can find inside bin folder.
+
+	There are 3 types of assemblies:
+1.	Private assembly - A private assembly can be used by a single application only. It is not accessible outside. So, all the projects you create will by default create private assembly only.
+2.	Public/ shared assembly - Shared assemblies are usually libraries of code, which multiple applications can use. It is registered in the global assembly cache(GAC).
+3.	Satellite assembly - A satellite Assembly is defined as an assembly with resources only, no executable code.
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+back to chapter index
+ 
+
+
+
+
+	GAC stands for Global Assembly Cache.
+	GAC is the place where public assemblies are stored.
+	Private assembly can be converted into public assembly by adding them in GAC using gacutil tool.
+ 
+
+ 
+Q106
+ 
+What is Reflection?
+ 
+
+
+ 
+	Reflection is the ability of a code to access the metadata of the assembly during runtime.
+
+	Metadata is information about data.
+ 
+	Suppose you have to check the version of the assembly at runtime, then you can use reflection.
+ 
+
+
+ 
+
+ 
+
+ 
+Q107
+ 
+What are Serialization and Deserialization? What are the types of serialization?
+ 
+
+
+	Serialization is the process of converting an object into a format that can be stored, transmitted, or reconstructed later.
+
+
+
+	Deserialization is the process of converting serialized data, such as binary/ XML/ json data,
+
+ 
+
+ 
+Q107
+ 
+What are Serialization and Deserialization? What are the types of serialization?
+ 
+
+
+ 
+	Serialization is the process of converting an object into a format that can be stored, transmitted, or reconstructed later.
+
+
+
+	Deserialization is the process of converting serialized data, such as binary/ XML/ json data, back into an object.
+ 
+	When to use serialization??
+It is mostly used in Web API to convert class objects into JSON string.
+
+
+
+ 
+
+ 
+Q108
+ 
+What is meant by Globalization and Localization?
+ 
+
+	Globalization is the process of designing and developing a software product that can support different cultures and regions of the world.
+
+
+
+
+
+
+	Localization is the process of adapting a globalized application, to a particular culture/locale.
+ 
+
+ 
+Q109
+ 
+What are Window Services?
+ 
+
+
+	Windows service is a computer program that runs in the BACKGROUND to execute some tasks.
+
+
+
+	Windows services can be started
+AUTOMATICALLY or manually.
+	You can also manually pause, stop and restart Windows services.
+ 
+Chapter 12 : .NET Framework - Garbage Collection
+
+
+
+Q110. What is Garbage Collection(GC)?	V Imp
+
+ 
+Q111. What are Generations in garbage collection?
+Q112. What is the difference between “Dispose” and “Finalize”?
+ 
+
+V Imp
+ 
+
+ 
+Q113. What is the difference between “Finalize” and “Finally” methods? Q114. Can we force Garbage Collector to run?
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+	The garbage collector (GC) manages the allocation and release of memory in .NET framework.
+	Garbage collection is one of the responsibilities of CLR only.
+
+
+
+
+
+	Garbage collector will dispose this employee object automatically when it is no longer needed.
+ 
+
+
+
+	Garbage collection release the objects which are no longer needed.
+	.NET framework has a mechanism to decide which objects are no longer needed and that mechanism we call generations.
+	Generation is a mechanism to collect the short-lived objects more frequently than the longer-lived object.
+ 
+
+ 
+Q112
+ 
+What is the difference between “Dispose” and “Finalize”?
+ 
+
+	Both Dispose and Finalize methods are used to release the unmanaged objects which are no longer required.
+
+	Finalize method is called automatically by the garbage collector.
+	But the Dispose method is called explicitly by the code to release any unmanaged object.
+ 
+
+
+
+
+		Finalize method is used for garbage collection. So before destroying an object this method is called as part of clean up activity by GC.
+
+	Finally block is used in exception handling for executing the code irrespective of exception occurred or not.
+ 
+
+
+
+
+	Yes, by calling GC.COLLECT() method we can force garbage collector to run, but this is not recommended, instead use Dispose method.
+ 
+Chapter 13 : .NET Framework - Threading
+
+Q115. What is the difference between Process and Thread?
+Q116. Explain Multithreading? V Imp
+Q117. What is the difference between synchronous and asynchronous programming?
+What is the role of Task? V Imp
+Q118. What is the difference between Threads and Tasks? What are the advantages of Tasks over Threads?
+
+ 
+Q119. What is the role of Async and Await?
+ 
+V Imp
+ 
+
+
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+ 
+Q115
+ 
+What is the difference between Process and Thread?
+ 
+
+
+	A process is an instance of a program with its
+own memory space and system resources.
+	A thread is the smallest unit of process, that shares memory and resources with other threads within the same process.
+ 
+
+
+
+
+	Multithreading refers to the ability to execute multiple threads of code concurrently within a single process.
+
+	Multithreading allows you to perform multiple tasks simultaneously, such as downloading data while displaying a progress bar.
+
+	To create multithreaded application in C#, we need to use SYSTEM.THREADING namespace.
+ 
+
+
+
+
+
+ 
+	In synchronous programming, task is executed in a sequential manner.
+	In asynchronous programming, tasks can be
+executed independently of each other.
+ 
+
+
+Synchronous Programming
+ 
+
+
+
+
+
+
+Asynchronous Programming
+ 
+Q118
+ 
+What is the difference between Threads and Tasks? What are the advantages of Tasks over Threads?
+ 
+
+	In .NET, threads and tasks are two different ways for doing multithreading.
+	Thread is a general programming concept. On the other hand, Microsoft created Task in .NET to simplify the use of Threads.
+	Tasks are like a wrapper over Threads.
+	Tasks internally uses threads only.
+
+
+
+
+ 
+Q118
+ 
+What is the difference between Threads and Tasks? What are the advantages of Tasks over Threads?
+ 
+
+
+
+
+
+ 	 
+ 
+Q118
+ 
+What is the difference between Threads and Tasks? What are the advantages of Tasks over Threads?
+ 
+
+
+ 
+	In .NET, threads and tasks are two different ways for doing multithreading.
+	Thread is a general programming concept. On the other hand, Microsoft created Task in .NET to simplify the used of Threads.
+	Tasks are like a wrapper over Threads.
+	Tasks internally uses threads only.
+ 
+	Advantages of Tasks over Threads:
+1.	Simplified Code.
+2.	Exception handling.
+3.	A Task can return a result, but there is no proper way to return a result from Thread.
+4.	We can apply chaining and parent/ child on multiple tasks, but it can be very difficult in threads.
+ 
+
+
+ 
+ 
+
+
+
+
+
+
+ 
+	In synchronous programming, task is executed in a sequential manner.
+	In asynchronous programming, tasks can be
+executed independently of each other.
+	Async and Await are keywords used to enable asynchronous programming.
+ 
+
+
+Synchronous Programming
+ 
+
+
+
+Asynchronous Programming
+ 
+
+
+
+	The async keyword is used to mark a method as an asynchronous method.
+	The await keyword is used to pause the execution of an asynchronous method until a specified operation completes.
+ 
+Chapter 14 : SQL - Basics
+
+ 
+Q120. What is the difference between DBMS and RDBMS?
+Q121. What is a Constraint in SQL? What are the types of constraints? Q122. What is the difference between Primary key and Unique key?
+Q123. What are Triggers and types of triggers?
+ 
+
+V Imp
+ 
+Q124. What is a View? V Imp
+Q125. What is the difference between Having clause and Where clause? V Imp Q126. What is Sub query or Nested query or Inner query in SQL?
+Q127. What is Auto Increment/ Identity column in SQL Server?
+
+
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+
+
+
+
+
+ 	 
+ 
+
+
+
+
+
+
+
+DBMS	RDBMS
+1. DBMS stores data as file.	RDBMS stores data in TABULAR form.
+
+2. No relationship between data.	Data is stored in the form of tables which are RELATED to each other. Eg: Foreign key relationship.
+3. Normalization is not present.	NORMALIZATION is present.
+4. It deals with small quantity of data.	It deals with LARGE amount of data.
+
+5. Examples: XML	Examples: MySQL, PostgreSQL, SQL Server, Oracle, Microsoft Access etc.
+ 
+
+
+
+
+	SQL constraints are used to specify rules for the data in a table.
+
+
+
+ 
+
+
+
+
+
+
+
+Primary Key	Unique Key
+1. Primay key can’t accept null values	Unique key can accept only one null value
+2. Automatically create clustered index.	
+Create non clustered index.
+3. Only one primary key can be present in a table.	More than one unique key can be present in a table.
+ 
+
+
+
+	Triggers are stored programs, which are AUTOMATICALLY executed or fired when some events (insert, delete and update) occur.
+
+	Locations	->	LocationHist
+
+	Example of After(DML) Trigger
+
+	In after trigger, update on the table executed first and then after trigger will be fired.
+ 
+
+
+
+	Triggers are stored programs, which are AUTOMATICALLY executed or fired when some events (insert, delete and update) occur.
+
+	Example of Instead of(DML) Trigger
+
+
+	An INSTEAD OF trigger is a trigger that allows you to skip an INSERT , DELETE , or UPDATE statement to a table or a view and execute other statements defined in the trigger.
+ 
+
+
+
+
+
+
+ 
+	A view is a VIRTUAL table which consists of a subset of data contained in single table or more than one table.
+
+CREATE VIEW [India-Customers] AS SELECT CustomerName, ContactName FROM Customers
+WHERE Country = ’India’;
+
+	Advantages of Views
+1.	Indexed Views to improve the performance.
+2.	Extra security – DBA can hide the actual table names and expose views for Read operations only.
+ 
+
+ 
+
+	Remember, in case of view, only query is stored but the actual data is never stored like a table.
+ 
+
+
+
+
+
+
+
+ 
+1.	WHERE Clause is used before GROUP BY Clause.
+HAVING Clause is used after GROUP BY Clause.
+
+
+
+
+
+2.	WHERE Clause cannot contain AGGREGATE function.
+HAVING Clause can contain aggregate function.
+ 
+
+ 
+
+
+
+SELECT EmpName FROM Employee
+GROUP BY EmpName
+HAVING SUM(EmpSalary) <30000
+ 
+
+
+
+
+	A Subquery/ Inner query/ Nested query is a query within another SQL outer query and embedded within the WHERE clause.
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+	Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+	Mostly auto increment is set on the primary key only.
+ 
+CREATE TABLE Employee (
+ID int IDENTITY(1,1) PRIMARY KEY,
+EmpName varchar(255) NOT NULL
+);
+ 
+
+
+ 
+ 
+Chapter 15: SQL - Joins & Indexes
+
+
+
+ 
+Q128. What are Joins in SQL?
+Q129. What are the types of Joins in SQL Server?
+Q130. What is Self-Join?
+Q131. What are Indexes in SQL Server? Q132. What is Clustered index?
+Q133. What is Non-Clustered index?
+ 
+
+V Imp
+ 
+
+ 
+Q134. What is the difference between Clustered and Non-Clustered index? Q135. How to create Clustered and Non-Clustered index in a table?
+Q136. In which column you will apply the indexing to optimize this query?
+ 
+V Imp
+ 
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	A join clause is used to combine rows from two or more tables, based on a related column between them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+back to chapter index
+ 
+
+
+
+
+	Left outer join - A left join returns all the rows from the left table, along with any matching rows from the right table.
+
+
+
+	Right outer join - A right join returns all the rows from the right table, along with any matching rows from the left table.
+
+
+	Full outer join - A full outer join returns all the rows from both the left and right tables in the join.
+
+
+
+	Inner join - An inner join returns only the common rows from both tables that meet the join condition.
+
+back to chapter index
+ 
+
+
+
+	A self join is a join of a table to itself.
+	When to use Self Join??
+
+	Now your task is to get the employees name with their manager names??
+ 
+
+
+
+
+
+
+
+ 
+	SQL Indexes are used in relational
+databases to retrieve data VERY FAST.
+ 
+	They are similar to indexes at the start of the BOOKS, which purpose is to find a topic quickly.
+ 
+
+
+
+ 	 
+ 
+
+
+
+
+
+
+
+
+ 
+		A clustered index is a type of index that determines the physical order of data in a table.
+
+	Table data can be sorted in only way, therefore, there can be only one clustered index per table.
+
+
+	In SQL Server, if you set a primary key on a column, then it will automatically create a clustered index on that particular column.
+ 
+Dictionary
+ 
+
+
+
+
+
+
+ 
+	A non-clustered index is stored at one place and table data is stored in another place.
+
+
+	A table can have multiple non-clustered index in a table.
+ 
+Book Index
+ 
+
+
+ 
+ 
+
+
+
+
+1.	A clustered index is a type of index that determines the
+physical order of data in a table.
+
+A non-clustered index is stored at one place and table data is stored in another place. For example, Book Index.
+
+2.	A table can have only one clustered index.
+A table can have multiple non-clustered index.
+
+3.	Clustered index is faster.
+Non-clustered index is slower.
+ 
+
+
+
+
+	Clustered Index
+
+
+
+
+	Non-clustered Index
+
+
+
+	When you create a PRIMARY KEY constraint, a clustered index on the column is automatically created.
+ 
+
+
+
+
+
+select id, class from student where name=”happy”
+
+	The column after WHERE condition, which is “NAME” here.
+ 
+Chapter 16 : SQL - Stored Procedure, Functions & Others
+
+
+
+
+ 
+Q137. What is the difference between Stored Procedure and Functions? Q138. How to optimize a Stored Procedure or SQL Query?
+Q139. What is a Cursor? Why to avoid them?
+Q140. What is the difference between scope_identity and @@identity?
+Q141. What is CTE in SQL Server?
+ 
+V Imp
+ 
+Q142. What is the difference between Delete, Truncate and Drop commands? V Imp Q143. How to get the Nth highest salary of an employee?
+Q144. What are ACID properties?
+Q145. What are Magic Tables in SQL Server?
+
+
+
+
+Back to main index
+ 
+
+
+
+
+CREATE PROCEDURE proc_name (@Ename varchar(50),
+@EId int output)
+AS
+BEGIN
+INSERT INTO Employee (EmpName) VALUES (@Ename)
+SELECT @EId= SCOPE_IDENTITY() END
+CREATE FUNCTION function_name
+(parameters) --only input parameter RETURNS data_type AS
+BEGIN
+-- SQL statements RETURN value
+ 
+
+
+
+
+1.	Use SET NOCOUNT ON
+2.	Specify column names instead of using * .
+SELECT * FROM table1  SELECT col1, col2 FROM table1
+3.	Use schema name before objects or table names. SELECT EmpID, Name FROM Employee SELECT EmpID, Name FROM dbo.Employee
+4.	Use EXISTS () instead of COUNT ().
+SELECT Count(1) FROM dbo.Employee
+IF( EXISTS (SELECT 1 FROM db.Employees))
+5.	Use TRANSACTION when required only.
+6.	Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections.
+ 
+
+
+
+	A database Cursor is a control which enables traversal/ iteration over the rows or records in the table.
+
+
+	5 step process:
+1.	Declare
+2.	Open
+3.	Fetch using while loop
+4.	Close
+5.	Deallocate
+
+	LIMITATION
+A cursor is a MEMORY resident set of pointers. Meaning it occupies lots of memory from your system which is not good for performance.
+ 
+
+
+
+
+	Both are used to get the last value generated in the identity
+column of the table.
+
+	@@IDENTITY function returns the last identity value generated within the current session, regardless of the scope.
+	This will return a value generated by an INSERT statement in a
+trigger, stored procedure or batch of T-SQL statements.
+
+
+	The scope_identity() function returns the last identity created in the same session and the same scope.
+
+
+
+	Mostly we use scope_identity() function inside stored procedures.
+ 
+
+
+
+
+	A Common Table Expression, is a TEMPORARY named result set, that you can reference within a SELECT, INSERT, UPDATE, or DELETE
+statement.
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+DELETE	TRUNCATE	DROP
+
+1.	It is a DML.	
+1.	It is a DDL.	
+1. It is a DDL.
+
+2. It is used to delete one or all rows from the table based on where condition, but it will not delete schema.	
+2. It is used to delete all rows from the table, but it will not delete schema.	
+2. It is used to delete all rows from the table with structure/schema.
+
+3. It can be rollback.	
+3. It can not be rollback.	
+3. It can not be rollback.
+
+
+
+ 
+
+
+
+
+
+
+ 
+1.	The logic is first select TOP 3 salaries in descending order.
+
+
+
+
+SELECT DISTINCT TOP 3 SALARY
+FROM tbl_Employees ORDER BY SALARY DESC
+ 
+2.	Put the result in “Result”
+and then do order by asc
+
+SELECT SALARY FROM (
+SELECT DISTINCT TOP 3 SALARY
+FROM tbl_Employees ORDER BY SALARY DESC
+) RESULT ORDER BY SALARY
+ 
+3.	Select top 1 salary from result set
+
+SELECT TOP 1 SALARY
+FROM (
+SELECT DISTINCT TOP 3 SALARY
+FROM tbl_Employees ORDER BY SALARY DESC
+) RESULT ORDER BY SALARY
+ 
+
+
+ 	 	 
+ 
+
+
+
+	ACID properties are used when you are handling transactions in SQL.
+For example, multiple inserts in a table are happening at the same point of time.
+
+ 
+
+
+
+	Magic tables are the temporary logical tables that are created by the SQL server, whenever there are insertion or deletion or update( D.M.L) operations.
+
+	Types of magic tables
+1.	INSERTED – When any insert query executed, then the recently inserted row gets added to the INSERTED magic table.
+2.	DELETED – When any delete query executed, then the recently deleted row gets added to the DELETED magic table.
+In update case, the updated row gets stored in INSERTED magic table and the old row or previous row gets stored in the DELETED magic table.
+
+	The use of magic tables are TRIGGERS.
+ 
+Chapter 17 : ASP.NET – MVC - Part 1
+
+
+
+
+
+ 
+Q146. What is MVC? Explain MVC Life cycle.
+Q147. What are the advantages of MVC over Web Forms?
+ 
+
+V Imp
+ 
+
+ 
+Q148. What are the different return types of a controller Action method?
+ 
+V Imp
+ 
+
+ 
+Q149. What are Filters and their types in MVC?
+ 
+V Imp
+ 
+Q150. What is Authentication and Authorization in ASP.NET MVC? V Imp Q151. What are the types of Authentication in ASP.NET MVC?
+Q152. What is Output Caching in MVC? How to implement it? Q153. What is Routing in MVC?
+ 
+Q154. Explain Attribute Based Routing in MVC?
+ 
+V Imp
+ 
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	MVC is a framework for building web applications using MVC (Model View Controller) architecture.
+
+ 
+1.	The Model represents the data.
+2.	The View displays the data.
+3.	The Controllers act as an interface between Model and View components to process all the business logic.
+ 
+
+
+Request
+ 
+
+
+
+
+
+
+
+ 
+	In web forms one aspx file will have one aspx.cs file, which means UI(aspx) is tightly coupled with logic in code-behind (.aspx.cs).
+ 
+
+.aspx			.aspx.cs
+ 
+
+
+
+
+
+	In MVC, one controller can interact with multiple views and one view can interact with multiple controllers and therefore they are loosely coupled.
+ 
+
+
+
+Advantage of MVC over Web-Forms:
+1.	Separation of concerns - The MVC framework provides a clean separation of the UI, business logic and data with the help of MVC architecture.
+2.	Multiple view support - Due to the separation of the model from the view, the user interface can display multiple views of the same data at the same time.
+3.	Change accommodation - UI change more frequently than business rules. Now because the model does not depend on the views, modifying view will not affect the model.
+4.	Testability - ASP.NET MVC provides better support for test driven development.
+5.	Light-weight – In MVC framework, the request and response are bit lighter than webforms.
+6.	Full features of Asp.Net – Almost all the features of web-forms
+are present in ASP.NET MVC.
+ 
+
+
+
+
+
+
+
+ 
+
+
+1.	ViewResult: It returns a view that renders HTML to be sent to the client.
+2.	PartialViewResult: It returns a partial view that is rendered within another view.
+3.	JsonResult: It returns JSON data that can be consumed by client-side JavaScript code.
+ 
+
+
+
+4.	ContentResult: It returns a string of content that is directly written to the response stream. This is useful for returning plain text, XML, or other non-HTML content.
+5.	FileResult: It returns a file to the client for download, such as a PDF, image, or video.
+6.	RedirectToRouteResult: It redirects the client to another action method based on a specified route.
+7.	RedirectResult: It redirects the client to a specified URL.
+8.	HttpNotFoundResult: It returns a 404 Not Found status code to the client.
+9.	HttpStatusCodeResult: It returns an HTTP status code to the client, such as 401 Unauthorized or 500 Internal Server Error.
+
+ 
+10.	EmptyResult: It returns an empty response to the client without any content.
+ 
+
+
+back to chapter index
+ 
+
+
+
+
+	Filters in ASP.NET MVC are used to inject logic that runs before or after an action method is executed.
+
+
+
+ 
+
+
+
+
+1.	Authorization Filters: Authorization filters are used to enforce authentication and authorization rules.
+They run before the action method is executed and can be used to verify whether the user is authenticated and authorized to perform the requested action.
+
+
+
+ 
+
+
+
+
+2.	Action Filters: Action filters run before and after an action method is executed. They can be used to modify the behavior of the action method or perform pre-processing or post- processing tasks.
+
+
+
+
+
+
+ 
+
+
+
+
+3.	Result Filters: Result filters run before and after the result of an action method is executed. They can be used to modify the behavior of the result or perform post- processing tasks.
+
+
+
+ 
+
+
+
+
+4.	Exception Filters: Exception filters are used to handle exceptions that occur during the execution of an action method. They run only when an unhandled exception occurs.
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+	Filters in ASP.NET MVC are used to inject logic that runs before or after an action method is executed.
+ 
+
+
+
+
+
+
+
+ 
+	Authentication is the process of verifying the identity of a user by validating their credentials such as username and password.
+ 
+	Authorization is the process of allowing an authenticated user ACCESS to resources. Authentication is always precedes to Authorization.
+ 
+
+
+ 	 
+ 
+
+
+
+1.	Form Authentication - Forms authentication is a cookie- based authentication mechanism that uses user credentials stored in a database to authenticate users.
+2.	Passport Authentication - Passport authentication is a
+centralized authentication service provided by Microsoft.
+3.	Token Authentication: Token authentication is a mechanism that uses JSON Web Tokens (JWT) to authenticate users. It is commonly used in Single Page Applications (SPA) or APIs where the user's credentials are not stored on the server.
+4.	Windows Authentication - Windows authentication is a mechanism that uses the user's Windows credentials to authenticate users. It is typically used in intranet scenarios where all users are part of the same Windows domain.
+ 
+
+
+
+
+
+
+
+ 
+	Output caching in MVC is a technique used to improve the performance of web applications by storing the output of an action method in cache.
+ 
+
+
+Client Request
+ 
+
+
+
+
+Response
+ 
+
+ 
+
+ 
+
+
+Request
+ 
+Server
+ 
+
+Response
+ 
+
+
+ 
+
+ 
+	Outputcache is one of the type of ResultFilter only
+ 
+Database
+ 
+
+
+
+
+	Routing in MVC is the process of mapping a URL request to a specific controller action in a web application.
+	The routing system is responsible for directing incoming requests to the appropriate controller, based on the URL.
+	The routing system is typically configured using a routing table, which maps URLs to controller actions.
+ 
+
+
+
+
+
+
+
+ 
+	Attribute based routing is used to manipulate the default behavior of routing in ASP.NET MVC.
+ 
+http://localhost:1234/home/about
+ 
+
+ 
+ 
+Chapter 18 : ASP.NET – MVC - Part 2
+
+
+
+
+
+ 
+Q155. What is the difference between ViewData, ViewBag & TempData? Q156. How can we pass the data from controller to view in MVC?
+Q157. What is Partial View?
+Q158. What are Areas in MVC?
+Q159. How Validation works in MVC? What is Data Annotation? Q160. Explain the concept of MVC Scaffolding?
+Q161. What is Bundling and Minification in MVC?
+ 
+V Imp
+ 
+Q162. How to implement Security in web applications in MVC? V Imp
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	ViewData, ViewBag, and TempData are all ways to pass data between a controller and a view.
+
+1.	ViewData and ViewBag are used to transfer data from controller to view.
+2.	TempData is used to pass data from controller to controller(pass data between two action methods).
+3.	ViewBag doesn’t require typecasting,
+whereas ViewData require the typecasting.
+ 
+
+
+
+
+	By using ViewData and ViewBag
+ 
+
+
+
+	A partial view is a reusable view component that can be rendered within other views or shared across multiple pages in a web application.
+
+	It helps us to reduce code duplication.
+
+
+
+
+View 2
+
+
+Partial View 1	Partial View 3
+
+
+
+
+
+back to chapter index
+ 
+
+
+
+
+	Areas are just a way to divide the modules of large applications in multiple or separated MVC.
+ 
+
+
+
+
+	Validation can be done in MVC using DATA ANNOTATION Attributes.
+ 
+
+
+
+	[Required]: Specifies that a property is required and cannot be null or empty.
+
+	[StringLength]: Specifies the minimum and maximum length of a string property.
+
+	[RegularExpression]: Specifies a regular expression pattern that a string property must match.
+
+	[EmailAddress]: Specifies that a string property must be a valid email address format.
+
+	[Range]: Specifies the minimum and maximum allowed values for a numeric property.
+
+	[Compare]: Compares the value of a property with the value of another property in the same model.
+
+	[DataType]: Specifies the data type of a property, which can be used for formatting and validation purposes.
+ 
+
+
+
+	[Display]: Provides metadata for displaying the property, such as the name and order of the property in a view.
+
+	[Editable]: Specifies whether a property can be edited or displayed in a view.
+
+	[ReadOnly]: Specifies that a property can be displayed in a view but cannot be edited.
+
+	[HiddenInput]: Specifies that a property should be hidden in a view.
+
+	[DisplayName]: Provides a friendly name for a property that can be used in a view.
+
+	[DisplayFormat]: Specifies a format string for displaying the value of a property.
+
+	[RequiredIf]: Specifies that a property is required if another property in the model has a specific value.
+
+
+ 
+	[CreditCard]: Specifies that a string property must be a valid credit card number format.
+ 
+back to chapter index
+ 
+
+
+
+
+	In ASP.NET MVC, scaffolding is a technique that generates code for common web application.
+	The scaffolding code can include controllers, views, and data access code automatically generated that can help developers to create web applications more quickly and with less manual coding.
+ 
+
+
+
+
+
+
+
+ 	 	 
+
+
+	BUNDLING - It lets us combine multiple JavaScript (.js) files or multiple cascading style sheet (.css) files, so that they can be downloaded as a unit, rather than making individual HTTP requests for different js and css files.
+	MINIFICATION - It squeezes out whitespace and performs other types of compression to make the downloaded files as small as possible.
+ 
+
+
+
+1.	Error handling - Must setup custom error page.
+
+2.	Cross-Site-Request-Forgery (CSRF) – Antiforgery token
+
+3.	Cross-Site-Scripting (XSS) attacks – Must validate input controls
+
+4.	Mallicious file upload – Must validate the extension of
+files.
+
+5.	SQL injection attack - Validate inputs, use parameterized queries, use ORM (e.g. dapper , entity framework ), use stored procedures and avoid dynamic queries.
+
+6.	Save the password in encrypted form so that even developer can’t access it.
+
+7.	Use https
+ 
+Chapter 19 : ASP.NET - Web Forms
+
+Q163. What are the events in Page Life Cycle?	V Imp
+Q164. What is the difference between Server.Transfer() and Response.Redirect()? Q165. What are the different types of Caching?
+Q166. What are the types of state management?V Imp
+Q167. Where the ViewState is stored after the page postback? Q168. What are the different ways to store session state in asp.net? Q169. What is cookie less session?
+Q170. How to force all the validation controls to run in a page in web forms?
+
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+1.	Init - This event fires after each control has been initialized.
+2.	Preload – Set properties or default values of the control.
+3.	Load – All the controls are ready at this event.
+4.	PreRender - Allows final changes to the page or its control.
+5.	Render - The Render event generates the client-side HTML
+6.	Unload - This event is used for cleanup code.
+
+
+	In PAGE LOAD event controls are fully loaded.
+ 
+
+
+
+	Both Response.Redirect() and Server.Transfer() methods are used to redirect the user's browser from one page to another page.
+
+	Response.Redirect uses round trip back to the client for redirecting the page.
+	It is a slow technique, but it maintains the URL history in the client browser for all pages.
+
+	In Server.Transfer page processing transfers from one page to the other page without making a round-trip back to the client's browser.
+	It is a faster technique, but it does not maintain
+the URL history in the client browser for all pages.
+ 
+
+
+
+
+
+
+ 
+Client
+
+ 
+
+Page Output Caching	Fragment Caching	Data Caching
+ 
+Request
+ 
+Response
+ 
+
+
+ 
+1.	Page Output Caching: Page output caching allows you to cache the output of an entire page. This is useful when a page contains all static content.
+2.	Fragment Caching: Fragment caching allows you to cache a portion or fragment of a page. This is useful when a page contains dynamic content that can be separated from the rest of the page.
+ 
+
+
+Request
+ 
+
+Server
+
+ 	 
+
+ 
+
+
+Response
+ 
+
+ 
+3.	Data Caching: Data caching allows you to cache data retrieved from a database or other data source. This can improve performance by reducing the number of database calls.
+ 
+Database
+ 
+
+
+
+	State management refer to storing data that is required by a web application to track information between user requests and server responses.
+1.	Cookies: Cookies is a mechanism for storing small amounts of data on the client's machine. For example, it is used to save usernames.
+2.	Hidden Fields: Hidden fields are HTML form elements that can be used to store data on the client side. They are often used to pass data between pages.
+3.	ViewState: ViewState is a mechanism that stores the data on the client side as a hidden field. ViewState is useful for persisting data between postbacks in a WebForms application.
+4.	QueryString: QueryString is a mechanism for passing data from one page to another through the URL. But it is not secure as it is visible to all.
+ 
+
+
+
+	Server-side state management techniques:
+1.	Session State: Session state is a server-side mechanism that allows you to store user-specific data on the server. Session state uses a session ID to associate data with a specific user and can be used to persist data between page requests.
+2.	Application State: Application state is a server-side mechanism that allows you to store data that is shared by all users of an application.
+3.	Caching: Cache is a server-side mechanism that allows you to store frequently accessed data in memory.
+ 
+
+
+
+
+	ViewState is stored in a HIDDEN FIELD on the page at client side.
+ 
+
+
+
+	Session state is a mechanism that enables you to store data on server side for multiple requests. It allows you to persist data between pages.
+
+1.	In-Process Session State: This is the default session state management mode in ASP.NET, where session data is stored in memory on the same web server.
+2.	State Server Session State: This mode stores session data in a separate process called the ASP.NET State Service, which runs outside the web server process.
+3.	SQL Server Session State: This mode stores session data in a SQL Server database, which provides the highest level of reliability and scalability.
+ 
+
+
+
+
+	By default, a session uses a browser cookie in the background.
+
+	In cookie less, the session is passed via url instead of cookie.
+
+
+
+
+
+
+
+ 
+
+
+
+
+	Page.Validate()
+ 
+Chapter 20 : ADO.NET & EF
+
+Q171. What are the main components of ADO.NET?	V Imp
+
+ 
+Q172. What is Connected architecture and Disconnected architecture? Q173. What are the different Execute Methods of ADO.NET?
+Q174. What are the Authentication techniques used to connect to SQL Server? Q175. What is ORM? What are the different types of ORM?
+Q176. What is Entity Framework?
+ 
+
+
+
+V Imp
+ 
+
+ 
+Q177. How will you differentiate ADO.NET from Entity Framework?
+Q178. How Entity Framework works? OR How to setup EF?
+Q179. What is meant by DBContext and DBSet?
+ 
+V Imp
+ 
+Q180. What are the different types of application development approaches used with EF? Q181. What is the difference between LINQ to SQL and Entity Framework?
+
+
+Back to main index
+ 
+
+
+
+
+	DataSet class - A DataSet is basically a container which gets the data from one or more tables from the database. It follows disconnected architecture.
+	DataAdapter class - A DataAdapter bridges the gap between the disconnected DataSet/ DataTable objects and the physical database.
+	DataReader Class - The DataReader allows you to read the data returned by a SELECT command.
+1.	It is read only.
+2.	Unlike dataset we cannot update the database via this.
+3.	It follows connected architecture.
+ 
+
+
+
+
+	Disconnected Architecture - Disconnected architecture means, you don’t need to connect always to get data from the database.
+1.	Get data into DataAdapter.
+2.	Manipulate the DataAdapter
+3.	Resubmit the data.
+	It is fast and robust(data will not lose in case of any power failure).
+
+
+	Connected Architecture - Connected architecture means you are directly interacting with database, but it is less secure and not robust.
+ 
+
+
+
+
+
+1.	EXECUTESCALAR() - It is used to return SINGLE value from the database.
+2.	EXECUTENONQUERY() – It returns a RESULTSET from databse and it has multiple values. It can be used for insert, update and delete.
+3.	EXECUTEREADER() - It only retrieves data from
+database. No update, insert. It is readonly.
+ 
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+	The main authentication techniques are:
+1.	Windows Authentication: This technique uses the current Windows user account to authenticate to SQL Server. It is the most secure and recommended technique for applications running on a Windows domain.
+2.	SQL Server Authentication: This technique uses a SQL Server user account and password to authenticate to SQL Server.
+3.	Azure Active Directory Authentication: This technique allows for authentication using Azure Active Directory (AAD) identities.
+ 
+
+
+
+
+	ORM (Object-Relational Mapper) is for mapping objects in your application with database tables.
+	It is like a wrapper to make database calls simple and easy.
+
+
+
+
+
+
+
+ 
+
+
+
+
+	An Entity Framework (EF) is an open-source ORM
+(Object-Relational Mapper) from Microsoft.
+	It’s like a wrapper on ADO.NET.
+	Entity Framework minimizes the coding effort.
+ 
+
+
+ADO.NET	EF
+
+ 
+
+
+
+
+
+
+
+Entity Framework	ADO.NET
+1. In EF, code is simpler and short.	In ADO.NET, same code is bigger.
+
+2. EF can generate SQL statements automatically based on LINQ queries.	
+ADO.NET requires developers to write SQL statements themselves.
+3. EF is designed to be database independent, which means same code can work with different databases.	ADO.NET, is tightly coupled to SQL Server and requires different code for different database systems.
+4. EF is slightly slower than ADO.NET because internally EF use ADO.NET only	
+ADO.NET is slightly faster than EF.
+ 
+
+
+
+ty	w	s?	t
+How to add records to Student table in database using EF?
+1.	Install-Package EntityFramework
+
+2.	Create the data model for the student entity
+
+
+
+
+3.	Create the database context
+ 
+
+
+
+
+3.	Add data to student table
+ 
+
+
+
+
+
+
+
+ 
+
+	DbContext is a class in the Entity Framework that helps in creating the communication between the database and the domain/entity class.
+	The DbSet class represents an entity set that can be used for create, read, update, and delete operations.
+ 
+
+
+
+
+1.	Database First – In Database First approach first the database is created and then the entity model is generated from it.
+2.	Code First - The Code First approach involves creating the data model using C# or VB.NET classes. Developers can define entities, relationships, and other schema elements using code, and then generate the database schema from the code.
+
+3.	Model First - The Model First approach involves creating the data model using visual tools such as Entity Data Model Designer in Visual Studio. Developers can create entities, relationships, and other schema elements visually, and then generate the database schema from the model.
+ 
+
+
+
+
+	LINQ to SQL and Entity Framework are both Object- Relational Mapping (ORM) frameworks that allow developers to interact with relational databases using object-oriented programming techniques.
+
+	Differences between LINQ to SQL and EF:
+1.	LINQ to SQL is a lightweight ORM that supports only SQL
+Server databases.
+2.	Entity Framework is a more robust ORM that supports multiple database providers, including SQL Server, Oracle, MySQL etc.
+3.	LINQ to SQL is suitable for small to medium-sized applications.
+4.	Entity Framework is suitable for large and complex applications.
+ 
+Chapter 21 : Web API - Basics
+
+
+
+
+
+ 
+Q182. What is Web API? What is the purpose of Web API?
+Q183. What are Web API advantages over WCF and web serivces? Q184. What are HTTP verbs or HTTP methods?
+Q185. What is the difference Rest API and Web API?
+ 
+
+V Imp
+ 
+Q186. What are REST guidelines? What is the difference between Rest and Restful? Q187. Is it possible to use WCF as Restful services?
+Q188. How to consume Web API from a .NET MVC application? Q189. What is the difference between Web API and MVC Controller?
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	Web API(Application Programming Interface) are HTTP based services that can be accessed from browser or mobile-apps.
+	Web API enables different software applications to communicate with each other through the internet.
+	Web API’s mostly use JSON and XML formats to
+transfer data between different applications.
+ 
+
+
+
+
+1.	Web APIs are simpler to use and learn, and use familiar web technologies like HTTP, JSON and XML.
+2.	Web APIs are more flexible, can be hosted on a wide range of platforms, and are compatible with many devices including mobile devices, web browsers, and IoT devices.
+3.	Web APIs are more scalable and can handle a large number of requests without consuming too many resources.
+4.	Web APIs are faster than WCF because they use lightweight protocols like JSON and HTTP.
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+ 	 
+ 
+
+
+
+
+	REST is a set of guidelines which helps in creating a system where applications can easily communicate with each other.
+	REST stands for Representational State Transfer.
+ 
+
+
+
+1.	Separation of Client and Server - The implementation of the
+client and the server must be done independently.
+2.	Stateless - The server will not store anything about the latest HTTP request the client made. It will treat every request as new request.
+3.	Uniform interface – Identify the resources by URL www.abc.com/api/questions
+4.	Cacheable – The API response should be cacheable to
+improve the performance.
+5.	Layered system - The system should follow layered pattern. For example, MVC is a layered system.
+
+	RESTFUL Service: If a system written by applying REST guidelines,
+then it is also called REST service or RESTful services.
+ 
+
+
+
+
+	Yes, we can develop RESTful services with WCF by following the REST guidelines in WCF service.
+ 
+
+
+
+Q188.	eb
+Web API methods can be consumed
+with the help of HttpClient class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+back to chapter index
+ 
+
+
+
+	Web API Controller
+
+
+
+
+	MVC Controller
+
+
+back to chapter index
+ 
+Chapter 22 : Web API – Authentication & JWT
+
+Q190. What are the types of authentication techniques in web api? Q191. What is Basic Authentication in Web API?
+Q192. What is API Key Authentication in Web API?
+
+ 
+Q193. What is Token based authentication?
+ 
+V Imp
+ 
+
+ 
+Q194. What is JWT Authentication?
+ 
+V Imp
+ 
+
+ 
+Q195. What are the parts of JWT token? Q196. Where JWT token reside in the request?
+ 
+
+
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	Authentication is the process of verifying the identity of a user by validating their credentials such as username and password.
+
+
+
+
+ 
+
+
+
+
+	In Basic Authentication, the user passes their credentials on a post request. At the WebAPI end, credentials are verified, and response is sent back.
+
+	The disadvantage of it is, Basic Authentication sends credentials in plain text over the network, so it is not considered a secure method of authentication.
+ 
+
+
+
+	API Key Authentication - In API Key Authentication, the API owner will share an API key with the users and this key will authenticate the users of that API.
+	The disadvantage of it is, API keys can be shared or stolen therefore it may not be suitable for all scenarios.
+ 
+
+
+
+
+	Token-based authentication is a 4 step process:
+1.	Client application first sends a request to Authentication server with valid credentials.
+2.	The Authentication server/ Web API sends an
+Access token to the client as a response.
+3.	In next request, the client uses the same token to access the restricted resources until the token is valid or not expired.
+4.	If the Access token is expired, then the client application can request for a new access token by using Refresh token.
+ 
+
+
+
+	JWT authentication is a token base authentication
+where JWT is a token format.
+	JWT stands for JSON Web Token.
+
+
+
+ 
+
+
+
+	JWT token has 3 parts:
+1.	Header
+2.	Payload
+3.	Signature
+
+
+
+
+
+
+ 
+
+
+
+
+	In REQUEST HEADER.
+KEY - Authorization VALUE - Token
+ 
+Chapter 23 : Web API - More
+
+
+
+
+
+ 
+Q197. How to test Web API? What are the tools?
+Q198. What are main Return Types supported in Web API?
+ 
+
+V Imp
+ 
+Q199. What is the difference between HTTPResponseMessage and IHttpActionResult?
+Q200. What is the difference between IActionResult and IHttpActionResult?
+
+ 
+Q201. What is Content Negotiation in Web API?
+ 
+V Imp
+ 
+Q202. What is MediaTypeFormatter class in Web API? Q203. What are Response Codes in Web API?
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	Postman, Swagger and Fiddler tools
+
+
+
+ 
+
+
+
+
+1.	HttpResponseMessage: This class allows developers to create and return HTTP responses with a customized status code, headers, and content.
+
+
+ 
+
+
+
+2.	IHttpActionResult: This interface provides a level of abstraction between the controller and the HTTP response, allowing developers to return a variety of response types that implement the interface.
+
+
+3.	JsonResult: This class is used to serialize an object to JSON format and return it as an HTTP response message.
+
+ 
+
+
+
+
+4.	XmlResult: This class is used to serialize an object to XML format and return it as an HTTP response message.
+5.	FileStreamResult: This class is used to return a file as an HTTP response message by reading the file as a stream.
+6.	EmptyResult: This class is used to return an empty HTTP response message with a specified status code.
+7.	StatusCodeResult: This class is used to return an HTTP response message with a specified status code and no content.
+8.	RedirectResult: This class is used to redirect the client to a different URL by returning an HTTP response message with a redirect status code.
+ 
+
+
+
+
+
+
+ 
+	In web API version 1.0, We have a response type class called HttpResponseMessage for returning Http response message from API.
+ 
+	In Web API version 2.0 IHttpActionResult/ IActionResult is introduced which is basically the replacement of HttpResponseMessage.
+ 
+
+ 	 
+ 
+
+
+
+
+
+
+ 
+Benefits of IHttpActionResult:
+1.	Readability: The IHttpActionResult implementation is more readable as it uses simple NotFound() and Ok() methods.
+2.	Testability: The IHttpActionResult implementation is more testable, as it allows for easier mocking of the return values.
+3.	Flexibility: The IHttpActionResult implementation is more flexible, as it allows for easy customization of the HTTP response without needing to construct a HttpResponseMessage object manually.
+ 
+	In Web API version 2.0 IHttpActionResult/ IActionResult is introduced which is basically the replacement of HttpResponseMessage.
+ 
+
+
+
+
+	IHttpActionResult is used in ASP.NET Web API,
+while IActionResult is used in ASP.NET Core.
+ 
+
+
+
+	Content negotiation is a way for the client and server to agree on the format(json/ xml) of the data being exchanged.
+
+
+	Content negotiation can be implemented with the help of MediaTypeFormatter class.
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+	MediaTypeFormatter is a class in ASP.NET Web API that handles the conversion of objects into serialized formats(JSON, XML, and other media ) that can be transmitted over the web.
+
+
+
+
+
+ 
+
+
+
+
+1.	1xx: Informational – Communicates transfer protocol-level information.
+2.	2xx: Success – Indicates that the client’s request was
+accepted successfully.
+3.	3xx: Redirection – This means request is not complete. The client must take some additional action in order to complete their request.
+4.	4xx: Client Error – This means there is some error in
+API code.
+5.	5xx: Server Error – This means the error is not due to web api code but due to some environment settings.
+ 
+
+
+
+
+
+ 
+	200 OK: The request was successful, and the server has
+returned the requested data in the response body.
+	204 No Content: The request was successful, but the server has no data to return in the response body.
+	400 Bad Request: The client's request was invalid or could not be understood by the server.
+	401 Unauthorized: The client is not authorized to access the requested resource. The client should include authentication credentials in the request header to authenticate itself.
+	403 Forbidden: The client is authenticated, but not authorized to access the requested resource.
+	404 Not Found: The requested resource could not be found on the server.
+	500 Internal Server Error: An error occurred on the server while processing the request.
+ 
+
+
+
+
+
+
+
+
+back to chapter index
+ 
+Chapter 24 : .NET Core - Basics
+
+
+ 
+Q204. What is .NET Core? Q205. What is .NET Standard?
+Q206. What are the advantages of .NET Core over .NET framework? Q207. What is the role of Program.cs file in ASP.NET Core?
+Q208. What is the role of ConfigureServices method? Q209. What is the role of Configure method?
+ 
+
+
+
+V Imp
+ 
+Q210. Describe the complete Request Processing Pipeline for ASP.NET Core MVC? Q211. What is the difference between .NET Core and .NET 5?
+Q212. What is Metapackage? What is the name of Metapackage provided by ASP.NET Core?
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	.NET Core is completely a NEW framework.
+	It is FREE and OPEN-SOURCE platform.
+	It is developed by Microsoft.
+ 
+
+
+
+
+
+
+	.NET Standard is a set of rules that is common across all .NET frameworks.
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 	 	 	 	 
+ 
+
+
+
+	Program.cs file contains the application startup code.
+	The main method of Program.cs file is the entry point of application.
+
+
+
+
+
+back to chapter index
+ 
+
+
+
+
+
+
+ 
+	From .NET 6.0, the startup class code is merged in Program.cs file and therefore there is no separate Startup.cs class.
+ 
+ 
+back to chapter index
+ 
+
+ 
+Q208
+ 
+What is the role of ConfigureServices method?
+ 
+
+1.	ConfigureServices is used to add services to the application.
+2.	ConfigureServices method always execute before Configure method.
+3.	ConfigureServices is an optional method. It’s not
+necessary that all its methods will be execute.
+
+
+
+
+back to chapter index
+ 
+
+ 
+Q209
+ 
+What is the role of Configure method?
+ 
+
+1.	Configure method will configure the request pipeline.
+2.	Configure method executes after ConfigureServices method.
+3.	For each and every request, all the methods will execute inside the Configure method and in the same sequence.
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+http://localhost:1234/home/about
+ 
+
+
+
+
+1.	.NET 5 is the next major release after .NET Core 3.1.
+2.	The word ‘Core’ is dropped from the name to emphasize that .NET 5 is the future of all earlier versions of .NET Core.
+3.	Recently, Microsoft has introduced .NET 6.
+ 
+
+
+
+	Metapackage is a consolidated package of many
+dependencies.
+ 
+Chapter 25 : .NET Core - Dependency Injection
+
+
+
+
+ 
+Q213. What is Dependency Injection?
+ 
+V Imp
+ 
+Q214. How to implement Dependency injection in .NET Core? V Imp
+
+ 
+Q215. What are the advantages of Dependency Injection in .NET Core? Q216. How to use Dependency Injection in Views in ASP.NET Core?
+ 
+V Imp
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	Dependency Injection (DI) is a software design pattern in which we inject the dependency object of a class into another class.
+
+
+
+
+
+
+
+
+
+
+
+back to chapter index
+ 
+
+
+
+
+
+
+ 	 	 
+
+ 
+
+
+
+
+
+
+   
+ 
+
+
+
+Dependency njection
+
+
+
+
+
+
+
+
+
+
+1.	Flexibility: DI allows you to easily change the behavior of an application without modifying its code. By injecting dependencies, you can easily switch between different implementations of a service/ class.
+2.	Easier unit testing: DI makes it easy to unit test your code by allowing you to easily replace real dependencies with mock with the help of interfaces.
+3.	Independent modules: By separating dependencies, it becomes easier to make changes to your code without affecting the rest of the system.
+4.	Reusability: DI promotes reuse of components by making them independent of their environment. This allows you to reuse the same components in different applications without modification.
+ 
+
+
+
+	A service can be injected into a view using the @inject directive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+back to chapter index
+ 
+Chapter 26 : .NET Core - Service Lifetimes, Middleware & Hosting
+
+Q217. What are the types of Service Lifetimes of an object in ASP.NET Core?
+Q218. What is AddSingleton, AddScoped and AddTransient method? V Imp
+
+ 
+Q219. What is Middleware in ASP.NET Core? What is custom middleware?
+Q220. How ASP.NET Core Middleware is different from HttpModule?
+Q221. What is Request Delegate in .NET Core?
+Q222. What is Run(), Use() and Map() method? V Imp
+ 
+V Imp
+ 
+Q223. What are the types of Hosting in ASP.NET Core? What is In process and Out of process hosting?
+Q224. What is Kestrel? What is the difference between Kestrel and IIS?
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	The Service Lifetime refers to the lifespan of a registered service. Or
+	The service lifetime controls how long a result object will live for after it has been created by the container.
+
+ 
+
+
+
+
+	AddSingleton method create only one instance when the service is requested for first time. And then the same instance will be shared by all different http requests.
+
+
+
+
+
+ 
+
+
+
+
+	AddScoped method create single instance per request. For every individual request there will be a single instance or object.
+ 
+
+
+
+
+	AddTransient instance will not be shared at all, even with in the same request. Every time a new instance will be created.
+
+
+
+
+
+
+ 
+
+
+
+
+	A middleware is a component that is executed on every request in the ASP.NET Core application.
+
+
+ 
+
+
+
+	A middleware a component that is executed on EVERY REQUEST in the ASP.NET Core application.
+	We can set up the middleware in ASP.NET using the CONFIGURE method of our STARTUP class.
+
+
+ 
+
+
+
+
+	HttpModules are nothing else, but they are
+very similar to Middlewares only.
+
+	HttpModules are registered in the web.config or global.asax file of the ASP.NET framework, while a Middleware is registered via Configure method of the startup.cs class.
+ 
+
+
+
+	Request delegates are used to build the
+request pipeline.
+	Request delegates are configured using
+Run, Map, and Use extension methods.
+ 
+
+
+
+
+	For any request, Use method will execute the middleware component and then pass the execution to the next middleware or component.
+
+
+
+ 
+
+
+
+	Run method will execute the middleware component and then terminate the execution.
+	It should be placed at the end of any pipeline.
+
+
+ 
+
+
+
+
+	The Map method is used to map a specific request url path to a middleware component.
+ 
+
+
+
+	In Process Hosting
+
+
+	Out of Process Hosting
+
+
+ 
+
+
+
+
+	Kestrel is a lightweight cross-platform web server for asp.net core.
+	It is a type of out of process hosting. It can be used alone, or it can be used with IIS or Nginx web servers.
+
+
+Kestrel	IIS
+1. Kestrel is a lightweight web server used for hosting.	IIS is a complete web server which is also used for hosting.
+2. Kestrel is cross platform and can be used with other web servers like IIS, Nginx and Apache.	IIS is not cross platform and can only run- in windows.
+3. Kestrel is open source like .NET Core	IIS is not open source
+ 
+Chapter 27 : .NET Core - Routing, Files, CORS & More…
+
+
+
+
+ 
+Q225. What is Routing? Explain attribute routing in ASP.NET Core? Q226. Explain default project structure in ASP.NET Core application? Q227. How ASP.NET Core serve static files?
+ 
+V Imp
+ 
+Q228. What are the roles of Appsettings.Json and Launchsetting.Json file?
+Q229. What are the various techniques to save configuration settings in .NET Core? Q230. What is CORS? Why is CORS restriction is required? How to fix CORS error?
+Q231. What is In-Memory caching & Distributed Caching? Q232. How to handle errors in ASP.NET Core?
+Q233. What are Razor pages in .NET Core?
+ 
+
+
+
+V Imp
+ 
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	Routing in MVC is the process of mapping a URL request to a specific controller action in a web application.
+	The routing system is responsible for directing incoming requests to the appropriate controller, based on the URL.
+	The routing system is typically configured using a routing table, which maps URLs to controller actions.
+ 
+
+
+
+
+
+
+
+ 
+	Attribute based routing is used to manipulate the default behavior of routing in ASP.NET MVC.
+ 
+http://localhost:1234/home/about
+ 
+
+ 
+ 
+
+
+
+
+	wwwroot - Store static files of the application like js/css/images.
+	Appsettings.json – Configuration settings like database connection strings and other things are saved here.
+	Program.cs – Entry point of the application.
+ 
+
+
+
+
+
+
+
+ 
+	WWWROOT contains all the static files.
+ 
+	USESTATICFILES() enables the static files to be served to client.
+ 
+
+
+
+ 	 
+ 
+
+
+
+	The appsettings. json file is an application configuration file used to store configuration settings such as database connections strings etc.
+
+
+
+
+
+ 
+
+
+
+	The launchSettings. json file is used to store the configuration information, which is used to start the ASP.NET Core application.
+ 
+
+
+
+
+	Appsettings.json (Default) (Mostly Used)
+	Azure Key Vault (Application is hosted on Azure)
+	Environment variables
+	In-memory .NET objects
+	Command Line Arguments
+	Custom Providers
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+	CORS stands for Cross-Origin Resource Sharing.
+	CORS is a security feature implemented in web browsers that restricts web pages or scripts from making requests to a different domain than the one that served the web page.
+ 
+
+
+
+	CORS stands for Cross-Origin Resource Sharing.
+	CORS is a security feature implemented in web browsers that restricts web pages or scripts from making requests to a different domain than the one that served the web page.
+
+	Why CORS is required?
+Because of security reason. So that you can make your api secure by default. Otherwise, any external website can try to access your data.
+
+
+	How to fix CORS error?
+1.	Add Microsoft.AspNetCore.Cors nuget package to
+your project.
+2.	In startup class, edit the Configure and ConfigureServices method.
+ 
+
+
+
+
+
+
+In-Memory Caching	Distributed Caching
+1. It’s the normal way of caching.
+In this cache is stored in the memory of a single server which is hosting the application.	Distributed caching is when you want to handle caching outside of your application. A different server is used for store cached data.
+2. It can be implemented with the
+IMemoryCache Interface in ASP.NET Core.	It can be implemented with the help of Redis
+Cache.
+
+	Redis is an open-source, highly replicated, performant, non-relational kind of database and caching server.
+
+
+	When to use which caching?
+In normal cases where the application size is small, use in-memory cache.
+But where application is very big or it’s a microservices based architecture, then use distributed caching.
+ 
+
+ 
+Q232
+ 
+How to handle errors in ASP.NET Core?
+ 
+
+	Error handling for development and other environments can be set in CONFIGURE method of Startup.cs class.
+
+
+
+
+
+
+
+
+
+	The IsDevelopment() method will check the
+ASPNETCORE_ENVIRONMENT value in
+LaunchSettings.json file.
+ 
+
+
+
+
+	Razor pages follows a page-centric development model just
+like ASP.NET web forms.
+ 
+Chapter 28 : SOLID Principles
+
+
+ 
+Q234. What are SOLID Principles? What is the difference
+between SOLID Principles and Design Patterns?
+ 
+V Imp
+ 
+
+ 
+Q235. What is Single Responsibility Principle? Q236. What is Open-closed Principle?
+ 
+V Imp
+ 
+Q237. What is Liskov Substitution Principle? V Imp
+Q238. What is Interface Segregation Principle? Q239. What is Dependency Inversion Principle? Q240. What is DRY principle?
+
+
+
+
+
+
+
+
+
+
+Back to main index
+ 
+
+
+
+
+
+
+
+ 
+	SOLID principles are a set of principles, which must be followed to develop flexible, maintainable, and scalable software systems.
+
+
+
+
+	SOLID principles aren't concrete - rather abstract.
+ 
+	Design patterns are concrete and solve a particular kind of problem in software's.
+
+
+
+
+	Design patterns are concrete and solve a particular kind of problem in a specific and fixed manner.
+ 
+
+
+
+	Single Responsibility Principle (SRP) states that a class should have only one responsibility.
+	Or a class should have only one reason to change.
+ 
+
+
+
+	Single Responsibility Principle (SRP) states that a class should have only one responsibility.
+	Or a class should have only one reason to change.
+	When a class has only one responsibility, it becomes easier to change and test. If a class has multiple responsibilities, changing one responsibility may impact others and more testing efforts will be required then.
+ 
+
+
+
+	Open-Closed Principle (OCP) states that software entities(classes, modules) should be open for extension, but closed for modification.
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+	Open-Closed Principle (OCP) states that software entities(classes, modules) should be open for extension, but closed for modification.
+	SRP is the prerequisite for OCP.
+
+
+
+
+ 
+	The benefit is simple testing is required to test individual classes, but if you will keep on adding and modifying in one class. Then even for the smallest modification, the whole class needs to be tested.
+ 
+
+
+
+
+back to chapter index
+ 
+Q237
+ 
+What is Liskov Substitution Principle?
+ 
+
+	The Liskov Substitution Principle (LSP) states that an object of a child class must be able to replace an object of the parent class without breaking the application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	All the base class methods must be applicable for the derived class.
+ 
+
+back to chapter index
+ 
+
+
+
+	The Interface Segregation (ISP) states that a class should not be forced to implement interfaces that it does not use.
+
+
+
+
+ 
+
+
+
+	The Interface Segregation (ISP) states that a class should not be forced to implement interfaces that it does not use.
+
+	It is better to have multiple smaller interfaces than larger interfaces.
+
+
+ 
+
+
+
+	The Dependency Inversion Principle (DIP) states that a high-level class must not depend upon a lower level class.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+	The Dependency Inversion Principle (DIP) states that a high-level class must not depend upon a lower level class.
+
+
+
+ 
+
+
+
+
+	DRY stands for DON’T REPEAT YOURSELF.
+	Don’t write the same functionality multiple
+time.
+	Instead write code once and then use it at multiple places using inheritance.
+ 
+Chapter 29 : Design Patterns
+
+Q241. What are Design Patterns and what problem they solve? V Imp
+
+ 
+Q242. What are the types of Design Patterns? Q243. What are Creational Design Patterns?
+Q244. What are Structural Design Patterns? Q245. What are Behavioral Design Patterns?
+ 
+V Imp
+ 
+Q246. What is Singleton Design Pattern? V Imp
+Q247. How to make singleton pattern thread safe? V Imp
+Q248. What is Factory pattern? Why to use factory pattern? Q249. How to implement Factory method pattern?
+Q250. What is Abstract Factory pattern?
+
+
+
+
+Back to main index
+ 
+
+
+
+
+	Design patterns are reusable solutions for common problems in software design.
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+	Creational design patterns are design patterns that deal with object creation mechanisms.
+
+	Why direct object creation is a problem?
+
+	The reason is in a large/enterprise application, if you want to change this Class from Cat to Dog, then you have to change it everywhere wherever you have used it and then it will be a testing issue. You have to retest all these classes like Pet class.
+ 
+
+
+
+
+	Structural Design Pattern is used to manage the structure of classes and interfaces to manage the relationship between the classes.
+
+
+
+	Adapter pattern
+
+
+ 
+
+
+
+	Behavioral design patterns defines the way to
+communicate between classes and object.
+	For example, in strategy pattern we can choose the best strategy at run time for doing any operation .
+
+ 
+
+
+
+
+
+
+2	ng
+The Singleton design pattern is a
+creational design pattern that ensures a class has only one instance of it.
+
+
+ 
+
+
+
+	Normal Singleton Pattern
+ 
+
+
+
+
+	The Factory Pattern is a creational design pattern which manages object creation.
+
+
+
+
+
+
+
+
+
+
+1.	Lots of new
+keywords
+
+
+
+
+
+
+back to chapter index
+ 
+
+
+
+	Factory Pattern provides an interface or abstract class for creating objects, but lets the subclasses decide which class to instantiate.
+	Or In simple factory pattern, one factory class is responsible for creating all the objects for its derived or sub class.
+
+ 
+
+
+
+
+	Simple Factory pattern provides a single factory class that creates objects, while the Factory Method pattern uses inheritance and polymorphism, so it provide more flexibility and extensibility.
+
+
+ 
+
+
+
+	Simple Factory pattern provides a single factory class that creates objects, while the Factory Method pattern uses inheritance and polymorphism, so it provide more flexibility and extensibility.
+
+ 
+
+
+
+
+	Things to remember about Factory(simple factory and factory method) design patterns.
+1.	The Factory Pattern is a creational design pattern
+which manages object creation.
+2.	Factory Pattern provides an interface or abstract class for creating objects, but lets the subclasses decide which class to instantiate.
+3.	Or In simple factory pattern, one factory class is responsible for creating all the objects for its derived or sub class.
+4.	Simple Factory pattern provides a single factory class that creates objects, while the Factory Method pattern uses inheritance and polymorphism, so it provide more flexibility and extensibility.
+ 
+
+
+
+	The Abstract Factory pattern is a creational design pattern that provides an interface for creating related families of objects without specifying their concrete classes.
+
+ 
+	Abstract Factory pattern can be thought of as a "factory of factories".
+ 
+
+
+No factory pattern
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Abstract Factory Pattern	Factory Method Pattern
+ 
+
+C# Coding Problems
+
+
+
+
+
+
+
+ 
+Array Problems
+ 
+String Problems
+ 
+Number Problems
+ 
+Array Coding Problems
+
+Q. What are the must-know pre-requisites for solving basic coding problems?
+Q. What is the common approach for solving coding problems?
+Q. Write a function to calculate the sum of all elements in an array.
+Q. Write a function to calculate the average of an array of numbers.
+Q. Write a function to find the smallest number in an array.
+Q. Write a function to find the largest number in an array.
+Q. Write a function to find the second largest number in an array.
+ 
+Q. What are the must-know pre-requisites for solving basic coding problems?
+
+
+
+
+
+
+ 
+Q. What are the steps or approach for solving coding problems?
+
+
+
+ 
+1.	Read and understand the problem
+
+2.	Set the input & imagine the output.
+
+3.	Define variable to receive the output from a function.
+
+4.	Print the output.
+ 
+// Find the length of the array public class ArrayLength
+{
+public static void Main(string[] args)
+{
+int[] numbers = { 1, 2, 3, 4, 5}; // Input
+int length = ArrayLengthMethod(numbers); Console.WriteLine(length); // Output: 5
+}
+ 
+
+ 
+5.	Write function logic and return result.
+
+6.	Test the code for success result.
+
+7.	At last check edge cases constraints.
+ 
+public static int ArrayLengthMethod(int[] array)
+{
+int length = array.Length; return length;
+}
+}
+ 
+Q. Write a function to calculate the sum of all elements in an array.
+
+
+
+numbers
+
+sum
+
+sum
+ 
+Q. Write a function to calculate the average of an array of numbers.
+
+
+numbers
+
+sum sum
+average
+ 
+Q. Write a function to find the smallest number in an array.
+
+
+ 
+
+numbers
+ 
+public class SmallestNumberFinder
+{
+public static void Main(string[] args)
+{
+ 
+
+
+smallest
+ 
+int[] numbers = { 3, 5, 7, 2, 8 };
+int smallest = FindSmallestNumber(numbers); Console.WriteLine(smallest); // Output: 2
+}
+ 
+compare
+ 
+public static int FindSmallestNumber(int[] array)
+{
+ 
+
+
+smallest
+ 
+// Assume the first element as the smallest
+int smallest = array[0];
+
+// Iterate through the array to extract each element for (int i = 1; i < array.Length; i++)
+{
+ 
+// Compare smallest with current element if (smallest > array[i])
+{
+smallest = array[i]; // Set current as smallest
+}
+}
+return smallest;
+}
+}
+ 
+Q. Write a function to find the largest number in an array.
+
+
+ 
+numbers
+ 
+public class LargestNumberFinder
+{
+public static void Main(string[] args)
+{
+ 
+
+
+largest
+ 
+int[] numbers = { 10, 7, 23, 45, 8 }; // Input int largestNumber = FindLargestNumber(numbers); Console.WriteLine(largestNumber); // Output: 45
+}
+ 
+
+ 
+compare
+ 
+public static int FindLargestNumber(int[] array)
+{
+ 
+
+largest
+ 
+// Assume the first element as the largest int largest = array[0];
+
+// Iterate through the array to extract each element for (int i = 1; i < array.Length; i++)
+{
+ 
+// Compare largest with current element if (largest < array[i])
+{
+largest = array[i]; // Set current as largest
+}
+}
+return largest;
+}
+}
+ 
+Q. Write a function to find the second largest number in an array.
+
+
+ 
+
+numbers
+
+ 
+largest
+compare
+ 
+public class SecondLargestElement
+{
+public static void Main(string[] args)
+{
+int[] array = { 10, 7, 23, 45, 8 };
+int secondLargest = FindSecondLargest(array); Console.WriteLine(secondLargest); // Output: 23
+}
+ 
+2nd largest
+2nd largest	23
+ 
+public static int FindSecondLargest(int[] array)
+{
+int largest = array[0]; // Or int.MinValue Or 0 int secondLargest = int.MinValue; // Or 0
+
+for (int i = 1; i < array.Length; i++)
+{
+ 
+int num = array[i]; if (largest < num) {
+secondLargest = largest; largest = num;
+} // { 10, 7, 23, 45, 30 }; // complex case
+else if (num > secondLargest && num != largest) secondLargest = num;
+}
+return secondLargest;
+}
+}
+ 
+Array Coding Problems Using Functions
+
+Q. What are the top 5 important array functions used in coding problems?
+Q. Write a function to check whether two arrays are same or not?
+Q. Write a function to check if a given array is sorted in ascending order or not.
+Q. Write a function to merge two arrays into a single sorted array.
+Q. Write a function to remove a specific element from an array.
+ 
+Q. What are the top 5 important array functions used in coding problems?
+
+ 
+Q. Write a function to check whether two arrays are same or not?
+
+
+ 
+Q. Write a function to check if a given array is sorted in ascending order or not.
+
+
+numbers
+
+
+compare
+
+
+
+
+ 
+Q. Write a function to merge two arrays into a single sorted array.
+
+array1	array2
+
+Empty new array
+ 
+Merged array
+
+Merged & sorted array
+ 
+Q. Write a function to remove a specific element from an array.
+
+
+array
+
+
+
+Number of occurrences of element(3)
+
+
+New empty array
+
+Array with element removed
+ 
+String Coding Problems
+
+Q. Write a function that counts the number of characters in a string?
+Q. Write a function that returns the reverse of a string?
+Q. Write a function that checks whether a given string is a palindrome or not?
+Q. What are the important methods of String class?
+Q. Write a function that returns the longest word in the sentence.
+Q. Write a function that checks whether two strings are anagrams or not?
+Q. Write a function to remove all whitespace characters from a string.
+Q. Write a function that counts the number of vowels in a string?
+Q. What are some more important methods of String class?
+ 
+Q. Write a function that counts the number of characters in a string?
+
+ 
+
+1.	Read and understand the problem
+ 
+public class CharacterCounter
+{
+public static void Main(string[] args)
+{
+ 
+2.	Set the input & imagine the output.
+
+3.	Define variable to receive the output
+from a function.
+
+4.	Print the output.
+ 
+// Set Input
+string str = "Interview Happy";
+
+// Set result received by the function
+int characterCount = CountCharacters(str);
+
+// Print result: Output: 15 Console.WriteLine(characterCount);
+}
+ 
+
+5.	Write function logic and return (First comments and then code).
+
+6.	Test the code for success result.
+
+7.	Check edge cases and constraints.
+ 
+// Function
+public static int CountCharacters(string input)
+{
+// Edge case
+if (input == null)
+{
+return 0; // Handle null input by returning 0
+}
+
+// Main Logic
+
+}
+}
+ 
+Q. How to iterate a string?
+
+
+
+ 
+Q. Write a function that returns the reverse of a string?
+
+
+ 
+string
+ 
+using System.Text;
+
+public class ReverseString
+{
+ 
+public static void Main(string[] args)
+{
+ 
+reverse
+string
+ 
+string inputStr = "Interview Happy"; // Set Input string reversedString = ReverseStringMethod(inputStr);
+Console.WriteLine(reversedString); // Output: yppaH weivretnI
+}
+ 
+
+public static string ReverseStringMethod(string input)
+{
+if (input == null) // Edge case return null;
+
+StringBuilder reversed = new StringBuilder(); // Empty string
+
+// Iterate all elements in reverse order for (int i = input.Length - 1; i >= 0; i--)
+{
+reversed.Append(input[i]); // yppa...
+}
+return reversed.ToString();
+}
+}
+ 
+Q. Write a function that checks whether a given string is a palindrome or not?
+ 
+String Coding Problems Using Functions
+
+Q. What are the must-know pre-requisites for solving basic coding problems?
+Q. What is the common approach for solving coding problems?
+Q. Write a function that counts the number of characters in a string?
+Q. Write a function that returns the reverse of a string?
+Q. Write a function that checks whether a given string is a palindrome or not?
+Q. What are the important methods of String class?
+Q. Write a function that returns the longest word in the sentence.
+Q. Write a function that checks whether two strings are anagrams or not?
+Q. Write a function to remove all whitespace characters from a string.
+Q. Write a function that counts the number of vowels in a string?
+Q. What are some more important methods of String class?
+ 
+Q. What are the important methods of String class?
+
+
+
+ 
+Q. What are the important methods of String class?
+
+
+ 
+Q. Write a function that returns the longest word in the sentence.
+
+
+public class LongestWordFinder
+{
+public static void Main(string[] args)
+{
+string testSentence = "Interviews are the best"; string longestWord = FindLongestWord(testSentence); Console.WriteLine(longestWord); // Output: Interviews
+}
+
+public static string FindLongestWord(string sentence)
+{
+if (string.IsNullOrEmpty(sentence)) return ""; // Edge case
+
+string[] words = sentence.Split(' '); //break to array of words
+
+string longestWord = ""; // set the empty word
+
+foreach (string word in words) // iterate all the words
+{
+if (word.Length > longestWord.Length) longestWord = word;
+}
+return longestWord;
+}
+}
+ 
+Q. Write a function to remove all whitespace characters from a string.
+
+
+ 
+Q. Write a function that counts the number of vowels in a string?
+
+
+ 
+Q. Write a function that checks whether two strings are anagrams or not?
+
+
+
+to array
+
+sort
+=
+
+
+ 
+Number Coding Problems
+
+Q. Write a function to calculate the factorial of a number.
+Q. What is the difference between ++i and i++?
+Q. Write a function that checks whether a number is prime or not?
+Q. How to swap two numbers in C#?
+Q. Write a function to calculate the GCD for two numbers.
+Q. Write a function to sum the digits of a number.
+Q. Write a function to calculate the Fibonacci sequence up to a given number.
+ 
+Q. Write a function to calculate the factorial of a number.
+
+
+ 
+Q. What is the difference between ++i and i++?
+
+
+
+
+
+
+ 
+Q. Write a function that checks whether a number is prime or not?
+
+public class PrimeChecker
+{
+public static void Main(string[] args)
+{
+int num = 17; // Input Console.WriteLine(IsPrime(num)); // Output: true
+}
+
+public static bool IsPrime(int number)
+{
+// Edge case: Check if the number is less than or equal to 1 if (number <= 1)
+return false;
+
+// Iterate from 2 to half of the number for (int i = 2; i <= number / 2; i++)
+{
+// Check if number is divisible by current number if (number % i == 0)
+{
+return false;
+}
+}
+return true;
+}
+}
+ 
+Q. How to swap two numbers in C#?
+
+a	b
+
+
+
+
+ 
+Q. Write a function to calculate the GCD for two numbers.
+
+num1	num2
+
+
+ 
+Q. Write a function to sum the digits of a number.
+
+number
+
+ 
+Q. Write a function to calculate the Fibonacci sequence up to a given number.
+
+number
+
+
+
+0	1	0+1	1+1	1+2	2+3	3+5
+
+ 
+
+0	1	2	3	4	5	8
+Fibonacci sequence
+ 
+Coding Algorithms
+
+Q. Write a function to sort an array of numbers in ascending order(Bubble Sort).
+Q. Write a function to search an element in any array(Binary Search)?
+ 
+Q. Write a function to sort an array of numbers in ascending order(Bubble Sort).
+
+
+
+
+
+ 
+Outer for (i = 0 to 3)
+Inner for
+ 
+First Pass
+ 
+Outer for (i = 1 to 3)
+Inner for
+ 
+Second Pass
+ 
+Outer for (i = 2 to 3)
+Inner for
+ 
+Third Pass
+ 
+(j = 0 to 3)
+
+Inner for (j = 1 to 3)
+
+Inner for
+(j = 2 to 3)
+
+Result
+ 
+swap
+
+
+no swap
+
+
+
+swap
+ 
+(j = 0 to 2)
+
+Inner for (j = 1 to 2)
+
+Result
+ 
+no swap
+
+
+swap
+ 
+(j = 0 to 1)
+swap
+
+Result
+ 
+Q. Write a function to sort an array of numbers in ascending order(Bubble Sort).
+
+ 
+Q. Write a function to search an element in any array(Binary Search)?
+
+
+
+ 
+sorted
+array
+ 
+
+
+left = 0
+ 
+
+target
+ 
+
+Right = array.length - 1 = 4
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 	 
+ 
+Q. Write a function to search an element in any array(Binary Search)?
+
+
+ 
+Q. Write a function to search an element in any array(Binary Search)?
+
+
+	Binary search steps:
+
+
+ 
+All the best for your interviews Never ever give up

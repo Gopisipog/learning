@@ -1,8 +1,8 @@
 # Gopinath Muthukrishnan
 **Senior Full Stack Developer & Technical Architect**
 
-📧 gopicool.m@gmail.com | 📱 +1 (915) 044-2199 | 📍 Coimbatore, India (Open to US Remote/Relocation)  
-🔗 [LinkedIn](https://linkedin.com/in/gopinath-m) | 💻 [GitHub](https://github.com/gopinath-m) | 🌐 [Portfolio](https://gopinath-dev.com)
+📧 gopicool.m@gmail.com | 📱 +919150442199 | 📍 Hyderabad, India (Open to US Remote/Relocation)  
+🔗 [LinkedIn](https://www.linkedin.com/in/gopinath-muthukrishnan) | 💻 [GitHub](https://github.com/Gopisipog/learning) | 🌐 [Portfolio](https://www.unimad.ai/portfolio/gopinathm)
 
 ---
 
@@ -48,7 +48,7 @@
 - **Mentored 5+ junior developers** in modern development practices and architectural patterns
 
 **Key Achievements:**
-- Delivered 4 major projects on time and under budget
+- Delivered major projects on time and under budget
 - Improved client satisfaction scores by 25% through proactive requirement gathering
 - Reduced production bugs by 60% through comprehensive testing strategies
 
@@ -110,13 +110,12 @@
 
 ## 🎓 Education & Certifications
 
-### **Bachelor of Engineering** | Computer Science
+### **Master of Science** | Software Engineering
 *Anna University, Tamil Nadu, India*
 
 ### **Certifications**
 - **AWS Certified Solutions Architect** (In Progress)
-- **Microsoft Azure Fundamentals** (AZ-900)
-- **Certified Scrum Master** (CSM)
+
 
 ---
 

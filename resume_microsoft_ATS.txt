@@ -1,0 +1,65 @@
+GOPINATH MUTHUKRISHNAN
+Coimbatore, India • +91 91504 42199 • gopicool.m@gmail.com
+
+ROLE
+Senior Software Engineer | .NET (C#) | Azure Cloud | Microservices | React/TypeScript
+
+SUMMARY
+Senior Full‑Stack Engineer with 14+ years of experience building secure, scalable, cloud‑ready solutions on .NET and Azure. Expert in ASP.NET Core, Web API, microservices, and event‑driven architectures with strong front‑end skills (React, TypeScript, Angular). Proven track record modernizing systems, driving operational excellence through CI/CD and observability (Azure Monitor, Application Insights), and improving developer velocity via reusable libraries and automation. Collaborative, customer‑obsessed, data‑driven, and experienced in Agile/Scrum, live‑site quality, and RCA.
+
+CORE COMPETENCIES
+- Languages & Frameworks: C#, .NET 8/7/6/5, ASP.NET Core, Web API, LINQ, Entity Framework Core, Node.js, Python
+- Front End: React, TypeScript, Angular, JavaScript, HTML5/CSS3, SPA, Responsive UI, Accessibility (WCAG 2.1)
+- Cloud (Azure‑first): App Service, Azure Kubernetes Service (AKS), Azure Functions, API Management (APIM), Service Bus, Event Grid, Event Hubs, Key Vault, Azure Storage, Cosmos DB, SQL Database, Redis Cache, Application Insights, Azure Monitor, Log Analytics
+- Architecture & Patterns: Microservices, REST/gRPC, Domain‑Driven Design (DDD), Clean Architecture, CQRS, Messaging, Event‑Driven, API Gateway, Circuit Breaker, Retry/Backoff
+- DevOps & Platform: Azure DevOps, GitHub Actions, CI/CD pipelines, Docker, Kubernetes, Helm, Infrastructure as Code (Bicep/Terraform/ARM), Feature Flags, Blue/Green & Canary
+- Data: SQL Server, PostgreSQL, MySQL, MongoDB/NoSQL, Redis, EF Core, Stored Procedures, Query Optimization
+- Security & Identity: Azure AD, MSAL, OAuth 2.0 / OpenID Connect, Secrets Management (Key Vault), OWASP, Secure Coding
+- Quality & Observability: xUnit/NUnit, Jest, Cypress/Selenium, Robot Framework, Postman, Swagger/OpenAPI, SonarQube, SLO/SLI, Tracing/Logging/Telemetry
+- Process & Leadership: Agile/Scrum, TDD/BDD, Code Reviews, Design Reviews, OKRs, Mentoring, Cross‑functional Collaboration
+
+EXPERIENCE
+Software Engineer II / Project Lead • Mphasis • Hyderabad, India • 03/2025 – Present
+- Delivered new features/services in ASP.NET Core and React, aligning scope with product goals and measurable OKRs.
+- Established test/validation procedures (xUnit, Postman collections) and monitored live‑site health via App Insights.
+- Implemented secure updates and patching cycles; improved operational efficiency with automation and CI/CD.
+- Facilitated engineering knowledge‑sharing; onboarded team members; drove code quality via reviews and static analysis.
+- Tech: C#, ASP.NET Core, Web API, React, Azure DevOps, Application Insights, SQL, Git, CI/CD.
+
+Senior Software Developer • Global Client Technology / NationsBenefits • Remote (TX, USA) • 03/2023 – 01/2025
+- Built reusable React/TypeScript components and shared modules within a design system to accelerate delivery.
+- Drove code reviews and standards; translated client requirements into technical specifications and implementation plans.
+- Integrated new features across services (REST) and reduced rework by creating reusable libraries and patterns.
+- Supported desktop/mobile delivery in Scrum cadence; collaborated closely with cross‑functional teams.
+- Tech: React, TypeScript/JavaScript, .NET Core APIs, REST, Git, Agile/Scrum.
+
+Senior Full‑Stack Developer / Tech Lead • Equadriga Software / Breas Medical • Remote (MA, USA) • 04/2022 – 12/2022
+- Led microservices architecture (.NET Core + React) to improve system flexibility, scalability, and release cadence.
+- Authored API contracts/standards; drove interoperability across services via APIM and versioned schemas.
+- Deployed to Azure/AWS following cost‑efficient, resilient patterns; integrated Key Vault, App Insights, and dashboards.
+- Strengthened quality via unit/integration tests and automation using Python + Robot Framework.
+- Tech: C#, ASP.NET Core, React, REST, Azure/AWS, APIM, Key Vault, App Insights, SQL/NoSQL, Python, Robot Framework.
+
+Senior Front‑End Developer • Coducer Tech • Bangalore, India • 01/2022 – 04/2022
+- Delivered microservices‑aligned UI modules; integrated REST endpoints; added monitoring/alerts to improve reliability.
+- Refactored FE for performance (lazy loading, code splitting, caching) and responsiveness; mentored junior devs.
+- Tech: React/Angular, TypeScript/JavaScript, Performance Optimization, CI/CD, REST.
+
+Senior Front‑End / Senior Full‑Stack Developer / Technical Architect / Trainee • Tata Consultancy Services Ltd. • Bangalore, India • 01/2010 – 12/2021
+- Implemented API Gateway to route/filter to microservices; improved request handling and throughput.
+- Built reusable UI components (React/Angular); planned/engineered RESTful services and secure coding practices.
+- Championed Agile/Scrum; managed Git workflows; influenced architecture for scalability and maintainability.
+- Partnered with stakeholders; mentored engineers; drove incident triage and contributed to RCAs for live‑site issues.
+- Tech: C#, ASP.NET, React/Angular, REST, SQL, Git, Agile/Scrum.
+
+SELECTED IMPACT
+- Improved scalability and developer velocity via microservices migration (.NET Core + React) and shared component libraries.
+- Reduced incidents and increased reliability through proactive testing/automation and production telemetry (App Insights).
+- Enhanced UX and performance using optimization techniques (bundling, caching, lazy‑loading) and accessibility focus.
+
+EDUCATION
+Master’s Degree • Coimbatore Institute of Technology • 06/2009
+
+KEYWORDS (ATS / MICROSOFT)
+.NET, .NET 8, .NET 7, C#, ASP.NET Core, Web API, REST, gRPC, Microservices, DDD, Clean Architecture, CQRS, React, Angular, TypeScript, JavaScript, HTML, CSS, SPA, Azure, AKS, App Service, Azure Functions, API Management, Service Bus, Event Grid, Event Hubs, Cosmos DB, Azure SQL, Redis, Key Vault, Azure Storage, Application Insights, Azure Monitor, Log Analytics, APIM, Docker, Kubernetes, Helm, Azure DevOps, GitHub Actions, CI/CD, ARM, Bicep, Terraform, Feature Flags, Blue‑Green, Canary, Observability, OpenTelemetry, Logging, Tracing, SLO, SLI, Security, Azure AD, MSAL, OAuth2, OpenID Connect, OWASP, Secrets Management, Performance Optimization, Scalability, Reliability, SRE, RCA, Agile, Scrum, TDD, BDD, Code Reviews, Design Reviews, Documentation, Postman, Swagger, OpenAPI, xUnit, NUnit, Jest, Cypress, Selenium, Robot Framework
+

@@ -1,0 +1,133 @@
+Gopinath Muthukrishnan
+gopicool.m@gmail.com | +919150442199 LinkedIn
+
+Summary
+With extensive experience in cloud-based microservices architecture and secure software systems development, I am committed to driving innovation and excellence in a dynamic, fast-paced environment. I thrive in collaborative settings, ensuring seamless integration and operational efficiency across complex systems. Eager to expand my knowledge and expertise, I am passionate about contributing to transformative solutions that enhance security, governance, and compliance.
+ 
+
+Employment History
+SOFTWARE ENGINEER II
+03/2025 - Current
+ 	Crafted and launched new software applications, enhancing both operational productivity and client satisfaction.
+ 	Applied advanced problem-solving skills to resolve intricate software challenges, upholding quality and innovation standards.
+ 	Engaged in detailed client consultations to gather accurate requirements for tailored software solutions.
+ 	Designed and developed automation solutions based on project briefs to create scalable, reliable software.
+ 	Implemented software updates that introduced new functionalities, patched security vulnerabilities, and rectified defects.
+ 	Facilitated knowledge-sharing sessions among engineers, fostering innovation and collaboration.
+
+Senior Software Developer
+03/2023 – 01/2025
+ 	Implemented reusable components to enhance communication within the design system.
+ 	Conducted thorough code reviews to maintain high-quality standards.
+ 	Gathered client requirements and translated them into technical specifications.
+ 	Collaborated across teams to integrate new functionalities into existing frameworks.
+ 	Developed reusable code libraries to expedite future projects.
+ 	Enhance skills through continuous learning and staying abreast of industry trends.
+
+SENIOR FULL STACK DEVELOPER / TECH LEAD
+04/2022 - 12/2022
+ 	Architected scalable microservices using .Net Core, enhancing application versatility.
+ 	Led deployment of microservices architecture, improving system scalability.
+ 	Deployed infrastructures using cloud platforms such as AWS and Azure.
+ 	Conducted testing with Node.js and Java to enhance software robustness.
+ 	Innovated automated testing practices transitioning to Python and robot frameworks.
+ 	Developed robust REST ensuring seamless integration between services.
+
+SENIOR FRONT-END DEVELOPER
+01/2022 - 04/2022
+ 	Enhanced application architecture through microservices-based modules, improving modularity and scalability.
+ 	Designed REST for efficient data exchange between services.
+ 	Integrated monitoring solutions to identify and resolve issues promptly.
+ 	Led comprehensive front-end projects resulting in successful application launches.
+ 	Applied advanced optimization techniques like lazy loading to improve page load times.
+
+SENIOR FULL STACK DEVELOPER / TECHNICAL ARCHITECT
+01/2010 - 12/2021
+ 	Implemented API gateways to streamline request handling and boost system performance.
+ 	Refactored codebases improving modularity and efficiency of CSS, HTML, and JavaScript.
+ 	Developed reusable UI components enhancing productivity across development teams.
+ 	Developed RESTful services enabling dynamic data manipulation.
+ 	Strengthened application security through regular vulnerability assessments and secure coding practices.
+ 	Drove Agile adoption, increasing efficiency during project cycles.
+
+Education
+
+Master's Degree, Coimbatore Institute of Technology (06/2009)
+
+Skills
+ 
+
+
+
+Mphasis
+
+
+
+
+
+
+
+
+
+
+
+
+
+Global Client Technology / Nations Benefits
+
+
+
+
+
+
+
+
+
+
+
+
+
+Equadriga Software / Breas Medicals
+
+
+
+
+
+
+
+
+
+
+
+
+
+Coducer Tech
+
+
+
+
+
+
+
+
+
+
+
+Tata Consultancy Services Ltd.
+ 
+
+ 
+
+Java	Microservices Architecture
+Cloud Platforms (AWS, Azure)
+Agile Methodologies
+JavaScript	Scalable Solutions
+Unit Testing
+Cross-functional Collaboration
+Python	Secure Software Systems
+Code Reviews
+Automation
+REST	Distributed Data Processing
+Problem Solving
+
+

@@ -1,6 +1,8 @@
 import microfrontendRegistry from './MicrofrontendRegistry';
 
 // Microfrontend configurations
+import CloudDevOpsEngineeringLearning from './CloudDevOpsEngineeringLearning';
+
 const microfrontendConfigs = [
   {
     name: 'dotnet-interfaces',
@@ -99,6 +101,35 @@ const microfrontendConfigs = [
       ),
       errorBoundary: true
     }
+  },
+  // Inline microfrontend (no code-splitting) for quick learning component
+  {
+    name: 'delegates-events-extensions',
+    importFunction: () => import('./DelegatesEventsExtensionsMicrofrontend'),
+    config: {
+      preload: false,
+      fallback: (
+        <div className="loading-microfrontend">
+          <div className="loading-spinner"></div>
+          <p>Loading Delegates, Events & Extensions Module...</p>
+        </div>
+      ),
+      errorBoundary: true
+    }
+  },
+  {
+    name: 'cloud-devops-engineering',
+    importFunction: async () => ({ default: CloudDevOpsEngineeringLearning }),
+    config: {
+      preload: false,
+      fallback: (
+        <div className="loading-microfrontend">
+          <div className="loading-spinner"></div>
+          <p>Loading Cloud & DevOps Engineering Module...</p>
+        </div>
+      ),
+      errorBoundary: true
+    }
   }
 ];
 
@@ -107,7 +138,7 @@ export const registerMicrofrontends = () => {
   microfrontendConfigs.forEach(({ name, importFunction, config }) => {
     microfrontendRegistry.register(name, importFunction, config);
   });
-  
+
   console.log('🚀 Microfrontends registered:', microfrontendRegistry.getAll());
 };
 
@@ -136,7 +167,9 @@ export const microfrontendRoutes = {
   '/system-design': 'system-design',
   '/dotnet-core-building-blocks': 'building-blocks',
   '/patterns': 'coding-patterns',
-  '/distributed-patterns': 'distributed-systems-patterns'
+  '/distributed-patterns': 'distributed-systems-patterns',
+  '/delegates-events-extensions': 'delegates-events-extensions',
+  '/cloud-devops-engineering': 'cloud-devops-engineering'
 };
 
 // Get microfrontend name by route
