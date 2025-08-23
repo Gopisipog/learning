@@ -68,6 +68,22 @@ const Navigation = () => {
         { path: '/system-design', title: '🏗️ System Design', description: 'Scalable system architecture', badge: 'Microfrontend' },
         { path: '/educational-coverage', title: '📚 C# Materials', description: 'Comprehensive C# resources' }
       ]
+    },
+    {
+      id: 'csharp-advanced',
+      title: '🧠 C# Advanced',
+      type: 'dropdown',
+      items: [
+        { path: '/delegates-events-extensions', title: '🧩 Delegates, Events & Extensions', description: 'Learn Q84–Q88 with examples', badge: 'Microfrontend' }
+      ]
+    },
+    {
+      id: 'cloud-devops',
+      title: '☁️ Cloud & DevOps',
+      type: 'dropdown',
+      items: [
+        { path: '/cloud-devops-engineering', title: '☁️ Cloud & DevOps Engineering', description: 'Azure, CI/CD, IaC, K8s, Observability', badge: 'Microfrontend' }
+      ]
     }
   ];
 
@@ -98,15 +114,15 @@ const Navigation = () => {
           {navigationItems.map(item => (
             <div key={item.id} className="nav-item">
               {item.type === 'link' ? (
-                <Link 
-                  to={item.path} 
+                <Link
+                  to={item.path}
                   className={`nav-link ${isActiveRoute(item.path) ? 'active' : ''}`}
                 >
                   {item.title}
                 </Link>
               ) : (
                 <div className="nav-dropdown">
-                  <button 
+                  <button
                     className={`nav-dropdown-toggle ${hasActiveChild(item.items) ? 'active' : ''}`}
                     onClick={() => toggleDropdown(item.id)}
                   >
@@ -115,16 +131,16 @@ const Navigation = () => {
                       ▼
                     </span>
                   </button>
-                  
+
                   <div className={`nav-dropdown-menu ${activeDropdown === item.id ? 'open' : ''}`}>
                     <div className="dropdown-header">
                       <h3>{item.title}</h3>
                     </div>
                     <div className="dropdown-items">
                       {item.items.map(subItem => (
-                        <Link 
+                        <Link
                           key={subItem.path}
-                          to={subItem.path} 
+                          to={subItem.path}
                           className={`dropdown-item ${isActiveRoute(subItem.path) ? 'active' : ''}`}
                         >
                           <div className="dropdown-item-content">
@@ -147,7 +163,7 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className="mobile-menu-toggle"
           onClick={toggleMenu}
           aria-label="Toggle mobile menu"
@@ -166,8 +182,8 @@ const Navigation = () => {
           {navigationItems.map(item => (
             <div key={item.id} className="mobile-nav-item">
               {item.type === 'link' ? (
-                <Link 
-                  to={item.path} 
+                <Link
+                  to={item.path}
                   className={`mobile-nav-link ${isActiveRoute(item.path) ? 'active' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -175,7 +191,7 @@ const Navigation = () => {
                 </Link>
               ) : (
                 <div className="mobile-nav-dropdown">
-                  <button 
+                  <button
                     className={`mobile-dropdown-toggle ${hasActiveChild(item.items) ? 'active' : ''}`}
                     onClick={() => toggleDropdown(item.id)}
                   >
@@ -184,12 +200,12 @@ const Navigation = () => {
                       ▼
                     </span>
                   </button>
-                  
+
                   <div className={`mobile-dropdown-menu ${activeDropdown === item.id ? 'open' : ''}`}>
                     {item.items.map(subItem => (
-                      <Link 
+                      <Link
                         key={subItem.path}
-                        to={subItem.path} 
+                        to={subItem.path}
                         className={`mobile-dropdown-item ${isActiveRoute(subItem.path) ? 'active' : ''}`}
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -214,7 +230,7 @@ const Navigation = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div 
+        <div
           className="mobile-menu-overlay"
           onClick={() => setIsMenuOpen(false)}
         />

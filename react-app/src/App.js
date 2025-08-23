@@ -50,6 +50,8 @@ function App() {
           <Route path="/system-design" element={<MicrofrontendRouter route="/system-design" />} />
           <Route path="/dotnet-interfaces" element={<MicrofrontendRouter route="/dotnet-interfaces" />} />
           <Route path="/distributed-patterns" element={<MicrofrontendRouter route="/distributed-patterns" />} />
+          <Route path="/delegates-events-extensions" element={<MicrofrontendRouter route="/delegates-events-extensions" />} />
+          <Route path="/cloud-devops-engineering" element={<MicrofrontendRouter route="/cloud-devops-engineering" />} />
         </Routes>
       </div>
     </Router>

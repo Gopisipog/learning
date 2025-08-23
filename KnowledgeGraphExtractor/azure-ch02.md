@@ -30,7 +30,8 @@
 
 ## 2) VM and Compute HA
 
-- VMs: availability sets (update + fault domains), availability zones, proximity placement groups (latency-sensitive)
+- VMs: availability sets (update +
+ fault domains), availability zones, proximity placement groups (latency-sensitive)
 - Scale sets (VMSS): automatic instance distribution across zones; upgrade policies (automatic, rolling, manual)
 - Host maintenance: Scheduled Events; use ephemeral OS disks for fast reimage; terminate notification handling
 - PaaS compute: App Service (slots, autoscale, zone redundancy), AKS (multi-node pools, multiple zones), Functions (premium plans for HA)
