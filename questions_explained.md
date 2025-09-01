@@ -1,0 +1,359 @@
+# Detailed explanations for questions.txt
+
+## 1) Dependency injection in .NET Core and Angular
+- Concept: DI supplies required dependencies to a class from the outside, improving testability, modularity, and adherence to the Dependency Inversion Principle.
+- .NET Core: Built-in container. Register services in Program.cs/Startup via IServiceCollection:
+  - Lifetimes: Transient (new each time), Scoped (per-request), Singleton (single for app lifetime).
+  - Injection: Constructor injection preferred. Avoid service locators and static singletons. Use options pattern for settings (IOptions<T>).
+  - Example:
+    ```csharp
+    services.AddScoped<IOrderService, OrderService>();
+
+    public class OrdersController
+    {
+        private readonly IOrderService _svc;
+        public OrdersController(IOrderService svc) => _svc = svc;
+    }
+    ```
+- Angular: Hierarchical injectors. Mark services with `@Injectable({ providedIn: 'root' })` or provide in component/module.
+  - Injection via `constructor(private svc: MyService) {}`
+  - Tokens: Use InjectionToken for primitives or multiple providers. Hierarchy allows component-level singletons.
+
+## 2) ASP.NET Core request pipeline and middleware
+- Pipeline: An ordered chain of middleware processing HttpContext. Order matters.
+- Common middleware: UseRouting, UseCors, UseAuthentication, UseAuthorization, UseEndpoints/MapControllers, exception handling, static files, compression, rate limiting.
+- Custom middleware pattern:
+  ```csharp
+  public class MyMiddleware
+  {
+      private readonly RequestDelegate _next;
+      public MyMiddleware(RequestDelegate next) => _next = next;
+      public async Task Invoke(HttpContext ctx)
+      {
+          // pre-processing
+          await _next(ctx);
+          // post-processing
+      }
+  }
+  // registration
+  app.UseMiddleware<MyMiddleware>();
+  ```
+- Map/Use/Run: Use adds inline middleware; Map branches by path; Run is terminal.
+
+## 3) Authentication vs Authorization: theory and implementation
+- Theory: Authentication verifies identity (who you are). Authorization determines access (what you can do).
+- Common auth for APIs: JWT Bearer (OAuth2/OIDC), Azure AD / Entra ID, API keys (not recommended alone), mTLS.
+- Implementation (JWT):
+  ```csharp
+  builder.Services
+      .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+      .AddJwtBearer(opts =>
+      {
+          opts.Authority = "https://authority";
+          opts.Audience  = "api-audience";
+      });
+
+  builder.Services.AddAuthorization(options =>
+  {
+      options.AddPolicy("CanRead", p => p.RequireClaim("scope", "read"));
+  });
+  ```
+  - Use `[Authorize]` with roles/claims/policies. For resource-based authorization use IAuthorizationService.
+- Web apps: Cookie auth via OIDC login (OpenIdConnect + Cookies). For Azure AD use Microsoft.Identity.Web.
+
+## 4) Passing data between Angular components (parent->child and child->parent)
+- Parent to child: `@Input()` on child; bind in parent template:
+  ```html
+  <child [data]="parentData"></child>
+  ```
+- Child to parent: `@Output() event = new EventEmitter<T>();` child emits; parent handles `(event)="onEvent($event)"`.
+- Sibling or cross-tree: Shared service with Subject/BehaviorSubject or state management (NgRx, Akita).
+
+## 5) SQL: Clustered vs Nonclustered indexes; CTE vs Temporary table
+- Clustered index: Defines the physical order of table data (only one per table). Good for range queries on key. Primary keys default to clustered.
+- Nonclustered index: Separate structure with key + pointer to base rows. Multiple allowed; support specific search patterns; include columns for covering indexes.
+- CTE (WITH cte AS (...)): Named, inline query scope; not materialized; great for readability and recursive queries; no indexes directly.
+- Temporary table (#Temp): Materialized in tempdb; can be indexed; reusable across multiple statements; statistics available; useful in complex, multi-step processing.
+
+## 6) Create a table from another table without data (SQL Server)
+- SELECT INTO with no rows:
+  ```sql
+  SELECT TOP 0 * INTO NewTable FROM OldTable;
+  -- or
+  SELECT * INTO NewTable FROM OldTable WHERE 1 = 0;
+  ```
+- Then add indexes/constraints as needed (since SELECT INTO doesn’t copy them).
+
+## 7) SOLID principles (details)
+- Single Responsibility: A class should have one reason to change. Encapsulate one cohesive responsibility.
+- Open/Closed: Open for extension, closed for modification. Use interfaces, strategy, polymorphism to add features without editing core logic.
+- Liskov Substitution: Subtypes must be substitutable for their base types without breaking behavior. Avoid weakening postconditions/preconditions.
+- Interface Segregation: Prefer many small, specific interfaces over large, fat ones.
+- Dependency Inversion: Depend on abstractions, not concretions. High-level modules should not depend on low-level details. DI containers help, but this is a design principle first.
+
+## 8) Caching in ASP.NET Core
+- Types:
+  - In-memory cache (IMemoryCache): Fast, per-instance; not suitable for multi-instance deployments alone.
+  - Distributed cache (IDistributedCache): Redis/SQL for multi-node. Prefer Redis.
+  - Response/Output caching: Cache full HTTP responses. OutputCache in .NET 7+; ResponseCaching middleware older approach.
+- Policies: Absolute vs sliding expiration; size limits; cache-key design (include tenant/user/version); cache priming; invalidation strategies (time-based, event-based, cache-aside, write-through).
+- HTTP caching: ETag/If-None-Match; Cache-Control; vary by header/query; CDN integration.
+
+## 9) Azure SQL vs local DB; App Insights vs server logs
+- Azure SQL advantages: Managed backups, HA/DR, scaling, automatic tuning, security (TDE, Defender), geo-replication, SLA, simple maintenance.
+- Application Insights advantages: Centralized telemetry, traces/metrics/dependencies, distributed tracing, Kusto Query Language (KQL), live metrics, smart detection, dashboards, alerts, correlation across services; versus fragmented server logs.
+
+## 10) Securing APIs (practical checklist)
+- Transport: Enforce HTTPS/TLS, HSTS.
+- AuthN/Z: Strong authentication (OIDC/JWT); scopes/roles; least privilege; resource-based checks.
+- Input validation: Model validation, allow-lists, size limits; avoid over-posting (DTOs, [Bind] constraints).
+- Headers/CORS: Strict CORS; security headers (X-Content-Type-Options, X-Frame-Options, CSP as applicable).
+- Rate limiting/throttling; request size limits; anti-DOS.
+- Secrets: Use Key Vault; never commit secrets.
+- Logging/monitoring: Structured logs, correlation IDs, alerting.
+- Data: Parameterized queries; encryption at rest/in transit; PII handling.
+
+## 11) async/await in .NET
+- Purpose: Non-blocking I/O using Tasks. `await` schedules a continuation when the awaited Task completes.
+- SynchronizationContext: In ASP.NET Core there’s no context; by default continuations may run on thread pool. `ConfigureAwait(false)` still useful for libraries.
+- Patterns: Do not use `async void` (except event handlers); propagate cancellation tokens; handle exceptions via try/catch around await.
+- I/O vs CPU: For CPU-bound work use `Task.Run`; for I/O-bound simply `await`.
+
+## 12) API performance optimization
+- Database: Proper indexes; avoid N+1 (use projection/Include wisely); AsNoTracking for read-only; compiled queries; batch operations.
+- Serialization: Use System.Text.Json; avoid large object graphs; reference handling; gzip/br compression.
+- Caching: Output caching, data caching (Redis), cache-aside.
+- Concurrency: Use paging/streaming for large payloads; avoid locking; fine-tune HttpClientFactory usage with pooled handlers.
+- DI/lifetimes: Singleton for stateless heavy dependencies (e.g., HttpClient); Scoped for per-request; avoid transient heavy objects.
+- Threading: Avoid sync-over-async; make the stack async.
+
+## 13) Table variables, indexes, and stored procedure performance
+- Table variables (@t): Prior to SQL 2019 no stats; assume 1 row may cause bad plans. Lighter temp usage. Good for very small sets.
+- Temp tables (#t): Have stats; suitable for intermediate results and indexing; often better for medium/large workloads.
+- Indexes: Create on predicates and join keys; use covering indexes with INCLUDE. Keep them lean.
+- Stored procedures: Parameter sniffing mitigation (OPTIMIZE FOR, recompile selectively); SARGable predicates; avoid scalar functions in WHERE; use TRY/CATCH and transactions correctly.
+
+## 14) Angular lifecycle hooks, security, DI, and component communication
+- Lifecycle: ngOnChanges, ngOnInit, ngDoCheck, ngAfterViewInit, ngOnDestroy; use properly to avoid extra work.
+- Security: Angular templates auto-sanitize; avoid `bypassSecurityTrust` unless you fully validate input; route guards; JWT interceptors; CSP.
+- DI: Provided-in root or component. Prefer stateless services; use providedIn to scope.
+- Communication: @Input/@Output, shared services, RxJS Subjects, global store (NgRx).
+
+## 15) Design patterns (overview)
+- Creational: Factory, Abstract Factory, Builder, Prototype, Singleton.
+- Structural: Adapter, Facade, Decorator, Composite, Proxy, Bridge.
+- Behavioral: Strategy, Observer, Command, Mediator, Chain of Responsibility, State, Template Method.
+- Practical in .NET: Strategy for pluggable business rules; Mediator with MediatR for decoupled CQRS; Decorators for cross-cutting; Adapter for integrations.
+
+## 16) Application migration experience (to newer .NET)
+- Plan: Inventory dependencies; assess breaking changes; choose target framework; multi-target if needed.
+- Upgrade: Update SDK/TFM, NuGet packages; replace obsolete APIs; update analyzers; enable nullable and implicit usings as applicable.
+- Behavior: Validate pipeline changes, JSON defaults (System.Text.Json), logging, hosting model (minimal hosting).
+- Perf: Consider trimming/AOT, container base images, Health checks.
+- Testing: Automated tests, performance regression checks, canary releases.
+
+## 17) Azure services commonly used
+- Compute: App Service, Azure Functions, Container Apps/AKS.
+- Data: Azure SQL, Cosmos DB, Storage (Blob/Table/Queue), Redis Cache.
+- Networking: App Gateway/WAF, Front Door/CDN, VNet, Private Endpoints.
+- Integration: Service Bus, Event Grid, API Management.
+- Security: Key Vault, Managed Identity, Defender for Cloud.
+- Observability: Application Insights, Azure Monitor/Log Analytics.
+- DevOps: Azure DevOps/GitHub Actions, Container Registry.
+
+## 18) Explain SOLID and pseudo code for one
+- Example (Open/Closed using Strategy): Interface `IDiscount` with `GetDiscount(amount)`. Implement `RegularDiscount`, `VipDiscount`. Inject `IDiscount` into service; selecting strategy via DI or factory keeps service closed to modification when adding new customer types.
+
+## 19) Multiple inheritance
+- C# classes do not support multiple inheritance. Implement multiple interfaces instead; favor composition over inheritance. Default interface methods allow shared behavior while avoiding diamond problem.
+
+## 20) Singleton pattern use cases
+- One instance per app domain for stateless shared services: config providers, caches, loggers, connection pools (via factories), mapping configuration.
+- In ASP.NET Core prefer DI: register as Singleton. Ensure thread safety and avoid holding per-request state.
+
+## 21) .NET Core dependency injection (how-to)
+- Register in Program.cs: `services.AddTransient/Scoped/Singleton`. Inject via constructor. Use Options pattern, HttpClientFactory, typed clients. Avoid service locator (`IServiceProvider.GetService` in app code).
+
+## 22) .NET Core Azure AD (Entra ID) authentication
+- APIs: Use Microsoft.Identity.Web `AddMicrosoftIdentityWebApi`; configure Azure AD app registration (expose API, scopes); protect with `[Authorize]` and scope policies.
+- Web apps: `AddMicrosoftIdentityWebApp` for OIDC login; use cookies for session; use Graph SDK for user data if needed.
+- SPA: Use MSAL.js to get tokens; backend validates JWTs.
+
+## 23) Repository pattern
+- Purpose: Abstract data persistence behind an interface to decouple domain from EF/DB.
+- Pros: Testability, swap data sources, encapsulate queries. Cons: Over-abstraction; EF Core already implements UoW and repository patterns.
+- Guidance: Use when domain needs clear boundary or multiple stores; otherwise prefer direct DbContext with query services/specifications.
+
+## 24) Generics
+- Type parameters for classes/methods: `List<T>`, `Func<T>`.
+- Benefits: Type safety, performance (no boxing), reuse.
+- Constraints: `where T : class, struct, new(), interface`.
+- Variance: `out` (covariant), `in` (contravariant) for interfaces/delegates.
+
+## 25) for vs foreach performance
+- Arrays/List<T>: `for` can be marginally faster; `foreach` is very close and clearer. On structs, foreach may avoid bounds checks but may allocate enumerator depending on type. Prefer clarity; micro-optimizations only in hot paths.
+
+## 26) Improving employee dashboard performance (include Redis)
+- Data shaping: Only fetch fields needed; projection DTOs; AsNoTracking; compiled queries.
+- Caching: Use Redis (IDistributedCache) with cache-aside for reference data (departments, roles) and per-user dashboards. Use ETags and OutputCache for GET endpoints. Define TTLs and invalidation events.
+- Pagination and search: Server-side paging/sorting/filtering; index search columns.
+- Parallelization: In API, run independent queries concurrently with `Task.WhenAll`.
+- Frontend: Lazy load components/data; debounce filters; virtualize long lists.
+- Infra: Enable response compression; HTTP/2; pool HttpClient; warm-up.
+
+## 27) Azure App Service vs Azure Functions
+- App Service: Host long-running web apps/APIs; always-on; predictable scaling; supports background tasks (WebJobs). Billed per plan.
+- Functions: Event-driven serverless; automatic scaling to zero; billed per execution/GB-s; cold starts; ideal for event processing and scheduled jobs.
+
+## 28) Exception handling in SQL Server
+- TRY...CATCH with THROW to rethrow preserving stack. Use `XACT_STATE()` in CATCH to manage transactions (ROLLBACK if -1; COMMIT if 1 and appropriate). Log errors to a table.
+
+## 29) CQRS pattern
+- Separate write (commands) and read (queries) models. Commands mutate state; queries are side-effect free.
+- Benefits: Scalability, tailored models, simpler queries. Often paired with Mediator (e.g., MediatR). Event sourcing is optional.
+- Trade-offs: Complexity, eventual consistency if read model is denormalized.
+
+## 30) Ensuring endpoint you connect to is safe (malware considerations)
+- Network hygiene: Use HTTPS with certificate validation and pinning if needed; maintain allowlists; use DNS filtering/reputation services.
+- Content safety: If downloading files, validate content-type/size; scan with antivirus (e.g., Defender) or a scanning service; sandbox processing; use checksum/signature verification.
+- Isolation: Run untrusted content in isolated storage/containers; never execute received content.
+
+## 31) How to secure API and performance optimization
+- See items 10 and 12. Combine both: secure by default and efficient.
+
+## 32) Authentication and Authorization (repeat)
+- See item 3.
+
+## 33) SOLID with examples (repeat)
+- See items 7 and 18.
+
+## 34) Dependency injection on .NET Core (repeat)
+- See items 1 and 21.
+
+## 35) Request pipeline & Middleware in .NET Core with example
+- Example ordering:
+  ```csharp
+  app.UseExceptionHandler("/error");
+  app.UseHttpsRedirection();
+  app.UseRouting();
+  app.UseCors();
+  app.UseAuthentication();
+  app.UseAuthorization();
+  app.MapControllers();
+  ```
+  Incorrect order breaks auth.
+- Custom middleware example shown in item 2.
+
+## 36) EF Core LINQ scenario patterns
+- Avoid N+1: Project into DTOs selecting navigation properties in one query; or Include judiciously.
+- Filtering and sorting: Apply Where/OrderBy before pagination; only call AsEnumerable after applying DB-side operations.
+- Performance: AsNoTracking for queries; .Select to reduce payload; `EF.Functions.Like` for SQL LIKE; `FromSqlInterpolated` for complex SQL.
+- Concurrency: Use rowversion/timestamps and handle `DbUpdateConcurrencyException`.
+
+## 37) Exception handling in ASP.NET Core
+- Global: `app.UseExceptionHandler` with a central endpoint returning ProblemDetails.
+- Logging: Log context, correlation IDs. Avoid leaking internals in responses.
+- MVC filters: `IExceptionFilter`/`IAsyncExceptionFilter` for per-controller concerns.
+- Validation: Automatic 400s with validation problem details; avoid catching exceptions for control flow.
+
+## 38) Azure services used (repeat)
+- See item 17.
+
+## 39) CTE in SQL Server (with example)
+- Non-recursive:
+  ```sql
+  WITH Expensive AS (
+      SELECT * FROM Sales WHERE Amount > 1000
+  )
+  SELECT * FROM Expensive WHERE Region = 'EU';
+  ```
+- Recursive (hierarchy):
+  ```sql
+  WITH Org AS (
+      SELECT Id, ManagerId, 0 AS Level FROM Employees WHERE Id = @root
+      UNION ALL
+      SELECT e.Id, e.ManagerId, Level + 1
+      FROM Employees e
+      JOIN Org o ON e.ManagerId = o.Id
+  )
+  SELECT * FROM Org;
+  ```
+
+## 40) Join scenarios in SQL Server
+- Inner vs Left Join: Left join returns unmatched left rows (NULLs on right). Filter carefully: put predicates for right table in ON to keep NULLs.
+- Anti-join: `NOT EXISTS` to find rows without matches.
+- De-dup with window functions: Use `ROW_NUMBER() OVER(PARTITION BY ...)` to keep first per key.
+- Performance: Ensure join keys are indexed; watch for implicit conversions; make predicates SARGable.
+
+## 41) Output of SELECT COUNT(1), COUNT(*), COUNT(2)
+- In SQL Server they are equivalent: all count rows. `COUNT(column)` counts non-null values only, but a literal is never NULL. Performance differences are negligible.
+
+## 42) Handling large files in APIs
+- Streaming: Read/write streams; disable buffering; for uploads use `IFormFile.OpenReadStream` with streaming and size limits.
+- Chunking: Implement chunked uploads with resumable offsets; support Range headers for downloads.
+- Storage: Store in Blob Storage/S3; avoid keeping in memory; process with background workers.
+- Safety: Validate content type/size; virus scanning; timeouts; backpressure.
+
+## 43) Pagination in EF Core and SQL
+- Offset pagination: Use OrderBy then Skip/Take; SQL `OFFSET ... FETCH NEXT`.
+- Keyset pagination (seek): Use `WHERE key > lastKey ORDER BY key` for better performance at scale.
+- Return metadata: total count (expensive) can be cached; expose next/prev cursors.
+- Index: Ensure ORDER BY columns are indexed.
+
+## 44) How did you do Authentication and Authorization?
+- Example API approach: Azure AD JWT Bearer with scope-based policies; `[Authorize(Policy = "Api.Read")]`. For admin features use role claims.
+- Example Web approach: OIDC + Cookies; `[Authorize(Roles = "Admin")]`.
+- Data-level: Resource-based authorization for row-level security.
+
+## 45) What is CTA and Procedures?
+- Interpreting CTA as CTE (likely a typo): see items 5 and 39 for CTE.
+- Stored procedures: Precompiled execution plans; encapsulate logic; security (EXECUTE AS, permissions); versioning; can reduce SQL injection risk when used correctly.
+
+## 46) Given a SQL query (general guidance)
+- Approach: Understand intent; check execution plan; ensure indexes match predicates; look for scans vs seeks; remove scalar UDFs from WHERE; ensure SARGable conditions; consider temp tables vs CTE when reused.
+
+## 47) What is DI and how to achieve it in .NET Core
+- See items 1 and 21. Register abstractions and inject via constructors; configure lifetimes appropriately.
+
+## 48) React: What is prop drilling?
+- Passing props through many levels where intermediary components don’t need them. Avoid with Context API, state libraries (Redux/Zustand/MobX), composition, or colocating state.
+
+## 49) React: Asking for auth token and storing for entire app
+- Obtain token by calling auth server (OAuth2/OIDC) from login page (PKCE for SPAs). Prefer using an SDK (e.g., MSAL for Azure AD).
+- Storage: Best is HttpOnly Secure SameSite cookies (backend sets after login). If must store in client, prefer in-memory store + refresh token in HttpOnly cookie; avoid localStorage/sessionStorage when possible due to XSS.
+- Use an Axios/fetch interceptor to attach token to requests and handle 401 refresh.
+
+## 50) Design principles: Singleton, Repository, etc.
+- See items 20 and 23. Favor composition, SOLID adherence, clear boundaries, and avoid over-abstracting EF with generic repositories unless needed.
+
+## 51) SOLID/design refactor of DiscountService (review)
+- Original code violated OCP and mixed logic. Strategy pattern fix is good.
+- Note: In the provided answer `RegularCustomer` returns `amount*0.5` (50%) but original implied 5%—should be `0.05`.
+- Enhancements: Use a factory keyed by customer type; register strategies in DI; consider data-driven configuration for discount rates.
+
+## 52) Azure resources used in the application (repeat)
+- See item 17. Typical: App Service, Azure SQL, Key Vault, Storage, Redis, App Insights, Service Bus, API Management.
+
+## 53) IQueryable vs IEnumerable; which is faster
+- `IEnumerable<T>`: In-memory enumeration. LINQ to Objects. Operations execute immediately in memory.
+- `IQueryable<T>`: Builds expression trees for providers (EF Core) to translate to SQL; deferred execution on the server.
+- Performance: Prefer IQueryable for database queries to push work server-side; calling `AsEnumerable`/`ToList` materializes data—do it late. Mixing client-eval can hurt performance.
+
+## 54) Migration to .NET 9: considerations
+- Update TargetFramework to `net9.0`; upgrade SDK, NuGet packages; adopt latest ASP.NET Core hosting model/minimal APIs where suitable.
+- Review breaking changes (runtime/BCL/ASP.NET/EF Core); update analyzers; nullable reference types; trimming/AOT readiness.
+- Security: Update auth libraries (`Microsoft.Identity.*`), TLS defaults, SameSite cookie behavior.
+- Observability: Use OpenTelemetry where appropriate; update logging.
+- Performance: Leverage new runtime/ASP.NET features; verify GC settings for containers; test and benchmark.
+
+## 55) Request and response filters in ASP.NET Core
+- MVC filters: `IActionFilter`/`IAsyncActionFilter` (around actions), `IResultFilter` (around results), `IExceptionFilter`, `IAuthorizationFilter`. Use attributes or DI-registered filters for cross-cutting concerns (logging, validation, transformation).
+- Minimal APIs: Endpoint filters (`IEndpointFilter`) in .NET 7+ process requests/responses around handlers.
+
+## 56) Azure resources to deploy .NET apps
+- Resource Group; App Service Plan + App Service; Azure SQL/Cosmos; Storage Account; Key Vault; Redis Cache; Application Insights; Log Analytics Workspace; Virtual Network + Private Endpoints; App Gateway/Front Door; API Management; Container Registry (if containers); Service Bus (if integration). Use Managed Identity for secrets.
+
+## 57) Duplicates and cross-references
+- Some questions repeat; refer to items above for canonical explanations to avoid inconsistency.
+
+End of document.

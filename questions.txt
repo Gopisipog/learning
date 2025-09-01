@@ -1,0 +1,115 @@
+Dependency injection on both .Net CORE & Angular.
+Request pipeline & Middlewares in .Net CORE.
+Authentication and Authorization. --> Theory & Implementation.
+How do you send data from a parent component to a child component in Angular & Vice versa?
+clustered and non-clustered indexes in SQL, Difference between a CTE (Common Table Expression) and a temporary table in SQL?
+How do you create a table from another table in SQL without any data?
+SOLID principles in Detail.
+Caching in .Net CORE.
+Advantage of Azure SQL over a local DB? Advantage of Azure Application Insights over Server Logs?
+How to secure API.
+ASYC & AWAIT functionality.
+Performance Optimization in API.
+Table variable, Indexes, Optimized procedure performance.
+Life cycle hook, Application Security, DI, pass data between two components.
+Design patterns
+Application migration experience 
+Azure services used
+Explain solid pattern and pseudo code one of the concept of solid pattern 
+Multiple inheritance 
+Singleton pattern use case
+.net core dependency injection 
+.net core azure ad authentication
+Repository pattern
+What are generic
+Which one is faster for loop or for each
+How do you improve the performance of the given employee dashboard (mention cache related details like rediscache)
+What is the difference between azure app service and azure functions 
+Expectional handling in SQL server
+What is cqrs design pattern
+How do you make sure end point you are connecting to doesn't contain malware.
+How to secure API and Performance Optimization in API.
+Authentication and Authorization. --> Theory & Implementation.
+SOLID principles in Detail with example
+Dependency injection on .Net CORE
+Request pipeline & Middleware in .Net CORE with example
+Scenario base questions related to EF LINQ query
+Exception handling in .Net CORE
+Azure services used.
+CET in SQL Server with example
+Scenario base questions related to joins in sql server
+Output on below query
+select count(1) from employee
+select count(*) from employee
+select count(2) from employee
+How to work with larger files in API.
+Pagination in EF Core and SQL side.
+How did you do Authentication and Authorization ?
+What is CTA and Procedures ?
+Given a sql query?
+Asked what is DI and how would you achieve it in dot net core.
+What is prop drilling in React?
+How can you ask for Authentication token in React app and how to store it for entire application?
+Asked about Design Principles? i.e. Singleton , repository etc.
+Given below code to rectify and check on SOLID and Design principles?
+public class DiscountService {		
+    public double GetDiscount(string customerType, double amount)		
+{		
+        if (customerType == "Regular") return amount * 0.05;		
+        if (customerType == "VIP") return amount * 0.10;		
+        return 0;		
+    }		
+}		
+		
+i have given below code as answer: 		
+ 		
+		
+public interface ICustomer		
+{		
+double GetDiscount(double amount);		
+}		
+		
+public class RegularCustomer : ICustomer		
+{		
+public double GetDiscount(double amount)		
+{		
+return amount*0.5;		
+}		
+}		
+		
+public class VIPCustomer : ICustomer		
+{		
+public double GetDiscount(double amount)		
+{		
+return amount*0.1;		
+}		
+}		
+		
+public class DiscountStrategy		
+{		
+private readonly ICustomer _customer;		
+		
+public DiscountStrategy(ICustomer customer) => _customer=customer;		
+		
+public double Discount(double amount)		
+{		
+return _customer.GetDiscount(amount);		
+}		
+		
+}		
+		
+		
+public class DiscountService		
+{		
+public static void Main()		
+{		
+ICustomer customer = new VIPCustomer();		
+var strategy = new DiscountStrategy(customer);		
+double discountedAmount = strategy.Discount(100);		
+}		
+}		
+ What are the azure resources used in my application.
+What is the difference between IQuerable and Ienumerable? Which one is faster.
+What are the list of details we need to consider when we move migrate from older version .net to .net 9
+What are request filters and response filters?
+ What will be the resources you will use when deploying the .net application to azure.

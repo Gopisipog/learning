@@ -1,0 +1,15 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:#0b1220; color:#e6ecff; }
+.app-header { position: sticky; top:0; background: linear-gradient(90deg,#0b1220,#17233d); padding:16px 20px; border-bottom:1px solid #22314f; z-index: 10; }
+.app-header h1 { margin:0 0 4px 0; font-size: 20px; }
+.app-header p { margin:0; opacity:.7; font-size: 13px; }
+.feed { max-width: 900px; margin: 0 auto; padding: 16px; display:flex; flex-direction: column; gap: 14px; }
+.card { background:#0f1a2e; border:1px solid #24375e; border-radius:12px; padding:16px 18px; box-shadow: 0 4px 18px rgba(0,0,0,0.35); }
+.card-title { margin:0 0 8px 0; font-size: 18px; color:#9cc3ff; }
+.card-body { font-size: 14px; line-height: 1.5; white-space: pre-wrap; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #365b9e; border-radius:999px; color:#a7c4ff; margin-right:6px; font-size: 12px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+blockquote { margin: 8px 0; padding-left: 12px; border-left: 3px solid #2d4f8c; opacity: .9; }
+.code { background:#0b1324; border: 1px solid #1d2e52; padding:10px; border-radius:8px; overflow:auto; }
+ul { margin: 8px 0 8px 22px; }
+hr { border: none; border-top: 1px solid #22314f; margin: 14px 0; }
