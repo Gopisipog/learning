@@ -1,0 +1,41 @@
+{
+  "offers": [
+    {
+      "code": "OFR001",
+      "discountPercent": 10,
+      "minDistanceKm": null,
+      "minDistanceInclusive": false,
+      "maxDistanceKm": 200,
+      "maxDistanceInclusive": false,
+      "minWeightKg": 70,
+      "minWeightInclusive": true,
+      "maxWeightKg": 200,
+      "maxWeightInclusive": true
+    },
+    {
+      "code": "OFR002",
+      "discountPercent": 7,
+      "minDistanceKm": 50,
+      "minDistanceInclusive": true,
+      "maxDistanceKm": 150,
+      "maxDistanceInclusive": true,
+      "minWeightKg": 100,
+      "minWeightInclusive": true,
+      "maxWeightKg": 250,
+      "maxWeightInclusive": true
+    },
+    {
+      "code": "OFR003",
+      "discountPercent": 5,
+      "minDistanceKm": 50,
+      "minDistanceInclusive": true,
+      "maxDistanceKm": 250,
+      "maxDistanceInclusive": true,
+      "minWeightKg": 10,
+      "minWeightInclusive": true,
+      "maxWeightKg": 150,
+      "maxWeightInclusive": true
+    }
+  ]
+}
+
