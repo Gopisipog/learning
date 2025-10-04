@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            font-size: 11px;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: white;
+            min-height: 11in;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+        }
+        
+        .left-section {
+            flex: 1;
+            padding-right: 20px;
+        }
+        
+        .name-title {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .right-section {
+            flex: 1;
+            padding-left: 20px;
+        }
+        
+        .professional-bg-title {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .professional-bg-text {
+            font-size: 10px;
+            line-height: 1.3;
+            text-align: justify;
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+        
+        .functional-skills-title {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            color: #7B2CBF;
+        }
+        
+        .skills-list {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+        
+        .skills-list li {
+            margin-bottom: 3px;
+            list-style: none;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .skills-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .left-column {
+            flex: 2;
+        }
+        
+        .right-column {
+            flex: 1;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #7B2CBF;
+            margin: 15px 0 8px 0;
+            text-transform: uppercase;
+        }
+        
+        .experience-item {
+            margin-bottom: 15px;
+        }
+        
+        .company-role {
+            font-weight: bold;
+            font-size: 11px;
+            margin-bottom: 3px;
+        }
+        
+        .role-description {
+            font-style: italic;
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .experience-details {
+            font-size: 10px;
+            line-height: 1.3;
+        }
+        
+        .experience-details ul {
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+        
+        .experience-details li {
+            margin-bottom: 3px;
+        }
+        
+        .tech-category {
+            font-weight: bold;
+            font-size: 10px;
+            margin-top: 8px;
+            margin-bottom: 3px;
+        }
+        
+        .tech-list {
+            font-size: 9px;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        
+        .industry-item {
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .phone-icon, .email-icon {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        
+        @media print {
+            body { 
+                font-size: 10px;
+            }
+            .container {
+                padding: 0.3in;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left-section">
+                <div class="professional-bg-title">PROFESSIONAL BACKGROUND</div>
+                <div class="professional-bg-text">
+                    [Name] is a technology expert specializing in platforms and middleware products in the .NET ecosystem typically possesses deep understanding of various .NET technologies, frameworks, and tools, along with expertise in their integration and development.
+                    <br><br>
+                    He has 12+ years of experience in leading cross-functional teams to deliver innovative and high-quality software solutions. Adept at leveraging the .NET framework and architecture, design, and develop scalable applications that meet business objectives and exceed client expectations.
+                    <br><br>
+                    He has gained experience by building solutions from the ground up using Microsoft .NET, C#, Azure, SQL Server and Azure DevOps.
+                    <br><br>
+                    <div style="margin-top: 10px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 3px;">
+                            <span class="phone-icon">📞</span> [Phone Number]
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <span class="email-icon">📧</span> [Email Address]
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="name-title">
+                <div class="name">[YOUR NAME]</div>
+                <div class="title">Technical Associate Manager (Expert)</div>
+            </div>
+            
+            <div class="right-section">
+                <div class="functional-skills-title">FUNCTIONAL SKILLS</div>
+                <ul class="skills-list">
+                    <li>Technical analysis</li>
+                    <li>Impact analysis</li>
+                    <li>Solution design</li>
+                    <li>DevOps</li>
+                    <li>Scrum</li>
+                    <li>Team Management</li>
+                    <li>Requirement Gathering</li>
+                </ul>
+                
+                <div class="section-title" style="margin-top: 15px;">TECHNICAL EXPERTISE</div>
+                <div class="tech-category">C#</div>
+                <div class="tech-list">.NET Framework</div>
+                
+                <div class="tech-category">ASP.Net, ASP.Net MVC, ASP.NET Core</div>
+                <div class="tech-list">WCF, Web Services</div>
+                
+                <div class="tech-category">Microservices</div>
+                <div class="tech-list">RESTful APIs, SOAP APIs</div>
+                
+                <div class="tech-category">Azure DevOps, Azure CI/CD Logic Apps, Kubernetes</div>
+                <div class="tech-list">jQuery, Query UI</div>
+                
+                <div class="tech-category">SmarQube</div>
+                <div class="tech-list">SQL Server</div>
+                
+                <div class="tech-category">Git</div>
+                <div class="tech-list">Team Foundation Version Control</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <div class="section-title">RELEVANT WORK EXPERIENCE - 12+ YEARS</div>
+                
+                <div class="experience-item">
+                    <div class="company-role">Free Lancing - Developer Support to various clients in USA (1.6 years)</div>
+                    <div class="role-description">Full end to end development of web applications using ASP.NET MVC, Web API, SQL Server, and Azure, ensuring scalable and maintainable solutions.</div>
+                    <div class="experience-details">
+                        Having an experience with Azure functions, Logic apps, and theoretical knowledge on Azure Kubernetes.
+                        <ul>
+                            <li>Collaborated with clients to gather requirements, design technical solutions, and provide regular progress updates.</li>
+                            <li>Implemented CI/CD pipelines, cloud development, and performance optimizations, improving application stability and delivery speed.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="company-role">Accenture - Technical Associate Manager (NET)(6+ year)</div>
+                    <div class="role-description">Middleware Integration: Identify and integrate middleware products such as message brokers, caching systems, authentication services, and workflow engines into .NET applications. Ensure seamless communication and interoperability between different components.</div>
+                    <div class="experience-details">
+                        <ul>
+                            <li><strong>Technical analysis:</strong> Provide insight and guidance on the technical implementation of SDAs in context of change requests to evaluate the impact on existing code.</li>
+                            <li><strong>Solution design:</strong> Design in QC Track next generation.</li>
+                            <li><strong>.NET Framework:</strong> Maintain and update Windows services developed in C#. Supported internal development activities.</li>
+                            <li><strong>Azure DevOps:</strong> Sprint based workflow with Azure Boards. Automate deployment using Azure Pipelines and PowerShell.</li>
+                            <li><strong>Code Quality & Reviews:</strong> Conduct regular code reviews to ensure code quality, adherence to coding standards, and compliance with project requirements. Provide constructive feedback to help team members to improve their coding skills and practices, implement automated testing and continuous integration practices to maintain code stability and reliability.</li>
+                            <li><strong>SQL Server:</strong> Develop T-SQL scripts, create and maintain stored procedures and maintain object definition scripts for SQL Server.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="company-role">Jasil Technologies - Technical Lead at various clients (6.3 years)</div>
+                    <div class="role-description">Full-Stack ASP.NET MVC Development:</div>
+                    <div class="experience-details">
+                        Lead the end-to-end development of scalable, high-performance web applications using ASP.NET MVC, C#, Entity Framework, and SQL Server. Implement best practices in coding, architecture, and testing.
+                        <ul>
+                            <li><strong>Solution Architecture and Design:</strong> Design modular, maintainable solutions aligned with business requirements. Create RESTful services, implement security mechanisms, and ensure performance optimization across tiers.</li>
+                            <li><strong>Team Leadership and Delivery Management:</strong> Manage a cross-functional development team, assign tasks, conduct code reviews, and mentor team members. Drive agile development processes, facilitate sprint planning, and ensure timely delivery of milestones.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="section-title">INDUSTRY EXPERTISE</div>
+                <div class="industry-item"><strong>Energy sector</strong><br>Utilities sector</div>
+                
+                <div class="section-title">CERTIFICATIONS</div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Available upon request</li>
+                    </ul>
+                </div>
+                
+                <div class="section-title">KEY PROJECTS</div>
+                <div class="experience-details">
+                    <div style="margin-bottom: 8px;">
+                        <strong>Enterprise Web Application</strong><br>
+                        <em>ASP.NET MVC, C#, SQL Server, Azure</em><br>
+                        Role: Technical Lead<br>
+                        Impact: Improved system performance
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                        <strong>Middleware Integration Platform</strong><br>
+                        <em>.NET Framework, Azure DevOps, Microservices</em><br>
+                        Role: Technical Associate Manager<br>
+                        Impact: Enhanced system interoperability
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                        <strong>Cloud Migration Project</strong><br>
+                        <em>Azure, Logic Apps, Kubernetes</em><br>
+                        Role: Solution Architect<br>
+                        Impact: Reduced infrastructure costs
+                    </div>
+                </div>
+                
+                <div class="section-title">EDUCATION & LEARNING</div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Bachelor's in Computer Science</li>
+                        <li>Microsoft .NET Certification</li>
+                        <li>Azure Cloud Architecture</li>
+                        <li>Agile Project Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
