@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopinath Muthukrishnan - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            font-size: 11px;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: white;
+            min-height: 11in;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+        }
+        
+        .left-section {
+            flex: 1;
+            padding-right: 20px;
+        }
+        
+        .name-title {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .right-section {
+            flex: 1;
+            padding-left: 20px;
+        }
+        
+        .professional-bg-title {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .professional-bg-text {
+            font-size: 10px;
+            line-height: 1.3;
+            text-align: justify;
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+        
+        .functional-skills-title {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            color: #7B2CBF;
+        }
+        
+        .skills-list {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+        
+        .skills-list li {
+            margin-bottom: 3px;
+            list-style: none;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .skills-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .left-column {
+            flex: 2;
+        }
+        
+        .right-column {
+            flex: 1;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #7B2CBF;
+            margin: 15px 0 8px 0;
+            text-transform: uppercase;
+        }
+        
+        .experience-item {
+            margin-bottom: 15px;
+        }
+        
+        .company-role {
+            font-weight: bold;
+            font-size: 11px;
+            margin-bottom: 3px;
+        }
+        
+        .role-description {
+            font-style: italic;
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .experience-details {
+            font-size: 10px;
+            line-height: 1.3;
+        }
+        
+        .experience-details ul {
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+        
+        .experience-details li {
+            margin-bottom: 3px;
+        }
+        
+        .tech-category {
+            font-weight: bold;
+            font-size: 10px;
+            margin-top: 8px;
+            margin-bottom: 3px;
+        }
+        
+        .tech-list {
+            font-size: 9px;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        
+        .industry-item {
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .phone-icon, .email-icon {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        
+        @media print {
+            body { 
+                font-size: 10px;
+            }
+            .container {
+                padding: 0.3in;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="left-section">
+                <div class="professional-bg-title">PROFESSIONAL BACKGROUND</div>
+                <div class="professional-bg-text">
+                    Gopinath is a Senior Full Stack Developer with 15+ years of experience architecting scalable microservices solutions using .NET Core, React.js, and Node.js. He possesses proven track record of reducing development time by 40% through reusable component libraries and improving system performance by 60% via microservices architecture.
+                    <br><br>
+                    Expert in cloud-native patterns (AWS/Azure), CQRS implementation, and modern JavaScript frameworks. He has successfully led cross-functional teams across multiple time zones, delivering enterprise applications serving 500K+ users with 99.9% uptime SLA.
+                    <br><br>
+                    He has gained extensive experience by building solutions from the ground up using modern frameworks including .NET Core, React, Angular, TypeScript, microservices architecture, and cloud technologies. Proven expertise in healthcare domain with HIPAA-compliant applications and medical device integrations.
+                    <br><br>
+                    <div style="margin-top: 10px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 3px;">
+                            <span class="phone-icon">📞</span> +91 91504 42199
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <span class="email-icon">📧</span> gopicool.m@gmail.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="name-title">
+                <div class="name">GOPINATH MUTHUKRISHNAN</div>
+                <div class="title">Senior Full Stack Developer & Technical Architect</div>
+            </div>
+            
+            <div class="right-section">
+                <div class="functional-skills-title">FUNCTIONAL SKILLS</div>
+                <ul class="skills-list">
+                    <li>Microservices Architecture</li>
+                    <li>Technical Leadership</li>
+                    <li>Solution Architecture</li>
+                    <li>Performance Optimization</li>
+                    <li>Agile/Scrum</li>
+                    <li>Team Management</li>
+                    <li>Requirements Analysis</li>
+                    <li>Code Reviews</li>
+                </ul>
+                
+                <div class="section-title" style="margin-top: 15px;">TECHNICAL EXPERTISE</div>
+                <div class="tech-category">Backend & Architecture</div>
+                <div class="tech-list">.NET Core/Framework (8+ years), C#, ASP.NET Web API, Entity Framework, Microservices, CQRS, DDD</div>
+                
+                <div class="tech-category">Frontend & Mobile</div>
+                <div class="tech-list">React.js (5+ years), Angular, TypeScript, JavaScript ES6+, Redux/Context API, Material-UI, PWAs</div>
+                
+                <div class="tech-category">Cloud & DevOps</div>
+                <div class="tech-list">AWS, Azure, Docker, Kubernetes, CI/CD, GitHub Actions, Azure DevOps, Jenkins</div>
+                
+                <div class="tech-category">Data & Testing</div>
+                <div class="tech-list">SQL Server, PostgreSQL, MongoDB, Redis, xUnit/NUnit, Jest, Cypress, Robot Framework</div>
+                
+                <div class="tech-category">Practices & Tools</div>
+                <div class="tech-list">Git, Agile/Scrum, TDD/BDD, Design Patterns, Swagger/OpenAPI, Postman</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <div class="section-title">RELEVANT WORK EXPERIENCE - 15+ YEARS</div>
+                
+                <div class="experience-item">
+                    <div class="company-role">Mphasis - Software Engineer II / Project Lead (Present)</div>
+                    <div class="role-description">Hyderabad, India • 03/2025 – Present</div>
+                    <div class="experience-details">
+                        Collaborate with cross-functional teams to gather requirements and improve software functionality and UX. Design and implement new features and services with rapid issue remediation.
+                        <ul>
+                            <li><strong>Technical Leadership:</strong> Define project scope with product management; deliver technical documentation to drive maintainability.</li>
+                            <li><strong>Problem Solving:</strong> Lead complex challenge resolution; establish testing/validation procedures for consistent quality.</li>
+                            <li><strong>Automation & Consulting:</strong> Build automation aligned to initial briefs; consult with clients to refine requirements and deliver tailored solutions.</li>
+                            <li><strong>Mentoring:</strong> Mentor/onboard engineers; facilitate knowledge sharing to uplift team capability and velocity.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="company-role">Global Client Technology / Nations Benefits - Senior Front-End Developer (2 years)</div>
+                    <div class="role-description">Remote (TX, USA) • 03/2023 – 01/2025</div>
+                    <div class="experience-details">
+                        Designed component library serving 12+ microservices, reducing development time by 40%. Built responsive React applications with TypeScript, serving 100K+ daily active users.
+                        <ul>
+                            <li><strong>Component Architecture:</strong> Designed and implemented reusable UI components and shared modules within a design system to accelerate delivery.</li>
+                            <li><strong>Code Quality:</strong> Drove code reviews and standards adherence to maintain quality across multiple streams.</li>
+                            <li><strong>API Optimization:</strong> Optimized API performance through caching strategies and database indexing, improving response times by 50%.</li>
+                            <li><strong>Cross-functional Collaboration:</strong> Collaborated with US-based teams across multiple time zones, ensuring seamless project delivery.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="company-role">Equadriga Software / Breas Medical - Senior Full-Stack Developer / Tech Lead (8 months)</div>
+                    <div class="role-description">Remote (MA, USA) • 04/2022 – 12/2022</div>
+                    <div class="experience-details">
+                        Architected microservices platform using .NET Core and React for medical device management. Implemented cloud-native solutions on AWS, achieving 99.9% uptime SLA.
+                        <ul>
+                            <li><strong>Healthcare Domain:</strong> Developed HIPAA-compliant applications with real-time patient monitoring dashboards and medical device API integrations.</li>
+                            <li><strong>API Design:</strong> Led API design and documentation following OpenAPI specifications for interoperability across services.</li>
+                            <li><strong>Testing Strategy:</strong> Established automated testing pipeline using Python and Robot Framework, replacing Java/Selenium.</li>
+                            <li><strong>Cloud Infrastructure:</strong> Deployed to AWS/Azure following cost-efficient, scalable infrastructure patterns.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="company-role">Tata Consultancy Services Ltd. - Technical Architect / Senior Developer (12 years)</div>
+                    <div class="role-description">Bangalore, India • 01/2010 – 12/2021</div>
+                    <div class="experience-details">
+                        Career progression from Trainee to Technical Architect. Managed teams of 15+ developers across multiple projects, delivering 20+ successful enterprise applications.
+                        <ul>
+                            <li><strong>API Gateway Implementation:</strong> Implemented API Gateway for routing/filtering to microservices, improving request handling and performance.</li>
+                            <li><strong>Component Architecture:</strong> Built reusable UI components (React/Angular); standardized FE architecture and accelerated feature delivery.</li>
+                            <li><strong>Security & Architecture:</strong> Planned/engineered RESTful web services; improved security via assessments and secure coding practices.</li>
+                            <li><strong>Agile Leadership:</strong> Championed Agile adoption; managed Git-based workflows; drove architecture decisions for scalability and maintainability.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="section-title">SELECTED IMPACT</div>
+                <div class="experience-details">
+                    <ul>
+                        <li><strong>System Flexibility:</strong> Improved system flexibility and scalability by implementing microservices in multiple engagements (.NET Core + React)</li>
+                        <li><strong>Development Efficiency:</strong> Reduced development time by 40% creating reusable component libraries and shared code packages</li>
+                        <li><strong>Quality & Reliability:</strong> Increased reliability via rigorous unit/integration testing and automation (Robot Framework, Python)</li>
+                        <li><strong>User Experience:</strong> Enhanced UX through performance optimization (bundling, caching, lazy-loading) and UX collaboration</li>
+                        <li><strong>Zero Critical Issues:</strong> Maintained zero critical production issues in last 3 years</li>
+                    </ul>
+                </div>
+                
+                <div class="section-title">INDUSTRY EXPERTISE</div>
+                <div class="industry-item"><strong>Healthcare Technology</strong><br>HIPAA-compliant applications, medical device integrations, patient monitoring systems</div>
+                <div class="industry-item"><strong>Enterprise Software</strong><br>Large-scale web applications, microservices platforms, business process automation</div>
+                <div class="industry-item"><strong>Financial Technology</strong><br>Benefits management systems, payment processing, compliance solutions</div>
+                
+                <div class="section-title">EDUCATION & CERTIFICATIONS</div>
+                <div class="experience-details">
+                    <ul>
+                        <li><strong>Master of Science</strong> - Software Engineering, Anna University, Tamil Nadu, India</li>
+                        <li>AWS Certified Solutions Architect - <em>In Progress</em></li>
+                        <li>Azure Developer Associate (AZ-204) - <em>In Progress</em></li>
+                        <li>Technical Architect Course (React/Angular/.NET) - <em>Current</em></li>
+                    </ul>
+                </div>
+                
+                <div class="section-title">KEY PROJECTS</div>
+                <div class="experience-details">
+                    <div style="margin-bottom: 8px;">
+                        <strong>Enterprise Microservices Platform</strong><br>
+                        <em>.NET Core, React, AWS, Docker, Kubernetes</em><br>
+                        Role: Technical Architect<br>
+                        Impact: Serving 500K+ users, 99.9% uptime
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                        <strong>Healthcare Device Management System</strong><br>
+                        <em>React, .NET Core, AWS, HIPAA-compliant</em><br>
+                        Role: Full-stack Lead<br>
+                        Impact: Real-time patient monitoring
+                    </div>
+                    <div style="margin-bottom: 8px;">
+                        <strong>Benefits Management Platform</strong><br>
+                        <em>React, TypeScript, .NET Core, SQL Server</em><br>
+                        Role: Senior Developer<br>
+                        Impact: 100K+ daily active users
+                    </div>
+                </div>
+                
+                <div class="section-title">AWARDS & RECOGNITION</div>
+                <div class="experience-details">
+                    <ul>
+                        <li><strong>Top Performer Award</strong> - Mphasis (2025)</li>
+                        <li><strong>Client Excellence Award</strong> - Nations Benefits (2024)</li>
+                        <li><strong>Innovation Award</strong> - TCS (2019, 2021)</li>
+                        <li><strong>15+ years</strong> of consistent delivery excellence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
