@@ -1,0 +1,3 @@
+[csharp]
+testingFramework = "MSTest"
+mockingFramework = "Microsoft Fakes"

@@ -1,0 +1,3304 @@
+PREFACE
+ABOUT THE BOOK
+This book contains 200 very important React interview questions.
+
+ABOUT THE AUTHOR
+Happy Rawat has around 15 years of experience in software development.
+He helps candidates in clearing technical interview in tech companies.
+
+Chapters
+Fundamentals
+1. React-Basics - I
+2. React-Basics - II
+Hooks
+7. useState/ useEffect
+8. useContext/ useReducer
+13. Controlled Components
+9. useCallback/ useMemo/…
+4. JSX
+10. Short Answer
+6. Routing
+Redux
+16. Action/ Store/ Reducer
+17. Core Principles/ Pros-Cons
+18. Short Answer
+19. Thunk/ Middleware/ Flux
+11. LifeCycle Methods - I
+12. LifeCycle Methods - II
+3. Project Files & Folders
+5. Components (Functional/Class)
+Advance
+Bonus
+20. JS Essentials for React
+21. Typescript
+14. Code Splitting
+15. React - Others
+1: React-Basics - I
+Q1. What is React? What is the Role of React in software development?
+Q2. What are the Key Features of React?
+
+Q3. What is DOM? What is the difference between HTML and DOM?
+Q4. What is Virtual DOM? Difference between DOM and Virtual DOM?
+Q5. What are React Components? What are the main elements of it?
+Q6. What is SPA(Single Page Application)?
+
+Q7. What are the 5 Advantages of React?
+Q8. What are the Disadvantages of React?
+Q9. What is the role of JSX in React? (3 points)
+Q10. What is the difference between Declarative & Imperative syntax?
+
+Back to main index
+Q. What is React? What is the Role of React in software development?
+UI/ Client/ Frontendend
+API Server/ Middleware
+Database Server
+Request
+Response
+CSS, HTML & Javascript
+(languages)
+C# / Java / PHP
+(languages)
+SQL
+(languages)
+React (library)/ Angular
+(framework)
+.NET(C#) / Spring(Java)
+/ Laravel(PHP)
+(framework)
+SOL Server / Oracle
+(RDBMS)
+back to chapter index
+Q. What is React? What is the Role of React in software development?
+❖ 3 Main Point about React:
+1. React is an open source Javascript Library.
+2. React is used for building user interfaces(UI).
+3. React simplifies the creation of SPA by using reusable components.
+
+back to chapter index
+Q. What are the Key Features of React?
+
+1. Virtual DOM
+2. Component
+Based
+Architecture
+7. React Hooks
+6. Community &
+Ecosystem
+5. Declarative
+Syntax
+7 Key
+Features of
+React
+3. Reusability &
+Composition
+4. JSX
+(JavaScript XML)
+back to chapter index
+Q. What are the Key Features of React?
+
+1. Virtual DOM:
+2. Component-Based
+Architecture:
+3. Reusability &
+Composition:
+React utilizes a virtual representation of the DOM, allowing efficient updates by minimizing
+direct manipulation of the actual DOM, resulting in improved performance.
+React structures user interfaces as modular, reusable components, promoting a more
+maintainable and scalable approach to building applications.
+React enables the creation of reusable components that can be composed together, fostering a
+modular and efficient development process.
+
+4. JSX (JavaScript XML):
+JSX is a syntax extension for JavaScript used in React, allowing developers to write HTML-like
+code within JavaScript, enhancing readability and maintainability.
+
+5. Declarative Syntax:
+React have a declarative programming style(JSX), where developers focus on "what" the UI
+should look like and React handles the "how" behind the scenes. This simplify the code.
+
+6. Community & Ecosystem:
+React benefits from a vibrant and extensive community, contributing to a rich ecosystem of
+libraries, tools, and resources, fostering collaborative development and innovation.
+
+7. React Hooks:
+Hooks are functions that enable functional components to manage state and lifecycle features,
+providing a more concise and expressive way to handle component logic.
+back to chapter index
+Q. What is DOM? What is the difference between HTML and DOM?
+❖ DOM(Document Object Model) represents the web page
+as a tree-like structure which allows JavaScript to
+dynamically access and manipulate the content and
+structure of a web page.
+
+DOM Tree(Real)
+Static HTML
+back to chapter index
+Q. What is Virtual DOM? Difference between DOM and Virtual DOM?
+❖ React uses a virtual DOM to efficiently update the UI without rerender the entire page, which helps improve performance and
+make the application more responsive.
+
+Reconciliation
+(React Libraries)
+Virtual DOM
+DOM Tree(Real)
+back to chapter index
+Q. What is Virtual DOM? Difference between DOM and Virtual DOM?
+
+DOM
+Virtual DOM
+1. DOM is actual representation of the
+webpage.
+
+Virtual DOM is lightweight copy of the
+DOM.
+
+2. Re-renders the entire page when updates
+occur.
+
+Re-renders only the changed parts
+efficiently.
+
+3. Can be slower, especially with frequent
+updates.
+
+Optimized for faster rendering.
+
+4. Suitable for static websites and simple
+applications
+Ideal for dynamic and complex single-page
+applications with frequent updates
+back to chapter index
+Q. What are React Components? What are the main elements of it?
+❖ In React, a component is a reusable
+building block for creating user interfaces.
+
+back to chapter index
+Q. What is SPA(Single Page Application)?
+
+❖ A Single Page Application (SPA) is a web application
+that have only one single web page.
+❖ Whenever user do some action on the website,
+then in response content is dynamically updated
+without refreshing or loading a new page.
+
+back to chapter index
+Q. What are the 5 Advantages of React?
+
+1. Simple to build Single Page Application (by using Components)
+2. React is cross platform and open source(Free to use)
+3. Lightweight and very fast (Virtual DOM)
+4. Large Community and Ecosystem
+5. Testing is easy
+back to chapter index
+Q. What are the Disadvantages of React?
+❖ React is not a good choice for very small applications.
+
+back to chapter index
+Q. What is the role of JSX in React? (3 points)
+1. JSX stands for JavaScript XML.
+2. JSX is used by React to write HTML-like code.
+3. JSX is converted to JavaScript via tools like Babel.
+Because Browsers understand JavaScript not JSX.
+
+Babel
+back to chapter index
+Q. What is the difference between Declarative & Imperative syntax?
+
+1. Virtual DOM
+2. Component Based
+Architecture
+7. React Hooks
+7 Key Features of
+React
+6. Community &
+Ecosystem
+5. Declarative Syntax
+3. Reusability &
+Composition
+4. JSX
+(JavaScript XML)
+back to chapter index
+Q. What is the difference between Declarative & Imperative syntax?
+1. Declarative syntax focuses on describing the desired
+result without specifying the step-by-step process.
+
+1. Imperative syntax involves step by step process to
+achieve a particular goal.
+
+2. JSX in React is used to write declarative syntax.
+
+2. JavaScript has an imperative syntax.
+
+back to chapter index
+2: React-Basics - II
+Q1. What is Arrow Function Expression in JSX?
+Q2. How to Setup React first project?
+
+Q3. What are the Main Files in a React project?
+Q4. How React App Load and display the components in browser?
+Q5. What is the difference between React and Angular?
+Q6. What are other 5 JS frameworks other than React?
+
+Q7. Whether React is a Framework or a Library? What is the difference?
+Q8. How React provides Reusability and Composition?
+Q9. What are State, Stateless, Stateful and State Management terms?
+Q10. What are Props n JSX?
+
+Back to main index
+Q. What is Arrow Function Expression in JSX?
+❖ The arrow function expression syntax
+is a concise way of defining functions.
+
+=
+back to chapter index
+Q. How to Setup React first project?
+
+1. Install Node.js from below link:
+https://nodejs.org/en/download
+2. Install code editor (VS Code):
+https://code.visualstudio.com/download
+3. Create first React Project (Open VS Code -> Terminal -> New Terminal)
+run command: “npx create-react-app my-app”
+4. Open Project
+Click File -> Open Project Folder “my-app”
+5. Run Project
+Open terminal(ctrl + ‘) key -> run “npm start”
+back to chapter index
+Q. What are the Main Files in a React project?
+❖ Main Files in a React project:
+1. index.html: Single page for React application.
+2. Components/component1.js: Your application components.
+3. App.js: Main component or container or Root component.
+
+4. App.test.js(Optional): Used for writing tests for the App.js file.
+5. Index.css(Optional): This is a global CSS file that serves as the
+main stylesheet for the entire application.
+6. index.js: Entry point for JavaScript. Renders the main React
+component (App) into the root DOM element.
+
+back to chapter index
+Q. How React App Load and display the components in browser?
+Request
+index.html
+Single Page
+index.js
+Entry Point(JS)
+Display
+Comp1.js
+Comp1.js
+App.js
+Root Component
+Comp1.js
+back to chapter index
+Q. How React App load and display the components in browser?
+
+index.html
+Single page which loads index.js by React libraries
+index.js
+Replace root element of index.html file by App component
+App.js
+Root component which is the container of all the child components.
+ChildComponent.js
+Custom child components placed over app component.
+back to chapter index
+Q. What is the difference between React and Angular?
+
+React
+Angular
+React and Angular both are used to create single page UI applications using components.
+1. React is a JavaScript library
+Angular is a complete framework.
+
+2. React uses a virtual DOM which makes it faster.
+
+Angular uses a real DOM
+3. React is smaller in size and lightweight and
+therefore faster sometime.
+
+Angular is bigger because it is a complete
+framework.
+
+4. React depends on external libraries for many
+complex features, so developer has to write many
+lines of code for complex functionalities.
+
+Since Angular is a complete framework, therefore
+it provide built-in support for features like routing,
+forms, validation, and HTTP requests.
+
+5. React is simple to learn and more popular than
+Angular.
+
+5. Angular is slightly difficult to learn as it has
+Typescript, OOPS concept and many more thing.
+back to chapter index
+Q. What are other 5 JS frameworks other than React?
+
+Angular
+Ember.js
+Vue.js
+JS
+frameworks
+/ libraries
+Backbone
+.js
+AngularJS
+back to chapter index
+Q. Whether React is a Framework or a Library? What is the difference?
+❖ Library: Developers import the libraries at the
+top and then used its functions in components.
+
+❖ Framework: Developers need to follow a specific
+structure or pattern defined by the framework.
+
+❖ React is commonly referred to as a JavaScript
+library.
+
+❖ Angular is a framework.
+
+back to chapter index
+Q. How React provides Reusability and Composition?
+❖ React provides reusability and composition
+through its component-based architecture.
+❖ Reusability: Once you create a component, you
+can re-use it in different parts of your application
+or even in multiple projects.
+❖ Composition: Composition is creating new and
+big components by combining existing small
+components. Its advantage is, change to one
+small component will not impact other
+components.
+
+10
+10
+back to chapter index
+Q. What are State, Stateless, Stateful and State Management terms?
+❖ "state" refers to the current data of the component.
+❖ Stateful or state management means, when a user
+performs some actions on the UI, then the React
+application should be able to update and re-render that
+data or state on the UI.
+
+back to chapter index
+Q. What are Props n JSX?
+
+❖ props (properties) are a way to pass
+data from a parent component to a
+child component.
+
+back to chapter index
+3: React Project - Files & Folders
+Q1. What is NPM? What is the role of node_modules folder?
+Q2. What is the role of public folder in React?
+
+Q3. What is the role of src folder in React?
+Q4. What is the role of index.html page in React?
+Q5. What is the role of index.js file and ReactDOM in React?
+Q6. What is the role of App.js file in React?
+
+Q7. What is the role of function and return inside App.js?
+Q8. Can we have a function without a return inside App.js?
+Q9. What is the role of export default inside App.js?
+Q10. Does the file name and the component name must be same in React?
+
+Back to main index
+Q. What is NPM? What is the role of node_modules folder?
+❖ NPM(Node Package Manager) is used to manage the
+dependencies for your React project, including the
+React library itself.
+
+❖ node_modules folder contains all the
+dependencies of the project, including the
+React libraries.
+
+back to chapter index
+Q. What is the role of public folder in React?
+❖ Public folder contains static assets that are
+served directly to the user's browser, such as
+images, fonts, and the index.html file.
+
+back to chapter index
+Q. What is the role of src folder in React?
+
+❖ src folder is used to store all the source code
+of the application which is then responsible for
+the dynamic changes in your web application.
+
+back to chapter index
+Q. What is the role of index.html page in React?
+❖ index.html file is the main HTML file(SPA) in
+React applcication.
+❖ Here the div with “id=root” will be replaced
+by the component inside index.js file.
+
+back to chapter index
+Q. What is the role of index.js file and ReactDOM in React?
+❖ ReactDOM is a JavaScript library that renders
+components to the DOM or browser.
+❖ The index.js file is the JavaScript file that replaces
+the root element of the index.html file with the
+newly rendered components.
+
+back to chapter index
+Q. What is the role of App.js file in React?
+
+Root Component (App.js)
+Component 1
+Component 2
+Component 3
+Component 4
+back to chapter index
+Q. What is the role of App.js file in React?
+❖ App.js file contain the root component(App) of React
+application.
+❖ App component is like a container for other components.
+❖ App.js defines the structure, layout, and routing in the
+application.
+
+back to chapter index
+Q. What is the role of function and return inside App.js?
+
+❖ The function keyword is used to define a
+JavaScript function that represents your
+React component.
+
+❖ function is like a placeholder which contains
+all the code or logic of component.
+❖ The function takes in props as its argument (if
+needed) and returns JSX
+❖ return is used to return the element from the
+function.
+
+back to chapter index
+Q. Can we have a function without a return inside App.js?
+❖ Yes, a function without a return statement is possible.
+❖ In that case, your component will not render anything
+in UI.
+❖ The common use case is for logging purpose.
+
+back to chapter index
+Q. What is the role of export default inside App.js?
+❖ Export statement is used to make a component available
+for import using “import” statement in other files.
+
+back to chapter index
+Q. Does the file name and the component name must be same in React?
+❖ No, the file name and the component name don't
+have to be the same.
+❖ However, it is recommended to keep them same
+for easier to organize and understand your code.
+
+back to chapter index
+4: JSX
+Q1. What is the role of JSX in React? (3 points)
+Q2. What are the 5 Advantages of JSX?
+
+Q3. What is Babel?
+Q4. What is the role of Fragment in JSX?
+Q5. What is Spread Operator in JSX?
+Q6. What are the types of Conditional Rendering in JSX?
+
+Q7. How do you iterate over a list in JSX? What is map() method?
+Q8. Can a browser read a JSX File?
+Q9. What is Transpiler? What is the difference between Compiler & Transpiler?
+Q10. Is it possible to use JSX without React?
+
+Back to main index
+Q. What is the role of JSX in React? (3 points)
+1. JSX stands for JavaScript XML.
+2. JSX is used by React to write HTML-like code.
+3. JSX is converted to JavaScript via tools like Babel.
+Because Browsers understand JavaScript not JSX.
+
+Babel
+back to chapter index
+Q. What are the 5 Advantages of JSX?
+Advantage of JSX
+1. Improve code readability and writability
+2. Error checking in advance(Type safety)
+3. Support JavaScript expressions
+4. Improved performance
+5. Code reusability
+back to chapter index
+Q. What is Babel?
+
+❖ Babel in React is used to transpile JSX syntax
+into regular JavaScript which browser can
+understand.
+
+back to chapter index
+Q. What is the role of Fragment in JSX?
+❖ In React, a fragment is a way to group
+multiple children's elements.
+
+Separate elements(Error)
+Fragment (<>, <Fragment>)
+❖ Using a Fragment prevents the addition
+of unnecessary nodes to the DOM.
+
+back to chapter index
+Q. What is Spread Operator in JSX?
+
+❖ The spread operator (...) is used to
+expand or spread an array or object.
+
+back to chapter index
+Q. What are the types of Conditional Rendering in JSX?
+Conditional Rendering
+1. If/else statements
+2. Ternary operator
+3. && operator
+4. Switch statement
+back to chapter index
+Q. How do you iterate over a list in JSX? What is map() method?
+
+❖ map() method allows you to iterate
+over an array and modify its elements
+using a callback function.
+
+back to chapter index
+Q. Can a browser read a JSX File?
+❖ No, browsers cannot directly interpret or understand
+JSX files.
+❖ Babel takes JSX and converts it into equivalent
+JavaScript code that browsers can understand.
+
+back to chapter index
+Q. What is Transpiler? What is the difference between Compiler & Transpiler?
+
+❖ A Transpiler is a tool that converts source
+code from one high-level programming
+language(JSX) to another high-level
+programming language(JavaScript).
+Example: Babel
+❖ A compiler is a tool that converts high-level
+programming language(Java) into a lowerlevel language(machine code or bytecode).
+
+back to chapter index
+Q. Is it possible to use JSX without React?
+
+❖ Yes, it's possible to use JSX without React by creating your
+own transpiler like Babel.
+❖ However, this is not recommended since JSX is tightly
+integrated with React and relies on many React-specific
+features.
+
+back to chapter index
+5: Components - Functional/ Class
+Q1. What are React Components? What are the main elements of it?
+Q2. What are the Types of React components? What are Functional Components?
+
+Q3. How do you pass data between functional components in React?
+Q4. What is Prop Drilling in React?
+Q5. Why to Avoid Prop Drilling? In how many ways can avoid Prop Drilling?
+Q6. What are Class Components In React?
+Q7. How to pass data between class components in React?
+Q8. What is the role of this keyword in class components?
+Q9. What are the 5 differences btw Functional components & Class components?
+
+Back to main index
+Q. What are React Components? What are the main elements of it?
+❖ In React, a component is a reusable
+building block for creating user interfaces.
+
+back to chapter index
+Q. What are the Types of React components? What are Functional Components?
+❖ Functional components are declared as a
+JavaScript function.
+❖ They are stateless component, but with the help
+of hooks, they can now manage state also.
+
+1. Functional
+Components
+Types of
+Components
+2. Class
+Components
+back to chapter index
+Q. How do you pass data between functional components in React?
+
+❖ props (properties) are a way to pass
+data from a parent component to a
+child component.
+
+back to chapter index
+Q. What is Prop Drilling in React?
+❖ Prop drilling is the process of passing down props
+through multiple layers of components.
+
+Parent
+• Data
+Component
+Child
+• Data
+Component
+Gran Child
+• Data
+Component
+back to chapter index
+Q. Why to Avoid Prop Drilling? In how many ways can avoid Prop Drilling?
+
+Root App
+Root App
+Data
+Data
+Data
+Parent 1
+Parent 1
+Parent 2
+Data
+Child 1
+Using Prop Drilling
+Parent 2
+Data
+Child 2
+Child 1
+Child 2
+Avoiding Prop Drilling
+back to chapter index
+Q. Why to Avoid Prop Drilling? In how many ways can avoid Prop Drilling?
+❖ Why to avoid Prop Drilling:
+1. Maintenance: Prop drilling can make code
+harder to maintain as changes in data
+flow require updates across multiple
+components.
+
+5 Ways to avoid Prop Drilling
+1. Using Context API
+2. Complexity: It increases code complexity
+and reduces code readability.
+
+2. Using Redux
+3. Debugging: Debugging becomes
+challenging when props need to be traced
+through numerous components.
+
+3. Using Component Composition
+4. Using Callback Functions
+5. Using Custom Hooks
+back to chapter index
+Q. What are Class Components In React?
+❖ Class components are defined using JavaScript classes.
+❖ They are stateful components by using the lifecycle
+methods.
+❖ The render method in a class component is responsible
+for returning JSX.
+
+1. Functional
+Components
+Types of
+Components
+2. Class
+Components
+back to chapter index
+Q. How to pass data between class components in React?
+❖ this.props can be used in child component to access
+properties/ data passed from parent component.
+
+back to chapter index
+Q. What is the role of this keyword in class components?
+❖ this keyword is used to refer to the instance of the class.
+
+back to chapter index
+Q. What are the 5 differences btw Functional components & Class components?
+
+Functional Component
+Class Component
+1. Syntax: Defined as a JS function.
+
+Defined as a JS(ES6) class.
+
+2. State: Originally stateless but can now
+maintain state using hooks.
+
+Can manage local state with this.state.
+
+3. Lifecycle methods: No
+Yes
+4. Readability: more readable & concise.
+
+Verbose(complex).
+
+5. this keyword: No
+Yes (Access props using this.props)
+6. Do not have render method.
+
+Have render method.
+back to chapter index
+6: Routing
+Q1. What is Routing and Router in React?
+Q2. How to Implement Routing in React?
+
+Q3. What are the roles of <Routes> & <Route> component in React Routing?
+Q4. What are Route Parameters in React Routing?
+Q5. What is the role of Switch Component in React Routing?
+Q6. What is the role of exact prop in React Routing?
+
+Back to main index
+Q. What is Routing and Router in React?
+
+Routing
+Routing allows you to create a singlepage web application with navigation,
+without the need for a full-page refresh.
+
+React Router
+React Router is a library for handling
+routing and enables navigation and
+rendering of different components based
+on the URL.
+
+back to chapter index
+Q. How to Implement Routing in React?
+❖ Command to install router:
+back to chapter index
+Q. How to Implement Routing in React?
+
+Step 1
+Step 2
+Step 3
+• Install React Router
+• Create Navigation
+• Create Routes
+back to chapter index
+Q. What are the roles of <Routes> & <Route> component in React Routing?
+❖ The <Routes> component is used as the root
+container for declaring your collection of
+routes.
+❖ The <Route> component is used to define a
+route and specify the component that
+should render when the route matches.
+❖ For example, in this code if user enter
+“websitename.com/about” in url, then
+matching “About” component will be
+rendered.
+
+back to chapter index
+Q. What are Route Parameters in React Routing?
+
+❖ Route parameters in React Router are a
+way to pass dynamic values(data) to the
+component as part of the URL path.
+
+back to chapter index
+Q. What is the role of Switch Component in React Routing?
+❖ Switch component ensures that only the
+first matching <Route> is rendered and rest
+are ignored.
+❖ For example, Switch is commonly used
+to handle 404 or "not found" routes.
+
+back to chapter index
+Q. What is the role of exact prop in React Routing?
+❖ exact prop is used with the
+<Route> component to match
+exactly to the provided path.
+
+back to chapter index
+7: Hooks -useState/ useEffect
+Q1. What are React Hooks? What are the Top React Hooks?
+Q2. What are State, Stateless, Stateful and State Management terms?
+
+Q3. What is the role of useState() hook and how it works?
+Q4. What is the role of useEffect(). How it works and what is its use?
+Q5. What is Dependency Array in useEffect() hook?
+Q6. What is the meaning of the empty array [] in the useEffect()?
+
+Back to main index
+Q. What are React Hooks? What are the Top React Hooks?
+1. React Hooks are inbuilt functions provided by
+React that allow functional components to use
+state and lifecycle features.
+2. Before Hooks, class components lifecycle
+methods were used to maintain state in React
+applications.
+3. To use React Hook first we first have to import it
+from React library:
+1. useState:
+State
+2. useEffect:
+Side effects
+3. useContext:
+Context
+4. useReducer:
+Complex state
+5. useCallback:
+Memoization
+6. useMemo:
+Performance
+7. useRef:
+Refs
+8. useLayoutEffect:
+Synchronous Side effects.
+back to chapter index
+Q. What are State, Stateless, Stateful and State Management terms?
+❖ "state" refers to the current data of the component.
+❖ Stateful or state management means, when a user
+performs some actions on the UI, then the React
+application should be able to update and re-render that
+data or state on the UI.
+
+back to chapter index
+Q. What is the role of useState() hook and how it works?
+
+back to chapter index
+Q. What is the role of useState() hook and how it works?
+❖ The useState hook enables functional components to manage state.
+❖ useState() working: usestate() function accept the initial state value as the parameter and
+returns an array with two elements:
+1. The first element is the current state value (count in this code).
+2. Second element is the function that is used to update the state (setCount in this code).
+❖ The concept of assign array elements to individual variables is called array destructuring.
+
+back to chapter index
+Q. What is the role of useEffect(). How it works and what is its use?
+❖ The useEffect Hook in React is used to
+perform side effects in functional
+components.
+
+2. Rendered after side effects
+by useEffect(eg: Loading data
+from external API)
+Rendered initially
+❖ For example, data fetching from API,
+subscriptions or any other operation
+that needs to be performed after the
+component has been rendered.
+
+back to chapter index
+Q. What is the role of useEffect(). How it works and what is its use?
+❖ 2 points to remember about useEffect():
+1. useEffect() is called after the component
+renders. Example, side effects.
+2. useEffect() function will accept two
+parameter: (Effect function,
+dependency array).
+
+Browser Output
+back to chapter index
+Q. What is Dependency Array in useEffect() hook?
+❖ Dependencies arrays(optional) act as triggers for
+useEffect to rerun; meaning if any of dependencies
+values change, the code inside useEffect() will be
+executed again.
+
+back to chapter index
+Q. What is Dependency Array in useEffect() hook?
+
+back to chapter index
+Q. What is the meaning of the empty array [] in the useEffect()?
+❖ An empty array [] indicates that the
+effect function should only run once.
+
+back to chapter index
+8: Hooks - useContext/ useReducer
+Q1. What is the role of useContext() hook?
+Q2. What is createContext() method? What are Provider & Consumer properties?
+
+Q3. When to use useContext() hook instead of props in real applications?
+Q4. What are the similarities between useState() and useReducer() hook?
+Q5. What is useReducer() hook? When to use useState() and when useReducer()?
+Q6. What are the differences between useState() and useReducer() Hook?
+Q7. What are dispatch & reducer function in useReducer Hook?
+Q8. What is the purpose of passing initial state as an object in UseReducer?
+
+Back to main index
+Q. What is the role of useContext() hook?
+❖ Prop drilling is the process of passing down props
+through multiple layers of components.
+
+Root App
+Root App
+Data
+Data
+Data
+Parent 1
+Parent 1
+Parent 2
+Data
+Child 1
+Using Prop Drilling
+Parent 2
+Data
+Child 2
+Child 1
+Child 2
+Avoiding Prop Drilling
+back to chapter index
+Q. What is the role of useContext() hook?
+❖ useContext in React provides a way to pass data from
+parent to child component without using props.
+
+back to chapter index
+Q. What is createContext() method? What are Provider & Consumer properties?
+❖ createContext() function returns an object with Provider
+and Consumer properties.
+❖ The Provider property is responsible for providing the
+context value to all its child components.
+❖ useContext() method or Consumer property can be used
+to consume the context value in child components.
+
+back to chapter index
+Q. When to use useContext() hook instead of props in real applications?
+❖ Use useContext instead of props when you want
+to avoid prop drilling and access context values
+directly within deeply nested components.
+
+1. Theme Switching (Dark/ Light)
+• You can centralize and pass the theme selection of the
+application from the parent to all the deep child
+components.
+2. Localization (language selection)
+❖ Props are good
+❖ useContext is good
+Component 1
+Component 1
+Component 2
+Component 2
+Component 3
+• You can centralize and pass the language selection of the
+application from the parent to all the child components.
+3. Centralize Configuration Settings
+• Common configuration settings like API endpoints can be
+centralized and change in the parent component will pass
+the setting to all its child components
+4. User Preferences
+Component 4
+• Any other user preferences apart from theme and
+localization can also be centralized.
+5. Notification System
+• Components that trigger or display notifications can
+access the notification state from the context.
+back to chapter index
+Q. What are the similarities between useState() and useReducer() hook?
+
+back to chapter index
+Q. What are the similarities between useState() and useReducer() hook?
+❖ 3 Similarities between useState() and useReducer() hook:
+1. Both hooks provide a way to update state and trigger a re-render of the component.
+2. Both useState and useReducer return an array with two elements:
+a. First element is current state
+b. Second element is a function that can be used to update the state.
+
+back to chapter index
+Q. What is useReducer() hook? When to use useState() and when useReducer()?
+
+back to chapter index
+Q. What is useReducer() hook? When to use useState() and when useReducer()?
+
+back to chapter index
+Q. What is useReducer() hook? When to use useState() and when useReducer()?
+❖ useReducer() is an alternative to the
+useState() hook when dealing with
+complex state in your components.
+
+Component
+(Event Handler)
+Component
+Re-render
+Complex State
+Update
+Dispatch
+Reducer
+(Function)
+back to chapter index
+Q. What are the differences between useState() and useReducer() Hook?
+
+useState
+1. useState is simpler to use and used for
+managing simple state values.
+
+useReducer
+useReducer is more appropriate for
+complex state logic or when the next state
+depends on the previous one.
+
+2. It is suitable for managing a single piece of
+state.
+
+It is well-suited for managing multiple
+pieces of state that needs to be updated
+together.
+
+3. The useState hook takes an initial state as
+an argument and returns an array with two
+elements: the current state and a function to
+update the state.
+
+The useReducer hook takes a reducer
+function and an initial state as arguments
+and returns the current state and a
+dispatch function.
+
+back to chapter index
+Q. What are dispatch & reducer function in useReducer Hook?
+❖ dispatch function is returned by the useReducer
+hook, and it is used to dispatch actions(type) to
+reducer function that trigger state updates.
+❖ The reducer function is a function responsible for
+updating the state based on the action received
+from dispatch function.
+
+back to chapter index
+Q. What is the purpose of passing initial state as an object in UseReducer?
+❖ By setting initial state as an object, you can manage
+complex states with useReducer functions.
+
+back to chapter index
+9: Hooks - useCallback/ useMemo/
+useRef/ useLayoutEffect
+Q1. What is the role of useCallback() hook in React?
+
+Q2. What parameters does the useCallback hook accept & what does it returns?
+Q3. What is the role of useMemo() Hook?
+Q4. What is the role of useRef() Hook?
+Q5. What is useLayoutEffect() Hook? Compare it with useEffect() hook.
+
+Q6. When to use useLayoutEffect() Hook?
+
+Back to main index
+Q. What is the role of useCallback() hook in React?
+❖ The useCallback hook is used to memorize
+functions in functional components.
+❖ When passing function as a prop from parent
+component to child component, then passing
+memorized function avoid unnecessary recreation of the function on each render.
+
+back to chapter index
+Q. What parameters does the useCallback hook accept & what does it returns?
+
+❖ The useCallback hook
+returns the memoized
+version of the callback
+function.
+
+❖ The first parameter is the
+callback function that you
+want to memorize.
+
+❖ The second parameter is
+an array of dependencies.
+It specifies the values that,
+when changed, will cause
+the memoized callback to
+be re-created.
+
+back to chapter index
+Q. What is the role of useMemo() Hook?
+❖ The useMemo hook is a performance optimization
+function that memorizes the result of a
+computation.
+❖ The advantage is it prevent unnecessary
+recalculations and rendering. It is particularly
+useful when dealing with expensive calculations.
+❖ userMemo accept two parameters:
+1. The first argument of useMemo() is a function
+that performs some expensive computation
+and return some result(processData).
+2. The second argument([data]) is an array of
+dependencies ([data]). The memorized value
+will only be recalculated if this dependency
+will change.
+❖ useMemo returns a memorized version of the
+calculated value.
+back to chapter index
+Q. What is the role of useRef() Hook?
+❖ The useRef hook is primarily used for accessing
+and interacting with the DOM elements.
+❖ The advantage is, the useRef hook persists
+across renders and does not trigger re-renders
+when it changes.
+
+back to chapter index
+Q. What is useLayoutEffect() Hook? Compare it with useEffect() hook.
+Rendered after side effects by
+useEffect(eg: Loading data
+from external API)
+Rendered initially
+back to chapter index
+Q. What useLayoutEffect() Hook? Compare it with useEffect() hook.
+
+back to chapter index
+Q. What useLayoutEffect() Hook? Compare it with useEffect() hook.
+
+useEffect
+useLayoutEffect
+useEffect runs asynchronously and is
+scheduled after the UI has been
+rendered.
+
+useLayoutEffect run synchronously with the
+UI rendering.
+
+This means useEffect won't block the
+browser from updating the UI.
+
+This means useLayoutEffect can block the
+browser from updating the UI.
+
+back to chapter index
+Q. When to use useLayoutEffect() Hook?
+❖ For example, below the paragraph element
+style(bold/ normal) is dependent on the side
+effect data, then we use useLayoutEffect.
+
+back to chapter index
+Q. When to use useLayoutEffect() Hook?
+❖ The useLayoutEffect hook in React should be used when you
+need to perform actions that involve manipulating the layout
+of the DOM based on side effects, such as data fetching.
+❖ In other words, you want the layout changes to be reflected
+before the browser paints the updated UI.
+
+back to chapter index
+10: Hooks - Best Practices/ Short Answer
+Q1. What are the Rules or Best Practices for hooks implementation?
+Q2. What are Custom Hooks?
+Q3. Tell 3 scenarios in which you can use useEffect() hook?
+Q4. What useState() hook return in React?
+Q5. How can you conditionally run effects with useEffect?
+Q6. What problem do React Hooks solve?
+Q7. What is the advantage of React Hooks over Lifecycle methods?
+
+Q8. What is Context API?
+Q9. What are the uses of all the Hooks in React?
+
+Back to main index
+Q. What are the Rules or Best Practices for hooks implementation?
+❖ Rules or Best Practices for hooks implementation
+1. Hooks can only be called at the top level of a component.
+2. Hooks can only be called directly inside React components.
+3. Keep hooks order consistent.
+
+back to chapter index
+Q. What are Custom Hooks?
+❖ Custom Hooks in React are JavaScript functions
+developed by developers to encapsulate reusable
+logic for their applications.
+
+back to chapter index
+Q. What useState() hook return in React?
+
+1. StateVariable is the current state
+value.
+
+1. stateUpdaterFunction is a function
+that used to update the state.
+
+back to chapter index
+Q. Tell 3 scenarios in which you can use useEffect() hook?
+
+useEffect() hook can be used for:
+1. Fetching data from external API.
+
+2. For managing subscriptions or event listeners.
+
+3. For manual DOM manipulations.
+
+4. For setting up timers or intervals.
+
+back to chapter index
+Q. How can you conditionally run effects with useEffect?
+❖ In React, you can conditionally run
+effects with the useEffect hook by
+placing the if-else condition inside
+the hook itself.
+
+back to chapter index
+Q. What problem do React Hooks solve?
+❖ React Hooks solve problems related to managing
+state, lifecycle, and side effects in functional
+components
+back to chapter index
+Q. What is the advantage of React Hooks over Lifecycle methods?
+❖ Simplicity: Hooks eliminate the need for class components,
+making the code more readable and reducing boilerplate.
+
+back to chapter index
+Q. What is Context API?
+❖ Context API is a broader concept for the creation of
+context and its management.
+❖ It can be achieved by using useContect Hook.
+
+back to chapter index
+Q. What are the uses of all the Hooks in React?
+1. useState:
+State
+2. useEffect:
+Side effects
+3. useContext:
+Context
+4. useReducer:
+Complex state
+5. useCallback:
+Memorize function
+6. useMemo:
+Memorize function result
+7. useRef:
+Refs
+8. useLayoutEffect:
+Synchronous Side effects.
+back to chapter index
+Q. What are the uses of all the Hooks in React?
+1. useState:
+2. useEffect:
+3. useContext:
+4. useReducer:
+5. useCallback:
+Used for adding state to functional components.
+Enables performing side effects in functional components, such as data fetching.
+Allows functional components to consume values from a React context.
+Provides an alternative to useState when the state logic is more complex.
+Memoizes a callback function to prevent unnecessary re-renders of child components.
+
+6. useMemo:
+Memoizes the result of a function to optimize performance by avoiding unnecessary
+recalculations.
+
+7. useRef:
+Creates a mutable object that persists across renders (used for interacting with DOM
+elements).
+
+8. useLayoutEffect:
+Similar to useEffect but fires synchronously after all DOM mutations.
+back to chapter index
+11: Components LifeCycle Methods - I
+Q1. What are Component life cycle phases?
+Q2. What are Component life cycle methods?
+
+Q3. What are Constructors in class components? When to use them?
+Q4. What is the role of super keyword in constructor?
+Q5. What is the role of render() method in component life cycle?
+Q6. How the State can be maintained in a class component?
+
+Q7. What is the role of componentDidMount() method in component life cycle?
+
+Back to main index
+Q. What are Component life cycle phases?
+
+Component Life Cycle Phases
+1. Mounting Phase
+2. Updating Phase
+3. Unmounting Phase
+(Component creation started)
+(Component updates)
+(Removal from the DOM )
+❖ This phase occurs when an
+instance of a component is
+being created and inserted
+into the DOM.
+
+❖ This phase occurs when a
+component is being rerendered as a result of changes
+to either its props or state.
+
+❖ This phase occurs when a
+component is being
+removed from the DOM.
+
+back to chapter index
+Q. What are Component life cycle methods?
+❖ Component lifecycle methods are special methods that get called
+at various stages of a component's life.
+
+Component Life Cycle
+Mounting Phase
+Updating Phase
+constructor()
+getDerivedStateFromProps()
+getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+render()
+componentDidMount()
+getSnapshotBeforeUpdate()
+Unmounting Phase
+componentWillUnmount()
+componentDidUpdate()
+back to chapter index
+Q. What are Constructors in class components? When to use them?
+❖ constructor is a special method that is called when an
+instance of the class is created.
+❖ Constructor is used for initializing the component's
+state or performing any setup that is needed before the
+component is rendered.
+
+Component Life Cycle
+Mounting Phase
+Updating Phase
+Unmounting
+Phase
+constructor()
+back to chapter index
+Q. What is the role of super keyword in constructor?
+❖ super keyword is used in the constructor of a
+class component to call the constructor of the
+parent class.
+❖ This is necessary to ensure that the initialization
+logic of the parent class is executed.
+
+back to chapter index
+Q. What is the role of render() method in component life cycle?
+
+Component Life Cycle
+Mounting Phase
+Updating Phase
+constructor()
+getDerivedStateFromProps()
+getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+render()
+componentDidMount()
+getSnapshotBeforeUpdate()
+Unmounting Phase
+componentWillUnmount()
+componentDidUpdate()
+back to chapter index
+Q. What is the role of render() method in component life cycle?
+❖ Render() method returns the React elements
+that will be rendered to the DOM.
+
+back to chapter index
+Q. How the State can be maintained in a class component?
+❖ Two step process to maintain state:
+1. this.setState() method is used to update the
+state.
+2. this.state property is used to render the
+update state in DOM.
+
+back to chapter index
+Q. What is the role of componentDidMount() method in component life cycle?
+
+Component Life Cycle
+Mounting Phase
+Updating Phase
+constructor()
+getDerivedStateFromProps()
+getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+render()
+componentDidMount()
+getSnapshotBeforeUpdate()
+Unmounting Phase
+componentWillUnmount()
+componentDidUpdate()
+back to chapter index
+Q. What is the role of componentDidMount() method in component life cycle?
+
+1. Rendered after constructor
+initialization.
+
+2. Rendered after
+componentDidMount() to run
+Side effects(ex: loading data
+from external API) and then
+call render() method of
+updating phase again.
+
+back to chapter index
+Q. What is the role of componentDidMount() method in component life cycle?
+❖ componentDidMount() lifecycle method in React is the
+part of mounting phase and is called after a component
+has been rendered to the DOM.
+❖ Mostly used for side effects. For example, external data
+fetching or setting up subscriptions.
+
+back to chapter index
+12: Components LifeCycle Methods - II
+Q1. What is the role of componentDidUpdate() method in component life cycle?
+Q2. What is the role of componentWillUnmount() method in component life cycle?
+
+Q3. How do you initialize state in a class component?
+Q4. In which lifecycle phase component will be re-rendered?
+Q5. What will happen if you don’t define a constructor in your React component?
+Q6. Why we need class components when we already have functional components?
+
+Q7. What are the 5 main methods of component lifecycle?
+
+Back to main index
+Q. What is the role of componentDidUpdate() method in component life cycle?
+
+Component Life Cycle
+Mounting Phase
+Updating Phase
+constructor()
+getDerivedStateFromProps()
+getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+render()
+componentDidMount()
+getSnapshotBeforeUpdate()
+Unmounting Phase
+componentWillUnmount()
+componentDidUpdate()
+back to chapter index
+Q. What is the role of componentDidUpdate() method in component life cycle?
+
+1. Rendered after constructor
+initialization.
+
+2. Rendered after
+componentDidMount() Side
+effects.
+
+3. For any property or state
+change,
+componentDidUpdate()
+method will refetch the data
+and re-rendered in the DOM.
+
+back to chapter index
+Q. What is the role of componentDidUpdate() method in component life cycle?
+❖ componentDidUpdate() lifecycle method is the part
+of updating phase and is called after a component
+has been updated(property of state change).
+
+❖ For example, after data is initially fetched by the
+componentDidMount method, if the user changes
+some property in the component (e.g., triggering a
+re-render with updated props or state), then the
+componentDidUpdate method can be used to refetch data again.
+
+back to chapter index
+Q. What is the role of componentWillUnmount() method in component life cycle?
+
+Component Life Cycle
+Mounting Phase
+Updating Phase
+constructor()
+getDerivedStateFromProps()
+getDerivedStateFromProps()
+shouldComponentUpdate()
+render()
+render()
+componentDidMount()
+getSnapshotBeforeUpdate()
+Unmounting Phase
+componentWillUnmount()
+componentDidUpdate()
+back to chapter index
+Q. What is the role of componentWillUnmount() method in component life cycle?
+
+1. Rendered after
+constructor() initialization.
+
+2. Rendered after
+componentDidMount().
+3. Re-rendered after,
+componentDidUpdate() on
+any state or property change.
+
+3. Before unmounting of
+component,
+componentWillUnmount()
+will do the cleanup task.
+back to chapter index
+Q. What is the role of componentWillUnmount() method in component life cycle?
+❖ componentWillUnmount() lifecycle method
+is called just before a component is
+unmounted and removed from the DOM.
+❖ It is used for cleanup tasks, freeing up
+resources or canceling any ongoing
+processes. For example, remove event
+listener or unsubscribe from any external
+service.
+
+back to chapter index
+Q. How do you initialize state in a class component?
+❖ In a React class component, state is initialized in
+the constructor.
+
+back to chapter index
+Q. In which lifecycle phase component will be re-rendered?
+❖ In the updating phase component will be re-rendered
+if any props or state is changed.
+
+Component Life Cycle Phases
+1. Mounting Phase
+2. Updating Phase
+3. Unmounting Phase
+(Component creation started)
+(Component updates)
+(Removal from the DOM )
+back to chapter index
+Q. What will happen if you don’t define a constructor in your React component?
+❖ If you don't define a constructor in your React
+component, React will automatically create a
+default constructor for you. This default
+constructor will call the constructor of the base
+class (Component) using super(props).
+
+back to chapter index
+Q. Why we need class components when we already have functional components?
+❖ Previously, class components were used for managing state in React applications since functional
+components were stateless. However, with the introduction of hooks, functional components can also
+handle the state.
+
+❖ When we need class components now?
+1. To manage existing projects(legacy code), especially those built before the introduction of hooks.
+2. To support some third-party libraries that might still be written as class components.
+3. To support component lifecycle methods of the existing legacy code.
+
+back to chapter index
+Q. What are the 5 main methods of component lifecycle?
+
+1. constructor()
+2. render()
+Component Life Cycle
+Main Methods
+3. componentDidMount()
+4. componentDidUpdate()
+5. componentWillUnmount()
+back to chapter index
+Q. What are the 5 main methods of component lifecycle?
+
+1. constructor()
+2. render()
+Initializes the component's state and automatically called when the
+component is being created.
+
+Returns UI elements based on the current state and props;
+3. componentDidMount()
+Invoked after the component has been added to the DOM; used for
+data fetching and subscribing to external data sources.
+
+4. componentDidUpdate()
+Invoked after a component's state or props have been updated and it
+has been re-rendered; used for handling side effects after updates.
+
+5. componentWillUnmount()
+Called just before a component is unmounted and removed from the
+DOM; used for cleanup tasks and releasing resources.
+
+back to chapter index
+13: Controlled & Uncontrolled Components
+Q1. What are Controlled Components in React?
+Q2. What are the Differences btw Controlled & Uncontrolled Components?
+
+Q3. What are characteristics of controlled components?
+Q4. What are the advantages of using controlled components in React forms?
+Q5. How to handle forms in React?
+Q6. How can you handle multiple input fields in a controlled form?
+Q7. How do you handle form validation in a controlled component?
+Q8. In what scenarios might using uncontrolled components be advantageous?
+
+Back to main index
+Q. What are Controlled Components in React?
+❖ A controlled component is a component
+whose form elements (like input fields or
+checkboxes) are controlled by the state
+of the application.
+
+back to chapter index
+Q. What are the Differences btw Controlled & Uncontrolled Components?
+
+back to chapter index
+Q. What are the Differences btw Controlled & Uncontrolled Components?
+
+Controlled Components
+Uncontrolled Components
+1. Values are controlled by React state.
+
+Values are not controlled by React state.
+
+2. Event handlers update React state.
+
+No explicit state update; values can be accessed
+directly from the DOM.
+
+3. Don’t depend on useRef().
+
+Commonly uses useRef() to access form element
+values.
+
+4. Re-renders on state changes.
+
+Less re-rendering since values are not directly tied to
+React state.
+
+5. A recommended and standard practice for
+form handling in React.
+
+Useful in certain scenarios but less commonly
+considered a best practice.
+back to chapter index
+Q. What are characteristics of controlled components?
+❖ Characteristics of controlled components:
+1. State Control: The value of the form
+element is stored in the component's state.
+2. Event Handling: Changes to the form
+element trigger an event (e.g., onChange
+for input fields).
+3. State Update: The event handler updates
+the component's state with the new value
+of the form element.
+
+4. Re-rendering: The component re-renders
+with the updated state, and the form
+element reflects the new value.
+
+back to chapter index
+Q. What are the advantages of using controlled components in React forms?
+❖ Top 3 benefits of using controlled components in React forms:
+1. In controlled components, form elements have their values
+managed by React state, ensuring a single source of truth.
+2. This approach facilitates predictable and synchronized updates,
+making it easier to implement features such as form validation,
+and dynamic rendering, and seamless integration with React's
+lifecycle methods.
+3. Controlled components offer better control and maintainability
+compared to uncontrolled components, making them the best
+practice for handling forms in React applications.
+
+back to chapter index
+Q. How to handle forms in React?
+❖ The preferred and recommended approach
+for handling forms in React is by using
+controlled components.
+
+back to chapter index
+Q. How can you handle multiple input fields in a controlled form?
+❖ Maintain separate state variables for each
+input field and update them individually
+using the onChange event.
+
+back to chapter index
+Q. How do you handle form validation in a controlled component?
+❖ By using conditional rendering based on the
+state and validate input values before
+updating the state.
+
+back to chapter index
+Q. In what scenarios might using uncontrolled components be advantageous?
+❖ Uncontrolled components can be beneficial
+when integrating with non-React libraries, or
+when dealing with forms where controlled
+components are not possible.
+
+back to chapter index
+14: Code Splitting
+Q1. What is Code Splitting in React?
+Q2. How to Implement Code Splitting in React?
+
+Q3. What is the role of Lazy and Suspense methods in React?
+Q4. What are the Pros and Cons of Code Splitting?
+Q5. What is the role of the import() function in code splitting?
+Q6. What is the purpose of the fallback prop in Suspense?
+
+Q7. Can you dynamically load CSS files using code splitting in React?
+Q8. How do you inspect and analyze the generated chunks in a React application?
+
+Back to main index
+Q. What is Code Splitting in React?
+❖ Code splitting is a technique to split the JavaScript
+bundle into smaller chunks, which are loaded ondemand.
+
+Bundle project
+files
+.css
+All in one
+Request
+.css
+Each chunk Loaded
+on demand
+.js
+.js
+.png
+.png
+.sass
+.sass
+Without Code Splitting
+With Code Splitting Implemented
+back to chapter index
+Q. How to Implement Code Splitting in React?
+❖ 3 steps for Code splitting in React:
+1. Use React.lazy() to lazily import components.
+
+2. Wrap components with Suspense to handle loading.
+3. Configure your build tool (e.g., Webpack) for dynamic imports.
+
+back to chapter index
+Q. How to Implement Code Splitting in React?
+
+back to chapter index
+Q. What is the role of Lazy and Suspense methods in React?
+❖ React.lazy is a function that allows you to
+load a component lazily.
+
+❖ It enables code splitting by allowing you
+to import a component asynchronously/
+dynamically, meaning component is
+loaded only when needed only.
+
+❖ The Suspense component is used to
+display a fallback UI while the lazily
+loaded component is being fetched.
+
+back to chapter index
+Q. What are the Pros and Cons of Code Splitting?
+
+5 Pros of Code Splitting:
+1. Faster Initial Load Time:
+Code splitting reduces the initial load time of your application by only loading
+the necessary code for the current view or feature. Good for performance.
+
+2. Optimized Bandwidth Usage:
+By loading only, the code needed for a specific page, it reduces the amount of
+data transferred over the network. Good for slow network.
+
+3. Improved Caching:
+Smaller, more focused code chunks are more likely to be cached by the browser.
+
+4. Parallel Loading:
+Multiple smaller chunks can be loaded simultaneously, leading to faster overall
+loading times.
+
+5. Easier Maintenance:
+Code splitting can make your codebase more modular, independent and easier
+to maintain.
+back to chapter index
+Q. What are the Pros and Cons of Code Splitting?
+
+5 Cons of Code Splitting:
+1. Complexity:
+Implementing code splitting introduces additional complexity to your
+application. This complexity can make the development process slow.
+
+2. Tooling Dependencies:
+Proper code splitting often requires specific build tools and configurations,
+such as Webpack and Babel. Managing these tools is challenging.
+
+3. Potential for Runtime Errors:
+Dynamically loading code at runtime can introduce the possibility of
+runtime errors. Careful testing is necessary to catch such issues.
+
+4. Increased Number of Requests:
+Code splitting may increase the number of HTTP requests needed to fetch
+all the necessary chunks. This can impact performance.
+
+5. Learning Curve:
+Developers who are new to code splitting may need time to understand
+the concepts and best practices. This can be a challenging.
+back to chapter index
+Q. What is the role of the import() function in code splitting?
+
+❖ The import() function returns a promise
+that allow dynamic loading of modules.
+
+back to chapter index
+Q. What is the purpose of the fallback prop in Suspense?
+
+❖ The fallback prop provides a loading
+indicator or UI while the dynamically
+imported component is being loaded.
+
+back to chapter index
+Q. Can you dynamically load CSS files using code splitting in React?
+❖ Yes, using dynamic import() for CSS files allows
+you to load styles on-demand along with the
+corresponding components.
+
+back to chapter index
+Q. How do you inspect and analyze the generated chunks in a React application?
+❖ Use tools like Webpack Bundle Analyzer to
+analyze the size and composition of chunks.
+
+back to chapter index
+15: React - Others
+Q1. What is a Higher-Order Component in React?
+Q2. What are the 5 ways to Style React components? Explain Inline Styles?
+Q3. What are the differences between React & React Native?
+Q4. What is GraphQL?
+Q5. What are the Top 3 ways to achieve state management? When to use what in React?
+Q6. How can you Implement Authentication in a React application?
+Q7. What is the use of React Profiler?
+Q8. What is the difference between fetch & axios for api calls in React?
+Q9. What are the popular Testing Libraries for React?
+Q10. How can you Optimize Performance in a React application?
+Q11. Explain Reactive Programming with example?
+Q12. In how many ways can we implement Reactive Programming in React?
+Q13. How to pass data from child component to parent Component in React?
+Back to main index
+Q. What is a Higher-Order Component in React?
+❖ A Higher-Order Component is a component which
+takes another component as an argument and adds
+extra features to another component.
+❖ HOC can be used for providing logging functionality
+to all the components in a reusable way.
+
+back to chapter index
+Q. What are the 5 ways to Style React components? Explain Inline Styles?
+
+5 ways to Style React components
+1. Inline Styles
+2. CSS Stylesheets
+3. CSS-Modules
+4. Global Stylesheets
+5. CSS Frameworks
+back to chapter index
+Q. What are the differences between React & React Native?
+
+React
+React Native
+1. React is a library
+React Native is a framework.
+
+2. React is used for building web interfaces.
+
+React Native is used for building mobile applications.
+
+3. Run on Web browsers.
+
+Run on iOS and Android platforms.
+
+4. HTML and CSS are used for UI.
+
+Native UI components (e.g., View, Text) are used for UI.
+
+5. Deployed as web applications.
+
+Deployed through app stores(e.g., App Store, Google Play).
+
+back to chapter index
+Q. What is GraphQL?
+❖ GraphQL is a query language for APIs (Application
+Programming Interfaces) and a runtime for executing
+those queries with your existing data.
+❖ GraphQL and React are often used together. React
+components can use GraphQL queries to fetch the
+data required for rendering.
+
+back to chapter index
+Q. What are the Top 3 ways to achieve state management? When to use what in React?
+1. useState Hook:
+• When to use: Simple component-level state.
+• Reason: Ideal for applications having small components and isolated state because it is
+Lightweight and built into React only.
+2. Context API:
+• When to use: Prop drilling avoidance for sharing global data.
+• Reason: Simplifies data passing through the component tree, reducing the need for manual prop
+drilling.
+3. Redux:
+• When to use: Large-scale applications with complex state.
+• Reason: Centralized store and actions provide a predictable state management pattern, aiding in
+debugging and scalability.
+
+back to chapter index
+Q. How can you Implement Authentication in a React application?
+
+Middleware/ Server-side/ Backend
+Front-end/ Client-side
+1. POST: {username, password}
+3. Return Response {JWT token}
+4. Store JWT token
+at local storage
+8. Display data on
+browser
+2. Authenticate &
+create JWT Token
+5. Request Data {JWT token: Header}
+7. Send Data
+6. Validate token
+signature
+back to chapter index
+Q. What is the use of React Profiler?
+❖ React Profiler is a set of tools in React that
+allows developers to profile(analyze) the
+performance of a React application.
+
+back to chapter index
+Q. What is the difference between fetch & axios for api calls in React?
+
+1. fetch is a built-in JavaScript function, so it
+doesn't require any additional libraries.
+
+1. Axios is a third-party library, that simplifies the
+process of making HTTP requests.
+
+2. fetch returns Promises, making it easy to work
+with asynchronous code using async/await
+syntax.
+
+2. Axios allows you to use interceptors, which can be
+good for tasks like request/response logging,
+authentication, and error handling.
+
+3. If you want to keep http requests simple, fetch
+is a good choice.
+
+3. If you want to intercept http request/response, or
+improve error handling then Azios has more features
+to do it.
+
+back to chapter index
+Q. What are the popular Testing Libraries for React?
+
+Jest
+Cypress
+Testing
+Libraries in
+React
+React
+Testing
+Library
+Enzyme
+back to chapter index
+Q. How can you Optimize Performance in a React application?
+
+1. Memoization with useMemo and useCallback:
+2. Optimizing Renders with React.Fragment:
+3. Lazy Loading with React.lazy:
+4. Code Splitting:
+5. Optimizing Images and Assets
+back to chapter index
+Q. How can you Optimize Performance in a React application?
+
+1. Memoization with
+useMemo and useCallback:
+Use this hooks to memoize values and, reducing unnecessary recalculations.
+
+2. Optimizing Renders with
+React.Fragment:
+Use it to avoid unnecessary wrapper elements that could cause additional DOM
+nodes.
+
+3. Lazy Loading with
+React.lazy:
+Use it to load components lazily, reducing the initial bundle size and improving
+initial loading performance.
+
+4. Code Splitting:
+Employ code splitting to divide your application into smaller chunks that are loaded
+on demand, improving initial load times.
+
+5. Optimizing Images and
+Assets:
+Compress and optimize images, use responsive images, and leverage lazy loading
+for images to reduce network and rendering overhead.
+back to chapter index
+Q. Explain Reactive Programming with example?
+❖ Reactive programming is a programming paradigm
+that focuses on reacting to changes and events in a
+declarative and asynchronous manner.
+❖ Declarative means a programming style where you
+write the code for what you want to achieve, rather
+than specifying step-by-step how to achieve it. For
+example, JSX in React has declarative syntax.
+❖ Asynchronously means an action that does not
+block other actions.
+
+Live Search Suggestion
+back to chapter index
+Q. In how many ways can we implement Reactive Programming in React?
+
+1. State and Props
+Reacting to changes in local component state and passing data reactively through
+props.
+
+2. React Hooks:
+Leveraging useState and useEffect hooks for managing state and side effects in
+functional components.
+
+3. Event Handling:
+Reacting to user interactions through event handling and updating state accordingly.
+
+4. Context API:
+Sharing and managing global state reactively across components using the Context
+API.
+
+5. Redux:
+Using state management libraries like Redux for managing complex application state
+reactively.
+
+6. Component Lifecycle
+Methods:
+7. Async/Await:
+8. RxJS and Observables:
+Using class components and lifecycle methods for handling side effects and updates.
+Utilizing async/await syntax for handling asynchronous operations reactively.
+Leveraging RxJS for handling asynchronous operations and data streams in a reactive
+manner.
+back to chapter index
+Q. How to pass data from child component to parent Component in React?
+❖ Parent provides a callback function to child and
+then child component can then invoke this callback
+to pass data back to the parent.
+
+back to chapter index
+16: Redux - Component/ Action/
+Store/ Reducer
+Q1. What is the role of Redux in React?
+
+Q2. When to use Hooks and when to use Redux in React applications?
+Q3. What is the Flow of data in React while using Redux?
+Q4. How to install Redux for React application?
+Q5. What are Action Creators in React Redux?
+
+Q6. Difference between Action Creators, Action Object & Action Type?
+Q7. Explain React Component Structure while using Redux?
+Q8. What is the role of Store in React Redux?
+Q9. What is the role of Reducer in Redux?
+
+Back to main index
+Q. What is the role of Redux in React?
+❖ Redux is an open-source JavaScript
+library used for state management.
+❖ Redux provides a centralized store
+that holds the entire state of an
+application and allows components
+to access and update the state in a
+predictable manner.
+
+Component1
+Dispatcher
+Action
+Component2
+Dispatcher
+Component3
+Dispatcher
+Action
+Action
+R
+e
+d
+Store
+u (Centralize
+c
+state)
+e
+r
+Action
+Component4
+Dispatcher
+back to chapter index
+Q. When to use Hooks and when to use Redux in React applications?
+
+❖ Use React with Hooks when:
+❖ Use React with Redux when:
+1. Your application is small or medium (5-50 Components)
+1. Your application is big or complex (>50 Components)
+2. Your application has simple state management.
+
+2. Your application has complex global state management.
+
+3. State is specific to components.
+
+3. Share state among multiple components.
+
+back to chapter index
+Q. What is the Flow of data in React while using Redux?
+❖ Flow of Data in React-Redux application
+Reducer
+(reducer.js)
+(Previous state,
+action)
+Store
+Component
+(Component.js)
+(New/ Current
+state)
+(Current state)
+Interaction
+(click, mouse
+etc.)
+
+(store.js)
+Action Dispatch
+(Component.js)
+Action Creators
+(action.js)
+back to chapter index
+Q. How to install Redux for React application?
+❖ Install the necessary packages using npm
+(run this command):
+back to chapter index
+Q. What are Action Creators in React Redux?
+❖ Action creators are functions that create
+and return action objects.
+
+back to chapter index
+Q. Difference between Action Creators, Action Object & Action Type?
+
+❖ Action creator functions are functions that create
+and return action objects.
+
+❖ Action object are plain JavaScript objects returned
+by action creator functions.
+
+❖ An action type is a string constant that defines the
+type of action.
+
+back to chapter index
+Q. Explain React Component Structure while using Redux?
+❖ Example video of expected state management:
+❖ Flow of Data in React-Redux application
+Reducer
+(reducer.js)
+(Previous state,
+action)
+Store
+Component
+(Component.js)
+(New state)
+(Current state)
+Interaction
+(click, mouse
+etc.)
+
+(store.js)
+Action Dispatch
+(Component.js)
+Action Creators
+(action.js)
+back to chapter index
+Q. Explain React Component Structure while using Redux?
+
+back to chapter index
+Q. Explain React Component Structure while using Redux?
+❖ 5 Steps to implement Redux integration in component:
+1. Import dependencies like connect function and action creators.
+2. Define Functional Component to render & display elements.
+3. Define function to dispatch action to reducer via store.
+4. Define function to get state from Redux store back to component.
+5. Connect both the above functions and the component to Redux
+store by connect() function.
+
+back to chapter index
+Q. What is the role of Store in React Redux?
+❖ Redux store enables the application to update state
+using the defined reducer.
+
+❖ Flow of Data in React-Redux application
+Reducer
+❖ Redux Store is a centralized place for holding the
+state of all the components in the application.
+
+(reducer.js)
+(Previous state,
+action)
+Store
+Component
+(Component.js)
+(New state)
+(Current
+state)
+Interaction
+(click, mouse
+etc.)
+
+(store.js)
+Action Dispatch
+(Component.js)
+Action Creators
+(action.js)
+back to chapter index
+Q. What is the role of Reducer in Redux?
+❖ A reducer is a function that takes the
+previous state and an action as arguments
+and returns the new state of the application.
+
+Reducer
+(reducer.js)
+(Previous state,
+action)
+(New state)
+Store
+(store.js)
+back to chapter index
+17: Redux - Core Principles/ Pros-Cons/
+Local & Redux State
+Q1. Explain the Core Principles of Redux?
+
+Q2. List 5 benefits of using Redux in React?
+Q3. What are the differences between local component state & Redux state?
+Q4. What are the challenges or disadvantages while using Redux?
+
+Back to main index
+Q. Explain the Core Principles of Redux?
+❖ Flow of Data in React-Redux application
+1. Single Source of Truth (Store)
+Reducer
+(reducer.js)
+2. State is Read-Only (Unidirectional)
+3. Changes using Pure Functions (Reducers)
+(Previous state,
+action)
+Store
+Component
+(Component.js)
+(store.js)
+(Current
+state)
+4. Actions Trigger State Changes (Actions)
+Interaction
+(click, mouse
+etc.)
+
+5. Predictable State Changes (Actions)
+Action Creators
+(action.js)
+back to chapter index
+Q. Explain the Core Principles of Redux?
+
+1. Single Source of Truth:
+The entire application state is stored in one place, simplifying data management
+and ensuring a consistent view of the application.
+
+2. State is Read-Only:
+State cannot be directly modified. To make changes to the state, you need to
+dispatch an action. This ensures that the state transitions are explicit and traceable.
+
+3. Changes using Pure
+Functions (Reducers):
+This ensures predictability and consistency because pure functions returns the
+same result if the same arguments are passed.
+
+4. Actions Trigger State
+Changes:
+Plain JavaScript objects (actions) describe state changes, guiding the store to invoke
+reducers and update the application state accordingly.
+
+5. Predictable State Changes
+with Actions:
+State changes are determined by actions, fostering a predictable flow of data and
+simplifying debugging in response to specific actions.
+back to chapter index
+Q. List 5 benefits of using Redux in React?
+
+1. Predictability &
+Centralization:
+The application state is stored in a single, predictable and centralize source (the store).
+
+2. Maintainability:
+For larger application, Redux is a structured and scalable approach for managing state.
+
+3. Debuggability:
+Redux has powerful developer tools that make it easier to trace and debug state changes.
+
+4. Interoperability:
+5. Community &
+Ecosystem:
+Redux can be used with various JavaScript frameworks and libraries.
+
+Redux has a large and active community, resulting in a rich ecosystem of tools and extensions.
+back to chapter index
+Q. What are the differences between local component state & Redux state?
+
+Local Component State
+Redux State
+1. Scope: Limited to the component where defined.
+
+Global and accessible across components.
+
+2. Management: Managed internally by the
+component.
+
+Managed externally by the Redux store.
+
+3. Performance: Generally, more performant for smallscale applications.
+
+More performant for large applications.
+
+4. Complexity: Simpler to set up and manage.
+
+Comparatively complex to manage.
+
+5. Testing: Simpler to test with component-specific
+state.
+
+Requires more comprehensive testing due to
+global nature and interactions between
+components.
+
+back to chapter index
+Q. What are the challenges or disadvantages while using Redux?
+
+1. Boilerplate Code
+2. Learning Curve
+3. Verbosity and Complexity
+4. Overhead for Small Projects
+5. Global State for Local Components
+6. Integration with Non-React Libraries
+back to chapter index
+Q. What are the challenges or disadvantages while using Redux?
+
+1. Boilerplate Code:
+Implementing Redux requires writing extensive boilerplate code in action, reducer,
+store, increasing code volume and complexity.
+
+2. Learning Curve:
+Understanding Redux concepts can be challenging, posing a learning curve for
+developers, especially those new to React state management.
+
+3. Verbosity and
+Complexity:
+As projects grow, Redux code may become verbose and complex, demanding careful
+management of actions and reducers.
+
+4. Overhead for Small
+Projects:
+In small projects, Redux may introduce unnecessary complexity, potentially
+outweighing its benefits in development efficiency.
+
+5. Global State for Local
+Components:
+Overusing Redux for local state introduces unnecessary complexity, as not all state
+requires a global scope.
+
+6. Integration with NonReact Libraries:
+Integrating Redux with non-React libraries or frameworks may demand additional
+effort and customization, potentially adding complexity to the project.
+back to chapter index
+18: Redux - Short Answer
+Q1. What is Provider Component? How components getting the state from Redux store?
+Q2. What is the role of Connect function in React-Redux?
+Q3. What are the 4 Important Files in React-Redux project?
+Q4. How to structure the project and maintain state in multiple components?
+Q5. Explain the concept of immutability in the context of Redux?
+Q6. Which are the typical properties of an Action object in React-Redux project?
+Q7. Difference btw mapDispatchToProps & mapStateToProps in the connect?
+
+Q8. What is the meaning of Unidirectional Data Flow in Redux?
+Q9. How does Redux handle communication between components?
+Q10. What is Payload property in Redux?
+
+Back to main index
+Q. What is Provider Component? How components getting the state from Redux store?
+❖ Provider component of react-redux will make the
+Redux store available to all connected components.
+
+back to chapter index
+Q. What is the role of Connect function in React-Redux?
+❖ The connect function is used to make the
+connection between a React component and
+the Redux store.
+
+back to chapter index
+Q. What are the 4 Important Files in React-Redux project?
+❖ Important File for Redux Implementation:
+1. actions.js: Defines action creators.
+2. reducer.js: Update the state based on the action and
+previous state received from the store.
+3. store.js: Stores the updated state received from
+reducer and export it to the components.
+
+src/
+|-- actions.js
+|-- reducer.js
+|-- store.js
+|-- CounterComponent.js
+|-- App.js
+|-- index.js
+4. CounterComponent.js: React component connected
+to Redux, uses state and actions to render UI and
+handle user interactions.
+
+back to chapter index
+Q. How to structure the project and maintain state in multiple components?
+❖ Single component project structure
+❖ Multiple component project structure
+Root Component(App.js)
+Root Component(App.js)
+CounterComponent
+CounterComponent
+UserComponent
+src/
+|-- actions.js
+|-- reducer.js
+|-- store.js
+|-- CounterComponent.js
+|-- App.js
+|-- index.js
+src/
+|-- actions/
+| |-- counterActions.js
+| |-- userActions.js
+|
+|-- reducers/
+| |-- counterReducer.js
+| |-- userReducer.js
+|
+|-- store/
+| |-- configureStore.js
+|
+|-- components/
+| |-- CounterComponent.js
+| |-- UserComponent.js
+|
+|-- App.js
+|-- index.js
+back to chapter index
+Q. Explain the concept of immutability in the context of Redux?
+❖ In Redux, immutability is the principle that once an object
+(such as the state which is readonly) is created, it cannot be
+changed or modified directly.
+❖ To make changes to the state, you need to dispatch an
+action.
+
+back to chapter index
+Q. Which are the typical properties of an Action object in React-Redux project?
+❖ 2 Typical properties in most of the React-Redux project:
+1. Type: Type describes the type of action being performed.
+2. Payload: Carries data from mostly from external API’s.
+
+back to chapter index
+Q. Difference btw mapDispatchToProps & mapStateToProps in the connect?
+❖ mapDispatchToProps() function dispatches
+action to the store to update the state using a
+reducer.
+❖ mapStateToProps() function gets the state for
+the component from Redux store.
+
+back to chapter index
+Q. What is the meaning of Unidirectional Data Flow in Redux?
+❖ In a unidirectional data flow architecture, data
+follows a single, clear path.
+
+❖ Flow of Data in React-Redux application
+Reducer
+❖ Redux enforces this pattern to provide a
+predictable state management mechanism.
+
+(reducer.js)
+(Previous state,
+action)
+Store
+Component
+(Component.js)
+(New state)
+(Current state)
+Interaction
+(click, mouse
+etc.)
+
+(store.js)
+Action Dispatch
+(Component.js)
+Action Creators
+(action.js)
+back to chapter index
+Q. How does Redux handle communication between components?
+❖ Redux handles communication between
+components through a centralized state
+management system(store).
+
+Component1
+Dispatcher
+Action
+Component2
+Dispatcher
+Component3
+Dispatcher
+Action
+Action
+R
+e
+d
+Store
+u (Centralize
+c
+state)
+e
+r
+Action
+Component4
+Dispatcher
+back to chapter index
+Q. What is Payload property in Redux?
+❖ Along with the action type, payload property in
+Redux actions holds the data being sent to the
+reducer.
+❖ Payload contains information necessary for the
+reducer to update the state based on the action.
+
+back to chapter index
+19: Redux - Thunk/ Middleware/
+Error Handling/ Flux
+Q1. What is the difference between Regular Action creator & Thunk action creator?
+
+Q2. Explain the concept of Middleware in React-Redux?
+Q3. How can you handle Asynchronous Operations & side-effect in React-Redux?
+Q4. How does Error Handling work in Redux?
+Q5. What is the difference between Flux & Redux?
+
+Back to main index
+Q. What is the difference between Regular Action creator & Thunk action creator?
+❖ A regular action creator returns a plain
+JavaScript object with a type property,
+describing the type of action to be
+performed.
+
+❖ 3 main points about Thunks:
+1. A Thunk action creator is a function
+that returns another function.
+2. This returned function dispatched to
+the Redux store.
+3. Thunks are used to handle complex
+asynchronous operations, such as data
+fetching or API calls, based on which
+the action will be decide.
+back to chapter index
+Q. Explain the concept of Middleware in React-Redux?
+❖ Middleware provides a mechanism to add
+extra functionality to the Redux store.
+
+❖ Flow of Data in React-Redux application with Middleware
+Reducer
+❖ Middleware can intercept actions, modify
+them, or execute additional logic in
+actions before they reach the reducers.
+
+(reducer.js)
+(Previous state,
+action)
+Store
+Component
+(Component.js)
+(New state)
+(Current
+state)
+(store.js)
+API
+Middleware
+Interaction
+(click, mouse
+etc.)
+
+Action Dispatch
+(Component.js)
+Action Creators
+(action.js)
+back to chapter index
+Q. How can you handle Asynchronous Operations & side-effect in React-Redux?
+❖ Use middleware and Redux Thunk action
+creators to handle asynchronous
+operations.
+
+back to chapter index
+Q. How does Error Handling work in Redux?
+❖ Error handling in Redux can be
+done by using try-catch blocks in
+action creator, middleware and
+reducers.
+
+back to chapter index
+Q. What is the difference between Flux & Redux?
+❖ Flux is an architecture pattern. It provides a set of design
+principles for organizing code to manage state in a
+unidirectional data flow.
+❖ Redux is a library that implements the Flux architecture.
+
+back to chapter index
+20: JavaScript Essentials for React
+Q1. What are Variables? What is the difference between var, let, and const ?
+Q2. What are the Types of Conditions statements in JS?
+
+Q3. What is Error Handling in JS?
+Q4. What is the difference between Spread and Rest operator in JS?
+Q5. What are Arrays in JS? How to get, add & remove elements from arrays?
+Q6. What is Array Destructuring in JS?
+Q7. What are Functions in JS? What are the types of function?
+Q8. Difference between Named and Anonymous functions? When to use what?
+Q9. What is Function Expression in JS?
+Q10. What are Arrow Functions in JS? What is it use?
+Q11. What are Callback Functions? What is it use?
+Q12. What is Higher-order function In JS?
+Q13. What are Pure and Impure functions in JS?
+Back to main index
+20: JavaScript Essentials for React
+Q14. What are template literals and string interpolation in strings?
+Q15. What are Objects in JS?
+
+Q16. What is the difference between an array and an object?
+Q17. How do you add or modify or delete properties of an object?
+Q18. What is asynchronous programming in JS? What is its use?
+Q19. What is the difference between synchronous and asynchronous programming?
+Q20. What are Promises in JavaScript?
+Q21. How to implement Promises in JavaScript?
+Q22. What is the purpose of async/ await? Compare it with Promises?
+Q23. What are Classes in JS?
+Q24. What is a Constructor?
+Q25. What is the use of this keyword?
+
+Back to main index
+Q. What are variables? What is the difference between var, let, and const ?
+❖ Variables are used to store data.
+
+back to chapter index
+Q. What are variables? What is the difference between var, let, and const ?
+❖ var creates a function-scoped
+variable.
+
+❖ let creates a block-scoped
+variable
+❖ const can be assigned only once, and its
+value cannot be changed afterwards.
+
+back to chapter index
+Q. What are the types of conditions statements in JS?
+
+back to chapter index
+Q. What are the types of conditions statements in JS?
+
+Types of condition statements
+1. If/ else statements
+2. Ternary operator
+3. Switch statement
+back to chapter index
+Q. What is Error Handling in JS?
+❖ Error handling is the process of
+managing errors.
+
+back to chapter index
+Q. What is the difference between Spread and Rest operator in JS?
+❖ The spread operator(...) is used to expand or
+spread elements from an iterable (such as an
+array, string, or object) into individual elements.
+
+Copying an Array
+Uses of Spread
+Operator
+Merging Arrays
+Passing Multiple
+Arguments to a Function
+back to chapter index
+Q. What is the difference between Spread and Rest operator in JS?
+❖ The rest operator is used in function parameters
+to collect all remaining arguments into an array.
+
+back to chapter index
+Q. What are Arrays in JS? How to get, add & remove elements from arrays?
+❖ An array is a data type that allows you to
+store multiple values in a single variable.
+
+Array1
+Multiple
+Variables
+Array2
+Array3
+Array4
+back to chapter index
+Q. What are Arrays in JS? How to get, add & remove elements from arrays?
+Arrays methods
+Get
+Add
+Remove
+Modify
+Others
+indexOf()
+push()
+pop()
+map()
+join()
+find()
+concat()
+shift()
+forEach()
+length
+filter()
+Slice()
+splice()
+sort()
+reverse()
+reduce()
+some()
+every()
+back to chapter index
+Q. What are Arrays in JS? How to get, add & remove elements from arrays?
+
+❖ Pictorial representation of important method of arrays
+back to chapter index
+Q. What is Array Destructuring in JS?
+❖ Array destructuring allows you to extract elements from an array
+and assign them to individual variables in a single statement.
+❖ Array destructuring is introduced in ECMAScript 6 (ES6).
+
+Structuring
+Multiple
+Variables
+Array1
+Array2
+Destructuring
+Array3
+Array4
+back to chapter index
+Q. What is Array Destructuring in JS?
+
+back to chapter index
+Q. What are Functions in JS? What are the types of function?
+❖ A function is a reusable block of code
+that performs a specific task.
+
+Function keyword
+Function name
+Parameters list
+Function body
+Function call
+Argument list
+back to chapter index
+Q. What are Functions in JS? What are the types of function?
+
+Named Function
+Anonymous Function
+Function Expression
+Types of
+Functions
+Arrow Function
+IIFE
+Callback Function
+Higher-Order Function
+back to chapter index
+Q. What is the difference between named and anonymous functions?
+When to use what in applications?
+❖ Named functions have a name identifier
+❖ Anonymous functions do not have a name identifier
+and cannot be referenced directly by name.
+
+❖ Use named functions for big and complex logics.
+
+❖ Use anonymous functions for small logics.
+
+❖ Use when you want to reuse one function at
+multiple places.
+
+❖ Use when want to use a function in a single place.
+
+back to chapter index
+Q. What is function expression in JS?
+
+❖ A function expression is a way to define a function
+by assigning it to a variable.
+
+back to chapter index
+Q. What are Arrow Functions in JS? What is it use?
+❖ Arrow functions, also known as fat arrow
+functions, is a simpler and shorter way for
+defining functions in JavaScript.
+Parameters list
+Function body
+back to chapter index
+Q. What are Callback Functions? What is it use?
+❖ A callback function is a function that is
+passed as an argument to another function.
+
+Higher-order function
+Callback function
+back to chapter index
+Q. What is Higher-order function In JS?
+❖ A Higher order function:
+1. Take one or more functions as arguments(callback function) OR
+2. Return a function as a result
+Callback function
+High-order function
+back to chapter index
+Q. What are Pure and Impure functions in JS?
+1. A pure function is a function that always
+produces the same output for the same input.
+
+1. An impure function, can produce different
+outputs for the same input.
+
+2. Pure functions cannot modify the state.
+
+2. Impure functions can modify the state.
+
+3. Pure functions cannot have side effects.
+
+3. Impure functions can have side effects.
+
+back to chapter index
+Q. What are template literals and string interpolation in strings?
+❖ A template literal, also known as a template
+string, is a feature introduced in ECMAScript
+2015 (ES6) for string interpolation and
+multiline strings in JavaScript.
+
+back to chapter index
+Q. What are Objects in JS?
+
+back to chapter index
+Q. What are Objects in JS?
+❖ An object is a data type that allows you to
+store key-value pairs.
+
+String/ number/
+boolean/ null/
+undefined
+Array
+Object
+Function
+Object
+back to chapter index
+Q. What is the difference between an array and an object?
+
+back to chapter index
+Q. How do you add or modify or delete properties of an object?
+
+back to chapter index
+Q. What is asynchronous programming in JS? What is its use?
+
+back to chapter index
+Q. What is asynchronous programming in JS? What is its use?
+❖ Asynchronous programming allows multiple tasks or
+operations to be initiated and executed concurrently.
+
+❖ Asynchronous operations do not block the execution
+of the code.
+Fetching Data from API
+Downloading Files
+Use of
+Asynchronous
+Operations
+Uploading Files
+Animations and Transitions
+Time taking operations…
+back to chapter index
+Q. What is the difference between synchronous and asynchronous programming?
+
+back to chapter index
+Q. What are Promises in JavaScript?
+
+❖ Important points about promises:
+1. Promises in JavaScript are a way to handle
+asynchronous operations.
+2. A Promise can be in one of three states: pending,
+resolved, or rejected.
+3. A promise represents a value that may not be available
+yet but will be available at some point in the future.
+
+back to chapter index
+Q. How to implement Promises in JavaScript?
+
+back to chapter index
+Q. How to implement Promises in JavaScript?
+
+back to chapter index
+Q. Explain the use of async and await keywords in JS?
+❖ The async keyword is used to define a function
+as an asynchronous function, which means the
+code inside async function will not block the
+execution other code.
+
+❖ The await keyword is used within an async
+function to pause the execution of the function
+until a Promise is resolved or rejected.
+
+back to chapter index
+Q. What are Classes in JS?
+
+❖ Classes serve as blueprints for creating objects
+and define their structure and behavior.
+
+❖ Advantages of classes:
+1. Object Creation
+2. Encapsulation
+3. Inheritance
+4. Code Reusability
+5. Polymorphism
+6. Abstraction
+back to chapter index
+Q. What is a constructor?
+❖ Constructors are special methods within
+classes that are automatically called when
+an object is created of the class using the
+new keyword.
+
+back to chapter index
+Q. What is the use of this keyword?
+❖ this keyword provides a way to access the
+current object or class.
+
+back to chapter index
+21: Typescript
+Q1. What is Typescript? Or What is the difference between Typescript and Javascript?
+Q2. How to install Typescript and check version?
+
+Q3. What is the difference between let and var keyword?
+Q4. What is Type annotation?
+Q5. What are Built in/ Primitive and User-Defined/ Non-primitive Types in Typescript?
+Q6. What is “any” type in Typescript?
+Q7. What is Enum type in Typescript?
+Q8. What is the difference between void and never types in Typescript?
+Q9. What is Type Assertion in Typescript?
+Q10. What are Arrow Functions in Typescript?
+
+Back to main index
+21: Typescript
+Q11. What is Object Oriented Programming in Typescript?
+Q12. What are Classes and Objects in Typescript?
+
+Q13. What is Constructor?
+Q14. What are Access Modifiers in Typescript?
+Q15. What is Encapsulation in Typescript?
+Q16. What is Inheritance in Typescript?
+Q17. What is Polymorphism in Typescript?
+Q18. What is Interface in Typescript?
+Q19. What's the difference between extends and implements in TypeScript ?
+Q20. Is Multiple Inheritance possible in Typescript?
+
+Back to main index
+Q55
+What is Typescript? What are the advantages of Typescript over Javascript?
+Q55. What is Typescript? Or What is the difference between Typescript and Javascript?
+
+❖
+Typescript is an open-source programming language.
+It’s advantage are:
+1. Typescript is a strongly typed language.
+2. Typescript is a superset of JavaScript.
+3. It has Object oriented features.
+4. Detect error at compile time.
+
+❖ In image, you can see TS(Typescript) contains
+JS(Javascript) and other additional features(type
+system, custom types, generics, enums, interfaces).
+❖ Browser can’t execute typescript, so finally TS
+Compiler will convert the TS to JS only, which
+browser can understand.
+back to chapter index
+Q56
+How to install Typescript and check version?
+Q56. How to install Typescript and check version?
+
+❖ Here is the command which can be used to install typescript
+on your system(without Angular).
+
+back to chapter index
+Q57
+What is the difference between let and var keyword?
+Q57. What is the difference between let and var keyword?
+
+❖ var and let are both used for variable declaration,
+but the difference between them is that var is
+global function scoped and let is block scoped.
+
+Compile time error, since let
+variable “i” scope is only
+limited inside for loop.
+
+No error, since var variable “j” scope
+is not limited inside for loop, but
+inside the whole function fnLetVar().
+
+back to chapter index
+Q58
+What is Type annotation in Typescript?
+Q58. What is Type annotation?
+
+❖ Type annotations helps the compiler in checking the
+types of variable and avoid errors.
+
+For example, in below image when we set variable “i” as
+number. And now if you assign “i” a string or Boolean
+value, then Typescript will show the compile time error,
+which is good.
+
+back to chapter index
+Q59
+What are Built in/ Primitive and User-Defined/ Non-primitive Types in Typescript?
+Q59. What are Built in/ Primitive and User-Defined/ Non-primitive Types in Typescript?
+
+❖ Built-in Data types are used to store simple data. Such as
+string, number, Boolean.
+❖ User-Defined types are used to store complex data. Such as
+array, enum, classes.
+
+back to chapter index
+Q60
+What is “any” type in Typescript?
+Q60. What is “any” type in Typescript?
+
+❖ When a value is of type any, then no typechecking(no compile
+time errror) will be done by compiler and the flexibility is there
+to do anything with this variable.
+For example, see in the image there is no compile time error for
+assigning different types to variable “x” because it is of any type.
+
+back to chapter index
+Q61
+What is Enum type in Typescript?
+Q61. What is Enum type in Typescript?
+
+❖ Enums allows to define a set of named constants.
+Suppose you have a family of constants(Directions)
+like this in image.
+Now if you want to insert some direction, for
+example SouthWest between 1 and 2, then it will be
+a problem, as you have to change this in all of your
+application.
+
+So here enum is a better way as you don’t have to
+assign the numbers then.
+
+back to chapter index
+Q62
+What is the difference between void and never types in Typescript?
+Q62. What is the difference between void and never types in Typescript?
+
+❖ void means no type. It is used when the function
+will return empty.
+In image, fnVoid() function will return empty.
+
+❖ never means it will return never. It is used to
+throw error only.
+
+For example, in image fnNever function which will
+not reach to its last line, and it always throws an
+exception.
+
+back to chapter index
+Q63
+What is Type Assertion in Typescript?
+Q63. What is Type Assertion in Typescript?
+
+❖ Type assertion is a technique that informs the compiler about the type
+of a variable.
+For example, in below image, if we do not put <String>, then typescript will
+try to assume the type of “secondname” by itself automatically.
+But by putting <String>, we are asserting and informing the compiler about
+the type of secondName as String and now compiler will not do automatic
+typechecking.
+
+back to chapter index
+Q64
+What are Arrow Functions in Typescript?
+Q64. What are Arrow Functions in Typescript?
+
+❖ An arrow function expression is a compact alternative to a
+traditional function expression.
+In below image, you can see how the same function can be
+written using arrow function.
+
+back to chapter index
+What is Object Oriented Programming(OOPS) in Typescript?
+Q65. What is Object Oriented Programming in Typescript?
+
+❖ Object oriented programming is used to design structured
+and better applications.
+
+Classes & Objects
+In the image, you can see the concepts used in object oriented
+programming.
+
+Encapsulation
+(Data Security)
+OOPS
+Q65
+Inheritance
+(Code Reusability)
+Polymorphism
+(Multiple Forms)
+Abstraction
+(Hide Complexity)
+back to chapter index
+Q66
+What are Classes and Objects in Typescript?
+Q66. What are Classes and Objects in Typescript?
+
+❖ Classes are blueprint for individual objects.
+❖ Objects are instances of a class.
+
+Person is a class with two
+properties(name, age) and one
+method(familyCount)
+objPerson is the
+object/instance of Person class.
+By this object only we can set
+Person class properties and call
+the method of the class.
+
+back to chapter index
+Q67
+What is a Constructor in Angular?
+Q67. What is Constructor?
+
+❖ The constructor is a method in a TypeScript class
+that automatically gets called when the class is
+being instantiated.
+❖ Constructor always run before any angular hook
+and it is not a part of Lifecycle Hooks.
+❖ Constructor is widely used to inject
+dependencies(services) into the component class.
+
+back to chapter index
+Q68
+What are Access Modifiers in Typescript?
+Q68. What are Access Modifiers in Typescript?
+
+❖ 3 types of Access modifiers in Typescript:
+Access Modifiers
+1. The public modifier allows class varibale, properties
+and methods to be accessible from all locations.
+
+2. The private modifier limits the visibility to the sameclass only.
+
+public
+private
+protected
+3. The protected modifier allows properties and methods
+of a class to be accessible within same class and within
+subclasses/derived/child.
+
+back to chapter index
+Q69
+What are Access Modifiers in Typescript?
+
+1. empId no error, as it is public.
+
+2. empName error, as it is out of the class
+and it is private.
+
+3. empAge error, as it is out of the class
+and it is protected.
+
+3. But in PermanentEmployee empAge no
+error, because it is inside the derived
+class(PermanentEmployee) of Employee.
+back to chapter index
+Q70
+What is Encapsulation in Typescript?
+Q69. What is Encapsulation in Typescript?
+
+❖ Encapsulation is the wrapping up of data and function
+together to access the data.
+For example, here in code _empId is the data. We can make it
+public and then it can be accessible outside the Employee class.
+But as per OOPS concept encapsulation this is wrong as it can
+lead to data security issues.
+Therefore, we should mark this _empId data as private. And
+then create a function(getEmpId), which will help in accessing
+this _empId outside of this class.
+Outside the class, in the last line we are calling getEmpId
+method to access/dispaly the data _empId.
+❖ What is the advantage of Encapsulation?
+This is good for data security to prevent direct data access.
+back to chapter index
+Q71
+What is Inheritance in Typescript?
+Q70. What is Inheritance in Typescript?
+
+❖ Inheritance is a feature where derive class
+will acquire the properties and methods of
+base class.
+
+Animal
+For example, in the image Dog and Cat class are
+derived from Animal base class.
+
+Sleep()
+Eat()
+Base/ Parent/
+Super Class
+Therefore, Eat() and Sleep() methods of Animal
+base class will be automatically available inside
+Dog and Cat derived class without even writing
+it.
+❖ What is the advantage of Inheritance?
+Inheritance is good for reusability of code. As
+you can write one method in base class, and
+then use it in multiple derived classes.
+
+Dog
+Cat
+Bark()
+Meaow()
+Derived/ Child/
+Sub Class
+back to chapter index
+Q71
+What is Inheritance in Typescript?
+
+Both Eat() and Bark() method are
+accessible via Dog class object. Eat is from
+the base class but.
+
+back to chapter index
+Q72
+What is Polymorphism in Typescript?
+Q71. What is Polymorphism in Typescript?
+
+❖ Polymorphism means same name method
+can take multiple Forms.
+For example, in the image Son can inherit the
+GetSurName() method implementation of
+father. But the GetName() method
+implementation should be different for son. So
+son can have a different implementation but the
+method name can be same as GetName().
+
+❖ What is the advantage of Polymorphism?
+Like in dictionary, a word “Running” can have
+multiple meanings: Running a race or Running a
+computer.
+
+Father
+Base/ Parent/
+Super Class
+GetName()
+GetSurName()
+Son
+GetName()
+Derived/ Child/
+Sub Class
+Similarly in programming, Polymorphism can be
+used to do multiple things with the same name.
+back to chapter index
+Q72
+What is Polymorphism in Typescript?
+
+GetName() method of Father class object
+output is different, and Getname()
+method of Son class object output is
+different. Same name method taking
+multiple forms.
+
+back to chapter index
+Q72
+What is Interface and why to use them in Typescript?
+Q72. What is Interface in Typescript?
+
+❖ An interface is a contract where methods are only declared.
+❖ What is the advantage of creating Interface?
+For example, we have multiple classes PermanentEmployee,
+ContractEmployee etc.
+They all must have the Role() method, but the body of Role()
+method can be different.
+Now to maintain consistency we will create the Interface
+IEmployee, with just declaration of Role() method and
+implement this interface in all the classes.
+This will make sure all the Employees classes are in sync with the
+Role method. It will also help in unit testing.
+❖ One advantage is, multiple inheritance can be achieved via
+interfaces only.
+❖ Also, if we create interfaces for the classes in application
+then unit testing is very easy, otherwise it is difficult.
+back to chapter index
+What's the difference between extends and implements?
+
+Q73
+Q73. What's the difference between extends and implements in TypeScript
+❖
+Extends used for base class inheritance.
+
+❖
+Implements used for interface inheritance.
+
+back to chapter index
+Is Multiple Inheritance possible in Typescript?
+
+Q74
+Q74. Is Multiple Inheritance possible in Typescript?
+
+❖
+Multiple inheritance means when one derived class is inherited from multiple base classes.
+
+Multiple inheritance in typescript only possible via Interfaces.
+See in first image there is the compile time error in Employee2 as multiple base classes are not
+allowed, but in second image with multiple interfaces iit is working.
+❖
+back to chapter index
+All the best for your interviews
+Never ever give up
+

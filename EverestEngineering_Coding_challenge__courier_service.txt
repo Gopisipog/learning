@@ -1,0 +1,344 @@
+Craft what you love,
+love what you craft
+02 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Background
+Kiki, a first-time entrepreneur from the city of
+Koriko has decided to open a small distance
+courier service to deliver packages, with her
+friend Tombo and cat Joji. 
+
+Kiki has invested in N no. of vehicles and 
+have driver partners to drive each vehicle 
+& deliver packages.
+
+03 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Problem
+01
+Delivery Cost Estimation with Offers
+Since it’s a new business, the team has decided to pass coupons
+around the town which will help them attract more customers.
+Things to keep in mind:
+Only one offer code can be applied for any given package.
+Package should meet the required mentioned 
+offer criterias.
+If offer code is not valid/found, discounted amount 
+will be equal to 0.
+
+04 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Offer Criteria
+The offers can be used according to
+the criteria that Tombo has captured in
+this table. Discount will not be provided
+if no offer code is applied.
+
+Distance (km)
+Weight (kg)
+OFR001 
+10% Discount
+< 200
+70-200
+OFR002 
+7% Discount
+50-150
+100-250
+OFR003 
+5% Discount
+50-250
+10-150
+05 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Challenge
+You are required to build a command line application to
+estimate the total delivery cost of each package with
+an offer code (if applicable).
+
+Note: Code should be extensible & scalable for more offer codes.
+
+Base Delivery Cost + (Package Total Weight * 10) +
+(Distance to Destination * 5) =
+Delivery Cost
+06 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Sample Input Formats
+Input Format
+Sample (I)
+base_delivery_cost no_of_packges
+
+100 3
+
+pkg_id1 pkg_weight1_in_kg distance1_in_km offer_code1
+
+PKG1 5 5 OFR001
+
+...
+
+PKG2 15 5 OFR002
+PKG3 10 100 OFR003
+Output Format
+Sample (O)
+pkg_id1 discount1 total_cost1
+
+PKG1 0 175
+
+...
+
+PKG2 0 275
+PKG 35 665
+07 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Explanation
+PKG 1: Testcase
+PKG 3: Testcase
+Base.delivery cost: 100
+
+Base.delivery cost: 100
+
+Weight: 5kg
+Weight: 10kg
+| Distance: 5km 
+
+Offer code: OFR001
+Delivery Cost
+
+Offer code: OFR003
+175.00
+100 + (5 * 10) + (5 * 5)
+Discount  
+
+Delivery Cost
+
+700.00
+100 + (10* 10) + (100 * 5)
+- 0.00
+(Offer not applicable as criteria not met)
+Total cost
+| Distance: 100km 
+
+Discount  
+
+- 35.00
+(5% of 700 i.e; Delivery Cost)
+175.00
+Total cost
+665.00
+08 | All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Problem
+02
+Delivery Time Estimation
+Now all these packages should be delivered to their destinations in
+the fleet of vehicles Kiki owns. She has N no. of vehicles available for
+delivering the packages.
+Things to keep in mind:
+Each Vehicle has a limit (L) on maximum weight (kg) 
+that it can carry.
+All Vehicles travel at the same speed (S km/hr) and in 
+the same route. It is assumed that all the destinations
+can be covered in a single route.
+
+09 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Delivery Criteria
+The delivery can be made using the criteria
+illustrated below.
+Shipment should contain max packages 
+vehicle can carry in a trip.
+We should prefer heavier packages when 
+there are multiple shipments with the same 
+no. of packages.
+If the weights are also the same, preference 
+should be given to the shipment which can 
+be delivered first.
+
+Always travelling at
+max speed.
+Post package delivery, vehicle
+will return back to the source
+station with the same speed
+and will be available for 
+another shipment. 
+
+10 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Challenge
+Tombo, the geeky business partner obsessed with 
+delivery metrics wants to maximise efficiency.
+
+You are required to build a 
+command line application to 
+calculate the estimated delivery 
+time for every package by 
+maximizing no. of packages in 
+every shipment.
+
+11 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Sample Input Formats
+Input Format
+Sample (I)
+base_delivery_cost no_of_packges
+
+100 5
+
+PKG4 110 60 OFFR002
+
+pkg_id1 pkg_weight1_in_kg distance1_in_km offer_code1
+
+PKG1 50 30 OFR001
+
+PKG5 155 95 NA
+
+….
+
+PKG2 75 125 OFFR0008
+
+2 70 200
+
+no_of_vehicles max_speed max_carriable_weight
+PKG3 175 100 OFFR003
+Output Format
+Sample (O)
+pkg_id1 discount1 total_cost1 estimated_delivery_time1_in_hours
+
+PKG1 0 750 3.98
+
+PKG4 105 1395 0.85
+
+...
+
+PKG2 0 1475 1.78
+
+PKG5 0 2125 4.19
+
+PKG3 0 2350 1.42
+12 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Explanation
+Packages
+05
+STEP 01
+Vehicles
+02
+Max Speed
+Packages Remaining: 03
+
+Vehicles Available: 02
+Vehicles Available: 01
++
+PKG2
+|
+Current Time: 0 hrs
+75kg
+02 packages 125kg
+PKG1 50kg
++
+PKG4 110kg
+02 packages 160kg
+PKG2
++
+PKG4 110kg
+02 packages 185kg
+75kg
+Max load
+200kg
+STEP 02
+Packages Remaining: 05
+
+PKG1 50kg
+70km/hr
+|
+Current Time: 0 hrs
+PKG1
+PKG3
+PKG5
+01 package (PKG3)
+50kg
+175kg
+155kg
+175 kg (Most Weight)
+Vehicle 02
+Delivering PKG3
+1.42 hrs
+100km/70km/hr
+Vehicle 01
+Delivering PKG2
+1.78 hrs
+125km/70km/hr
+Vehicle 02 will be available after (2*1.42)
+Delivering PKG4
+0.85 hrs
+60/70km/hr
+Vehicle 01 will be available after (2*1.78)
+3.56 hrs
+2.84 hrs
+13 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Explanation (Contd. 1)
+STEP 03
+STEP 04
+Packages Remaining: 02
+
+Packages Remaining: 02
+
+Vehicles Available: 0 | Current Time: 0 hrs
+Vehicles Available: 01 | Current Time: 2.84 hrs
+Vehicle 01
+Vehicle 02
+Returning in
+Returning in
+3.56 hrs
+KG1
+KG5
+package (PKG5)
+P
+P
+01
+50kg
+155kg
+155 kg (
+Most Weight)
+2.84 hrs
+Vehicle 02
+Delivering PKG5 (2.84+ 1.35)
+4.19 hrs
+Current Time + 95km/70km/hr
+Vehicle 02 will be available first after
+(Current Time (0) + 2.84)
+2.84 hrs
+*
+Vehicle 02 will be available after (2.84+ 2 1.35)
+5.54 hrs
+14 |
+All copyrights © reserved by EVERESTENGINEERING 2021 - 22
+Explanation (Contd. 2)
+STEP 05
+STEP 06
+Packages Remaining: 01
+
+Packages Remaining: 01
+
+Vehicles Available: 0
+Vehicles Available: 01
+Vehicle 01
+Vehicle 02
+|
+Current Time: 2.84 hrs
+Returning in
+Returning in
+3.56 hrs
+|
+PKG1
+01 package
+50kg
+50kg
+Current Time: 3.56 hrs
+5.54 hrs
+Vehicle 01
+Delivering PKG4 (3.56+ 0.42)
+Current Time + 30km/70km/hr
+Vehicle 01 will be available first after
+0.72 hrs
+3.98 hrs
+

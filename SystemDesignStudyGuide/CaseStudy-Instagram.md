@@ -8,7 +8,7 @@ Design a photo sharing platform where users can:
 - Upload images (with captions, tags), view feed, like/comment
 - View user profiles and photo grids
 
-Out of scope (for brevity): stories, reels, DMs, ads, full search, ML ranking.
+Out of scope (for brevity): stories, reels, DMs, ads, full search, ML ranking
 
 ## 2) Requirements
 - Functional:
