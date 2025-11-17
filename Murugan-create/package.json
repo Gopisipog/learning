@@ -1,0 +1,21 @@
+{
+  "name": "murugan-shorts-generator",
+  "version": "1.0.0",
+  "description": "Generate 25 Murugan devotional shorts using Creatomate API",
+  "main": "generate-shorts.js",
+  "scripts": {
+    "start": "node generate-shorts.js"
+  },
+  "keywords": [
+    "murugan",
+    "shorts",
+    "video",
+    "creatomate"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
+

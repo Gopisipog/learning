@@ -341,3 +341,7 @@ server/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Large local audio files (not tracked)
+Top 100 - Murugan Songs - Tamil*

@@ -1,0 +1,31 @@
+{
+  "name": "kids-animated-story",
+  "version": "1.0.0",
+  "description": "Generate kids animated stories using Stability AI SDK",
+  "main": "story-generator.js",
+  "type": "module",
+  "scripts": {
+    "start": "node story-generator.js",
+    "generate": "node story-generator.js",
+    "video": "node create-rhyme-video.js",
+    "download-music": "node download-music.js",
+    "final": "node create-final-video.js",
+    "complete": "node story-generator.js && node create-rhyme-video.js && node download-music.js && python generate-voiceovers.py && node create-final-video.js",
+    "new-story": "node create-full-story.js",
+    "test": "node story-generator.js"
+  },
+  "keywords": [
+    "stability-ai",
+    "animation",
+    "kids-story",
+    "image-generation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "form-data": "^4.0.4",
+    "fs-extra": "^11.2.0",
+    "node-fetch": "^3.3.2"
+  }
+}

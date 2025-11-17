@@ -1,0 +1,33 @@
+Music Video Credits: "Growing"
+=====================================
+
+Audio
+-----
+- Source: growing.mp3 (user-provided)
+- Title: 🌱 நான் தினமும் வளரும் 🌱 (I grow every day)
+- Artist: gopicool_m
+- Duration: 78.84 seconds
+- Format: MP3, 48kHz stereo, 181 kbps
+
+Video
+-----
+- Format: MP4 (H.264 + AAC)
+- Resolution: 1080x1920 (9:16 vertical shorts)
+- Frame rate: 30 fps
+- Duration: 78.84 seconds
+- File size: 46.61 MB
+
+Visual Effects
+--------------
+- Dark gradient background (procedurally generated)
+- Real-time audio waveform visualization (showwaves filter)
+- Frequency spectrum analyzer (showfreqs filter)
+- Text overlays: "GROWING" title and "Music Video" subtitle
+
+Tools Used
+----------
+- FFmpeg 8.0 (video processing and audio visualization)
+- PowerShell (build automation)
+
+Generated: 2025-11-14
+

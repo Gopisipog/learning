@@ -1,0 +1,32 @@
+[
+  {
+    "scene": 1,
+    "description": "A cute little owl named Luna sitting on a tree branch under a starry night sky, children's book illustration style, bright colors, magical atmosphere, twinkling stars, crescent moon",
+    "narration": "High in the tallest tree, Luna the owl wakes with glee!",
+    "duration": 5
+  },
+  {
+    "scene": 2,
+    "description": "Luna the owl flying through a magical forest with glowing fireflies all around, enchanted woodland, sparkling lights, mystical trees, children's book art style, vibrant colors",
+    "narration": "Through the forest she takes flight, guided by the fireflies' light!",
+    "duration": 5
+  },
+  {
+    "scene": 3,
+    "description": "Luna the owl meeting a friendly fox near a glowing mushroom circle, magical forest clearing, bioluminescent mushrooms, cute fox character, whimsical children's illustration, warm colors",
+    "narration": "Felix the fox says come and see, the magic mushroom jubilee!",
+    "duration": 5
+  },
+  {
+    "scene": 4,
+    "description": "Luna and Felix watching shooting stars together on a hilltop, beautiful night sky with meteor shower, silhouettes of owl and fox, magical atmosphere, children's book style, dreamy colors",
+    "narration": "Stars are falling from above, filling hearts with joy and love!",
+    "duration": 5
+  },
+  {
+    "scene": 5,
+    "description": "Luna the owl back in her cozy tree hollow nest, peaceful sleeping scene, soft moonlight, comfortable and warm, children's book illustration, gentle colors, sweet dreams atmosphere",
+    "narration": "Home again as dawn draws near, Luna dreams without a fear!",
+    "duration": 5
+  }
+]
