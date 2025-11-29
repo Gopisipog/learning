@@ -1,0 +1,124 @@
+{
+  "name": "Tavily Research Simple",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tavily-research",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-node",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "tavily-research-webhook"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Extract parameters from webhook body\nconst body = $input.item.json.body || $input.item.json;\n\nreturn {\n  json: {\n    topic: body.topic || 'AI trends 2024',\n    searchDepth: body.searchDepth || 'basic',\n    maxResults: body.maxResults || 5\n  }\n};"
+      },
+      "id": "extract-params",
+      "name": "Extract Parameters",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.tavily.com/search",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  \"api_key\": \"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\",\n  \"query\": String($json.topic),\n  \"search_depth\": String($json.searchDepth),\n  \"max_results\": Number($json.maxResults),\n  \"include_answer\": true,\n  \"include_images\": false\n}) }}",
+        "options": {}
+      },
+      "id": "tavily-api",
+      "name": "Tavily API Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const tavilyResponse = $input.item.json;\nconst topic = $node['Extract Parameters'].json.topic;\nconst searchDepth = $node['Extract Parameters'].json.searchDepth;\nconst maxResults = $node['Extract Parameters'].json.maxResults;\n\nconst results = tavilyResponse.results || [];\nconst answer = tavilyResponse.answer || 'No summary available';\n\n// Generate simple HTML\nlet html = `<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Research: ${topic}</title>\n  <style>\n    body {\n      font-family: Arial, sans-serif;\n      max-width: 1200px;\n      margin: 0 auto;\n      padding: 20px;\n      background: #f5f5f5;\n    }\n    .header {\n      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n      color: white;\n      padding: 30px;\n      border-radius: 10px;\n      margin-bottom: 20px;\n    }\n    .header h1 { margin: 0 0 10px 0; }\n    .summary {\n      background: #fff3cd;\n      border-left: 4px solid #ffc107;\n      padding: 20px;\n      margin-bottom: 20px;\n      border-radius: 5px;\n    }\n    .result {\n      background: white;\n      padding: 20px;\n      margin-bottom: 15px;\n      border-radius: 5px;\n      box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n    }\n    .result h3 { margin-top: 0; color: #333; }\n    .result a { color: #667eea; text-decoration: none; }\n    .result a:hover { text-decoration: underline; }\n    .score {\n      display: inline-block;\n      background: #28a745;\n      color: white;\n      padding: 3px 8px;\n      border-radius: 10px;\n      font-size: 0.85em;\n      margin-left: 10px;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"header\">\n    <h1>🔍 Research Report</h1>\n    <p>${topic}</p>\n    <small>Search Depth: ${searchDepth} | Results: ${results.length}</small>\n  </div>\n  \n  <div class=\"summary\">\n    <h2>💡 Summary</h2>\n    <p>${answer}</p>\n  </div>\n  \n  <h2>📚 Sources (${results.length})</h2>\n`;\n\nresults.forEach((result, index) => {\n  const score = result.score ? (result.score * 100).toFixed(0) : 'N/A';\n  html += `\n  <div class=\"result\">\n    <h3>${index + 1}. ${result.title} ${result.score ? '<span class=\"score\">' + score + '%</span>' : ''}</h3>\n    <a href=\"${result.url}\" target=\"_blank\">${result.url}</a>\n    <p>${result.content ? result.content.substring(0, 300) : 'No content'}...</p>\n  </div>\n`;\n});\n\nhtml += `\n  <div style=\"text-align: center; margin-top: 30px; color: #666;\">\n    <p>Generated on ${new Date().toLocaleString()}</p>\n  </div>\n</body>\n</html>`;\n\nconst sanitizedTopic = topic.replace(/\\s+/g, '-').toLowerCase().replace(/[^a-z0-9-]/g, '');\nconst fileName = `research-${sanitizedTopic}-${Date.now()}.html`;\n\nreturn {\n  json: {\n    success: true,\n    topic: topic,\n    fileName: fileName,\n    htmlContent: html,\n    resultsCount: results.length,\n    answer: answer,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "format-html",
+      "name": "Format HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({\n  success: $json.success,\n  topic: $json.topic,\n  fileName: $json.fileName,\n  htmlContent: $json.htmlContent,\n  resultsCount: $json.resultsCount,\n  answer: $json.answer,\n  timestamp: $json.timestamp\n}) }}",
+        "options": {}
+      },
+      "id": "respond-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1120, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Parameters": {
+      "main": [
+        [
+          {
+            "node": "Tavily API Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tavily API Request": {
+      "main": [
+        [
+          {
+            "node": "Format HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format HTML": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-11-25T10:00:00.000Z",
+  "versionId": "1"
+}

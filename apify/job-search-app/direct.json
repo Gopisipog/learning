@@ -1,0 +1,591 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "version": "1.1",
+    "x-build-id": "rmLepDv0LgiZvBqew"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/practicaltools~global-jobs-scraper-2/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run-sync-get-dataset-items-practicaltools-global-jobs-scraper-2",
+        "x-openai-isConsequential": false,
+        "summary": "Executes an Actor, waits for its completion, and returns Actor's dataset items in response.",
+        "tags": [
+          "Run Actor"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inputSchema"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Enter your Apify token here"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/acts/practicaltools~global-jobs-scraper-2/runs": {
+      "post": {
+        "operationId": "runs-sync-practicaltools-global-jobs-scraper-2",
+        "x-openai-isConsequential": false,
+        "summary": "Executes an Actor and returns information about the initiated run in response.",
+        "tags": [
+          "Run Actor"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inputSchema"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Enter your Apify token here"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/runsResponseSchema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/practicaltools~global-jobs-scraper-2/run-sync": {
+      "post": {
+        "operationId": "run-sync-practicaltools-global-jobs-scraper-2",
+        "x-openai-isConsequential": false,
+        "summary": "Executes an Actor, waits for completion, and returns the OUTPUT from Key-value store in response.",
+        "tags": [
+          "Run Actor"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inputSchema"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Enter your Apify token here"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "title": "Search Query",
+            "type": "string",
+            "description": "General search query for jobs"
+          },
+          "jobTitleQuery": {
+            "title": "Job Title Keywords",
+            "type": "string",
+            "description": "Specific job title keywords to search for"
+          },
+          "jobDescriptionQuery": {
+            "title": "Job Description Keywords",
+            "type": "string",
+            "description": "Keywords to search in job descriptions"
+          },
+          "locations": {
+            "title": "Locations",
+            "type": "array",
+            "description": "Target locations for job search",
+            "items": {
+              "type": "string"
+            }
+          },
+          "workplaceTypes": {
+            "title": "Workplace Types",
+            "type": "array",
+            "description": "Type of workplace arrangement",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Remote",
+                "Hybrid",
+                "Onsite"
+              ]
+            }
+          },
+          "commitmentTypes": {
+            "title": "Employment Types",
+            "type": "array",
+            "description": "Types of employment commitment",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Full Time",
+                "Part Time",
+                "Contract",
+                "Temporary",
+                "Seasonal",
+                "Volunteer"
+              ]
+            }
+          },
+          "seniorityLevel": {
+            "title": "Seniority Levels",
+            "type": "array",
+            "description": "Required seniority levels",
+            "items": {
+              "type": "string",
+              "enum": [
+                "No Prior Experience Required",
+                "Mid Level",
+                "Senior Level"
+              ]
+            }
+          },
+          "minSalary": {
+            "title": "Minimum Salary",
+            "minimum": 0,
+            "type": "integer",
+            "description": "Minimum salary requirement (yearly)"
+          },
+          "maxSalary": {
+            "title": "Maximum Salary",
+            "minimum": 0,
+            "type": "integer",
+            "description": "Maximum salary range (yearly)"
+          },
+          "currency": {
+            "title": "Currency",
+            "enum": [
+              "USD",
+              "EUR",
+              "GBP",
+              "CAD",
+              "AUD",
+              "JPY",
+              "CHF",
+              "SEK",
+              "NOK",
+              "DKK",
+              "ILS",
+              "SGD",
+              "HKD",
+              "NZD"
+            ],
+            "type": "string",
+            "description": "Preferred currency for salary"
+          },
+          "restrictJobsToTransparentSalaries": {
+            "title": "Transparent Salaries Only",
+            "type": "boolean",
+            "description": "Only show jobs with transparent salary information"
+          },
+          "bachelorsDegreeFieldsOfStudy": {
+            "title": "Bachelor's Degree Fields",
+            "type": "array",
+            "description": "Required bachelor's degree fields of study",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mastersDegreeFieldsOfStudy": {
+            "title": "Master's Degree Fields",
+            "type": "array",
+            "description": "Required master's degree fields of study",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bachelorsDegreeRequirements": {
+            "title": "Bachelor's Degree Requirements",
+            "type": "array",
+            "description": "Bachelor's degree requirement level",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Required",
+                "Preferred",
+                "Not Required"
+              ]
+            }
+          },
+          "mastersDegreeRequirements": {
+            "title": "Master's Degree Requirements",
+            "type": "array",
+            "description": "Master's degree requirement level",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Required",
+                "Preferred",
+                "Not Required"
+              ]
+            }
+          },
+          "companyNames": {
+            "title": "Target Companies",
+            "type": "array",
+            "description": "Specific company names to target",
+            "items": {
+              "type": "string"
+            }
+          },
+          "industries": {
+            "title": "Industries",
+            "type": "array",
+            "description": "Target industries",
+            "items": {
+              "type": "string"
+            }
+          },
+          "companySizeRanges": {
+            "title": "Company Size Ranges",
+            "type": "array",
+            "description": "Preferred company size ranges [min, max]"
+          },
+          "benefitsAndPerks": {
+            "title": "Required Benefits",
+            "type": "array",
+            "description": "Required benefits and perks",
+            "items": {
+              "type": "string",
+              "enum": [
+                "relocation_assistance",
+                "generous_paid_time_off",
+                "visa_sponsorship",
+                "four_day_work_week",
+                "remote_work",
+                "health_insurance",
+                "dental_insurance",
+                "vision_insurance",
+                "retirement_plan"
+              ]
+            }
+          },
+          "languageRequirements": {
+            "title": "Language Requirements",
+            "type": "array",
+            "description": "Required languages",
+            "items": {
+              "type": "string"
+            }
+          },
+          "technologyKeywordsQuery": {
+            "title": "Technology Keywords",
+            "type": "string",
+            "description": "Technology stack keywords (e.g., Python, React, AWS)"
+          },
+          "requirementsKeywordsQuery": {
+            "title": "Requirements Keywords",
+            "type": "string",
+            "description": "Specific requirement keywords"
+          },
+          "dateFetchedPastNDays": {
+            "title": "Job Posting Age (Days)",
+            "minimum": 2,
+            "maximum": 90,
+            "type": "integer",
+            "description": "Only fetch jobs posted within the last N days (options: 2, 4, 8, 30, 90)"
+          },
+          "sortBy": {
+            "title": "Sort Order",
+            "enum": [
+              "default",
+              "date",
+              "compensation_desc",
+              "compensation_asc"
+            ],
+            "type": "string",
+            "description": "How to sort the job results"
+          },
+          "maxResults": {
+            "title": "Maximum Results",
+            "minimum": 1,
+            "maximum": 10000,
+            "type": "integer",
+            "description": "Maximum number of job results to scrape"
+          },
+          "proxyConfiguration": {
+            "title": "Proxy Configuration",
+            "type": "object",
+            "description": "Proxy settings for the scraper."
+          }
+        }
+      },
+      "runsResponseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "actId": {
+                "type": "string"
+              },
+              "userId": {
+                "type": "string"
+              },
+              "startedAt": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2025-01-08T00:00:00.000Z"
+              },
+              "finishedAt": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2025-01-08T00:00:00.000Z"
+              },
+              "status": {
+                "type": "string",
+                "example": "READY"
+              },
+              "meta": {
+                "type": "object",
+                "properties": {
+                  "origin": {
+                    "type": "string",
+                    "example": "API"
+                  },
+                  "userAgent": {
+                    "type": "string"
+                  }
+                }
+              },
+              "stats": {
+                "type": "object",
+                "properties": {
+                  "inputBodyLen": {
+                    "type": "integer",
+                    "example": 2000
+                  },
+                  "rebootCount": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "restartCount": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "resurrectCount": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "computeUnits": {
+                    "type": "integer",
+                    "example": 0
+                  }
+                }
+              },
+              "options": {
+                "type": "object",
+                "properties": {
+                  "build": {
+                    "type": "string",
+                    "example": "latest"
+                  },
+                  "timeoutSecs": {
+                    "type": "integer",
+                    "example": 300
+                  },
+                  "memoryMbytes": {
+                    "type": "integer",
+                    "example": 1024
+                  },
+                  "diskMbytes": {
+                    "type": "integer",
+                    "example": 2048
+                  }
+                }
+              },
+              "buildId": {
+                "type": "string"
+              },
+              "defaultKeyValueStoreId": {
+                "type": "string"
+              },
+              "defaultDatasetId": {
+                "type": "string"
+              },
+              "defaultRequestQueueId": {
+                "type": "string"
+              },
+              "buildNumber": {
+                "type": "string",
+                "example": "1.0.0"
+              },
+              "containerUrl": {
+                "type": "string"
+              },
+              "usage": {
+                "type": "object",
+                "properties": {
+                  "ACTOR_COMPUTE_UNITS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATASET_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATASET_WRITES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "KEY_VALUE_STORE_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "KEY_VALUE_STORE_WRITES": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "KEY_VALUE_STORE_LISTS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "REQUEST_QUEUE_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "REQUEST_QUEUE_WRITES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATA_TRANSFER_INTERNAL_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATA_TRANSFER_EXTERNAL_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "PROXY_RESIDENTIAL_TRANSFER_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "PROXY_SERPS": {
+                    "type": "integer",
+                    "example": 0
+                  }
+                }
+              },
+              "usageTotalUsd": {
+                "type": "number",
+                "example": 0.00005
+              },
+              "usageUsd": {
+                "type": "object",
+                "properties": {
+                  "ACTOR_COMPUTE_UNITS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATASET_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATASET_WRITES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "KEY_VALUE_STORE_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "KEY_VALUE_STORE_WRITES": {
+                    "type": "number",
+                    "example": 0.00005
+                  },
+                  "KEY_VALUE_STORE_LISTS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "REQUEST_QUEUE_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "REQUEST_QUEUE_WRITES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATA_TRANSFER_INTERNAL_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATA_TRANSFER_EXTERNAL_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "PROXY_RESIDENTIAL_TRANSFER_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "PROXY_SERPS": {
+                    "type": "integer",
+                    "example": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

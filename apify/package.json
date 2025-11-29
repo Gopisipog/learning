@@ -1,0 +1,18 @@
+{
+  "name": "apify-architect-job-search",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["apify", "job-search", "architect"],
+  "author": "",
+  "license": "ISC",
+  "description": "Search for Software/Solutions Architect jobs outside India using Apify",
+  "dependencies": {
+    "apify-client": "^2.20.0",
+    "dotenv": "^17.2.3"
+  }
+}

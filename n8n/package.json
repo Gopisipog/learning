@@ -1,0 +1,31 @@
+{
+  "name": "n8n-text-to-blog-ai-publisher",
+  "version": "1.0.0",
+  "description": "An automated n8n workflow that transforms text into professional blog posts using AI and publishes them to WordPress",
+  "main": "index.js",
+  "scripts": {
+    "start": "n8n",
+    "test": "echo \"Run test-workflow.ps1 or test-workflow.sh to test the workflow\"",
+    "test:tavily": "node test-tavily.js",
+    "dev": "n8n start"
+  },
+  "keywords": [
+    "n8n",
+    "automation",
+    "ai",
+    "blog",
+    "wordpress",
+    "openai",
+    "content-generation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@pinecone-database/pinecone": "^5.1.2",
+    "@qdrant/js-client-rest": "^1.16.1",
+    "@tavily/core": "^0.5.13",
+    "dotenv": "^17.2.3",
+    "n8n": "^1.120.4",
+    "n8n-nodes-mcp": "^0.1.33"
+  }
+}

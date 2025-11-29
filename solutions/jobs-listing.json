@@ -1,0 +1,131 @@
+{
+  "jobs": [
+    {
+      "id": "JOB001",
+      "title": "Senior .NET Developer",
+      "company": "TechCorp Solutions",
+      "location": "Remote",
+      "type": "Full-time",
+      "experience": "5+ years",
+      "skills": [".NET Core", "C#", "ASP.NET", "SQL Server", "Azure"],
+      "description": "Looking for an experienced .NET developer to build scalable enterprise applications.",
+      "salary": "$120,000 - $150,000",
+      "postedDate": "2025-11-20"
+    },
+    {
+      "id": "JOB002",
+      "title": "React Frontend Developer",
+      "company": "Digital Innovations Inc",
+      "location": "New York, NY",
+      "type": "Full-time",
+      "experience": "3+ years",
+      "skills": ["React", "JavaScript", "TypeScript", "Redux", "CSS3", "HTML5"],
+      "description": "Join our team to create modern, responsive web applications using React.",
+      "salary": "$100,000 - $130,000",
+      "postedDate": "2025-11-21"
+    },
+    {
+      "id": "JOB003",
+      "title": "Angular Developer",
+      "company": "Enterprise Systems Ltd",
+      "location": "San Francisco, CA",
+      "type": "Full-time",
+      "experience": "4+ years",
+      "skills": ["Angular", "TypeScript", "RxJS", "NgRx", "REST APIs"],
+      "description": "Seeking an Angular expert to develop complex enterprise web applications.",
+      "salary": "$110,000 - $140,000",
+      "postedDate": "2025-11-19"
+    },
+    {
+      "id": "JOB004",
+      "title": "Full Stack .NET/React Developer",
+      "company": "CloudTech Ventures",
+      "location": "Remote",
+      "type": "Full-time",
+      "experience": "5+ years",
+      "skills": [".NET Core", "C#", "React", "TypeScript", "SQL Server", "Docker"],
+      "description": "Full stack role combining .NET backend with React frontend development.",
+      "salary": "$130,000 - $160,000",
+      "postedDate": "2025-11-22"
+    },
+    {
+      "id": "JOB005",
+      "title": "Junior .NET Developer",
+      "company": "StartUp Dynamics",
+      "location": "Austin, TX",
+      "type": "Full-time",
+      "experience": "1-2 years",
+      "skills": [".NET", "C#", "ASP.NET MVC", "Entity Framework", "SQL"],
+      "description": "Entry-level position for motivated .NET developers looking to grow their skills.",
+      "salary": "$70,000 - $85,000",
+      "postedDate": "2025-11-18"
+    },
+    {
+      "id": "JOB006",
+      "title": "React Native Mobile Developer",
+      "company": "Mobile First Apps",
+      "location": "Seattle, WA",
+      "type": "Contract",
+      "experience": "3+ years",
+      "skills": ["React Native", "JavaScript", "TypeScript", "iOS", "Android"],
+      "description": "Build cross-platform mobile applications using React Native.",
+      "salary": "$95,000 - $120,000",
+      "postedDate": "2025-11-21"
+    },
+    {
+      "id": "JOB007",
+      "title": "Senior Angular Architect",
+      "company": "Financial Tech Group",
+      "location": "Boston, MA",
+      "type": "Full-time",
+      "experience": "7+ years",
+      "skills": ["Angular", "TypeScript", "Microservices", "Architecture", "Team Leadership"],
+      "description": "Lead Angular development and architecture for financial applications.",
+      "salary": "$150,000 - $180,000",
+      "postedDate": "2025-11-20"
+    },
+    {
+      "id": "JOB008",
+      "title": ".NET Microservices Engineer",
+      "company": "Cloud Native Systems",
+      "location": "Remote",
+      "type": "Full-time",
+      "experience": "5+ years",
+      "skills": [".NET Core", "Microservices", "Kubernetes", "Docker", "Azure", "RabbitMQ"],
+      "description": "Design and implement microservices architecture using .NET Core.",
+      "salary": "$135,000 - $165,000",
+      "postedDate": "2025-11-22"
+    },
+    {
+      "id": "JOB009",
+      "title": "React UI/UX Developer",
+      "company": "Design Forward Studios",
+      "location": "Los Angeles, CA",
+      "type": "Full-time",
+      "experience": "3+ years",
+      "skills": ["React", "JavaScript", "CSS3", "Figma", "UI/UX Design", "Responsive Design"],
+      "description": "Create beautiful and intuitive user interfaces with React.",
+      "salary": "$105,000 - $135,000",
+      "postedDate": "2025-11-19"
+    },
+    {
+      "id": "JOB010",
+      "title": "Full Stack Angular/.NET Developer",
+      "company": "Healthcare Tech Solutions",
+      "location": "Chicago, IL",
+      "type": "Full-time",
+      "experience": "4+ years",
+      "skills": ["Angular", ".NET Core", "C#", "TypeScript", "SQL Server", "Azure"],
+      "description": "Develop healthcare applications using Angular and .NET stack.",
+      "salary": "$115,000 - $145,000",
+      "postedDate": "2025-11-21"
+    }
+  ],
+  "metadata": {
+    "totalJobs": 10,
+    "generatedDate": "2025-11-22",
+    "categories": [".NET", "React", "Angular"],
+    "locations": ["Remote", "New York, NY", "San Francisco, CA", "Austin, TX", "Seattle, WA", "Boston, MA", "Los Angeles, CA", "Chicago, IL"]
+  }
+}
+

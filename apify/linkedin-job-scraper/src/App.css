@@ -1,0 +1,68 @@
+.app { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+.header { text-align: center; color: white; margin-bottom: 2rem; }
+.header h1 { font-size: 2.5rem; margin: 0; }
+.header p { opacity: 0.9; margin-top: 0.5rem; }
+
+.main { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333; }
+.form-group input, .form-group select {
+  width: 100%; padding: 0.75rem; border: 2px solid #e0e0e0;
+  border-radius: 8px; font-size: 1rem; transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus { outline: none; border-color: #0077b5; }
+.form-group small { color: #666; font-size: 0.85rem; }
+.form-group small a { color: #0077b5; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-row.filters { grid-template-columns: repeat(4, 1fr); }
+
+.btn-submit {
+  width: 100%; padding: 1rem; font-size: 1.1rem; font-weight: 600; color: white;
+  background: linear-gradient(135deg, #0077b5 0%, #004182 100%);
+  border: none; border-radius: 8px; cursor: pointer; margin-top: 1rem; transition: all 0.2s;
+}
+.btn-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0, 119, 181, 0.4); }
+.btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.status-box { margin-top: 1rem; padding: 1rem; background: #e0f7fa; border: 1px solid #00bcd4; border-radius: 8px; text-align: center; color: #006064; }
+.error-box { margin-top: 1rem; padding: 1rem; background: #fee2e2; border: 1px solid #fca5a5; border-radius: 8px; color: #dc2626; }
+.error-box h3 { margin: 0 0 0.5rem 0; }
+
+.loading-box { margin-top: 2rem; text-align: center; padding: 2rem; }
+.spinner { width: 50px; height: 50px; border: 4px solid #e0e0e0; border-top-color: #0077b5; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.results-section { margin-top: 2rem; }
+.results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; }
+.results-header h2 { color: #0077b5; margin: 0; }
+.export-buttons { display: flex; gap: 0.5rem; }
+.btn-export { padding: 0.5rem 1rem; border: 2px solid #0077b5; background: white; color: #0077b5; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+.btn-export:hover { background: #0077b5; color: white; }
+.btn-export.sheets { border-color: #34a853; color: #34a853; }
+.btn-export.sheets:hover { background: #34a853; color: white; }
+
+.jobs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; }
+
+.job-card { border: 1px solid #e0e0e0; border-radius: 12px; padding: 1.25rem; background: #f8fafc; transition: box-shadow 0.2s; }
+.job-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+.job-header { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem; }
+.company-logo { width: 50px; height: 50px; object-fit: contain; border-radius: 8px; background: white; }
+
+.job-title { margin: 0 0 0.25rem 0; color: #333; font-size: 1.1rem; }
+.job-company { margin: 0; color: #0077b5; font-weight: 600; }
+.job-location, .job-salary, .job-date, .job-apps { margin: 0.25rem 0; color: #666; font-size: 0.9rem; }
+
+.badges { margin: 0.5rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.badge { padding: 0.25rem 0.5rem; background: #e0f2fe; color: #0077b5; border-radius: 4px; font-size: 0.8rem; }
+.badge.remote { background: #dcfce7; color: #166534; }
+.badge.exp { background: #fef3c7; color: #92400e; }
+
+.btn-apply { display: inline-block; margin-top: 0.75rem; padding: 0.5rem 1rem; background: #0077b5; color: white; text-decoration: none; border-radius: 6px; font-size: 0.9rem; transition: background 0.2s; }
+.btn-apply:hover { background: #004182; }
+
+@media (max-width: 768px) { .form-row, .form-row.filters { grid-template-columns: 1fr; } .jobs-grid { grid-template-columns: 1fr; } }
+

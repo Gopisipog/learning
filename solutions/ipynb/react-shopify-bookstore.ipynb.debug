@@ -1,0 +1,110 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "intro-markdown",
+   "metadata": {},
+   "source": [
+    "# React Bookstore with Shopify Storefront API
+",
+    "
+",
+    "Build a complete online bookstore using React and Shopify's Storefront API to sell books.
+",
+    "
+",
+    "## What You'll Learn:
+",
+    "- Shopify Storefront API integration
+",
+    "- GraphQL queries for products
+",
+    "- Shopping cart with Shopify Checkout
+",
+    "- Product catalog for books
+",
+    "- Real payment processing through Shopify
+",
+    "- Inventory management
+",
+    "
+",
+    "## Prerequisites:
+",
+    "- Shopify Partner account (free at https://partners.shopify.com)
+",
+    "- Development store created
+",
+    "- Storefront API access token
+",
+    "- Node.js installed
+",
+    "- Basic React knowledge
+",
+    "
+",
+    "Run cells one by one from top to bottom.
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "shopify-setup-markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Shopify Setup Instructions
+",
+    "
+",
+    "Before coding, set up your Shopify store.
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "shopify-setup-code",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "/*
+",
+    "SHOPIFY SETUP STEPS:
+",
+    "
+",
+    "1. Create Shopify Partner Account:
+",
+    "   - Go to https://partners.shopify.com
+",
+    "   - Sign up for free
+",
+    "   - Create a development store
+",
+    "
+",
+    "2. Create Development Store:
+",
+    "   - In Partner Dashboard > Stores
+",
+    "   - Click 'Add store' > 'Development store'
+",
+    "   - Fill in store details
+",
+    "   - Choose 'Developer Preview' for latest features
+",
+    "
+",
+    "3. Enable Storefront API:
+",
+    "   - Go to your store admin
+",
+    "   - Apps > Develop apps
+",
+    "   - Click 'Allow custom app development'
+",
+    "   - Create an app (e.g., 'Bookstore Frontend')
+",
+    "
+",
+    "

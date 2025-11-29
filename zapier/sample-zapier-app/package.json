@@ -1,0 +1,22 @@
+{
+  "name": "sample-zapier-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --testTimeout 10000"
+  },
+  "dependencies": {
+    "zapier-platform-core": "18.0.4"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "jest": "^29.6.0"
+  },
+  "private": true,
+  "exports": "./index.js",
+  "type": "module",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  }
+}

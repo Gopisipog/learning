@@ -1,0 +1,94 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "intro-markdown-1",
+   "metadata": {},
+   "source": [
+    "# Angular Step-by-Step Tutorial
+",
+    "
+",
+    "This notebook teaches Angular fundamentals using small, focused examples.
+",
+    "Each section has:
+",
+    "- Explanation (this markdown cell)
+",
+    "- Sample Angular/TypeScript code you can run and modify
+",
+    "
+",
+    "Run cells one by one from top to bottom. Feel free to tweak the code and re-run.
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "hello-world-markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Hello World - Your First Angular Component
+",
+    "
+",
+    "Angular is a TypeScript-based framework for building web applications. Components are the building blocks of Angular apps.
+",
+    "Each component has a TypeScript class decorated with `@Component` and a template.
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "hello-world-code",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import { Component } from '@angular/core';
+",
+    "
+",
+    "@Component({
+",
+    "  selector: 'app-hello-world',
+",
+    "  template: `<h1>Hello, Angular world!</h1>`
+",
+    "})
+",
+    "export class HelloWorldComponent {
+",
+    "  constructor() {
+",
+    "    console.log('HelloWorldComponent created');
+",
+    "  }
+",
+    "}
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "interpolation-markdown",
+   "metadata": {},
+   "source": [
+    "## 2. String Interpolation and Property Binding
+",
+    "
+",
+    "Use double curly braces `{{ }}` for string interpolation to display component properties in the template.
+",
+    "Property binding with `[property]` binds component data to element properties.
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "interpolation-code",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import { Component } from '@angular

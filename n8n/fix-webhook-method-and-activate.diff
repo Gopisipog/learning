@@ -1,0 +1,17 @@
+"path": "create-blog",
+      "responseMode": "responseNode"
+=======
+      "httpMethod": "GET",
+      "path": "create-blog",
+      "responseMode": "responseNode"
+```
+
+```
+<<<<<<< SEARCH
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+=======
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"

@@ -1,0 +1,232 @@
+{
+  "name": "Text to Blog AI Publisher (With Tavily Research)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "create-blog",
+        "responseMode": "responseNode"
+      },
+      "id": "webhook-1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "input-text",
+              "name": "inputText",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "blog-title",
+              "name": "blogTitle",
+              "value": "={{ $json.title || 'Untitled Blog Post' }}",
+              "type": "string"
+            },
+            {
+              "id": "author",
+              "name": "author",
+              "value": "={{ $json.author || 'AI Assistant' }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "set-1",
+      "name": "Extract Input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const { tavily } = require('@tavily/core');\n\n// Initialize Tavily with API key from environment\nconst apiKey = process.env.TAVILY_API_KEY || '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';\nconst tvly = tavily({ apiKey });\n\n// Get input from previous node\nconst topic = $input.item.json.inputText;\nconst title = $input.item.json.blogTitle;\n\n// Research the topic\ntry {\n  const research = await tvly.search(title + ' ' + topic, {\n    searchDepth: 'advanced',\n    maxResults: 5,\n    includeAnswer: true\n  });\n  \n  // Extract key information\n  const sources = research.results.map(r => ({\n    title: r.title,\n    url: r.url,\n    content: r.content.substring(0, 200) + '...'\n  }));\n  \n  // Create enhanced prompt with research\n  const enhancedContent = `Original Topic: ${title}\\n\\nOriginal Content: ${topic}\\n\\nResearch Summary: ${research.answer || 'No summary available'}\\n\\nKey Sources:\\n${sources.map((s, i) => `${i + 1}. ${s.title}\\n   ${s.content}`).join('\\n\\n')}`;\n  \n  return {\n    json: {\n      inputText: topic,\n      blogTitle: title,\n      author: $input.item.json.author,\n      researchSummary: research.answer || 'No research summary',\n      sources: sources,\n      enhancedContent: enhancedContent\n    }\n  };\n  \n} catch (error) {\n  // If Tavily fails, continue without research\n  return {\n    json: {\n      inputText: topic,\n      blogTitle: title,\n      author: $input.item.json.author,\n      researchSummary: 'Research unavailable',\n      sources: [],\n      enhancedContent: `Original Topic: ${title}\\n\\nOriginal Content: ${topic}`\n    }\n  };\n}"
+      },
+      "id": "code-1",
+      "name": "Tavily Research",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'gpt-4o-mini', messages: [{ role: 'system', content: 'You are a professional blog writer. Transform the given text and research into a well-structured, engaging blog post with: 1) An attention-grabbing introduction 2) Well-organized body paragraphs with subheadings 3) Key takeaways or insights 4) A compelling conclusion 5) SEO-friendly content. Incorporate the research findings naturally. Format the output in HTML with proper tags (h2, h3, p, ul, li, strong, em).' }, { role: 'user', content: $json.enhancedContent + '\\n\\nPlease transform this into a complete, well-researched blog post. Cite the research naturally in the content.' }], temperature: 0.7, max_tokens: 2500 }) }}"
+      },
+      "id": "http-1",
+      "name": "OpenAI Chat",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [840, 300]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "title",
+              "name": "title",
+              "value": "={{ $('Tavily Research').item.json.blogTitle }}",
+              "type": "string"
+            },
+            {
+              "id": "blog-content",
+              "name": "blogContent",
+              "value": "={{ $json.choices[0].message.content }}",
+              "type": "string"
+            },
+            {
+              "id": "word-count",
+              "name": "wordCount",
+              "value": "={{ $json.choices[0].message.content.split(' ').length }}",
+              "type": "number"
+            },
+            {
+              "id": "generated-at",
+              "name": "generatedAt",
+              "value": "={{ new Date().toISOString() }}",
+              "type": "string"
+            },
+            {
+              "id": "research-summary",
+              "name": "researchSummary",
+              "value": "={{ $('Tavily Research').item.json.researchSummary }}",
+              "type": "string"
+            },
+            {
+              "id": "sources",
+              "name": "sources",
+              "value": "={{ JSON.stringify($('Tavily Research').item.json.sources) }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "set-2",
+      "name": "Format Blog",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1040, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://your-wordpress-site.com/wp-json/wp/v2/posts",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ title: $json.title, content: $json.blogContent, status: 'draft', excerpt: $json.researchSummary }) }}"
+      },
+      "id": "http-2",
+      "name": "Publish to WordPress",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1240, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, message: 'Blog post created successfully with research', data: { title: $('Format Blog').item.json.title, wordCount: $('Format Blog').item.json.wordCount, researchSummary: $('Format Blog').item.json.researchSummary, sourcesCount: JSON.parse($('Format Blog').item.json.sources).length, wordpressPostId: $json.id, wordpressLink: $json.link } }) }}"
+      },
+      "id": "respond-1",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1440, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Input": {
+      "main": [
+        [
+          {
+            "node": "Tavily Research",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tavily Research": {
+      "main": [
+        [
+          {
+            "node": "OpenAI Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat": {
+      "main": [
+        [
+          {
+            "node": "Format Blog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Blog": {
+      "main": [
+        [
+          {
+            "node": "Publish to WordPress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish to WordPress": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-11-25T00:00:00.000Z",
+  "versionId": "1"
+}
+

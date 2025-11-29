@@ -1,0 +1,97 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "intro-markdown-1",
+   "metadata": {},
+   "source": [
+    "# C# Step-by-Step Tutorial\
+",
+    "\
+",
+    "This notebook teaches C# fundamentals using small, focused examples.\
+",
+    "Each section has:\
+",
+    "- Explanation (this markdown cell)\
+",
+    "- Sample C# code you can run and modify\
+",
+    "\
+",
+    "Run cells one by one from top to bottom. Feel free to tweak the code and re-run.\
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "hello-world-markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Hello World and Basic Output\
+",
+    "\
+",
+    "The simplest way to start with C# is to print text to the console using `Console.WriteLine`.\
+",
+    "Run the cell below to see your first C# output.\
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "hello-world-code",
+   "metadata": {
+    "language_info": {
+     "name": "polyglot-notebook"
+    },
+    "polyglot_notebook": {
+     "kernelName": "csharp"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "Console.WriteLine(\"Hello, C# world!\");\
+",
+    "Console.WriteLine(\"This is your first C# cell.\");\
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "variables-markdown",
+   "metadata": {},
+   "source": [
+    "## 2. Variables and Basic Types\
+",
+    "\
+",
+    "C# is a statically typed language. Common types include `int`, `double`, `bool`, and `string`.\
+",
+    "You can declare variables with explicit types or use `var` when the type is obvious.\
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "variables-code",
+   "metadata": {
+    "language_info": {
+     "name": "polyglot-notebook"
+    },
+    "polyglot_notebook": {
+     "kernelName": "csharp"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "int age = 30;\
+",
+    "double price = 9.99;\
+",
+    "bool isActive = true;\
+",
+    "string name = \"Gopi\";\
+",

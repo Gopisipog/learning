@@ -1,0 +1,699 @@
+{
+  "name": "Document Summary with Vector Database",
+  "nodes": [
+    {
+      "id": "a3af309b-d24c-42fe-8bcd-f330927c7a3c",
+      "name": "Local File Trigger",
+      "type": "n8n-nodes-base.localFileTrigger",
+      "position": [240, 300],
+      "parameters": {
+        "path": "C:\\Users\\gopic\\OneDrive\\Documents\\notes",
+        "events": [
+          "add"
+        ],
+        "options": {
+          "usePolling": true,
+          "followSymlinks": true
+        },
+        "triggerOn": "folder"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "ab88cf9a-d310-4bef-9280-8b23729e7cc9",
+      "name": "Settings",
+      "type": "n8n-nodes-base.set",
+      "position": [460, 260],
+      "parameters": {
+        "options": {},
+        "assignments": {
+          "assignments": [
+            {
+              "id": "df327b01-961c-4a49-8455-58c3fbff111a",
+              "name": "project",
+              "type": "string",
+              "value": "={{ $json.path.split('/').slice(0, 4)[3] }}"
+            },
+            {
+              "id": "6b7d26f9-3a38-417e-85d0-4e9d42476465",
+              "name": "path",
+              "type": "string",
+              "value": "={{ $json.path }}"
+            },
+            {
+              "id": "bb4471c7-d894-4739-99a6-4be247794ffa",
+              "name": "filename",
+              "type": "string",
+              "value": "={{ $json.path.split('/').last() }}"
+            }
+          ]
+        }
+      },
+      "typeVersion": 3.3
+    },
+    {
+      "id": "386f7aac-f3b9-4565-907f-687d48b00c52",
+      "name": "Import File",
+      "type": "n8n-nodes-base.readWriteFile",
+      "position": [680, 260],
+      "parameters": {
+        "options": {},
+        "fileSelector": "={{ $json.path }}"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "8490664e-0ca5-4839-ad03-d3f9706c99a3",
+      "name": "Get FileType",
+      "type": "n8n-nodes-base.switch",
+      "position": [900, 260],
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "outputKey": "pdf",
+              "conditions": {
+                "options": {
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.fileType }}",
+                    "rightValue": "pdf"
+                  }
+                ]
+              },
+              "renameOutput": true
+            },
+            {
+              "outputKey": "docx",
+              "conditions": {
+                "options": {
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "3a5f509d-46fe-490c-95f0-35124873c63e",
+                    "operator": {
+                      "name": "filter.operator.equals",
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "leftValue": "={{ $json.fileType }}",
+                    "rightValue": "docx"
+                  }
+                ]
+              },
+              "renameOutput": true
+            },
+            {
+              "outputKey": "everything else",
+              "conditions": {
+                "options": {
+                  "leftValue": "",
+                  "caseSensitive": true,
+                  "typeValidation": "strict"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "id": "75188d2f-4bea-44ea-a579-9b9a1bd1ea93",
+                    "operator": {
+                      "type": "object",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "leftValue": "={{ $json }}",
+                    "rightValue": ""
+                  }
+                ]
+              },
+              "renameOutput": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "typeVersion": 3
+    },
+    {
+      "id": "6ade93d5-61c3-450a-b78c-e210c18c0e70",
+      "name": "Extract from PDF",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [1120, 180],
+      "parameters": {
+        "options": {},
+        "operation": "pdf"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "f413e139-3f9c-438f-8e82-824c38f09c6b",
+      "name": "Extract from DOCX",
+      "type": "n8n-nodes-base.extractFromFile",
+      "position": [1120, 260],
+      "parameters": {
+        "options": {},
+        "operation": "docx"
+      },
+      "typeVersion": 1
+    },
+    {
+      "id": "455fadea-f5c7-4bea-983f-b06da4e57510",
+      "name": "Extract from TEXT",
+      "type": "n8n-nodes-base.moveBinaryData",
+      "position": [1120, 340],
+      "parameters": {
+        "mode": "binaryToText",
+        "options": {}
+      },
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "doc-text",
+              "name": "text",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "prepare-document",
+      "name": "Prepare Document",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1340, 260]
+    },
+    {
+      "parameters": {
+        "chunkSize": 4000,
+        "options": {}
+      },
+      "id": "summarization-chain",
+      "name": "Summarization Chain",
+      "type": "@n8n/n8n-nodes-langchain.chainSummarization",
+      "position": [900, 200],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {}
+      },
+      "id": "openai-chat-model",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [900, 340],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "openai_credentials",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonData": "={{ $json.text }}",
+        "jsonMode": "expressionData",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "source",
+                "value": "={{ $json.path }}"
+              },
+              {
+                "name": "timestamp",
+                "value": "={{ $now.toISO() }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "document-loader",
+      "name": "Document Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "position": [1120, 480],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "chunkSize": 2000,
+        "options": {}
+      },
+      "id": "text-splitter",
+      "name": "Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "position": [1120, 620],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-small",
+        "options": {}
+      },
+      "id": "openai-embeddings",
+      "name": "OpenAI Embeddings",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [1340, 560],
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "openai_credentials",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "mode": "list",
+          "value": "documents",
+          "cachedResultName": "documents"
+        },
+        "options": {}
+      },
+      "id": "qdrant-vector-store",
+      "name": "Qdrant Vector Store",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "position": [1340, 400],
+      "typeVersion": 1,
+      "credentials": {
+        "qdrantApi": {
+          "id": "qdrant_credentials",
+          "name": "Qdrant account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition",
+        "options": {}
+      },
+      "id": "merge-results",
+      "name": "Merge Results",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "summary",
+              "name": "summary",
+              "value": "={{ $('Summarization Chain').item.json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "vector-status",
+              "name": "vectorStoreStatus",
+              "value": "={{ $('Qdrant Vector Store').item.json ? 'stored' : 'failed' }}",
+              "type": "string"
+            },
+            {
+              "id": "chunks",
+              "name": "chunksStored",
+              "value": "={{ $('Qdrant Vector Store').all().length }}",
+              "type": "number"
+            },
+            {
+              "id": "timestamp",
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "format-response",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1780, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "markdown-data",
+              "name": "data",
+              "value": "={{ (() => { const settings = $('Settings').first().json; const summary = $json.summary || ''; return ['# Document Summary', '', '**Source:** ' + settings.path, '**Vector store:** ' + $json.vectorStoreStatus + ' (' + $json.chunksStored + ' chunks)', '**Generated:** ' + $json.timestamp, '', summary].join('\\n'); })() }}",
+              "type": "string"
+            },
+            {
+              "id": "markdown-path",
+              "name": "outputPath",
+              "value": "={{ (() => { const original = $('Settings').first().json.path; const segments = original.split('/'); const originalName = segments.pop() || 'document'; const dotIndex = originalName.lastIndexOf('.'); const base = dotIndex > -1 ? originalName.slice(0, dotIndex) : originalName; segments.push(base + '-summary.md'); return segments.join('/'); })() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {
+          "keepOnlySet": false
+        }
+      },
+      "id": "prepare-markdown",
+      "name": "Prepare Markdown",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [2000, 300]
+    },
+    {
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "={{ $json.data }}",
+        "options": {}
+      },
+      "id": "summary-to-file",
+      "name": "Summary to File",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [2220, 300]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $json.outputPath }}",
+        "options": {}
+      },
+      "id": "save-markdown",
+      "name": "Save Markdown",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [2440, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "result-summary",
+              "name": "summary",
+              "value": "={{ $('Format Response').item.json.summary }}",
+              "type": "string"
+            },
+            {
+              "id": "result-vector-status",
+              "name": "vectorStoreStatus",
+              "value": "={{ $('Format Response').item.json.vectorStoreStatus }}",
+              "type": "string"
+            },
+            {
+              "id": "result-chunks",
+              "name": "chunksStored",
+              "value": "={{ $('Format Response').item.json.chunksStored }}",
+              "type": "number"
+            },
+            {
+              "id": "result-timestamp",
+              "name": "timestamp",
+              "value": "={{ $('Format Response').item.json.timestamp }}",
+              "type": "string"
+            },
+            {
+              "id": "result-source-path",
+              "name": "sourcePath",
+              "value": "={{ $('Settings').first().json.path }}",
+              "type": "string"
+            },
+            {
+              "id": "result-output-path",
+              "name": "markdownPath",
+              "value": "={{ $('Prepare Markdown').item.json.outputPath }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "summary-result",
+      "name": "Summary Result",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [2660, 300]
+    }
+  ],
+  "connections": {
+    "Local File Trigger": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Settings": {
+      "main": [
+        [
+          {
+            "node": "Import File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Import File": {
+      "main": [
+        [
+          {
+            "node": "Get FileType",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get FileType": {
+      "main": [
+        [
+          {
+            "node": "Extract from PDF",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract from DOCX",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract from TEXT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from PDF": {
+      "main": [
+        [
+          {
+            "node": "Prepare Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from DOCX": {
+      "main": [
+        [
+          {
+            "node": "Prepare Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from TEXT": {
+      "main": [
+        [
+          {
+            "node": "Prepare Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Document": {
+      "main": [
+        [
+          {
+            "node": "Summarization Chain",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Qdrant Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarization Chain": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "main": [
+        [
+          {
+            "node": "Merge Results",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Results": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Prepare Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Markdown": {
+      "main": [
+        [
+          {
+            "node": "Summary to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summary to File": {
+      "main": [
+        [
+          {
+            "node": "Save Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Markdown": {
+      "main": [
+        [
+          {
+            "node": "Summary Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Summarization Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Document Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Embeddings": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-11-27T00:00:00.000Z",
+  "versionId": "1",
+  "active": false
+}

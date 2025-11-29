@@ -1,0 +1,133 @@
+# Elixir Basics with Livebook
+
+> A step-by-step Elixir notebook you can run in [Livebook](https://livebook.dev/) to learn the core language.
+
+---
+
+## 1. Hello from Elixir
+
+This section checks that your Livebook + Elixir setup is working.
+
+```elixir
+IO.puts("Hello from Elixir in Livebook!")
+
+name = "Gopi"
+IO.puts("Welcome, #{name} 👋")
+```
+
+---
+
+## 2. Immutable data and basic types
+
+Elixir variables are **rebindings**, not mutable variables.
+
+```elixir
+x = 1
+x = x + 1
+
+IO.puts("x is now #{x}")
+
+is_boolean = is_boolean(true)
+
+IO.inspect({:tuple_example, 1, 2, 3})
+IO.inspect([1, 2, 3], label: "list")
+IO.inspect(%{language: "elixir", typed: :dynamic}, label: "map")
+```
+
+Try changing the values and re-running the cell.
+
+---
+
+## 3. Pattern matching (= is a matcher)
+
+In Elixir, `=` tries to **match** the left and right sides.
+
+```elixir
+# Simple match
+{:ok, value} = {:ok, 42}
+IO.puts("Matched value: #{value}")
+
+# Matching parts of a list
+[first | rest] = [10, 20, 30]
+
+IO.inspect(first, label: "first")
+IO.inspect(rest, label: "rest")
+
+# Uncomment to see a match error
+# {:ok, _} = :error
+```
+
+---
+
+## 4. Functions and the pipe operator
+
+Elixir code becomes very readable with **small functions** and the `|>` pipe.
+
+```elixir
+# Define a named function inside a module
+
+defmodule MathDemo do
+  def double(x), do: x * 2
+  def square(x), do: x * x
+end
+
+value = 5
+
+result =
+  value
+  |> MathDemo.double()
+  |> MathDemo.square()
+
+IO.puts("Result: #{result}")
+```
+
+Change `value` and re-run to see how the pipeline behaves.
+
+---
+
+## 5. Anonymous functions (& syntax)
+
+Elixir supports concise anonymous functions using `&`.
+
+```elixir
+add_one = &(&1 + 1)
+
+IO.puts("3 + 1 = #{add_one.(3)}")
+
+numbers = [1, 2, 3, 4]
+
+IO.inspect(numbers, label: "original")
+IO.inspect(Enum.map(numbers, add_one), label: "after add_one")
+```
+
+---
+
+## 6. Recursion and Enum
+
+Instead of loops, Elixir uses **recursion** and the `Enum` module.
+
+```elixir
+# A simple recursive sum
+
+defmodule RecursionDemo do
+  def sum([]), do: 0
+  def sum([head | tail]), do: head + sum(tail)
+end
+
+list = [1, 2, 3, 4, 5]
+
+IO.puts("Recursive sum: #{RecursionDemo.sum(list)}")
+IO.puts("Enum.sum: #{Enum.sum(list)}")
+```
+
+---
+
+## 7. Next steps
+
+Ideas for where to go next in new sections or notebooks:
+
+- Pattern matching with **structs** and maps
+- Working with **Processes** and `spawn/1`, `send/2`, `receive/1`
+- Building a small **GenServer**
+- Writing a simple **Phoenix** HTTP endpoint
+

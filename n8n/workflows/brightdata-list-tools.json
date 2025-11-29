@@ -1,0 +1,48 @@
+{
+  "name": "Bright Data MCP Tool Catalog",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger-1",
+      "name": "When clicking 'Test workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [-540, 300]
+    },
+    {
+      "parameters": {
+        "operation": "listTools"
+      },
+      "id": "mcp-client-1",
+      "name": "List Bright Data Tools",
+      "type": "n8n-nodes-mcp.mcpClient",
+      "typeVersion": 1,
+      "position": [-300, 300],
+      "credentials": {
+        "mcpClientApi": {
+          "id": "JtatFSfA2kkwctYa",
+          "name": "MCP Client (STDIO) account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking 'Test workflow'": {
+      "main": [
+        [
+          {
+            "node": "List Bright Data Tools",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "id": "brightdata-tool-catalog",
+  "tags": []
+}

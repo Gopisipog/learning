@@ -1,0 +1,120 @@
+{
+  "name": "Tavily Research (SDK)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tavily-research-sdk",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-node",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 400],
+      "webhookId": "tavily-research-sdk-webhook"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Extract parameters from webhook body\nconst body = $input.item.json.body || $input.item.json;\n\nconst topic = body.topic || 'Artificial Intelligence trends 2024';\nconst searchDepth = body.searchDepth || 'advanced';\nconst maxResults = body.maxResults || 10;\n\nreturn {\n  json: {\n    topic: topic,\n    searchDepth: searchDepth,\n    maxResults: maxResults\n  }\n};"
+      },
+      "id": "extract-params",
+      "name": "Extract Parameters",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 400]
+    },
+    {
+      "parameters": {
+        "command": "=node tavily-research-script.js \"{{ $json.topic }}\" \"{{ $json.searchDepth }}\" \"{{ $json.maxResults }}\"",
+        "options": {}
+      },
+      "id": "execute-research",
+      "name": "Execute Tavily Research Script",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Parse the output from the research script\nconst stdout = $input.item.json.stdout || '';\nconst stderr = $input.item.json.stderr || '';\nconst exitCode = $input.item.json.exitCode || 0;\n\n// Extract JSON output from stdout (last JSON block)\nlet result = null;\ntry {\n  // Find the last occurrence of JSON output\n  const lines = stdout.split('\\n');\n  let jsonStr = '';\n  let inJson = false;\n  \n  for (let i = 0; i < lines.length; i++) {\n    const line = lines[i].trim();\n    if (line === 'JSON Output:') {\n      inJson = true;\n      jsonStr = '';\n      continue;\n    }\n    if (inJson) {\n      jsonStr += line;\n    }\n  }\n  \n  if (jsonStr) {\n    result = JSON.parse(jsonStr);\n  }\n} catch (error) {\n  // If parsing fails, try to find any JSON in the output\n  try {\n    const jsonMatch = stdout.match(/\\{[\\s\\S]*\"success\"[\\s\\S]*\\}/g);\n    if (jsonMatch && jsonMatch.length > 0) {\n      result = JSON.parse(jsonMatch[jsonMatch.length - 1]);\n    }\n  } catch (e) {\n    // Still failed\n  }\n}\n\n// If no result was parsed, create error result\nif (!result) {\n  result = {\n    success: exitCode === 0,\n    error: stderr || (exitCode !== 0 ? 'Script execution failed' : null),\n    stdout: stdout.substring(0, 500),\n    stderr: stderr.substring(0, 500),\n    exitCode: exitCode\n  };\n}\n\nreturn {\n  json: result\n};"
+      },
+      "id": "parse-output",
+      "name": "Parse Script Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "respond-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1120, 400]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Parameters": {
+      "main": [
+        [
+          {
+            "node": "Execute Tavily Research Script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Tavily Research Script": {
+      "main": [
+        [
+          {
+            "node": "Parse Script Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Script Output": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-11-25T00:00:00.000Z",
+  "versionId": "1"
+}
+

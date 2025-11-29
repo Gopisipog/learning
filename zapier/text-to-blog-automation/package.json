@@ -1,0 +1,32 @@
+{
+  "name": "text-to-blog-automation",
+  "version": "1.0.0",
+  "description": "Zapier integration that automatically converts plain text into formatted blog posts with metadata, excerpts, and reading time calculations",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --testTimeout 10000",
+    "validate": "zapier validate",
+    "push": "zapier push"
+  },
+  "keywords": [
+    "zapier",
+    "blog",
+    "automation",
+    "text-to-blog",
+    "content",
+    "publishing"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "zapier-platform-core": "18.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.6.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

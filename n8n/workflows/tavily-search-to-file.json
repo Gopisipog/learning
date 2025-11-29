@@ -1,0 +1,147 @@
+{
+  "name": "Tavily Search to HTML File",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tavily-search",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-node",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "tavily-search-webhook"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Extract parameters from webhook body\nconst body = $input.item.json.body || $input.item.json;\n\nreturn {\n  json: {\n    searchQuery: body.query || 'AI trends 2024',\n    maxResults: body.maxResults || 5,\n    searchDepth: body.searchDepth || 'basic'\n  }\n};"
+      },
+      "id": "extract-params",
+      "name": "Extract Parameters",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.tavily.com/search",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  \"api_key\": \"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\",\n  \"query\": String($json.searchQuery || \"AI trends\"),\n  \"search_depth\": String($json.searchDepth || \"basic\"),\n  \"max_results\": Number($json.maxResults || 5),\n  \"include_answer\": true,\n  \"include_images\": false\n}) }}",
+        "options": {}
+      },
+      "id": "tavily-api-request",
+      "name": "Tavily API Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Get Tavily API response\nconst tavilyResponse = $input.item.json;\nconst query = $node['Extract Parameters'].json.searchQuery;\nconst searchDepth = $node['Extract Parameters'].json.searchDepth;\nconst maxResults = $node['Extract Parameters'].json.maxResults;\n\ntry {\n  const results = tavilyResponse.results || [];\n  const timestamp = new Date().toISOString();\n  const formattedDate = new Date().toLocaleString('en-US', { \n    dateStyle: 'full', \n    timeStyle: 'long' \n  });\n  \n  // Generate HTML content\n  let htmlContent = `<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Tavily Search Results - ${query}</title>\n  <style>\n    * {\n      margin: 0;\n      padding: 0;\n      box-sizing: border-box;\n    }\n    \n    body {\n      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n      line-height: 1.6;\n      color: #333;\n      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n      padding: 20px;\n      min-height: 100vh;\n    }\n    \n    .container {\n      max-width: 1200px;\n      margin: 0 auto;\n      background: white;\n      border-radius: 12px;\n      box-shadow: 0 20px 60px rgba(0,0,0,0.3);\n      overflow: hidden;\n    }\n    \n    .header {\n      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n      color: white;\n      padding: 40px;\n      text-align: center;\n    }\n    \n    .header h1 {\n      font-size: 2.5em;\n      margin-bottom: 10px;\n      font-weight: 700;\n    }\n    \n    .header .query {\n      font-size: 1.3em;\n      opacity: 0.95;\n      font-weight: 300;\n      margin-top: 10px;\n    }\n    \n    .meta {\n      background: #f8f9fa;\n      padding: 20px 40px;\n      border-bottom: 1px solid #e9ecef;\n      display: flex;\n      justify-content: space-between;\n      flex-wrap: wrap;\n      gap: 15px;\n    }\n    \n    .meta-item {\n      display: flex;\n      align-items: center;\n      gap: 8px;\n    }\n    \n    .meta-label {\n      font-weight: 600;\n      color: #667eea;\n    }\n    \n    .meta-value {\n      color: #666;\n    }\n    \n    .summary {\n      background: #fff3cd;\n      border-left: 4px solid #ffc107;\n      padding: 30px 40px;\n      margin: 0;\n    }\n    \n    .summary h2 {\n      color: #856404;\n      margin-bottom: 15px;\n      font-size: 1.5em;\n      display: flex;\n      align-items: center;\n      gap: 10px;\n    }\n    \n    .summary p {\n      color: #856404;\n      font-size: 1.1em;\n      line-height: 1.8;\n    }\n    \n    .results {\n      padding: 40px;\n    }\n    \n    .results h2 {\n      color: #333;\n      margin-bottom: 30px;\n      font-size: 1.8em;\n      padding-bottom: 15px;\n      border-bottom: 3px solid #667eea;\n    }\n    \n    .result-card {\n      background: white;\n      border: 1px solid #e9ecef;\n      border-radius: 8px;\n      padding: 25px;\n      margin-bottom: 20px;\n      transition: all 0.3s ease;\n      box-shadow: 0 2px 4px rgba(0,0,0,0.05);\n    }\n    \n    .result-card:hover {\n      box-shadow: 0 8px 16px rgba(102, 126, 234, 0.2);\n      transform: translateY(-2px);\n      border-color: #667eea;\n    }\n    \n    .result-number {\n      display: inline-block;\n      background: #667eea;\n      color: white;\n      width: 32px;\n      height: 32px;\n      border-radius: 50%;\n      text-align: center;\n      line-height: 32px;\n      font-weight: bold;\n      margin-right: 12px;\n      font-size: 0.9em;\n    }\n    \n    .result-title {\n      font-size: 1.4em;\n      color: #333;\n      margin-bottom: 12px;\n      font-weight: 600;\n      display: flex;\n      align-items: center;\n    }\n    \n    .result-url {\n      color: #667eea;\n      text-decoration: none;\n      font-size: 0.95em;\n      margin-bottom: 10px;\n      display: inline-block;\n      word-break: break-all;\n    }\n    \n    .result-url:hover {\n      text-decoration: underline;\n    }\n    \n    .result-score {\n      display: inline-block;\n      background: #28a745;\n      color: white;\n      padding: 4px 12px;\n      border-radius: 12px;\n      font-size: 0.85em;\n      font-weight: 600;\n      margin-left: 10px;\n    }\n    \n    .result-content {\n      color: #666;\n      line-height: 1.8;\n      margin-top: 15px;\n      padding: 15px;\n      background: #f8f9fa;\n      border-radius: 6px;\n      font-size: 0.95em;\n    }\n    \n    .footer {\n      background: #f8f9fa;\n      padding: 30px 40px;\n      text-align: center;\n      border-top: 1px solid #e9ecef;\n      color: #666;\n    }\n    \n    .footer p {\n      margin: 5px 0;\n    }\n    \n    .badge {\n      display: inline-block;\n      padding: 6px 12px;\n      border-radius: 4px;\n      font-size: 0.85em;\n      font-weight: 600;\n      margin-left: 10px;\n    }\n    \n    .badge-primary {\n      background: #667eea;\n      color: white;\n    }\n    \n    .badge-success {\n      background: #28a745;\n      color: white;\n    }\n    \n    @media (max-width: 768px) {\n      body {\n        padding: 10px;\n      }\n      \n      .header {\n        padding: 30px 20px;\n      }\n      \n      .header h1 {\n        font-size: 1.8em;\n      }\n      \n      .meta {\n        padding: 15px 20px;\n      }\n      \n      .summary, .results, .footer {\n        padding: 20px;\n      }\n      \n      .result-card {\n        padding: 20px;\n      }\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>🔍 Tavily Search Results</h1>\n      <div class=\"query\">\"${query}\"</div>\n    </div>\n    \n    <div class=\"meta\">\n      <div class=\"meta-item\">\n        <span class=\"meta-label\">Search Depth:</span>\n        <span class=\"meta-value\">${searchDepth}<span class=\"badge badge-primary\">${searchDepth.toUpperCase()}</span></span>\n      </div>\n      <div class=\"meta-item\">\n        <span class=\"meta-label\">Max Results:</span>\n        <span class=\"meta-value\">${maxResults}</span>\n      </div>\n      <div class=\"meta-item\">\n        <span class=\"meta-label\">Results Found:</span>\n        <span class=\"meta-value\"><span class=\"badge badge-success\">${results.length}</span></span>\n      </div>\n      <div class=\"meta-item\">\n        <span class=\"meta-label\">Timestamp:</span>\n        <span class=\"meta-value\">${formattedDate}</span>\n      </div>\n    </div>\n`;\n\n  // Add AI summary if available\n  if (tavilyResponse.answer) {\n    htmlContent += `\n    <div class=\"summary\">\n      <h2>💡 AI Summary</h2>\n      <p>${tavilyResponse.answer}</p>\n    </div>\n`;\n  }\n\n  // Add search results\n  htmlContent += `\n    <div class=\"results\">\n      <h2>Search Results (${results.length} found)</h2>\n`;\n\n  results.forEach((result, index) => {\n    const score = result.score ? (result.score * 100).toFixed(0) : 'N/A';\n    const content = result.content ? result.content.substring(0, 400) : 'No content available';\n    \n    htmlContent += `\n      <div class=\"result-card\">\n        <div class=\"result-title\">\n          <span class=\"result-number\">${index + 1}</span>\n          ${result.title}\n          ${result.score ? `<span class=\"result-score\">Score: ${score}%</span>` : ''}\n        </div>\n        <a href=\"${result.url}\" target=\"_blank\" class=\"result-url\">${result.url}</a>\n        <div class=\"result-content\">${content}...</div>\n      </div>\n`;\n  });\n\n  htmlContent += `\n    </div>\n    \n    <div class=\"footer\">\n      <p><strong>Total Results:</strong> ${results.length}</p>\n      <p><strong>Generated by:</strong> Tavily API</p>\n      <p><strong>Timestamp:</strong> ${timestamp}</p>\n    </div>\n  </div>\n</body>\n</html>`;\n\n  return {\n    json: {\n      query: query,\n      searchDepth: searchDepth,\n      maxResults: maxResults,\n      resultsCount: results.length,\n      answer: tavilyResponse.answer || 'No summary available',\n      htmlContent: htmlContent,\n      results: results,\n      timestamp: timestamp\n    }\n  };\n  \n} catch (error) {\n  console.error('Error formatting results:', error);\n  \n  const errorHtml = `<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Error - Tavily Search</title>\n  <style>\n    body {\n      font-family: Arial, sans-serif;\n      padding: 40px;\n      background: #f8d7da;\n      color: #721c24;\n    }\n    .error-container {\n      max-width: 800px;\n      margin: 0 auto;\n      background: white;\n      padding: 30px;\n      border-radius: 8px;\n      border: 2px solid #f5c6cb;\n    }\n    h1 { color: #721c24; }\n  </style>\n</head>\n<body>\n  <div class=\"error-container\">\n    <h1>❌ Error</h1>\n    <p><strong>Failed to format results for:</strong> \"${query}\"</p>\n    <p><strong>Error:</strong> ${error.message}</p>\n    <p><strong>Timestamp:</strong> ${new Date().toISOString()}</p>\n  </div>\n</body>\n</html>`;\n  \n  return {\n    json: {\n      error: true,\n      message: error.message,\n      query: query,\n      htmlContent: errorHtml,\n      timestamp: new Date().toISOString()\n    }\n  };\n}"
+      },
+      "id": "format-results",
+      "name": "Format Results as HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Get data from previous node\nconst htmlContent = $input.item.json.htmlContent;\nconst query = $input.item.json.query;\nconst resultsCount = $input.item.json.resultsCount;\n\n// Create filename\nconst sanitizedQuery = query.replace(/\\s+/g, '-').toLowerCase().replace(/[^a-z0-9-]/g, '');\nconst timestamp = new Date().getTime();\nconst fileName = `tavily-search-${sanitizedQuery}-${timestamp}.html`;\n\n// Return data with HTML content\nreturn {\n  json: {\n    success: true,\n    fileName: fileName,\n    htmlContent: htmlContent,\n    query: query,\n    resultsCount: resultsCount,\n    fileSize: htmlContent.length,\n    timestamp: new Date().toISOString(),\n    message: `HTML content ready. Save manually or use the test script to auto-save.`,\n    suggestedPath: `Desktop/TavilySearches/${fileName}`\n  }\n};"
+      },
+      "id": "write-file",
+      "name": "Prepare HTML Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, message: 'HTML content generated successfully!', data: { query: $('Format Results as HTML').item.json.query, resultsCount: $('Format Results as HTML').item.json.resultsCount, answer: $('Format Results as HTML').item.json.answer, fileName: $('Prepare HTML Data').item.json.fileName, htmlContent: $('Prepare HTML Data').item.json.htmlContent, suggestedPath: $('Prepare HTML Data').item.json.suggestedPath, fileSize: $('Prepare HTML Data').item.json.fileSize, timestamp: $('Format Results as HTML').item.json.timestamp } }) }}",
+        "options": {}
+      },
+      "id": "respond-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1340, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Parameters": {
+      "main": [
+        [
+          {
+            "node": "Tavily API Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tavily API Request": {
+      "main": [
+        [
+          {
+            "node": "Format Results as HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Results as HTML": {
+      "main": [
+        [
+          {
+            "node": "Prepare HTML Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare HTML Data": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-11-25T10:00:00.000Z",
+  "versionId": "1"
+}
+

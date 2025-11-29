@@ -1,0 +1,100 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "intro-markdown-1",
+   "metadata": {},
+   "source": [
+    "# React Step-by-Step Tutorial
+",
+    "
+",
+    "This notebook teaches React fundamentals using small, focused examples.
+",
+    "Each section has:
+",
+    "- Explanation (this markdown cell)
+",
+    "- Sample React/JavaScript code you can run and modify
+",
+    "
+",
+    "Run cells one by one from top to bottom. Feel free to tweak the code and re-run.
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "hello-world-markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Hello World - Your First React Component
+",
+    "
+",
+    "React is a JavaScript library for building user interfaces. The simplest React component is a function that returns JSX (JavaScript XML).
+",
+    "JSX looks like HTML but is actually JavaScript.
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "hello-world-code",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "function HelloWorld() {
+",
+    "  return <h1>Hello, React world!</h1>;
+",
+    "}
+",
+    "
+",
+    "// Render the component
+",
+    "console.log('Component created: HelloWorld');
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "jsx-markdown",
+   "metadata": {},
+   "source": [
+    "## 2. JSX and JavaScript Expressions
+",
+    "
+",
+    "JSX allows you to embed JavaScript expressions using curly braces `{}`. You can use variables, perform calculations, and call functions inside JSX.
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "jsx-code",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "function Greeting() {
+",
+    "  const name = 'Gopi';
+",
+    "  const age = 30;
+",
+    "  const isActive = true;
+",
+    "  
+",
+    "  return (
+",
+    "    <div>
+",
+    "      <h2>Welcome, {name}!</h2>
+",
+    "      <p>Age: {age}</p>
+",
+    "      <p>Status: {isActive ? 'Active' :

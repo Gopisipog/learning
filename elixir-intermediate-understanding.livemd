@@ -1,0 +1,146 @@
+# Elixir for Intermediate Developers: Mental Models & OTP
+
+> Understanding-focused Livebook for developers who know basics (pattern matching, pipe operator, simple functions) and want to think in **BEAM / OTP** terms.
+
+---
+
+## 1. Big picture: BEAM, processes, and messages
+
+- Elixir runs on the **Erlang VM (BEAM)**.
+- Work is done by **lightweight processes**, not OS threads.
+- Processes are **isolated**; they share no memory, they communicate via **messages**.
+- Fault-tolerance comes from **"let it crash" + supervision**.
+
+Think of BEAM like a tiny OS whose main primitives are:
+
+- `spawn/1` to start a process
+- `send/2` to deliver a message
+- `receive` to handle messages
+
+```elixir
+self_pid = self()
+
+spawn(fn ->
+  send(self_pid, {:hello, "from another process"})
+end)
+
+receive do
+  {:hello, msg} -> IO.puts("Got: #{msg}")
+after
+  1_000 -> IO.puts("No message in 1 second")
+end
+```
+
+---
+
+## 2. Thinking in processes instead of classes
+
+In OOP you model behavior with **objects and methods**.
+In Elixir you often model behavior as **processes with mailboxes**.
+
+- A long-lived process = **stateful service**.
+- A short-lived process = one-off task or worker.
+- Instead of `object.method(arg)`, you **send a message** and let the process decide what to do.
+
+Key question when designing: *"Which things in my system deserve to be their own process?"*
+
+---
+
+## 3. GenServer: a reusable pattern for stateful processes
+
+`GenServer` is a behavior that hides the manual `receive` loop and standardizes:
+- How you **start** a process
+- How clients **call** it (sync) or **cast** to it (async)
+- How it keeps **state** between messages
+
+```elixir
+defmodule Counter do
+  use GenServer
+
+  # client API
+  def start_link(initial \\ 0), do: GenServer.start_link(__MODULE__, initial, name: __MODULE__)
+  def inc(), do: GenServer.cast(__MODULE__, :inc)
+  def value(), do: GenServer.call(__MODULE__, :value)
+
+  # server callbacks
+  @impl true
+  def init(initial), do: {:ok, initial}
+
+  @impl true
+  def handle_cast(:inc, state), do: {:noreply, state + 1}
+
+  @impl true
+  def handle_call(:value, _from, state), do: {:reply, state, state}
+end
+
+{:ok, _pid} = Counter.start_link(0)
+Counter.inc()
+Counter.value()
+```
+
+Understanding GenServer well is key to reading **real-world Elixir services**.
+
+---
+
+## 4. Supervision and "let it crash"
+
+Instead of trying to catch every error, Elixir encourages:
+- Keep business logic simple.
+- If something goes wrong, **crash the process**.
+- A **supervisor** restarts it in a known-good state.
+
+```elixir
+children = [
+  {Counter, 0}
+]
+
+Supervisor.start_link(children, strategy: :one_for_one)
+```
+
+As an intermediate developer, focus on being able to **read a supervision tree** and answer:
+- What happens if this child crashes?
+- Does this strategy (`:one_for_one`, `:rest_for_one`, etc.) match the dependency between processes?
+
+---
+
+## 5. Domain modeling with structs and pattern matching
+
+Instead of big mutable classes, Elixir favors:
+- **Structs** for shape of data
+- **Pattern matching** + functions for behavior
+
+```elixir
+defmodule User do
+  defstruct [:id, :name, :role]
+end
+
+def admin?(%User{role: :admin}), do: true
+def admin?(_), do: false
+```
+
+Ask yourself: *"Can I express this rule as a pattern match instead of nested `if`s?"*
+
+---
+
+## 6. Streams, back-pressure, and large data
+
+`Enum` is eager; `Stream` is lazy and can help with **large or infinite data**.
+
+```elixir
+1..10_000_000
+|> Stream.map(&(&1 * 2))
+|> Stream.filter(&(rem(&1, 3) == 0))
+|> Enum.take(5)
+```
+
+Mental model: `Stream` builds a **recipe**; `Enum` is the **execute button**.
+
+---
+
+## 7. How to keep leveling up
+
+- Read source of libraries that use **GenServer and supervision trees**.
+- Practice modeling features as **processes + messages**, not just modules.
+- Build a small OTP app: e.g. a **job queue** or **chat room** with supervised processes.
+- Pay attention to how error handling is designed: where do you *let it crash* vs. return errors.
+

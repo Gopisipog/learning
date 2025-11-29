@@ -1,0 +1,110 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "intro-markdown",
+   "metadata": {},
+   "source": [
+    "# Shopify Bookstore - Complete Integration Guide
+",
+    "
+",
+    "This notebook teaches you how to build a complete bookstore using Shopify API.
+",
+    "
+",
+    "## What You'll Learn:
+",
+    "- Shopify API authentication
+",
+    "- Creating and managing book products
+",
+    "- Inventory management
+",
+    "- Order processing
+",
+    "- Customer management
+",
+    "- Storefront integration
+",
+    "- Custom React frontend
+",
+    "
+",
+    "## Prerequisites:
+",
+    "- Shopify Partner account (free at https://partners.shopify.com)
+",
+    "- Development store
+",
+    "- Node.js installed
+",
+    "- Basic React knowledge
+",
+    "
+",
+    "Run cells one by one from top to bottom.
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "setup-markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Shopify Setup and API Credentials
+",
+    "
+",
+    "First, set up your Shopify development store and get API credentials.
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "setup-code",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "/*
+",
+    "SHOPIFY SETUP STEPS:
+",
+    "
+",
+    "1. Create Shopify Partner Account:
+",
+    "   - Go to https://partners.shopify.com
+",
+    "   - Sign up for free
+",
+    "   - Create a development store
+",
+    "
+",
+    "2. Create Custom App:
+",
+    "   - In your store admin, go to Settings > Apps and sales channels
+",
+    "   - Click \"Develop apps\"
+",
+    "   - Click \"Create an app\"
+",
+    "   - Name it \"Bookstore API\"
+",
+    "   - Configure API scopes:
+",
+    "     * read_products, write_products
+",
+    "     * read_orders, write_orders
+",
+    "     * read_customers, write_customers
+",
+    "     * read_inventory, write_inventory
+",
+    "   - Install the app
+",
+    "   - Get Admin API access token
+",
+    "

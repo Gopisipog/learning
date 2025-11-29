@@ -1,0 +1,97 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "adv-intro",
+   "metadata": {},
+   "source": [
+    "# Advanced C# for .NET Core Architects\
+",
+    "\
+",
+    "This notebook goes deeper into C# building blocks that are heavily used in modern .NET Core apps:\
+",
+    "- Delegates and events\
+",
+    "- Interfaces vs abstract classes (for DI and architecture)\
+",
+    "- `IEnumerable<T>` vs `IQueryable<T>`\
+",
+    "- Attributes and reflection (annotations)\
+",
+    "\
+",
+    "Run each code cell, then modify it to see how behavior changes.\
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "delegates-events-md",
+   "metadata": {},
+   "source": [
+    "## 1. Delegates and Events\
+",
+    "\
+",
+    "Delegates are types that represent methods. Events build on delegates to implement the observer pattern.\
+",
+    "In real apps, events are used for domain events, UI events, and background notifications.\
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "delegates-events-code",
+   "metadata": {
+    "language_info": { "name": "polyglot-notebook" },
+    "polyglot_notebook": { "kernelName": "csharp" }
+   },
+   "outputs": [],
+   "source": [
+    "// A delegate type: any method that matches (string message) can be attached.\
+",
+    "delegate void NotificationHandler(string message);\
+",
+    "\
+",
+    "class Notifier\
+",
+    "{\
+",
+    "    public event NotificationHandler? OnNotify;\
+",
+    "\
+",
+    "    public void DoWork()\
+",
+    "    {\
+",
+    "        // ... some work\
+",
+    "        OnNotify?.Invoke(\"Work completed.\");\
+",
+    "    }\
+",
+    "}\
+",
+    "\
+",
+    "void Logger(string message) => Console.WriteLine($\"LOG: {message}\");\
+",
+    "\
+",
+    "var notifier = new Notifier();\
+",
+    "notifier.OnNotify += Logger;\
+",
+    "notifier.DoWork();\
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "interfaces-abstract-md",
+   "metadata": {},
+   "

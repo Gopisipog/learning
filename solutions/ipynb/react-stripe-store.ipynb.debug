@@ -1,0 +1,104 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "intro-markdown",
+   "metadata": {},
+   "source": [
+    "# React E-Commerce Store with Stripe Payment Integration
+",
+    "
+",
+    "This notebook teaches you how to build a complete e-commerce store with real payment processing using Stripe.
+",
+    "
+",
+    "## What You'll Learn:
+",
+    "- Product catalog management
+",
+    "- Shopping cart functionality
+",
+    "- Stripe payment integration
+",
+    "- Checkout process
+",
+    "- Order confirmation
+",
+    "- Payment webhooks
+",
+    "
+",
+    "## Prerequisites:
+",
+    "- Node.js installed
+",
+    "- Stripe account (get free test keys at https://stripe.com)
+",
+    "- Basic React knowledge
+",
+    "
+",
+    "Run cells one by one from top to bottom.
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "setup-markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Project Setup and Dependencies
+",
+    "
+",
+    "First, let's install the required packages for our store.
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "setup-code",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "// Run this in your terminal:
+",
+    "// npm install react react-dom
+",
+    "// npm install @stripe/stripe-js @stripe/react-stripe-js
+",
+    "// npm install axios
+",
+    "// npm install express stripe cors dotenv (for backend)
+",
+    "
+",
+    "console.log('Dependencies to install:');
+",
+    "console.log('Frontend: @stripe/stripe-js, @stripe/react-stripe-js, axios');
+",
+    "console.log('Backend: express, stripe, cors, dotenv');
+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "env-markdown",
+   "metadata": {},
+   "source": [
+    "## 2. Environment Configuration
+",
+    "
+",
+    "Create a `.env` file in your project root with your Stripe keys.
+"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "env-code",
+   "metadata": {},
+   "outputs": 

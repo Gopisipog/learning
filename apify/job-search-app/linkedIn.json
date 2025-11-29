@@ -1,0 +1,735 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "version": "0.0",
+    "x-build-id": "i51catVTTSEceApco"
+  },
+  "servers": [
+    {
+      "url": "https://api.apify.com/v2"
+    }
+  ],
+  "paths": {
+    "/acts/fantastic-jobs~advanced-linkedin-job-search-api/run-sync-get-dataset-items": {
+      "post": {
+        "operationId": "run-sync-get-dataset-items-fantastic-jobs-advanced-linkedin-job-search-api",
+        "x-openai-isConsequential": false,
+        "summary": "Executes an Actor, waits for its completion, and returns Actor's dataset items in response.",
+        "tags": [
+          "Run Actor"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inputSchema"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Enter your Apify token here"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/acts/fantastic-jobs~advanced-linkedin-job-search-api/runs": {
+      "post": {
+        "operationId": "runs-sync-fantastic-jobs-advanced-linkedin-job-search-api",
+        "x-openai-isConsequential": false,
+        "summary": "Executes an Actor and returns information about the initiated run in response.",
+        "tags": [
+          "Run Actor"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inputSchema"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Enter your Apify token here"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/runsResponseSchema"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/acts/fantastic-jobs~advanced-linkedin-job-search-api/run-sync": {
+      "post": {
+        "operationId": "run-sync-fantastic-jobs-advanced-linkedin-job-search-api",
+        "x-openai-isConsequential": false,
+        "summary": "Executes an Actor, waits for completion, and returns the OUTPUT from Key-value store in response.",
+        "tags": [
+          "Run Actor"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/inputSchema"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Enter your Apify token here"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "timeRange": {
+            "title": "Time Range",
+            "enum": [
+              "1h",
+              "24h",
+              "7d"
+            ],
+            "type": "string",
+            "description": "Select the time range for job listings. You can choose between hourly (1h), daily (24h), or weekly (7d). We strongly recommend running the Actor at the same time every hour/day/week to ensure that you get all jobs without duplicates",
+            "default": "7d"
+          },
+          "limit": {
+            "title": "Maximum Jobs per API call",
+            "minimum": 10,
+            "maximum": 5000,
+            "type": "integer",
+            "description": "Maximum number of jobs to return per run. The minimum is 10 and the maximum is 5,000. Please set the memory to 1GB for runs above 2,000 jobs.",
+            "default": 10
+          },
+          "includeAi": {
+            "title": "Include AI Fields",
+            "type": "boolean",
+            "description": "BETA Feature: Include AI enriched fields. We enrich jobs with AI to retrieve relevant data from the job description. Please note that this performed with a one-shot prompt, so there might be some errors. We enrich over 99.9% of all jobs.",
+            "default": true
+          },
+          "removeAgency": {
+            "title": "Remove Agency Jobs",
+            "type": "boolean",
+            "description": "Filter out recruitment agencies, job boards and other low quality sources"
+          },
+          "titleSearch": {
+            "title": "Title Search",
+            "type": "array",
+            "description": "Array of job titles to search for. Use :* for prefix matching (e.g., 'Soft:*' will match 'Software', 'Softball', etc.)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "titleExclusionSearch": {
+            "title": "Title Exclusion Search",
+            "type": "array",
+            "description": "Array of job titles to exclude. Use :* for prefix matching (e.g., 'Soft:*' will match 'Software', 'Softball', etc.)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locationSearch": {
+            "title": "Location Search",
+            "type": "array",
+            "description": "Array of locations to search for. Use :* for prefix matching (e.g., 'New:*' will match 'New York', 'New Jersey', etc.). Please do not use any abbreviations. NY should be New York, US should be United States",
+            "items": {
+              "type": "string"
+            }
+          },
+          "locationExclusionSearch": {
+            "title": "Location Exclusion Search",
+            "type": "array",
+            "description": "Array of locations to exclude. Use :* for prefix matching (e.g., 'New:*' will match 'New York', 'New Jersey', etc.) Please do not use any abbreviations. NY should be New York, US should be United States",
+            "items": {
+              "type": "string"
+            }
+          },
+          "descriptionSearch": {
+            "title": "Description Search",
+            "type": "array",
+            "description": "Warning, this search might be too intenstive for the 7d API. Please be very specific, limit your searches to a handful of keywords, and combine with one of the other searches, preferably titleSearch. Array of terms to search in job title & description. Use :* for prefix matching (e.g., 'Python:*' will match 'Python', 'Pythonic', etc.)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "descriptionExclusionSearch": {
+            "title": "Description Exclusion Search",
+            "type": "array",
+            "description": "Warning, this search might be too intenstive for the 7d API. Please be very specific, limit your searches to a handful of keywords, and combine with one of the other searches, preferably titleSearch. Array of terms to exclude from job title & description. Use :* for prefix matching (e.g., 'Python:*' will match 'Python', 'Pythonic', etc.)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "organizationSearch": {
+            "title": "Organization Search",
+            "type": "array",
+            "description": "Array of organization names to search for. Use :* for prefix matching (e.g., 'Google:*' will match 'Google', 'Google Cloud', etc.) Getting several companies with the same name? Use the organizationSlugFilter to filter by LinkedIn organization slugs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "organizationExclusionSearch": {
+            "title": "Organization Exclusion Search",
+            "type": "array",
+            "description": "Array of organization names to exclude. Use :* for prefix matching (e.g., 'Google:*' will match 'Google', 'Google Cloud', etc.) Getting several companies with the same name? Use the organizationSlugExclusionFilter to filter by LinkedIn organization slugs.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "organizationDescriptionSearch": {
+            "title": "Organization Description Search",
+            "type": "array",
+            "description": "Array of terms to search in organization description. Use :* for prefix matching (e.g., 'Tech:*' will match 'Technology', 'Technical', etc.)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "organizationDescriptionExclusionSearch": {
+            "title": "Organization Description Exclusion Search",
+            "type": "array",
+            "description": "Array of terms to exclude from organization description. Use :* for prefix matching (e.g., 'Tech:*' will match 'Technology', 'Technical', etc.)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "descriptionType": {
+            "title": "Description Type",
+            "enum": [
+              "text"
+            ],
+            "type": "string",
+            "description": "Format of the job description. Leave empty to include no description.",
+            "default": "text"
+          },
+          "remote": {
+            "title": "Remote",
+            "type": "boolean",
+            "description": "Filter for remote jobs only. Set to false to include all jobs. This filter is very sensitive and will include jobs that have 'remote' in the title, description, or location."
+          },
+          "seniorityFilter": {
+            "title": "Seniority Level",
+            "type": "array",
+            "description": "Filter by seniority level. This filter is case sensitive. You can select multiple seniority levels.",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Associate",
+                "Director",
+                "Executive",
+                "Mid-Senior level",
+                "Entry level",
+                "Not Applicable",
+                "Internship"
+              ]
+            }
+          },
+          "externalApplyUrl": {
+            "title": "External Apply URL Only",
+            "type": "boolean",
+            "description": "Filter for jobs that include an external apply URL (the opposited of Easy Apply)"
+          },
+          "directApply": {
+            "title": "Easy Apply Only",
+            "type": "boolean",
+            "description": "Filter for jobs that can be applied to directly through LinkedIn Easy Apply"
+          },
+          "organizationSlugFilter": {
+            "title": "Organization Slug Filter",
+            "type": "array",
+            "description": "Filter by LinkedIn organization slugs (exact match). The slug is the company specific part of the url. For example the slug in the following url is 'tesla-motors': https://www.linkedin.com/company/tesla-motors/",
+            "items": {
+              "type": "string"
+            }
+          },
+          "organizationSlugExclusionFilter": {
+            "title": "Organization Slug Exclusion Filter",
+            "type": "array",
+            "description": "Exclude jobs from specific LinkedIn organization slugs (exact match). The slug is the company specific part of the url. For example the slug in the following url is 'tesla-motors': https://www.linkedin.com/company/tesla-motors/",
+            "items": {
+              "type": "string"
+            }
+          },
+          "industryFilter": {
+            "title": "Industry Filter",
+            "type": "array",
+            "description": "Filter by LinkedIn industries. Use exact industry names. Industries containing commas will be automatically wrapped in quotes. You can find a list of industries on our website: https://fantastic.jobs/article/linkedin-industries",
+            "items": {
+              "type": "string"
+            }
+          },
+          "organizationEmployeesLte": {
+            "title": "Max Company Size",
+            "minimum": 0,
+            "type": "integer",
+            "description": "Maximum number of employees in the company"
+          },
+          "organizationEmployeesGte": {
+            "title": "Min Company Size",
+            "minimum": 0,
+            "type": "integer",
+            "description": "Minimum number of employees in the company"
+          },
+          "EmploymentTypeFilter": {
+            "title": "Employment Type",
+            "type": "array",
+            "description": "Filter by employment type",
+            "items": {
+              "type": "string",
+              "enum": [
+                "FULL_TIME",
+                "PART_TIME",
+                "CONTRACTOR",
+                "TEMPORARY",
+                "INTERN",
+                "VOLUNTEER",
+                "PER_DIEM",
+                "OTHER"
+              ]
+            }
+          },
+          "excludeATSDuplicate": {
+            "title": "Exclude ATS Duplicates (only use in combination with the Career Site Job Listing API!)",
+            "type": "boolean",
+            "description": "Set this parameter to true to remove the majority of duplicate jobs between this API and the 'Career Site Job Listing API' actor. We have created a system where every LinkedIn job is checked against the ATS dataset using URL matching, job title + organization name matching, and LinkedIn company profile mapping. Jobs flagged as duplicates will have ats_duplicate=true, non-duplicates will have ats_duplicate=false, and unchecked jobs (agencies/jobboards or EasyApply jobs) will have ats_duplicate=null."
+          },
+          "aiWorkArrangementFilter": {
+            "title": "AI Work Arrangement",
+            "type": "array",
+            "description": "BETA Feature: Filter by work arrangement. Remote OK = remote with an office available. Remote Solely = remote with no office available. Include both to include all remote jobs.",
+            "items": {
+              "type": "string",
+              "enum": [
+                "On-site",
+                "Hybrid",
+                "Remote OK",
+                "Remote Solely"
+              ]
+            }
+          },
+          "aiHasSalary": {
+            "title": "AI Has Salary",
+            "type": "boolean",
+            "description": "BETA Feature: Filter for jobs with salary information only. Set to false to include all jobs. Results include jobs that have either an AI enriched salary or a raw salary (discovered in the job posting schema)."
+          },
+          "aiExperienceLevelFilter": {
+            "title": "AI Experience Level",
+            "type": "array",
+            "description": "BETA Feature: Filter by years of experience",
+            "items": {
+              "type": "string",
+              "enum": [
+                "0-2",
+                "2-5",
+                "5-10",
+                "10+"
+              ]
+            }
+          },
+          "aiVisaSponsorshipFilter": {
+            "title": "AI Visa Sponsorship",
+            "type": "boolean",
+            "description": "BETA Feature: Filter for jobs offering visa sponsorship only. Set to false to include all jobs."
+          },
+          "aiTaxonomiesFilter": {
+            "title": "AI Taxonomies Filter",
+            "type": "array",
+            "description": "BETA Feature: Filter by AI taxonomies",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Technology",
+                "Healthcare",
+                "Management & Leadership",
+                "Finance & Accounting",
+                "Human Resources",
+                "Sales",
+                "Marketing",
+                "Customer Service & Support",
+                "Education",
+                "Legal",
+                "Engineering",
+                "Science & Research",
+                "Trades",
+                "Construction",
+                "Manufacturing",
+                "Logistics",
+                "Creative & Media",
+                "Hospitality",
+                "Environmental & Sustainability",
+                "Retail",
+                "Data & Analytics",
+                "Software",
+                "Energy",
+                "Agriculture",
+                "Social Services",
+                "Administrative",
+                "Government & Public Sector",
+                "Art & Design",
+                "Food & Beverage",
+                "Transportation",
+                "Consulting",
+                "Sports & Recreation",
+                "Security & Safety"
+              ]
+            }
+          },
+          "aiTaxonomiesPrimaryFilter": {
+            "title": "AI Taxonomies Primary Filter",
+            "type": "array",
+            "description": "BETA Feature: Filter by primary AI taxonomy",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Technology",
+                "Healthcare",
+                "Management & Leadership",
+                "Finance & Accounting",
+                "Human Resources",
+                "Sales",
+                "Marketing",
+                "Customer Service & Support",
+                "Education",
+                "Legal",
+                "Engineering",
+                "Science & Research",
+                "Trades",
+                "Construction",
+                "Manufacturing",
+                "Logistics",
+                "Creative & Media",
+                "Hospitality",
+                "Environmental & Sustainability",
+                "Retail",
+                "Data & Analytics",
+                "Software",
+                "Energy",
+                "Agriculture",
+                "Social Services",
+                "Administrative",
+                "Government & Public Sector",
+                "Art & Design",
+                "Food & Beverage",
+                "Transportation",
+                "Consulting",
+                "Sports & Recreation",
+                "Security & Safety"
+              ]
+            }
+          },
+          "aiTaxonomiesExclusionFilter": {
+            "title": "AI Taxonomies Exclusion Filter",
+            "type": "array",
+            "description": "BETA Feature: Exclude jobs by AI taxonomies",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Technology",
+                "Healthcare",
+                "Management & Leadership",
+                "Finance & Accounting",
+                "Human Resources",
+                "Sales",
+                "Marketing",
+                "Customer Service & Support",
+                "Education",
+                "Legal",
+                "Engineering",
+                "Science & Research",
+                "Trades",
+                "Construction",
+                "Manufacturing",
+                "Logistics",
+                "Creative & Media",
+                "Hospitality",
+                "Environmental & Sustainability",
+                "Retail",
+                "Data & Analytics",
+                "Software",
+                "Energy",
+                "Agriculture",
+                "Social Services",
+                "Administrative",
+                "Government & Public Sector",
+                "Art & Design",
+                "Food & Beverage",
+                "Transportation",
+                "Consulting",
+                "Sports & Recreation",
+                "Security & Safety"
+              ]
+            }
+          }
+        }
+      },
+      "runsResponseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "actId": {
+                "type": "string"
+              },
+              "userId": {
+                "type": "string"
+              },
+              "startedAt": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2025-01-08T00:00:00.000Z"
+              },
+              "finishedAt": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2025-01-08T00:00:00.000Z"
+              },
+              "status": {
+                "type": "string",
+                "example": "READY"
+              },
+              "meta": {
+                "type": "object",
+                "properties": {
+                  "origin": {
+                    "type": "string",
+                    "example": "API"
+                  },
+                  "userAgent": {
+                    "type": "string"
+                  }
+                }
+              },
+              "stats": {
+                "type": "object",
+                "properties": {
+                  "inputBodyLen": {
+                    "type": "integer",
+                    "example": 2000
+                  },
+                  "rebootCount": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "restartCount": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "resurrectCount": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "computeUnits": {
+                    "type": "integer",
+                    "example": 0
+                  }
+                }
+              },
+              "options": {
+                "type": "object",
+                "properties": {
+                  "build": {
+                    "type": "string",
+                    "example": "latest"
+                  },
+                  "timeoutSecs": {
+                    "type": "integer",
+                    "example": 300
+                  },
+                  "memoryMbytes": {
+                    "type": "integer",
+                    "example": 1024
+                  },
+                  "diskMbytes": {
+                    "type": "integer",
+                    "example": 2048
+                  }
+                }
+              },
+              "buildId": {
+                "type": "string"
+              },
+              "defaultKeyValueStoreId": {
+                "type": "string"
+              },
+              "defaultDatasetId": {
+                "type": "string"
+              },
+              "defaultRequestQueueId": {
+                "type": "string"
+              },
+              "buildNumber": {
+                "type": "string",
+                "example": "1.0.0"
+              },
+              "containerUrl": {
+                "type": "string"
+              },
+              "usage": {
+                "type": "object",
+                "properties": {
+                  "ACTOR_COMPUTE_UNITS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATASET_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATASET_WRITES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "KEY_VALUE_STORE_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "KEY_VALUE_STORE_WRITES": {
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "KEY_VALUE_STORE_LISTS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "REQUEST_QUEUE_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "REQUEST_QUEUE_WRITES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATA_TRANSFER_INTERNAL_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATA_TRANSFER_EXTERNAL_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "PROXY_RESIDENTIAL_TRANSFER_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "PROXY_SERPS": {
+                    "type": "integer",
+                    "example": 0
+                  }
+                }
+              },
+              "usageTotalUsd": {
+                "type": "number",
+                "example": 0.00005
+              },
+              "usageUsd": {
+                "type": "object",
+                "properties": {
+                  "ACTOR_COMPUTE_UNITS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATASET_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATASET_WRITES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "KEY_VALUE_STORE_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "KEY_VALUE_STORE_WRITES": {
+                    "type": "number",
+                    "example": 0.00005
+                  },
+                  "KEY_VALUE_STORE_LISTS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "REQUEST_QUEUE_READS": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "REQUEST_QUEUE_WRITES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATA_TRANSFER_INTERNAL_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "DATA_TRANSFER_EXTERNAL_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "PROXY_RESIDENTIAL_TRANSFER_GBYTES": {
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "PROXY_SERPS": {
+                    "type": "integer",
+                    "example": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

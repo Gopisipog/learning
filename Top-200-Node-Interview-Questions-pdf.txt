@@ -1,0 +1,3423 @@
+PREFACE
+ABOUT THE BOOK
+This book contains top 200 Node.js interview questions and answers.
+
+ABOUT THE AUTHOR
+Happy Rawat has around 15 years of experience in software development.
+He helps candidates in clearing technical interview in tech companies.
+
+Chapters
+FUNDAMENTALS
+1. Node.js Basics
+2. Main Features of Node.js
+3. Project setup & Modules
+4. Top built in modules
+NODE - OTHERS
+15 Error Handling & Debugging
+16. Security, Performance &
+Deployment
+17. Testing & Web Socket
+EXPRESS
+5. Express Basics
+6. Middleware
+7. Types of Middleware's
+8. Routing - I
+9. Routing - II
+10. Template Engines
+REST API
+11. REST API Basics
+12. HTTP Methods & Status Codes
+13. CORS, Serialization,
+Deserialization, Others
+14. Authentication & Authorization
+MONGO-DB
+18. MongoDB Basics
+19. Setup & CRUD operations
+20. Query Operators & Projection
+21. Indexes
+22. Mongoose
+23. Application based questions.
+24. Scenario based short questions
+25. JavaScript Essentials for Node
+1. Node.js - Basics
+Q1. What is Node.js?
+Q2. How Node is a runtime environment on server side? What is V8?
+
+Q3. What is the difference between Runtime environment & Framework?
+Q4. What is the difference between Node.js & Express.js?
+Q5. What are the differences between Client-Side(Browser) & Server-Side(Node.js)?
+
+Back to main index
+Q. What is Node.js?
+❖ Node is neither a language nor a framework.
+
+Languages
+❖ Node/ Node.js is a runtime environment for
+executing JavaScript code on the server side.
+
+Runtime Environment
+CPython
+JVM
+Node.js
+CLR
+Frameworks
+Back to chapter index
+Q. How Node is a runtime environment on server side? What is V8?
+❖ Browsers execute JavaScript on the client side, and
+similarly, Node.js executes JavaScript on the server side.
+❖ V8 is a JavaScript engine for the JavaScript language.
+
+Browser(client side)
+Node(server side)
+JavaScript Engine
+JavaScript Engine
+Back to chapter index
+Q. What is the difference between Runtime environment & Framework?
+❖ Runtime Environment: Primarily focuses on
+providing the necessary infrastructure for
+code execution, including services like
+memory management and I/O operations.
+
+Languages
+❖ Framework: Primarily focuses on simplifying
+the development process by offering a
+structured set of tools, libraries, and best
+practices.
+Runtime Environment
+CPython
+JVM
+Node.js
+CLR
+Frameworks
+Back to chapter index
+Q. What is the difference between Node.js & Express.js?
+❖ Node.js is a runtime environment that allows the
+execution of JavaScript code server-side.
+
+Language
+❖ Express.js is a framework built on the top Node.js.
+❖ It is designed to simplify the process of building
+web applications and APIs by providing a set of
+features like simple routing system, middleware
+support etc.
+Runtime
+Environment
+Node.js
+Framework
+Back to chapter index
+Q. What are the differences between Client-Side(Browser) & Server-Side(Node.js)?
+
+Client-Side
+Server-Side
+Database Server
+Request
+Response
+Back to chapter index
+Q. What are the differences between Client Side(Browser) & Server-Side(Node.js)?
+
+Client-Side (Browser)
+Server-Side (Node.js/Server)
+Environment Location
+Runs on the user's web browser.
+
+Runs on the server.
+
+Primary Languages
+HTML, CSS, JavaScript.
+
+JavaScript
+Document/ Window/
+Navigator/ Event Objects
+Yes
+No
+Request/ Response/
+Server/ Database Object
+No
+Yes
+Responsibilities
+Handles UI display, interactions,
+and client-side logic.
+
+Handles business logic, data storage/
+access, authentication, authorization etc.
+
+Back to chapter index
+2. Main Features of Node.js
+Q. What are the 7 Main Features of Node.js?
+Q. What is Single Threaded Programming?
+
+Q. What is Synchronous Programming?
+Q. What is Multi Threaded Programming?
+Q. What is Asynchronous Programming?
+Q. What is the difference between Synchronous & Asynchronous programming?
+
+Q. What are Events, Event Emitter, Event Queue, Event Loop & Event Driven?
+Q. What are the main features & advantages of Node.js?
+Q. What are the disadvantages of node?
+
+Back to main index
+Q. What are the 7 Main Features of Node.js?
+
+1. Single Threaded
+7. Real-Time
+Capabilities
+6. NPM (Node
+Package Manager)
+2. Asynchronous
+7 Key
+Features of
+Node
+5. Cross-Platform
+3. Event-Driven
+4. V8 JavaScript
+Engine
+Back to chapter index
+Q. What is Single Threaded Programming?
+Client-Side
+Server-Side
+Request
+Single Thread created
+❖ In a single-threaded application, only one
+thread will execute all the tasks.
+
+T1
+T1
+T1
+T1
+T1
+Back to chapter index
+Q. What is Synchronous Programming?
+❖ In a synchronous program, each task is
+performed one after the other, and the
+program waits for each operation to
+complete before moving on to the next one.
+❖ Synchronous programming focuses on the
+order of execution in a sequential manner,
+while single-threaded programming focuses
+on the single thread.
+
+Single Thread created
+T1
+T1
+T1
+T1
+T1
+Back to chapter index
+Q. What is Multi Threaded Programming?
+Client-Side
+Server-Side
+Request
+T1
+❖ In a multi-threaded application, multiple
+threads can execute multiple tasks
+simultaneously and parallelly.
+
+❖ As soon as one thread starts a task, the next
+task is immediately initiated by creating a
+second thread.
+
+T1
+T2 created
+T2
+T3 created
+T3
+T4 created
+T4
+Back to chapter index
+Q. What is Asynchronous Programming?
+❖ In Node.js, asynchronous flow can be achieved by its
+single-threaded, non-blocking, and event-driven
+architecture.
+
+T1
+T1
+❖ In Node.js, if there are 4 tasks(Task1, Task2, Task3,
+Task4) to be completed for an event. Then below steps
+will be executed:
+1. First, Thread T1 will be created.
+
+T1
+2. Thread T1 initiates Task1, but it won't wait for Task1 to
+complete. Instead, T1 proceeds to initiate Task2, then
+Task3 and Task4(This asynchronous execution allows T1
+to efficiently handle multiple tasks concurrently).
+
+T1
+3. Whenever Task1 completes, an event is emitted.
+
+T1
+4. Thread T1, being event-driven, promptly responds to
+this event, interrupting its current task and delivering
+the result of Task1.
+Back to chapter index
+Q. What is the difference between Synchronous & Asynchronous programming?
+
+Back to chapter index
+Q. What are Events, Event Emitter, Event Queue, Event Loop & Event Driven?
+❖ Event: Signals that something has happened
+in a program.
+
+Event Emitters
+Events Queue
+Events Handler
+❖ Event Emitter: Create or emit events.
+❖ Event Queue: Events emitted queued(stored)
+in event queue.
+
+E2
+E1
+Event Loop
+Code
+❖ Event Handler(Event Listener): Function that
+responds to specific events
+❖ Event Loop: The event loop picks up event
+from the event queue and executes them in
+the order they were added.
+
+❖ Event Driven Architecture: It means
+operations in Node are drive or based by
+events.
+
+Back to chapter index
+Q. What are the main features & advantages of Node.js?
+Features
+1. Asynchronous
+2. V8 JS Engine
+3. Event-Driven Architecture
+4. Cross-Platform
+5. JavaScript
+Advantages
+Enables handling multiple concurrent requests & non blocking execution of thread.
+Built on the V8 JS engine from Google Chrome, Node.js executes code fast.
+Efficient handling events. Great for real time applications like chat applications, gaming
+applications(using web sockets) where bidirectional communication is required.
+Supports deployment on various operating systems, enhancing flexibility.
+Coding in JS language therefore no need to learn a new language.
+Suitable for building scalable applications that can handle increased loads.
+Back to chapter index
+Q. What are the disadvantages of node? When to use and when not to use Node?
+
+When to Use Node.js?
+
+1. Ideal for real-time applications like
+chat applications, online gaming, and
+collaborative tools due to its eventdriven architecture.
+
+2. Excellent for building lightweight
+and scalable RESTful APIs that
+handle a large number of concurrent
+connections.
+3. Well-suited for building
+microservices-based architectures,
+enabling modular and scalable
+systems.
+
+When not to use
+Node.js(disadvantages):
+1. CPU-Intensive Tasks: Avoid for
+applications that involve heavy CPU
+processing(Image/Video Processing, Data
+Encryption/Decryption, ) as Node.js may
+not provide optimal performance in such
+scenarios because it single threaded and
+for heavy computation multi-threaded is
+better.
+
+Back to chapter index
+3. Project Setup & Modules
+Q. How to setup node.js project?
+Q. What is NPM? What is the role of node_modules folder?
+
+Q. What is the role of package.json file in Node?
+Q. What are Modules in Node?
+Q. How many ways are there to Export a module?
+Q. What will happen if you don’t export the module?
+
+Q. How to import single and multiple functions from a module?
+Q. What is module wrapper function?
+Q. What are the Types of modules in Node?
+
+Back to main index
+Q. How to setup node.js project?
+❖ 7 Steps for setting up node.js project in VS Code:
+1. Download Node.js installer & install it.
+2. Download VSCode editor installer & install it.
+3. Create a new folder (myFirstProject) anywhere.
+4. Open VSCode and open myFirstProject folder from it.
+5. Initialize project: Open terminal & run this command: npm init -y.
+6. Create a new JS file(app.js) within your project folder(myFirstProject).
+7. Run your Node.js application by using this command in the terminal - node app.js.
+
+Back to chapter index
+Q. How to setup node.js project?
+
+Back to chapter index
+Q. What is NPM? What is the role of node_modules folder?
+❖ NPM(Node Package Manager) is used to manage the
+dependencies for your Node project.
+
+❖ node_modules folder contains all the
+dependencies of the node project.
+
+Back to chapter index
+Q. What is the role of package.json file in Node?
+❖ The package.json file contains project
+metadata(information about the
+project). For example, project name,
+version, description, author, license etc.
+
+Back to chapter index
+Q. What are Modules in Node? What is the difference between a function & module?
+❖ A module contains a specific functionality that
+can be easily reused within a Node.js application.
+❖ Ideally in node.js, a JavaScript file can be treated
+as a module.
+
+Modules
+❖ A module is a broader concept that encapsulates
+functionality, while a function is a specific set of
+instructions within that module.
+❖ Modules can contain multiple functions and
+variables.
+Back to chapter index
+Q. How many ways are there to Export a module?
+1. module.exports object can be used to
+export the module.
+
+2. exports object can be also used directly to
+export the module.
+
+Back to chapter index
+Q. What will happen if you don’t export the module?
+❖ If you don’t export the module, then the module
+functions will not be available outside the module.
+
+Back to chapter index
+Q. How to import single and multiple functions from a module?
+❖ In Node.js, you can import a module using the
+require function.
+
+Back to chapter index
+Q. What is module wrapper function?
+❖ In Node.js, each module is wrapped in a function called
+the "module wrapper function" before it is executed.
+Converted/ wrapped by Node
+Back to chapter index
+Q. What are the Types of modules in Node?
+
+1. Built-in Module
+These are already present modules in Node.js which provide essential
+functionalities.
+
+(Core Modules)
+For example, fs (file system), http (HTTP server), path (path
+manipulation), and util (utilities).
+
+2. Local Modules
+These user-defined modules(JS files) created by developers for
+specific functionalities.
+
+3. Third-Party Modules
+These are external packages or libraries created by the community
+and provide additional functionalities for Node projects. You install
+third-party modules using the npm install command.
+For example, npm install lodash.
+
+Back to chapter index
+4. Top built in modules
+Q. What are the Top 5 built in modules commonly used in node projects?
+Q. Explain the role of fs module? Name some functions of it?
+
+Q. Explain the role of path module? Name some functions of it?
+Q. Explain the role of OS module? Name some functions of it?
+Q. Explain the role of events module? How to handle events in Node?
+Q. What are Event Arguments?
+
+Q. What is the difference between a function and an event?
+Q. What is the role of http module in node?
+Q. What is the role createServer() method of http module?
+
+Back to main index
+Q. What are the Top 5 built in modules commonly used in node projects?
+
+Top 5 Built in
+Modules
+1. fs
+2. path
+3. os
+4. events
+5. http
+Back to chapter index
+Q. Explain the role of fs module? Name some functions of it?
+❖ fs (File System) module in Node
+provides a set of methods for
+interacting with the file system.
+
+Back to chapter index
+Q. Explain the role of fs module? Name some functions of it?
+❖ 7 Main functions of fs module:
+1. fs.readFile()
+2. fs.writeFile()
+3. fs.appendFile()
+4. fs.unlink()
+5. fs.readdir()
+6. fs.mkdir()
+7. fs.rmdir()
+Reads the content of the file specified
+Writes data to the specified file, creating the file if it does not exist.
+Appends data to a file. If the file does not exist, it is created.
+Deletes the specified file.
+Reads the contents of a directory.
+Creates a new directory.
+Removes the specified directory.
+Back to chapter index
+Q. Explain the role of path module? Name some functions of it?
+❖ Path module provides utilities for joining,
+resolving, parsing, formatting, normalizing,
+and manipulating paths.
+
+Back to chapter index
+Q. Explain the role of path module? Name some functions of it?
+❖ 5 Main functions of path module:
+Back to chapter index
+Q. Explain the role of OS module? Name some functions of it?
+❖ The os module in Node.js provides a set of
+methods for interacting with the operating
+system.
+❖ Operation system can be used by
+developers for building cross-platform
+applications or performing system-related
+tasks in Node.js applications.
+
+Back to chapter index
+Q. Explain the role of events module? How to handle events in Node?
+❖ Event: Signals that something has happened
+in a program.
+
+Event Emitters
+Events Queue
+Event Handler
+❖ Event Emitter: Create or emit events.
+❖ Event Queue: Events emitted queued(stored)
+in event queue.
+
+E2
+E1
+Event Loop
+Code
+❖ Event Handler(Event Listener): Function that
+responds to specific events
+❖ Event Loop: The event loop picks up event
+from the event queue and executes them in
+the order they were added.
+
+❖ Event Driven Architecture: It means
+operations in Node are drive or based by
+events.
+
+Back to chapter index
+Q. Explain the role of events module? How to handle events in Node?
+1. events module is used to handle events.
+2. EventEmitter class of events module is used to
+register event listeners and emit events.
+3. An event listener is a function that will be
+executed when a particular event occurs.
+4. on() method is used to register event listeners.
+
+Back to chapter index
+Q. What are Event Arguments?
+❖ event arguments refer to the additional information or data that can be passed
+along with an emitted event.
+
+Back to chapter index
+Q. What is the difference between a function and an event?
+❖ A function is a reusable piece of code that performs a
+specific task when invoked or called.
+
+Request
+Received,
+Event Created
+❖ Events represent actions that can be observed and
+responded to. Events will call functions internally.
+
+HTTP Request
+HTTP Response
+UI Server
+API Server
+Back to chapter index
+Q. What is the role of http module in node?
+❖ The HTTP module can create an HTTP server that listens
+to server ports and gives a response back to the client.
+
+UI Server
+www.ui.example.com
+HTTP Request
+www.ui.example.com
+HTTP Request
+www.api.example.com
+HTTP Response
+HTTP Response
+API Server
+www.api.example.com
+(Hosted by http module only)
+Back to chapter index
+Q. What is the role createServer() method of http module?
+❖ The createServer() method of the http
+module in Node.js is used to create an
+HTTP server.
+
+Back to chapter index
+Chapters
+FUNDAMENTALS
+1. Node.js Basics
+2. Main Features of Node.js
+3. Project setup & Modules
+4. Top built in modules
+NODE - OTHERS
+15 Error Handling & Debugging
+16. Security, Performance &
+Deployment
+17. Testing & Web Socket
+EXPRESS
+5. Express Basics
+6. Middleware
+7. Types of Middleware's
+8. Routing - I
+9. Routing - II
+10. Template Engines
+REST API
+11. REST API Basics
+12. HTTP Methods & Status Codes
+13. CORS, Serialization,
+Deserialization, Others
+14. Authentication & Authorization
+MONGO-DB
+18. MongoDB Basics
+19. Setup & CRUD operations
+20. Query Operators & Projection
+21. Indexes
+22. Mongoose
+23. Application based questions.
+24. Scenario based short questions
+25. JavaScript Essentials for Node
+5. Express - Basics
+Q. What are the advantages of using Express.js with Node.js?
+Q. How do you install Express.js in a Node.js project?
+
+Q. How to create an HTTP Sever using Express.js?
+Q. How do you create and start Express.js application?
+
+Back to main index
+Q. What are the advantages of using Express.js with Node.js?
+
+1. Simplified Web Development
+Express.js provides a lightweight framework that simplifies the process
+of building web applications in Node.js.
+
+2. Middleware Support
+Easy integration of middleware functions into application's requestresponse cycle.
+
+3. Flexible Routing System
+Defining routes for handling different HTTP methods (GET, POST, PUT,
+DELETE, etc.) and URL patterns is easy.
+
+4. Template Engine Integration
+Express.js supports various template engines making it easy to
+generate dynamic HTML content on the server side.
+
+Back to chapter index
+Q. How do you install Express.js in a Node.js project?
+❖ Run this command in terminal: npm install express
+Back to chapter index
+Q. How to create an HTTP Sever using Express.js?
+❖ Creating an HTTP Server using Express.js:
+❖ Creating an HTTP Server using Node.js http module:
+Back to chapter index
+Q. How do you create and start Express.js application?
+❖ Create an Express.js application by requiring the express
+module and calling the express() function.
+
+❖ Start an Express.js server by calling the listen() method on
+the application object (app) and specifying the port number
+Back to chapter index
+6. Express - Middleware
+Q. What is Middleware in Express.js and when to use them?
+Q. How do you implement middleware in Express.js?
+
+Q. What is the purpose of the app.use() function in Express.js?
+Q. What is the purpose of the next parameter in Express.js?
+Q. How to use middleware globally for a specific route?
+Q. What is Request Pipeline in Express?
+
+Back to main index
+Q. What is Middleware in Express.js and when to use them?
+❖ A middleware in Express.js is a function that
+handles HTTP requests, performs operations,
+and passes control to the next middleware.
+
+Frontend
+Request Pipeline
+HTTP
+Request
+next()
+next()
+Middleware 1
+(Request Logging)
+Middleware 2
+(Authentication)
+Middleware 3
+(CORS)
+Application
+Endpoints
+(Get/ Post/
+Put/Delete..)
+
+HTTP Response
+Back to chapter index
+Q. How do you implement middleware in Express.js?
+❖ 4 steps to use middleware:
+1. Initialize an Express application.
+2. Define a middleware function myMiddleware.
+3. Use app.use() to mount myMiddleware
+globally, meaning it will be executed for every
+incoming request to the application.
+4. Finally, we start the server by listening on a
+specified port (defaulting to port 3000) using
+app.listen().
+
+Back to chapter index
+Q. What is the purpose of the app.use() function in Express.js?
+❖ The app.use() method is used to
+execute(mount) middleware
+functions globally.
+
+Back to chapter index
+Q. What is the purpose of the next parameter in Express.js?
+❖ The next parameter is a callback
+function which is used to pass
+control to the next middleware
+function in the stack.
+
+Back to chapter index
+Q. How to use middleware globally for a specific route?
+❖ Use app.use('/specificRoute', myMiddleware)
+to use middleware globally for a specific route
+in Express.js
+Back to chapter index
+Q. What is Request Pipeline in Express?
+❖ The request pipeline in Express.js is a series of
+middleware functions that handle incoming HTTP
+requests and pass control to the next function.
+
+Frontend
+Request Pipeline
+HTTP
+Request
+next()
+next()
+Middleware 1
+(Request Logging)
+Middleware 2
+(Authentication)
+Middleware 3
+(CORS)
+Application
+Endpoints
+(Get/ Post/
+Put/Delete..)
+
+HTTP Response
+Back to chapter index
+7. Express - Types of Middleware's
+Q. What are the type of middleware's in Express.js?
+Q. What is the difference btw application-level & route-level middleware?
+
+Q. What is error handling middleware and how to implement it?
+Q. If you have 5 middlewares then in which middleware you will do the error handling?
+Q. What is built in middleware? How to serve static files from Express.js?
+Q. What are third-party middleware's? Give some examples?
+
+Q. Can you summarize all the type of middleware's?
+Q. What are the advantages of using middleware in Express.js?
+
+Back to main index
+Q. What are the Types of middleware's in Express.js?
+
+1. Application-level middleware
+2. Router-level middleware
+5 Types of
+Middlewares
+3. Error-handling middleware
+4. Built-in middleware
+5. Third-party middleware
+Back to chapter index
+Q. What is the difference btw application-level & route-level middleware?
+❖ Application-level middleware applies globally to all
+incoming requests in the entire Express.js application.
+
+❖ Route-level middleware applies only to specific
+routes, not for all incoming requests.
+
+Back to chapter index
+Q. What is error handling middleware and how to implement it?
+❖ Error handling middleware in Express is a special
+kind of middleware used to manage errors
+happening while handling incoming requests.
+
+❖ To implement error handling in Express, define
+middleware with four parameters (err, req, res,
+next). Here the additional error object parameter
+will be used for error handling.
+
+Back to chapter index
+Q. If you have 5 middlewares then in which middleware you will do the error handling?
+❖ In case of multiple middleware, errorhandling middleware should be
+defined at last(after all other
+middleware’s) because when an error
+occurs, Express.js will search for the
+next error-handling middleware
+skipping any regular middleware or
+route handlers.
+
+Back to chapter index
+Q. What is built in middleware? How to serve static files from Express.js?
+❖ Built in middleware’s are built in functions
+inside Express framework which provides
+common functionalities.
+❖ express.static() middleware is used for
+serving static files.
+
+Back to chapter index
+Q. What are third-party middleware's? Give some examples?
+❖ Third-party middleware in
+Express.js are modules developed
+by third-party developers(not
+part of the core Express.js).
+❖ Third-party middleware’s provide
+functionalities like logging,
+security, body parsing, and
+compression.
+❖ Example of third-party
+middleware’s: morgan, helmet,
+body-parser, compression etc.
+
+Back to chapter index
+Q. Can you summarize all the type of middleware's?
+
+1. Application-level middleware
+Middleware applied to all routes; commonly used for logging,
+authentication, etc.
+
+2. Router-level middleware
+Middleware specific to certain routes; applied using or .
+
+3. Built-in middleware
+Pre-packaged middleware included with Express.js, like for serving
+static files.
+
+4. Error-handling middleware
+Middleware for handling errors; declared after other middleware,
+triggered on errors.
+
+5. Third-party middleware
+Middleware developed by others, not part of Express.js core; adds
+various functionalities.
+Back to chapter index
+Q. What are the advantages of using middleware in Express.js?
+
+1. Modularity
+Middleware allows you to modularize your application's functionality into
+smaller, self-contained units. Each middleware function can handle a specific
+task or concern, such as logging, authentication, or error handling.
+
+2. Reusability
+Middlewares can be reused at multiple places and that makes application
+code easier to maintain.
+
+3. Improved Request Handling
+Middleware functions have access to both the request (req) and response (res)
+objects which enables you to perform validations on request or modify the
+response before sending it back to the client.
+
+4. Flexible Control Flow
+Middleware functions can be applied globally to all routes or selectively to
+specific routes, allowing you to control the flow of request processing in your
+application.
+
+5. Third-party Middleware’s
+Express.js offers a wide range of third-party middleware packages that provide
+additional functionality. For eg: body-parser, cors etc.
+Back to chapter index
+8. Express - Routing - I
+Q. What is Routing in Express.js?
+Q. What is the difference between middleware & routing in Express?
+
+Q. How to implement routing? How do you define routes in Express.js?
+Q. How to handle Routing in Express.js real applications?
+Q. What are Route Handlers?
+Q. What are Route Parameters in Express.js?
+
+Back to main index
+Q. What is Routing in Express.js?
+❖ Routing is the process of directing incoming HTTP requests to
+the appropriate handler functions based on the request's
+method (e.g., GET, POST) and the URL path.
+
+Frontend
+Controllers
+Orders: Get()
+HTTP
+Request
+Middlewares
+Routing
+Products: Get()
+Payments: Get()
+HTTP Response
+Back to chapter index
+Q. What is the difference between middleware & routing in Express?
+
+Middleware
+Routing
+1. Middleware are functions.
+
+1. Routing is a process.
+
+2. Middleware functions can access and the
+request and response objects, then they can:
+a) perform some actions(logic like authorization)
+b) End the request-response cycle
+c) Call the next middleware function.
+
+Routing is the process of directing incoming HTTP
+requests to the appropriate handler functions(Get,
+Put, Post/ Delete).
+
+Back to chapter index
+Q. How to implement routing? How do you define routes in Express.js?
+❖ To implement routing first define the routes.
+❖ In Express.js, routes are defined using the
+app.METHOD() functions. (where METHOD
+is the HTTP request method (e.g., GET, POST,
+PUT, DELETE) and app is an instance of the
+Express application).
+
+Back to chapter index
+Q. How to handle Routing in Express.js real applications?
+❖ 5 steps for setup routing:
+1. Import Express
+2. Set Middleware's
+3. Import Controllers
+4. Define Routes for different
+endpoints
+5. Start the server
+Back to chapter index
+Q. What are Route Handlers?
+❖ Route handler is the second argument passed
+to app.get() or app.post().
+❖ route handler function is used to process the
+request and generate a response.
+
+Back to chapter index
+Q. What are Route Parameters in Express.js?
+❖ Route parameters in Express.js allow
+you to capture dynamic values from
+the URL paths.
+❖ Route parameters can be accessed by
+using req.params object.
+
+Back to chapter index
+9. Express - Routing - II
+Q. What are Router object & Router Methods and how to implement them?
+Q. What are the types of Router Methods?
+
+Q. What is the difference between app.get() and router.get() method?
+Q. What is express.Router() in Express.js?
+Q. Share a real application use of Routing?
+Q. What is Route Chaining in Express.js?
+
+Q. What is Route Nesting in Express.js?
+Q. How to implement route nesting in Express.js?
+
+Q. What are Router object & Router Methods and how to implement them?
+❖ The router object is a mini version of an Express application which is
+used for handling routes.
+❖ Router Methods are functions provided by the Router object to
+define routes for different HTTP methods (GET, POST, DELETE, etc.).
+❖ Implement router method
+❖ Use router method
+Back to chapter index
+Q. What are the types of Router Methods?
+
+router.get(path, callback)
+router.post(path, callback)
+Router methods
+router.put(path, callback)
+router.delete(path, callback)
+Back to chapter index
+Q. What is the difference between app.get() and router.get() method?
+1. The app.get() method is used to define routes
+directly on the application object.
+
+1. The router.get() method is used to define routes on a router
+object.
+
+2. Routes defined using app.get() are automatically
+mounted on the root path (/).
+
+2. Routes defined using router.get() are not automatically
+mounted; they must be explicitly mounted using app.use().
+
+3. Routes defined using app.get() are not modular
+and cannot be reused in other applications.
+
+3. Routes defined using router.get() are modular and can be
+reused in other applications by exporting the router object.
+
+Back to chapter index
+Q. What is express.Router() in Express.js?
+❖ express.Router is a class in Express.js
+that returns a new router object.
+
+Back to chapter index
+Q. Share a real application use of Routing?
+❖ Routing is used for authenticating
+requests based on the token available in
+request header.
+
+Back to chapter index
+Q. What is Route Chaining in Express.js?
+❖ Route chaining is a process defining
+multiple route handlers for a single route.
+❖ This pattern helps in modularity,
+organizing code, improving readability,
+and separating concerns.
+
+Back to chapter index
+Q. What is Route Nesting in Express.js?
+❖ Route nesting organize routes hierarchically by
+grouping related routes under a common URL prefix.
+❖ Advantage: This allows you to create more modular
+and structured routes, making your codebase easier
+to manage and maintain.
+/profile
+Route 1
+www.example.com/users
+www.example.com/users/profile
+Route 2
+www.example.com/products
+www.example.com/products/features
+www.example.com/products/ratings
+/users
+www.example.com
+/features
+/products
+/ratings
+Back to chapter index
+Q. How to implement route nesting in Express.js?
+
+Back to chapter index
+10. Express - Template Engines
+Q. What are Template Engines in Express.js?
+Q. Name some Template Engines libraries?
+
+Q. How to implement EJS templating engine in a Express.js application?
+
+Back to main index
+Q. What are Template Engines in Express.js?
+❖ Template engines are libraries that enable developers to
+generate dynamic HTML content by combining static HTML
+templates with data.
+Data
+Template Engine
+HTML Document
+Static HTML Template
+Back to chapter index
+Q. Name some Template Engines libraries?
+
+1. EJS(Embedded JavaScript)
+2. Handlebars
+Template
+Engines
+3. Pug (formerly Jade)
+4. Mustache
+5. Nunjucks
+Back to chapter index
+Q. How to implement EJS templating engine in a Express.js application?
+
+Back to chapter index
+Q. How to implement EJS templating engine in a Express.js application?
+
+1. Install EJS: npm install ejs.
+
+2. Create html template file index.ejs.
+
+3. Create server file and set the view engine to EJS .
+
+4. Specify the views directory.
+
+5. Render EJS templates using res.render() method.
+
+Back to chapter index
+Chapters
+FUNDAMENTALS
+1. Node.js Basics
+2. Main Features of Node.js
+3. Project setup & Modules
+4. Top built in modules
+NODE - OTHERS
+15 Error Handling & Debugging
+16. Security, Performance &
+Deployment
+17. Testing & Web Socket
+EXPRESS
+5. Express Basics
+6. Middleware
+7. Types of Middleware's
+8. Routing - I
+9. Routing - II
+10. Template Engines
+REST API
+11. REST API Basics
+12. HTTP Methods & Status Codes
+13. CORS, Serialization,
+Deserialization, Others
+14. Authentication & Authorization
+MONGO-DB
+18. MongoDB Basics
+19. Setup & CRUD operations
+20. Query Operators & Projection
+21. Indexes
+22. Mongoose
+23. Application based questions.
+24. Scenario based short questions
+25. JavaScript Essentials for Node
+11. REST API - Basics
+Q. What is REST & RESTful API?
+Q. What are HTTP Request and Response structures in UI and REST API?
+
+Q. What are Top 5 REST guidelines and the advantages of them?
+Q. What is the difference between REST API and SOAP API?
+
+Back to main index
+Q. What is REST & RESTful API?
+❖ REST (Representational State Transfer) is an architectural style for designing
+networked applications (REST is a set of guidelines for creating API’s).
+❖ RESTful API is a service which follow REST principles/ guidelines.
+
+Client-Side
+Server-Side (REST API)
+Request
+Request
+Response
+(html)
+Response
+(json)
+Database Server
+Back to chapter index
+Q. What are HTTP Request and Response structures in UI and REST API?
+HTTP Action & URL
+Type of Request
+UI Server Address
+Request Body
+POST /user/submit-form
+HTTP/1.1
+Host: ui-server.example.com
+uid=john&password=123
+// Header, content-type…
+POST /api/user/create
+HTTP/1.1
+Host: api-server.example.com
+uid=john&password=123
+// Header, content-type…
+HTTP Request
+HTTP Request
+UI
+Server
+HTTP Response
+(HTML)
+HTTP/1.1 200 OK
+Content-Type: text/html;
+Content-Length: 158
+<!DOCTYPE html>
+<html></html>
+HTTP Response
+(JSON)
+HTTP/1.1 201 Created
+Content-Type: application/json;
+{
+"userId": 123,
+"message": "User created"
+}
+Back to chapter index
+Q. What are HTTP Request and Response structures in UI and REST API?
+
+HTTP Request
+• An HTTP (Hypertext Transfer Protocol) request is a
+message sent by a client (such as a web browser or
+a mobile app) to a server, requesting a particular
+action or resource.
+
+HTTP Response
+• An HTTP response is a message sent by a server
+back to the client in response to an HTTP request.
+• It includes status code, content type, content.
+
+• It contains HTTP Action(GET, POST…), URL, Request
+Body, Request Header.
+
+Back to chapter index
+Q. What are Top 5 REST guidelines and the advantages of them?
+1.
+Separation
+of Client
+and Server
+5. Layered
+system
+2.
+Stateless
+REST
+guidelines
+4.
+Cacheable
+3. Uniform
+interface
+Back to chapter index
+Q. What are Top 5 REST guidelines and the advantages of them?
+1. Separation of Client & Server The implementation of the client and the server must be done independently.
+• Advantage: Independence allows easier maintenance, scalability, and evolution.
+2. Stateless
+The server will not store anything about the latest HTTP request the client made.
+
+• Advantage: It will treat every request as new request. It simplifies server implementation as it is not overloading it
+with state management.
+3. Uniform interface
+Identify the resources by URL (e.g., www.abc.com/api/questions).
+
+• Advantage: standardized URLs, making it easy to understand and use the API.
+4. Cacheable
+The API response should be cacheable to improve the performance.
+
+• Advantage: Caching API responses improves performance by reducing the need for repeated requests to the server.
+5. Layered system
+The system should follow layered pattern.
+
+• Advantage: A layered system, such as the Model-View-Controller (MVC) pattern, promotes modular design and
+separation of concerns.
+Back to chapter index
+Q. What is the difference between REST API and SOAP API?
+
+Feature
+REST API
+SOAP API
+Architecture
+REST is an architectural style.
+
+SOAP(Simple Object Access Protocol) is
+a protocol.
+
+Protocol
+Uses HTTP or HTTPS.
+
+Can use various protocols (HTTP, SMTP,
+etc.).
+
+Message Format
+Uses lightweight formats like
+JSON, XML.
+
+Typically uses XML.
+
+State
+Stateless.
+
+Can be stateful or stateless.
+
+Error Handling
+Relies on HTTP status codes.
+
+Defines its own fault mechanism.
+
+Performance
+Generally lightweight and faster.
+
+Can be slower due to XML processing.
+Back to chapter index
+12. REST API - HTTP Methods & Status Codes
+Q. What are HTTP Verbs and HTTP methods?
+Q. What are GET, POST, PUT & DELETE HTTP methods?
+
+Q. What is the difference between PUT & PATCH methods?
+Q. Explain the concept of Idempotence in RESTful APIs.
+Q. What are the role of status codes in RESTful APIs?
+
+Back to main index
+Q. What are HTTP Verbs and HTTP methods?
+❖ HTTP methods, also known as HTTP verbs,
+are a set of actions that a client can take on
+a resource.
+
+GET
+POST
+Request
+PUT
+Response
+DELETE
+UI/ Client/ Frontend
+PATCH
+Database Server
+Back to chapter index
+Q. What are GET, POST, PUT & DELETE HTTP methods?
+HTTP
+Method
+GET
+POST
+PUT
+DELETE
+Action
+Example
+Retrieve data from a specified resource
+www.example.com/users
+(retrieve users list)
+www.example.com/users/123
+(retrieve single user of id - 123)
+Submit data to be processed
+www.example.com/users
+(submit and create a new user from
+data provided in request)
+Update a resource or create a new
+resource if it does not exist
+www.example.com/users/123
+(update user 123 details from data
+provided in request)
+Request removal of a resource
+www.example.com/users/123
+(delete user 123)
+Back to chapter index
+Q. What is the difference between PUT & PATCH methods?
+PUT
+PATCH
+Both PUT and PATCH method are used to update a resource by replacing the resource with the new data
+provided in the request.
+Full Resource Replacement: In a PUT request, the
+client sends the full updated resource in the request
+body, replacing the existing resource on the server.
+
+Partial Updates: In a PATCH request, the client
+sends specific changes or instructions for
+modifying the resource, updating only certain
+fields without resending the entire resource.
+
+Back to chapter index
+Q. Explain the concept of Idempotence in RESTful APIs.
+❖ Idempotence meaning performing an operation multiple
+times should have the same outcome as performing it once.
+For example, Sending multiple identical GET requests will
+always return the same response
+Performing same operation
+multiple times
+(GET: www.abc.com/users )
+Idempotent Methods
+Non-Idempotent Methods
+GET
+POST
+PUT
+Same output/ response/ result
+DELETE
+Back to chapter index
+Q. What are the role of status codes in RESTful APIs?
+❖ Status codes are used to convey the results of a client’s request.
+
+1XX (Info)
+• 100 Continue
+2XX (Success)
+• 200: OK
+• 201: Created
+• 202: Accepted
+• 204: No
+Content
+3XX (Redirection)
+• 300: Multiple
+Choices
+4XX (Client Error)
+• 400: Bad Request
+• 401 Unauthorized
+• 403 Forbidden
+• 404 Not Found
+5XX (Server Error)
+• 500: Internal
+Server Error
+• 501: Not
+Implemented
+• 502: Bad
+Gateway
+• 503: Service
+Unavailable
+Back to chapter index
+13. REST API - CORS, Serialization, Deserialization, Others
+Q. What is CORS in RESTful APIs?
+Q. How to remove CORS restrictions RESTful APIs?
+
+Q. What are Serialization & Deserialization?
+Q. What are the types of serialization?
+Q. How to Serialize & Deserialize in Node.js?
+Q. Explain the concept of versioning in RESTful APIs.
+
+Q. What is an API document? What are the popular documentation formats?
+Q. What is the typical structure of a REST API project in Node?
+
+Back to main index
+Q. What is CORS in RESTful APIs?
+❖
+CORS(Cross-Origin Resource Sharing) is a security feature
+implemented in web browsers that restricts web pages
+or scripts from making requests to a different domain
+than the one that served the web page.
+
+http://interviewhappy.com/getdata
+(same domain not restricted)
+http://xyz.com/getdata
+(different domain restricted)
+http://interviewhappy.com/index.html
+http://api.interviewhappy.com/getdata
+(different sub-domain restricted)
+https://interviewhappy.com/getdata
+(different protocol restricted)
+http://interviewhappy.com:12/getdata
+(different port restricted)
+Back to chapter index
+Q. How to remove CORS restrictions RESTful APIs?
+❖
+CORS restrictions can be removed
+by enabling CORS middleware in
+application.
+
+Back to chapter index
+Q. What are Serialization & Deserialization?
+❖ Serialization is the process of converting an
+object into a format that can be stored,
+transmitted, or reconstructed later.
+
+❖ Deserialization is the process of converting
+serialized data, such as binary/ XML/ json
+data, back into an object.
+
+Deserialization
+Serialization
+Sent over network(json)
+Object
+json
+REST API 1
+json
+Object
+REST API 2
+Back to chapter index
+Q. What are the types of serialization?
+
+Types of
+Serialization
+Binary
+XML
+JSON
+Serialization
+Serialization
+Serialization
+Back to chapter index
+Q. How to Serialize & Deserialize in Node.js?
+❖ Serialize a JavaScript object into
+JSON format using JSON.stringify().
+
+❖ Deserialize a JSON string into a
+JavaScript object using JSON.parse().
+
+Back to chapter index
+Q. Explain the concept of versioning in RESTful APIs.
+❖ Versioning in RESTful APIs refers to the
+practice of maintaining multiple versions of
+an API to support backward compatibility.
+
+Client A
+Version 1
+Version 2
+Client B
+Version 3
+Client C
+https://api.example.com/v1/resource
+https://api.example.com/v2/resource
+https://api.example.com/v3/resource
+Back to chapter index
+Q. What is an API document? What are the popular documentation formats?
+❖ An API document, describe the functionality,
+features, and usage of a REST API.
+
+1. Swagger
+(OpenAPI)
+REST API
+Documentat
+ion Formats
+3. API
+Blueprint
+2. RAML
+Back to chapter index
+Q. What is the typical structure of a REST API project in Node?
+❖ node_modules: Directory where npm packages are installed.
+
+❖ src: Source code directory.
+❖ controllers: Contains files responsible for handling
+business logic.
+❖ models: Defines data models.
+❖ routes: Defines API routes.
+❖ utils: Contains reusable functions used across the project.
+❖ app.js: Initializes and configures the Express application.
+Connects routes, middleware, and other configurations.
+❖ .gitignore: A file that specifies files and directories to be
+ignored by version control (e.g., node_modules, *.log).
+❖ package.json: The file that contains metadata about the
+project and its dependencies.
+
+/ecommerce-project-root
+|-- node_modules
+|-- src
+| |-- controllers
+| | |-- productController.js
+| | |-- userController.js
+| |-- models
+| | |-- productModel.js
+| | |-- userModel.js
+| |-- routes
+| | |-- productRoutes.js
+| | |-- userRoutes.js
+| |-- utils
+| | |-- errorHandlers.js
+| | |-- validators.js
+| |-- app.js
+|-- .gitignore
+|-- package.json
+Back to chapter index
+14. REST API - Authentication & Authorization
+Q. What are Authentication and Authorization?
+Q. What are the types of authentication in Node.js?
+
+Q. What is Basic Authentication?
+Q. What are the security risks associated with storing passwords in plain text in Node.js?
+Q. What is the role of Hashing and Salt in securing passwords?
+Q. How can we securely hash passwords in Node.js?
+
+Q. What is API Key Authentication?
+Q. What is Token based and JWT authentication?
+Q. What are the parts of JWT token?
+Q. Where JWT token reside in the request?
+
+Back to main index
+Q. What are Authentication and Authorization?
+❖ Authentication is the process of verifying the
+identity of a user by validating their credentials
+such as username and password.
+
+❖ Authorization is the process of allowing an
+authenticated user access to resources.
+Authentication is always precedes to Authorization.
+
+www.school.com/student/happy
+www.school.com
+Menu
+USERNAME Happy
+PASSWORD *********
+SIGNIN
+Authentication(Who are you?)
+View
+Result
+Edit
+Fees
+Result
+(only teachers
+have rights)
+Salary
+(only teachers
+have rights)
+Authorization(Your rights/ access?)
+Back to chapter index
+Q. What are the types of authentication in Node.js?
+
+1. Basic (Username and Password) Authentication
+2. API Key Authentication
+5 Types of
+Authentication
+3. Token-based Authentication (JWT)
+4. Multi-factor Authentication (MFA)
+5. Certificate-based Authentication
+Back to chapter index
+Q. What is Basic Authentication?
+❖ In Basic Authentication, the user passes
+their credentials on a post request. At
+the Node Rest API end, credentials are
+verified, and response is sent back.
+
+www.school.com
+USERNAME Happy
+❖ The disadvantage of it is, Basic
+Authentication sends credentials in
+plain text over the network, so it is not
+considered a secure method of
+authentication.
+
+PASSWORD *********
+SIGNIN
+Authentication(Who are you?)
+Back to chapter index
+Q. What are the security risks associated with storing passwords in plain text in Node.js?
+1. Unauthorized Access: Storing passwords in plain text means that
+anyone with access to the storage location, such as a database or
+configuration file, can easily read and extract passwords.
+2. Compromise of Other Accounts: Many users tend to reuse
+passwords across multiple accounts, allowing attackers to access
+to multiple accounts.
+
+UserId
+UserName
+Password
+11111
+lallu123456
+test
+22222
+tallu123456
+password
+33333
+ballu123456
+talli
+Stored as Plain Text (Less secure)
+UserId
+Encode
+UserName
+Password
+11111
+12313kjiik?df
+3434jkjkjffaf
+22222
+sdfkasjs33444 asdfasfk444
+33333
+dsfkjaskfj333
+asfasii33333
+Stored in Encrypted format (More secure)
+Back to chapter index
+Q. What is the role of Hashing and Salt in securing passwords?
+❖ Hashing: Hashing is a process of
+converting a password into a fixedsize string of characters using a
+mathematical algorithm.
+
+Generate Salt by using bcrypt library
+(random sting)
+Plain Text Password
+$2b$10$zZK9Kq3ZZ9Zd8E4w83jLk
+password123
+Hashing
+(using algorithm)
+❖ Salt: A salt is a random string of
+data combined with a password
+before hashing.
+
+7SipLzFeuQQNbWlQXXX
+❖ Salting ensures security even
+if the hacker knows the
+hashing algorithm.
+❖ Salting ensures that even if
+two users have the same
+password, their hashed
+passwords will be different
+due to the unique salt.
+Typically, each user has
+unique salt.
+
+$2b$10$zZK9Kq3ZZ9Zd8E4w83jLk.7SipLzFeuQQNbWlQXXX
+Hash
+Salt
+Secure Password
+Back to chapter index
+Q. How can we create hash passwords in Node.js?
+
+1
+• Generate a random salt
+2
+• Create a hash object using
+SHA-256
+3
+• Update the hash object with
+the salt and password
+4
+• Get the hashed data in a
+hexadecimal string
+5
+• Return the salt and hashed
+password as a string
+Back to chapter index
+Q. What is API Key Authentication?
+❖ API Key Authentication - In API Key
+Authentication, the API owner will
+share an API key with the users and
+this key will authenticate the users of
+that API.
+❖ The disadvantage of it is, API keys can
+be shared or stolen therefore it may
+not be suitable for all scenarios.
+
+Back to chapter index
+Q. What is Token based and JWT authentication?
+
+Front-end/ Client-side
+RES API
+1. POST: {username, password}
+3. Return Response {JWT token}
+4. Store JWT token
+at local storage
+8. Display data on
+browser
+2. Authenticate &
+create JWT Token
+5. Request Data {JWT token: Header}
+7. Send Data
+6. Validate token
+signature
+Back to chapter index
+Q. What are the parts of JWT token?
+❖
+1.
+2.
+3.
+
+JWT token has 3 parts:
+Header
+Payload
+Signature
+JWT Token
+Algorithm used to generate
+the token.
+
+The type of the token, which
+is JWT here.
+
+The payload contains the
+CLAIMS.
+
+The signature is a string that is
+used to ensure the INTEGRITY
+of the token and verify that it
+has not been tampered with.
+
+Back to chapter index
+Q. Where JWT token reside in the request?
+❖ In REQUEST HEADER.
+
+Back to chapter index
+Chapters
+FUNDAMENTALS
+1. Node.js Basics
+2. Main Features of Node.js
+3. Project setup & Modules
+4. Top built in modules
+NODE - OTHERS
+15 Error Handling & Debugging
+16. Security, Performance &
+Deployment
+17. Testing & Web Socket
+EXPRESS
+5. Express Basics
+6. Middleware
+7. Types of Middleware's
+8. Routing - I
+9. Routing - II
+10. Template Engines
+REST API
+11. REST API Basics
+12. HTTP Methods & Status Codes
+13. CORS, Serialization,
+Deserialization, Others
+14. Authentication & Authorization
+MONGO-DB
+18. MongoDB Basics
+19. Setup & CRUD operations
+20. Query Operators & Projection
+21. Indexes
+22. Mongoose
+23. Application based questions.
+24. Scenario based short questions
+25. JavaScript Essentials for Node
+15. Error Handling & Debugging
+Q. What is Error Handling? In how many ways you can do error handling in Node.js?
+Q. How to handle errors in synchronous operations using try-catch-finally?
+
+Q. What is Error-First Callbacks?
+Q. How to handle errors using Promises?
+Q. How to handle errors while using async-await?
+Q. How can you Debug Node.js applications?
+
+Back to main index
+Q. What is Error Handling? In how many ways you can do error handling in Node.js?
+❖ Error handling is the process
+of managing errors that occur
+during the execution of a
+program or system.
+
+1. Try-Catch (Sync)
+4 ways to implement
+error handling in
+Node.js
+2. Error-First Callbacks (Async)
+3. Promises (Async)
+4. Try-Catch with async-await (Async)
+Back to chapter index
+Q. How to handle errors in synchronous operations using try-catch-finally?
+1. TRY − A try block is a block of code
+inside which any error can occur.
+2. CATCH − When any error occur in TRY
+block then it is passed to catch block to
+handle it.
+3. FINALLY − The finally block is used to
+execute a given set of statements,
+whether an exception occur or not.
+
+Back to chapter index
+Q. What is Error-First Callbacks?
+❖ Error-First Callbacks is a convention in
+Node.js for handling asynchronous
+operations.
+❖ They are called Error-First Callbacks
+because the first argument of a
+callback function is reserved for an
+error object.
+
+Back to chapter index
+Q. How to handle errors using Promises?
+❖ .catch() method is used in
+Promises for error handling.
+
+Back to chapter index
+Q. How to handle errors while using async-await?
+❖ try-catch block is used with
+async-await for handling errors.
+
+Back to chapter index
+Q. How can you Debug Node.js applications?
+
+Debugging techniques in Node.js
+1. console.log()
+2. debugger statement
+3. Node.js inspector
+4. Visual Studio Code debugger
+5. Chrome DevTools
+Back to chapter index
+16. Security, Performance & Deployment
+Q. What is XSS (Cross-Site Scripting) attack?
+Q. How to prevent XSS attacks? What is sanitize-html module?
+
+Q. What is SQL Injection attack?
+Q. How do you prevent SQL injection attacks in Node?
+Q. How can you improve the performance of a Node.js application?
+Q. How can you Deploy a Node.js application?
+
+Back to main index
+Q. What is XSS (Cross-Site Scripting) attack?
+❖ XSS (Cross-Site Scripting) is a security
+attack when a user/ hacker insert
+some malicious script code in input
+fields to steal or manipulate content.
+
+Back to chapter index
+Q. How to prevent XSS attacks? What is sanitize-html module?
+❖ The sanitize-html module is a
+library for Node.js that sanitizes
+HTML input by removing
+potentially malicious code,
+helping prevent Cross-Site
+Scripting (XSS) attacks.
+
+Back to chapter index
+Q. What is SQL Injection attack?
+❖ SQL Injection is a security attack when
+a user/ hacker insert some malicious
+SQL script code in input fields to steal
+or manipulate content.
+
+Back to chapter index
+Q. How do you prevent SQL injection attacks in Node?
+❖ Use Parameterized Queries
+with Prepared Statements.
+❖ Do not use dynamic queries.
+
+Back to chapter index
+Q. How can you improve the performance of a Node.js application?
+
+1. Optimize Database Queries:
+Use indexes, query optimization techniques, and appropriate database models to
+ensure efficient data retrieval and manipulation.
+
+2. Use Asynchronous Operations:
+Use asynchronous operations(async-await/ promises) to avoid blocker operations
+and prevent delay.
+
+3. Use Caching:
+Use caching mechanisms (eg: in-memory caching, database query caching, HTTP
+caching) for faster retrieval of frequently accessed data.
+
+4. Implement Load Balancing:
+Use load balancing to distribute incoming requests across multiple instances of the
+application to distribute the workload. (eg: use Nginx)
+5. Enable Compression:
+Use compression to shrink data size of the response for faster network transfer.
+(eg: use require('compression’) middleware)
+6. Use Streaming for I/O Operations: Use streaming to read and write large files data in smaller chunks, reducing
+memory usage and improving throughput.
+
+7. Monitor Profile Performance:
+Use monitoring tools(eg: New Relic) to continuously track performance metrics,
+detect anomalies, and optimize the application accordingly.
+Back to chapter index
+Q. How can you Deploy a Node.js application?
+
+Deployment Tools
+(Optional)
+Deployment Platforms
+AWS
+Node.js
+Application
+Docker
+Google Cloud
+Platform
+Microsoft Azure
+Kubernetes
+Self-hosted
+solutions
+Back to chapter index
+17. Testing & Web Socket
+Q. What is Testing? What are the types of testing?
+Q. What are testing frameworks?
+
+Q. How to create unit tests using Jest framework?
+Q. How to write code for Unit Testing? Explain AAA?
+Q. What is Test-Driven Development (TDD)?
+Q. What is WebSocket? How to create a real-time chat application using Node?
+
+Back to main index
+Q. What is Testing? What are the types of testing?
+❖ Testing is the process of
+verifying software
+functionality.
+
+Unit Testing
+Integration Testing
+Functional
+Testing
+Types of
+Testing
+Non-Functional
+Testing
+System Testing
+Testing small parts(functions) of code to ensure
+they work correctly in isolation.
+Testing how different parts of code work together.
+(End to End/ Smoke/ Sanity Testing) Testing the
+entire application from the user's perspective.
+
+Acceptance Testing
+Test by specific users.
+
+Regression Testing
+Testing to ensure new changes don't break existing
+functionality.
+
+Performance Testing
+Testing how well the application performs under
+load.
+
+Security Testing
+Testing for vulnerabilities and security flaws.
+Back to chapter index
+Q. What are testing frameworks?
+❖ Testing frameworks are tools that helps in
+writing and executing tests for your code.
+1. Mocha
+5. Chai
+2. Jest
+Node
+Testing
+Frameworks
+4. AVA
+3.
+Jasmine
+Back to chapter index
+Q. How to create unit tests using Jest framework?
+❖ Steps to create unit tests using Jest framework
+1. Install jest: npm install jest
+2. Create test.js file for corresponding .js file.
+3. Create related unit test functions inside describe function.
+4. Inside test function – Arrange, Act and Assert.
+5. Run this command to run the test cases: npx jest math.test.js
+Back to chapter index
+Q. How to write code for Unit Testing? Explain AAA?
+Arrange: Prepare
+everything needed for the
+test. For example, set data
+or mock object which are
+required by the function
+which has to be tested.
+
+Act: Call or perform the
+function with the data.
+
+Assert: Check if the result
+matches the expected
+outcome.
+
+Back to chapter index
+Q. What is Test-Driven Development (TDD)?
+❖ Test-driven development (TDD) is a software
+development approach where tests are written
+before the actual implementation code.
+
+1. Write Test:
+• Create tests defining
+expected behavior
+before writing
+implementation
+code.
+
+2. Write Code:
+• Implement the
+minimum code
+necessary to pass
+the test.
+
+3. Run Test:
+• Execute the test
+suite to validate
+the new code.
+
+Back to chapter index
+Q. What is WebSocket? How to create a real-time chat application using Node?
+❖ By using WebSockets - WebSockets allow data to
+be sent in both directions using a single connection
+between a client and a server.
+
+Back to chapter index
+Chapters
+FUNDAMENTALS
+1. Node.js Basics
+2. Main Features of Node.js
+3. Project setup & Modules
+4. Top built in modules
+NODE - OTHERS
+15 Error Handling & Debugging
+16. Security, Performance &
+Deployment
+17. Testing & Web Socket
+EXPRESS
+5. Express Basics
+6. Middleware
+7. Types of Middleware's
+8. Routing - I
+9. Routing - II
+10. Template Engines
+REST API
+11. REST API Basics
+12. HTTP Methods & Status Codes
+13. CORS, Serialization,
+Deserialization, Others
+14. Authentication & Authorization
+MONGO-DB
+18. MongoDB Basics
+19. Setup & CRUD operations
+20. Query Operators & Projection
+21. Indexes
+22. Mongoose
+23. Application based questions.
+24. Scenario based short questions
+25. JavaScript Essentials for Node
+18. MongoDB - Basics
+Q. What is MongoDB?
+Q. What is NoSQL?
+
+Q. What is the difference between NoSQL & RDBMS?
+Q. When to use RDBMS and when to use NoSQL DB in your applications?
+Q. What are Documents and Collections in NoSQL?
+Q. What are the advantages of NoSQL over RDBMS/SQL databases?
+
+Q. What are the dis-advantages of NoSQL as comparison to RDBMS databases?
+
+Back to main index
+Q. What is MongoDB?
+❖ MongoDB is a popular open-source, NoSQL database
+management system.
+Client-Side
+Server-Side
+Database
+Request
+Response
+Back to chapter index
+Q. What is NoSQL?
+❖ NoSQL(Not Only SQL) databases are designed to handle
+structured, semi-structured, and unstructured data.
+
+Main Databases
+Categories/ types
+Examples
+RDBMS
+MySQL
+Oracle
+NoSQL
+SQL
+Server
+MongoDB
+Redis
+Back to chapter index
+Q. What is the difference between NoSQL & RDBMS?
+❖ RDBMS(SQL)
+ID
+Name
+Passion
+Row 1
+1
+Happy
+Football
+Row 2
+2
+Amit
+null
+Users (Table)
+❖ NoSQL
+{
+{
+“ID”: 1,
+“Name”: “Happy” ,
+“Passion”: “Football”
+“ID”: 2,
+“Name”: “Amit”
+}
+}
+Document 1
+Document 2
+Users (Collection)
+1. RDBMS are designed to handle
+structured data ( predefined and
+fixed schemas).
+
+1. NoSQL databases are designed to handle
+structured, semi-structured, and
+unstructured data.
+
+2. RDBMS use the relational model,
+where data is stored in tables with
+rows and columns.
+
+2. NoSQL databases use a variety of flexible
+data models, such as document, columnar,
+and graph.
+Back to chapter index
+Q. When to use RDBMS and when to use NoSQL DB in your applications?
+1. RDBMS are suitable for applications that require
+complex transactions and data integrity(ACID),
+such as banking, finance, and e-commerce.
+
+1. NoSQL databases are designed to handle large
+volumes of data with high-speed read and write
+operations, such as social media, IoT, and gaming.
+
+Back to chapter index
+Q. What are Documents and Collections in NoSQL?
+❖ A document is a semi-structured data
+structure(XML, JSON format) that stores
+information in a NoSQL database. It is similar to a
+row in a table in a RDBMS.
+❖ A "collection" is a group of documents that are
+stored together in a NoSQL database. It is similar
+to a table in a RDBMS.
+
+❖ NoSQL
+{
+{
+“ID”: 1,
+“Name”: “Happy” ,
+“Passion”: “Football”
+“ID”: 2,
+“Name”: “Amit”
+}
+}
+Document 1
+Document 2
+Users (Collection)
+Back to chapter index
+Q. What are the advantages of NoSQL over RDBMS/SQL databases?
+❖ RDBMS(SQL)
+ID
+Name
+Passion
+Row 1
+1
+Happy
+Football
+Row 2
+2
+Amit
+null
+Users (Table)
+❖ NoSQL
+{
+{
+“ID”: 1,
+“Name”: “Happy” ,
+“Passion”: “Football”
+{
+“ID”: 2,
+“Name”: “Amit”
+“ID”: 3,
+“Name”: “John”,
+“City”: ”Delhi”
+}
+}
+}
+Document 1
+Document 2
+Document 3
+Users (Collection)
+1. Schema Flexibility
+a) Example 1: In users table in SQL, unknown user passion require storing null values, taking space. In NoSQL,
+omitting passion saves space without needing to store null values.
+b) Example 2: In SQL, adding city for users means altering schema(adding new column), affecting all records. In
+NoSQL, adding city for users is straightforward, requiring no schema changes.
+Back to chapter index
+Q. What are the advantages of NoSQL over RDBMS/SQL databases?
+
+1. Schema Flexibility
+NoSQL adapts easily to changing data structures, allowing data storage without
+strict schema requirements.
+
+2. Scalability
+NoSQL scales efficiently by spreading data across multiple servers, handling
+large volumes effectively.
+
+3. High Performance
+NoSQL databases offer speedy operations for both reading and writing data,
+particularly beneficial for handling large datasets.
+
+4. Support for Diverse Data Models
+NoSQL accommodates various data types and structures, providing flexibility in
+data modeling. For example, document store, graph store, key-value store etc.
+
+5. Cost-Effectiveness
+NoSQL solutions can be cost-efficient with open-source options and flexible
+pricing models available.
+
+Back to chapter index
+Q. What are the dis-advantages of NoSQL as comparison to RDBMS databases?
+
+1. Lack of standard query language
+NoSQL databases lack a standardized query language like SQL, which can lead to a
+learning curve and inconsistency across different databases.
+
+2. Weaker consistency guarantees
+Some NoSQL databases prioritize availability and speed over consistency, leading to
+eventual consistency or weaker consistency models.
+
+3. Limited transaction support
+NoSQL databases may have limited support for complex transactions involving multiple
+operations across different documents or records.
+
+4. Less mature ecosystem
+The NoSQL ecosystem may be less mature compared to RDBMS, resulting in fewer tools,
+libraries, and community support for some NoSQL databases.
+
+Back to chapter index
+19. MongoDB - Setup & CRUD operations in Node.js
+Q. What is the difference between MongoDB Server and MongoDB Database?
+Q. How to install and run MongoDB server? What is MongoDB compass?
+
+Q. How to create database and a collection in MongoDB server?
+Q. What are CRUD operations in MongoDB?
+Q. How to Connect to MongoDB server from Node.js application?
+Q. How to create/ insert a record in MongoDB via Node.js?
+
+Q. How to read/ select a record in MongoDB via Node.js?
+Q. How to update a record in MongoDB via Node.js?
+Q. How to delete a record in MongoDB via Node.js?
+Q. How to insert, select, update & delete multiple records in MongoDB via Node.js?
+
+Back to main index
+Q. What is the difference between MongoDB Server and MongoDB Database?
+❖ MongoDB Server is a software application
+that manages the MongoDB databases.
+❖ MongoDB Database is a logical container
+within the MongoDB Server that stores
+collections of documents.
+
+MongoDB database 1
+MongoDB database 2
+MongoDB Server
+MongoDB database 3
+Back to chapter index
+Q. How to install and run MongoDB server? What is MongoDB compass?
+
+Back to chapter index
+Q. How to install and run MongoDB server? What is MongoDB compass?
+
+Back to chapter index
+Q. How to install and run MongoDB server? What is MongoDB compass?
+
+Back to chapter index
+Q. How to create database and a collection in MongoDB server?
+
+Back to chapter index
+Q. How to create database and a collection in MongoDB server?
+
+Back to chapter index
+Q. What are CRUD operations in MongoDB?
+
+C
+R
+U
+D
+• Create: This operation refers to inserting new documents into a MongoDB collection.
+
+• Read: This operation refers to retrieving data from a MongoDB collection.
+
+• Update: This operation refers to modifying existing documents in a MongoDB collection.
+
+• Delete: This operation refers to removing documents from a MongoDB collection.
+
+Back to chapter index
+Q. How to Connect to MongoDB server from Node.js application?
+❖ MongoDB can be connected
+from Node by calling the
+connect() method of
+MongoClient class.
+
+Back to chapter index
+Q. How to create/ insert a record in MongoDB via Node.js?
+❖ To insert a record in
+MongoDB via Node.js, use
+the insertOne() method on a
+collection object.
+
+C
+R
+U
+D
+• Create
+• Read
+• Update
+• Delete
+Back to chapter index
+Q. How to read/ select a record in MongoDB via Node.js?
+❖ To select a single record in
+MongoDB via Node.js, use the
+findOne() method on a
+collection object.
+
+C
+R
+U
+D
+• Create
+• Read
+• Update
+• Delete
+Back to chapter index
+Q. How to update a record in MongoDB via Node.js?
+❖ To update a record in
+MongoDB via Node.js, use
+the updateOne() method
+on a collection object.
+
+C
+R
+U
+D
+• Create
+• Read
+• Update
+• Delete
+Back to chapter index
+Q. How to delete a record in MongoDB via Node.js?
+❖ To delete a record in
+MongoDB via Node.js, use the
+deleteOne() method on a
+collection object.
+
+C
+R
+U
+D
+• Create
+• Read
+• Update
+• Delete
+Back to chapter index
+Q. How to insert, select, update & delete multiple records in MongoDB via Node.js?
+
+C
+R
+U
+D
+Single
+Multiple
+• Create
+.insertOne()
+. insertMany()
+• Read
+. findOne()
+. find()
+. updateOne()
+. updateMany()
+. deleteOne()
+. deleteMany()
+• Update
+• Delete
+Back to chapter index
+Q. How to insert, select, update & delete multiple records in MongoDB via Node.js?
+
+Back to chapter index
+Q. How to insert, select, update & delete multiple records in MongoDB via Node.js?
+
+Back to chapter index
+20. MongoDB - Query Operators & Projection
+Q. What are Query Operators in MongoDB?
+Q. Compare Query Operators in SQL & MongoDB?
+
+Q. How to implement comparison operators?
+Q. What are in, nin, exists, and, or, regex, not query operators in MongoDB?
+Q. What is projection in MongoDB? How to implement it?
+Q. How to remove _id field from result in MongoDB?
+
+Q. How do you perform sorting in ascending & descending order in MongoDB?
+
+Back to main index
+Q. What are Query Operators in MongoDB?
+❖ Query operators are special keywords or
+symbols used to perform operations like
+comparison, logical operations in queries.
+
+Back to chapter index
+Q. Compare Query Operators in SQL & MongoDB?
+
+Category/ Name
+SQL Operator
+MongoDB Operator
+Description
+$eq
+Operators allow you to compare values and
+select documents that match specific conditions.
+Selects documents where the value of a field
+equals a specified value.
+
+$ne
+Selects documents where the value of a field
+does not equal a specified value.
+
+$gt
+Selects documents where the value of a field is
+greater than a specified value.
+
+$gte
+Selects documents where the value of a field is
+greater than or equal to a specified value.
+
+$lt
+Selects documents where the value of a field is
+less than a specified value.
+
+$lte
+Selects documents where the value of a field is
+less than or equal to a specified value. Back to chapter index
+Comparison Operators
+Equal
+Not Equal
+Greater Than
+Greater Than or Equal
+Less Than
+Less Than or Equal
+=
+<> or !=
+>
+>=
+<
+<=
+Q. Compare Query Operators in SQL & MongoDB?
+
+Category/ Name
+SQL Operator
+MongoDB Operator
+Operators allow you to combine multiple conditions in
+a query using logical operations.
+
+Logical Operators
+AND
+OR
+NOT
+Description
+AND
+$and
+OR
+$or
+Joins query clauses with a logical OR.
+
+$not
+Inverts the effect of a query expression and returns
+documents that do not match the query expression.
+
+NOT
+Joins query clauses with a logical AND.
+
+Array Operators
+Operators allow you to perform operations on array
+fields within documents.
+
+Contains
+$in
+Selects documents where the value of a field equals
+any value in a specified array.
+
+$nin
+Selects documents where the value of a field does not
+equal any value in a specified array.
+
+$size
+Selects documents where the size of an array field
+meets a specified condition.
+Back to chapter index
+Not Contains
+Array Size
+IN
+NOT IN
+ARRAY_LENGTH
+Q. Compare Query Operators in SQL & MongoDB?
+
+Category/ Name
+SQL Operator
+MongoDB Operator
+Description
+Element Operators
+Exists
+IS NULL or IS NOT NULL
+$exists
+Selects documents where a field
+exists or does not exist.
+
+$regex
+Selects documents where a field
+matches a regular expression.
+
+$text
+Performs a full-text search on the
+specified text index.
+
+$near
+Selects documents based on
+proximity to a specified point.
+
+Regular Expression Operators
+Regular Expression
+LIKE
+Text Search Operators
+Full-Text Search
+CONTAINS
+Geospatial Operators
+Near
+ST_Distance
+Back to chapter index
+Q. How to implement comparison operators?
+Comparison Operators
+$eq
+$ne
+$gt
+$gte
+$lt
+$lte
+Back to chapter index
+Q. What are in, nin, exists, and, or, regex, not query operators in MongoDB?
+
+Back to chapter index
+Q. What are in, nin, exists, and, or, regex, not query operators in MongoDB?
+
+Back to chapter index
+Q. What is projection in MongoDB? How to implement it?
+❖ Projection is the way of specifying
+which fields should be returned in
+the query results.
+❖ Projection can be implemented by
+using the project method.
+
+❖ SQL Example
+Projection
+Back to chapter index
+Q. How to remove _id field from result in MongoDB?
+❖ To remove the _id field from the
+result in MongoDB, you can use the
+project method with _id: 0.
+
+Back to chapter index
+Q. How do you perform sorting in ascending & descending order in MongoDB?
+❖ Sorting in queries can be performed by
+using sort() method.
+
+Back to chapter index
+21. MongoDB - Indexes
+Q. What are Indexes in MongoDB? How indexing make data retrieval faster?
+Q. What are indexes? How indexing make data retrieval faster?
+
+Q. How to create indexes in MongoDB?
+Q. On which filed you will create an index - projection field or filter field?
+Q. What happens if I create an index on all fields of the collection?
+Q. What is the difference between Single Field Indexes & Compound Indexes?
+
+Back to main index
+Q. What are Indexes in MongoDB? How indexing make data retrieval faster?
+❖ Indexes are data structures that improve
+the speed of data retrieval operations on
+collections.
+
+❖ By default, index is automatically created
+on _id field.
+
+❖ Before creating index,
+data is directly retrieved
+❖ collection.find({name: "Happy" });
+❖ Create index on “name” field.
+(MongoDB will create a separate
+index data structure (index tree))
+❖ After creating index, data
+is retrieved via indexes
+Back to chapter index
+Q. What are indexes? How indexing make data retrieval faster?
+❖ MongoDB automatically updates the index tree as
+documents are inserted, updated, or deleted, ensuring
+the index remains accurate.
+❖ When querying with indexed fields, MongoDB uses the
+index to efficiently locate matching documents, avoiding a
+full collection scan.
+
+Back to chapter index
+Q. How to create indexes in MongoDB?
+❖ Indexes can by create by using the
+createIndex() method.
+
+Back to chapter index
+Q. On which filed you will create an index - projection field or filter field?
+❖ It would be beneficial to create an index on the 'name'
+field, as this is the field being used for filtering.
+
+Back to chapter index
+Q. What happens if I create an index on all fields of the collection?
+❖ Indexes are data structures that occupy space and
+memory in database. Therefore, it is beneficial to create
+indexes for fields that are frequently used in query
+conditions/ filtering or for sorting, as this can significantly
+improve query performance.
+
+Back to chapter index
+Q. What is the difference between Single Field Indexes & Compound Indexes?
+❖ Single Field Indexes: Indexes that
+are created on a single field.
+❖ Compound Indexes: Indexes that
+are created on multiple fields.
+These indexes can improve
+performance for queries that use
+multiple fields in the query
+condition.
+
+Back to chapter index
+22. MongoDB - Mongoose
+Q. What is Mongoose? What are the advantages of using it?
+Q. How to install Mongoose in Node.js?
+
+Q. What is the role of Schema in Mongoose? How to define it?
+Q. How to perform database operation using Mongoose with Node.js?
+Q. How Mongoose will do data validation for Node applications?
+Q. How to perform CRUD operations using Mongoose in Node.js application?
+
+Q. How to define relationships between collections using Mongoose?
+Q. How to create a Mongoose model from a schema?
+Q. How Mongoose provide middleware support? What are Pre & Post Hooks?
+
+Back to main index
+Q. What is Mongoose? What are the advantages of using it?
+❖ Mongoose is an Object Data Modeling
+(ODM) library for MongoDB and Node.js.
+❖ Mongoose provides schema-based
+solution to model application data.
+
+Advantages of Mongoose over directly using
+MongoDB:
+Direct
+1. Data validation.
+
+2. Middleware Support.
+3. Define relationships btw collections.
+
+Back to chapter index
+Q. How to install Mongoose in Node.js?
+
+Back to chapter index
+Q. What is the role of Schema in Mongoose? How to define it?
+❖ A schema in Mongoose defines the
+structure, validation rules, and behavior
+of MongoDB documents, ensuring data
+consistency and integrity.
+
+❖ It's defined using the
+mongoose.Schema() function.
+
+Back to chapter index
+Q. How to perform database operation using Mongoose with Node.js?
+
+Back to chapter index
+Q. How to perform database operation using Mongoose with Node.js?
+❖ Steps to perform database operation using Mongoose with Node.js
+1. Create schema.
+
+2. Create model from the schema.
+
+3. Connect to MongoDB via Mongoose.
+
+4. Create instance from the Mongoose model.
+
+5. Save the new instance to the database via Mongoose.
+
+Back to chapter index
+Q. How Mongoose will do data validation for Node applications?
+❖ Use validate() method to validate the model as per
+the defined schema before calling the save method.
+
+Back to chapter index
+Q. How to perform CRUD operations using Mongoose in Node.js application?
+
+C
+R
+U
+D
+• Create: This operation refers to inserting new
+documents into a MongoDB collection.
+
+• Read: This operation refers to retrieving data
+from a MongoDB collection.
+
+• Update: This operation refers to modifying
+existing documents in a MongoDB collection.
+
+• Delete: This operation refers to removing
+documents from a MongoDB collection.
+
+Back to chapter index
+Q. How to perform CRUD operations using Mongoose in Node.js application?
+
+Back to chapter index
+Q. How to define relationships between collections using Mongoose?
+❖ To define a one-to-one
+relationship between two
+collections in Mongoose,
+use the ref property in
+one schema to reference
+the model of the related
+collection's documents
+by their ObjectId.
+
+Back to chapter index
+Q. How to create a Mongoose model from a schema?
+❖ Create Mongoose model by using the
+mongoose.model() function.
+
+Back to chapter index
+Q. How Mongoose provide middleware support? What are Pre & Post Hooks?
+❖ Mongoose provides middleware support by allowing
+you to define pre and post hooks, also known as
+middleware functions.
+❖ Pre hook execute before specific database operations.
+❖ Post hook execute after specific database operations.
+
+Back to chapter index
+Chapters
+FUNDAMENTALS
+1. Node.js Basics
+2. Main Features of Node.js
+3. Project setup & Modules
+4. Top built in modules
+NODE - OTHERS
+15 Error Handling & Debugging
+16. Security, Performance &
+Deployment
+17. Testing & Web Socket
+EXPRESS
+5. Express Basics
+6. Middleware
+7. Types of Middleware's
+8. Routing - I
+9. Routing - II
+10. Template Engines
+REST API
+11. REST API Basics
+12. HTTP Methods & Status Codes
+13. CORS, Serialization,
+Deserialization, Others
+14. Authentication & Authorization
+MONGO-DB
+18. MongoDB Basics
+19. Setup & CRUD operations
+20. Query Operators & Projection
+21. Indexes
+22. Mongoose
+23. Application based questions.
+24. Scenario based short questions
+25. JavaScript Essentials for Node
+23. Application based questions
+Q. How you would organize your Node.js project for building
+a RESTful API? What modules or frameworks would you use
+for routing and handling requests?
+Q. Describe the steps you would take to implement user
+authentication in a Node.js application. What strategies or
+libraries would you consider for secure authentication?
+Q. Describe the steps you would follow to deploy a Node.js
+application to a production environment? How would you
+manage dependencies, environment variables, and monitor
+the application in production?
+Q. Your Node.js application needs to interact with a
+MongoDB database. How would you handle database
+transactions and ensure data integrity?
+
+Q. How to secure your Node.js application. What security
+measures would you implement?
+
+Back to main index
+Q. How you would organize your Node.js project for building a RESTful
+API? What modules or frameworks would you use for routing and
+handling requests?
+
+1
+• I will create separate modules for controllers, routes, models, middlewares, and
+configuration files.
+
+• I will use Express.js for routing and middleware handling.
+2
+3
+• I will use in-built modules like Body-parser for parsing request bodies, Helmet for
+security, Morgan for request logging, and CORS for enabling CORS if needed.
+
+Back to chapter index
+Q. Describe the steps you would take to implement user
+authentication in a Node.js application. What strategies or libraries
+would you consider for secure authentication?
+
+1
+2
+3
+4
+5
+6
+• Select Authentication Strategy: Choose between session-based or token-based (JWT) authentication.
+• Pick Libraries: Consider Passport.js or JWT libraries for token-based authentication.
+• Middleware Integration: Integrate authentication middleware into routes.
+• Password Security: Hash passwords securely using bcrypt or similar.
+• User Model: Define a model/schema for user data in the database.
+• Route Protection: Secure routes by requiring authentication.
+Back to chapter index
+Q. Describe the steps you would follow to deploy a Node.js application
+to a production environment? How would you manage dependencies,
+environment variables, and monitor the application in production?
+
+1
+• Prepare the application for deployment by organizing dependencies, configuration files,
+and build scripts.
+
+2
+• Choose a hosting provider and set up a server or containerized environment (e.g., AWS
+EC2, Heroku, Docker).
+
+3
+4
+• Configure environment variables for sensitive information like database credentials.
+
+• Monitor the application in production using logging, metrics, and alerting tools to
+ensure its health and performance.
+
+Back to chapter index
+Q. Your Node.js application needs to interact with a MongoDB
+database. How would you handle database transactions and ensure
+data integrity?
+
+1
+2
+3
+4
+• Use the official MongoDB Node.js driver or an ODM library like Mongoose to interact
+with the database.
+
+• Use schema validation via Mongoose to avoid invalid data insertion inside the database.
+
+• Use transactions to ensure atomicity, consistency, isolation, and durability (ACID)
+properties.
+
+• Handle error conditions and rollbacks gracefully to maintain data integrity.
+
+Back to chapter index
+Q. How to secure your Node.js application. What security measures
+would you implement?
+
+1
+• Enforce HTTPS/TLS encryption for securing data in transit.
+
+2
+• Implement input validation and sanitize user inputs to prevent injection attacks (e.g., SQL
+injection, XSS).
+
+3
+• Use encryption algorithms (e.g., AES, RSA) and libraries like crypto.js to encrypt and
+decrypt sensitive data at rest.
+
+4
+• Implement secure authentication and authorization mechanisms to control access to
+sensitive resources.
+
+5
+• Regularly update dependencies and libraries to patch security vulnerabilities.
+
+Back to chapter index
+24. Scenario based short questions
+Q. How to perform file operations in Node.js?
+Q. How you will handle HTTP requests and responses in a Node.js application?
+
+Q. How you will handle processing large amounts of file data efficiently?
+Q. How to execute a task after a certain delay in a Node.js application?
+Q. How to implement centralized error handling and logging in an Express.js application.
+Q. How to optimize the performance of database queries in a Node.js application?
+
+Q. How to handle form submissions and POST Requests in an Express.js application?
+Q. How to connect to a MongoDB database in a Node.js application?
+Q. How to perform CRUD operations on a MongoDB collection in a
+Node.js application?
+
+Back to main index
+24. Scenario based short questions
+Q. How to automate the deployment process of a Node.js application?
+Q. How to parse and validate JSON data from client requests in an Express.js application?
+
+Q. How to monitor the performance of a Node.js application deployed on a cloud platform?
+Q. How to handle and store password securely?
+Q. How to log incoming HTTP requests in an Express.js application?
+Q. Can a REST API share its resources with applications from different domains by default?
+
+Back to main index
+Q. How to perform file operations in Node.js?
+❖ Use the built-in fs module for file
+operations like reading, writing, and
+manipulating files.
+
+Back to chapter index
+Q. How you will handle HTTP requests and responses in a Node.js application?
+❖ Use either a framework like Express.js or
+a built-in module like http.
+
+Back to chapter index
+Q. How you will handle processing large amounts of file data efficiently?
+❖ Use the built-in stream module to create
+readable and writable streams and pipe them
+together for efficient data processing.
+
+Back to chapter index
+Q. How to execute a task after a certain delay in a Node.js application?
+❖ Use setTimeout() or setInterval() functions to
+execute the task after the specified delay.
+
+Back to chapter index
+Q. How to implement centralized error handling and logging in an Express.js application.
+❖ Use middleware in Express.js to catch errors
+globally, log them using a logging library like
+Winston, and return appropriate error
+responses to clients.
+
+Back to chapter index
+Q. How to optimize the performance of database queries in a Node.js application?
+❖ Use indexes, query optimization techniques,
+and appropriate database models.
+
+Back to chapter index
+Q. How to handle form submissions and POST Requests in an Express.js application?
+❖ Use the body-parser middleware to parse
+incoming request bodies and handle form
+submissions in POST requests.
+
+Back to chapter index
+Q. How to connect to a MongoDB database in a Node.js application?
+❖ Use the mongodb package to connect to
+the MongoDB database using the
+MongoClient.connect() method.
+
+Back to chapter index
+Q. How to perform CRUD operations on a MongoDB collection in a Node.js application.
+❖ Use methods like insertOne(), updateOne(),
+deleteOne(), etc., provided by the MongoDB
+driver to perform CRUD operations on the
+collection.
+
+Back to chapter index
+Q. How to automate the deployment process of a Node.js application?
+❖ Use continuous integration and continuous
+deployment (CI/CD) tools like Jenkins, Travis
+CI, CircleCI, or GitHub Actions to automate
+the deployment process of the Node.js
+application.
+
+Back to chapter index
+Q. How to parse and validate JSON data from client requests in an Express.js application?
+❖ Use the express.json() middleware to parse
+JSON data from the request body and
+validate it using schema validation libraries
+like Joi or ajv.
+
+Back to chapter index
+Q. How to monitor the performance of a Node.js application deployed on a cloud platform?
+❖ Use cloud monitoring services like AWS
+CloudWatch, Google Cloud Monitoring, or thirdparty monitoring tools like New Relic, Datadog
+to monitor and analyze performance metrics of
+the deployed application.
+
+Back to chapter index
+Q. How to handle and store password securely?
+❖ Use libraries like bcrypt for password
+hashing and salting to securely store
+passwords in the database.
+
+Back to chapter index
+Q. How to log incoming HTTP requests in an Express.js application?
+❖ Create custom middleware using app.use()
+in Express.js to log request details such as
+URL, method, headers, and timestamp.
+
+Back to chapter index
+Q. Can a REST API share its resources with applications from different domains by default?
+❖ No, by default, REST APIs cannot share
+resources with applications from different
+domains due to the same-origin policy
+enforced by web browsers. However, CORS
+headers or other methods can be used to
+enable cross-domain resource sharing.
+
+Back to chapter index
+25: JavaScript Essentials for React
+Q. What are variables? What is the difference between var, let, and const ?
+Q. What are the types of conditions statements in JS?
+
+Q. What is Error Handling in JS?
+Q. What is the difference between Spread and Rest operator in JS?
+Q. What are Arrays in JS? How to get, add & remove elements from arrays?
+Q. What is Array Destructuring in JS?
+Q. What are Functions in JS? What are the types of function?
+Q. What is the difference between named and anonymous functions? When to use what in applications?
+Q. What is function expression in JS?
+Q. What are Arrow Functions in JS? What is it use?
+Q. What are Callback Functions? What is it use?
+Q. What is Higher-order function In JS?
+Q. What are Pure and Impure functions in JS?
+Q. What are template literals and string interpolation in strings?
+
+Back to main index
+25: JavaScript Essentials for React
+Q. What are Objects in JS?
+Q. What is the difference between an array and an object?
+Q. How do you add or modify or delete properties of an object?
+Q. What are Classes in JS?
+Q. What is a constructor?
+Q. What is the use of this keyword?
+Q. What are the techniques for achieving asynchronous operations in JS?
+Q. What is setTimeout()? How is it used to handle asynchronous operations?
+Q. What is setInterval()? How is it used to handle asynchronous operations?
+Q. What are Promises in JavaScript?
+
+Q. How to implement Promises in JavaScript?
+Q. When to use Promises in real applications?
+Q. What is the purpose of async/ await? Compare it with Promises?
+Q. Explain the use of async and await keywords in JS?
+
+Q. Can we use async keyword without await keyword and vice versa?
+Q. How do you handle errors in async/ await functions?
+
+Back to main index
+Q. What are variables? What is the difference between var, let, and const ?
+❖ Variables are used to store data.
+
+Back to chapter index
+Q. What are variables? What is the difference between var, let, and const ?
+❖ var creates a function-scoped
+variable.
+
+❖ let creates a block-scoped
+variable
+❖ const can be assigned only once, and its
+value cannot be changed afterwards.
+
+Back to chapter index
+Q. What are the types of conditions statements in JS?
+
+Back to chapter index
+Q. What are the types of conditions statements in JS?
+
+Types of condition statements
+1. If/ else statements
+2. Ternary operator
+3. Switch statement
+Back to chapter index
+Q. What is Error Handling in JS?
+❖ Error handling is the process of
+managing errors.
+
+Back to chapter index
+Q. What is the difference between Spread and Rest operator in JS?
+❖ The spread operator(...) is used to expand or
+spread elements from an iterable (such as an
+array, string, or object) into individual elements.
+
+Copying an Array
+Uses of Spread
+Operator
+Merging Arrays
+Passing Multiple
+Arguments to a Function
+Back to chapter index
+Q. What is the difference between Spread and Rest operator in JS?
+❖ The rest operator is used in function parameters
+to collect all remaining arguments into an array.
+
+Back to chapter index
+Q. What are Arrays in JS? How to get, add & remove elements from arrays?
+❖ An array is a data type that allows you to
+store multiple values in a single variable.
+
+Array1
+Multiple
+Variables
+Array2
+Array3
+Array4
+Back to chapter index
+Q. What are Arrays in JS? How to get, add & remove elements from arrays?
+Arrays methods
+Get
+Add
+Remove
+Modify
+Others
+indexOf()
+push()
+pop()
+map()
+join()
+find()
+concat()
+shift()
+forEach()
+length
+filter()
+Slice()
+splice()
+sort()
+reverse()
+reduce()
+some()
+every()
+Back to chapter index
+Q. What are Arrays in JS? How to get, add & remove elements from arrays?
+
+❖ Pictorial representation of important method of arrays
+Back to chapter index
+Q. What is Array Destructuring in JS?
+❖ Array destructuring allows you to extract elements from an array
+and assign them to individual variables in a single statement.
+❖ Array destructuring is introduced in ECMAScript 6 (ES6).
+
+Structuring
+Multiple
+Variables
+Array1
+Array2
+Destructuring
+Array3
+Array4
+Back to chapter index
+Q. What is Array Destructuring in JS?
+
+Back to chapter index
+Q. What are Functions in JS? What are the types of function?
+❖ A function is a reusable block of code
+that performs a specific task.
+
+Function keyword
+Function name
+Parameters list
+Function body
+Function call
+Argument list
+Back to chapter index
+Q. What are Functions in JS? What are the types of function?
+
+Named Function
+Anonymous Function
+Function Expression
+Types of
+Functions
+Arrow Function
+IIFE
+Callback Function
+Higher-Order Function
+Back to chapter index
+Q. What is the difference between named and anonymous functions?
+When to use what in applications?
+❖ Named functions have a name identifier
+❖ Anonymous functions do not have a name identifier
+and cannot be referenced directly by name.
+
+❖ Use named functions for big and complex logics.
+
+❖ Use anonymous functions for small logics.
+
+❖ Use when you want to reuse one function at
+multiple places.
+
+❖ Use when want to use a function in a single place.
+Back to chapter index
+Q. What is function expression in JS?
+
+❖ A function expression is a way to define a function
+by assigning it to a variable.
+
+Back to chapter index
+Q. What are Arrow Functions in JS? What is it use?
+❖ Arrow functions, also known as fat arrow
+functions, is a simpler and shorter way for
+defining functions in JavaScript.
+Parameters list
+Function body
+Back to chapter index
+Q. What are Callback Functions? What is it use?
+❖ A callback function is a function that is
+passed as an argument to another function.
+
+Higher-order function
+Callback function
+Back to chapter index
+Q. What is Higher-order function In JS?
+❖ A Higher order function:
+1. Take one or more functions as arguments(callback function) OR
+2. Return a function as a result
+Callback function
+High-order function
+Back to chapter index
+Q. What are Pure and Impure functions in JS?
+1. A pure function is a function that always
+produces the same output for the same input.
+
+1. An impure function, can produce different
+outputs for the same input.
+
+2. Pure functions cannot modify the state.
+
+2. Impure functions can modify the state.
+
+3. Pure functions cannot have side effects.
+
+3. Impure functions can have side effects.
+
+Back to chapter index
+Q. What are template literals and string interpolation in strings?
+❖ A template literal, also known as a template
+string, is a feature introduced in ECMAScript
+2015 (ES6) for string interpolation and
+multiline strings in JavaScript.
+
+Back to chapter index
+Q. What are Objects in JS?
+
+Back to chapter index
+Q. What are Objects in JS?
+❖ An object is a data type that allows you to
+store key-value pairs.
+
+String/ number/
+boolean/ null/
+undefined
+Array
+Object
+Function
+Object
+Back to chapter index
+Q. What is the difference between an array and an object?
+
+Back to chapter index
+Q. How do you add or modify or delete properties of an object?
+
+Back to chapter index
+Q. What are Classes in JS?
+
+❖ Classes serve as blueprints for creating objects
+and define their structure and behavior.
+
+❖ Advantages of classes:
+1. Object Creation
+2. Encapsulation
+3. Inheritance
+4. Code Reusability
+5. Polymorphism
+6. Abstraction
+Back to chapter index
+Q. What is a constructor?
+❖ Constructors are special methods within
+classes that are automatically called when
+an object is created of the class using the
+new keyword.
+
+Back to chapter index
+Q. What is the use of this keyword?
+❖ this keyword provides a way to access the
+current object or class.
+
+Back to chapter index
+Q. What are the techniques for achieving asynchronous operations in JS?
+
+setTimeout
+setInterval
+Callbacks
+Asynchronous
+Operations
+Techniques
+Promises
+Async/await
+Generators with yield
+Event-driven programming
+back to chapter index
+Q. What is setTimeout()? How is it used to handle asynchronous operations?
+
+❖ setTimeout() is a built-in JavaScript function
+that allows you to schedule the execution
+of a function after a specified delay
+asynchronously.
+
+back to chapter index
+Q. What is setInterval()? How is it used to handle asynchronous operations?
+❖ setInterval() is a built-in JavaScript function that
+allows you to repeatedly execute a function at a
+specified interval asynchronously.
+setTimeout
+Timeout(10 sec)
+Start Function
+setInterval
+Timeout(10 sec)
+Start Function
+back to chapter index
+Q. What are Promises in JavaScript?
+
+❖ Important points about promises:
+1. Promises in JavaScript are a way to handle
+asynchronous operations.
+2. A Promise can be in one of three states: pending,
+resolved, or rejected.
+3. A promise represents a value that may not be available
+yet but will be available at some point in the future.
+
+Back to chapter index
+Q. How to implement Promises in JavaScript?
+
+Back to chapter index
+Q. How to implement Promises in JavaScript?
+
+Back to chapter index
+Q. When to use Promises in real applications?
+❖ Promises are useful when you need to perform
+time taking operations in asynchronous manner
+and later handle the results when the result is
+available.
+
+API calls
+File handling
+Use of Promises in
+Real Applications
+Data fetching
+Animations and visual
+effects
+Event handling
+back to chapter index
+Q. What is the purpose of async/ await? Compare it with Promises?
+
+Async-Await
+try{}/
+catch()
+promise
+constructor/
+resolve/
+reject
+Promises
+then()/
+catch()
+Back to chapter index
+Q. What is the purpose of async/ await? Compare it with Promises?
+❖ Similarities and differences between promises and async-await:
+1. Promises and async/await can achieve the same goal of
+handling asynchronous operations.
+
+2. async/await provides a more concise and readable syntax that
+resembles synchronous code whereas Promises use a chaining
+syntax with then() and catch() which is not that readable.
+3. async/await still relies on Promises for handling the
+asynchronous nature of the code.
+
+Back to chapter index
+Q. Explain the use of async and await keywords in JS?
+❖ The async keyword is used to define a function
+as an asynchronous function, which means the
+code inside async function will not block the
+execution other code.
+
+❖ The await keyword is used within an async
+function to pause the execution of the function
+until a Promise is resolved or rejected.
+
+Back to chapter index
+back to chapter index
+Q. Can we use async keyword without await keyword and vice versa?
+❖ Yes, we use async keyword without await keyword.
+
+❖ await keyword cannot be used without async.
+
+Back to chapter index
+Q. How do you handle errors in async/ await functions?
+❖ In async/await functions, we can handle
+errors using try/catch blocks.
+
+Back to chapter index
+Chapters
+FUNDAMENTALS
+1. Node.js Basics
+2. Main Features of Node.js
+3. Project setup & Modules
+4. Top built in modules
+NODE - OTHERS
+15 Error Handling & Debugging
+16. Security, Performance &
+Deployment
+17. Testing & Web Socket
+EXPRESS
+5. Express Basics
+6. Middleware
+7. Types of Middleware's
+8. Routing - I
+9. Routing - II
+10. Template Engines
+REST API
+11. REST API Basics
+12. HTTP Methods & Status Codes
+13. CORS, Serialization,
+Deserialization, Others
+14. Authentication & Authorization
+MONGO-DB
+18. MongoDB Basics
+19. Setup & CRUD operations
+20. Query Operators & Projection
+21. Indexes
+22. Mongoose
+23. Application based questions.
+24. Scenario based short questions
+25. JavaScript Essentials for Node
+All the best for your interviews
+Never ever give up
+

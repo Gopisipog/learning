@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C# Basic Internals - Research Report</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    header .topic {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 15px;
+    }
+
+    header .meta {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    main {
+      padding: 40px;
+    }
+
+    .summary {
+      background: linear-gradient(135deg, #fff9e6 0%, #ffe6cc 100%);
+      border-left: 5px solid #ff9800;
+      padding: 25px;
+      margin-bottom: 40px;
+      border-radius: 8px;
+    }
+
+    .summary h2 {
+      color: #e65100;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .summary p {
+      font-size: 1.1rem;
+      color: #5d4037;
+    }
+
+    .sources-header {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    .source-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .source-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .source-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .source-title {
+      flex: 1;
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .relevance-score {
+      background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      margin-left: 15px;
+    }
+
+    .source-link {
+      color: #667eea;
+      text-decoration: none;
+      font-size: 0.9rem;
+      word-break: break-all;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .source-link:hover {
+      text-decoration: underline;
+      color: #764ba2;
+    }
+
+    .source-excerpt {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      border-left: 3px solid #e0e0e0;
+      padding-left: 15px;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      header {
+        padding: 25px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .source-header {
+        flex-direction: column;
+      }
+
+      .relevance-score {
+        margin: 10px 0 0 0;
+        align-self: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔍 Research Report</h1>
+      <p class="topic">C# Basic Internals</p>
+      <p class="meta">Search Depth: Basic | Total Results: 5</p>
+    </header>
+
+    <main>
+      <section class="summary">
+        <h2>💡 Executive Summary</h2>
+        <p>C# uses the 'internal' access modifier for members, allowing them to be accessed within the same assembly. It's essential for encapsulation and controlling access. The 'internal' modifier is useful for library design.</p>
+      </section>
+
+      <h2 class="sources-header">📚 Top Sources</h2>
+
+      <article class="source-card">
+        <div class="source-header">
+          <h3 class="source-title">1. C# Language Internals - Part 1 - Pluralsight</h3>
+          <span class="relevance-score">100%</span>
+        </div>
+        <a href="https://www.pluralsight.com/courses/csharp-language-internals" target="_blank" class="source-link">
+          https://www.pluralsight.com/courses/csharp-language-internals
+        </a>
+        <p class="source-excerpt">
+          C# Language Internals is designed to give you a deeper understanding of the C# programming language and the CLR. Bart De Smet - Pluralsight...
+        </p>
+      </article>
+
+      <article class="source-card">
+        <div class="source-header">
+          <h3 class="source-title">2. [PDF] Introduction to .NET Basics and C# Fundamentals</h3>
+          <span class="relevance-score">100%</span>
+        </div>
+        <a href="https://home.cs.colorado.edu/~kena/classes/5448/f11/presentation-materials/csharp_dotnet_adnanreza.pdf" target="_blank" class="source-link">
+          https://home.cs.colorado.edu/~kena/classes/5448/f11/presentation-materials/csharp_dotnet_adnanreza.pdf
+        </a>
+        <p class="source-excerpt">
+          The class access modifiers are public, private, protected and internal. 'internal' is an intermediate access level which only allows access to classes in the same assembly...
+        </p>
+      </article>
+
+      <article class="source-card">
+        <div class="source-header">
+          <h3 class="source-title">3. Basics Of C# - C# Corner</h3>
+          <span class="relevance-score">100%</span>
+        </div>
+        <a href="https://www.c-sharpcorner.com/UploadFile/e9fdcd/basics-of-C-Sharp/" target="_blank" class="source-link">
+          https://www.c-sharpcorner.com/UploadFile/e9fdcd/basics-of-C-Sharp/
+        </a>
+        <p class="source-excerpt">
+          This article explains C# basics with C# code examples including C# data types, class, objects, properties, and methods. You'll also learn basic OOP concepts and best practices.
+        </p>
+      </article>
+
+      <article class="source-card">
+        <div class="source-header">
+          <h3 class="source-title">4. Deep Dive into C# / .NET Internals: Looking for Resources</h3>
+          <span class="relevance-score">100%</span>
+        </div>
+        <a href="https://www.reddit.com/r/dotnet/comments/1ielhrx/deep_dive_into_c_net_internals_looking_for/" target="_blank" class="source-link">
+          https://www.reddit.com/r/dotnet/comments/1ielhrx/deep_dive_into_c_net_internals_looking_for/
+        </a>
+        <p class="source-excerpt">
+          I'm wondering about the existence of a resource where I can read about some features / non-obvious aspects / behind-the-scenes processes of C# / .NET internals and how things work under the hood.
+        </p>
+      </article>
+
+      <article class="source-card">
+        <div class="source-header">
+          <h3 class="source-title">5. Learn C# BASICS in 10 MINUTES! - YouTube</h3>
+          <span class="relevance-score">97%</span>
+        </div>
+        <a href="https://www.youtube.com/watch?v=IFayQioG71A" target="_blank" class="source-link">
+          https://www.youtube.com/watch?v=IFayQioG71A
+        </a>
+        <p class="source-excerpt">
+          Let's learn the Basics of C# in a quick Crash Course! FREE C# Beginner Complete Course covering fundamental concepts, syntax, and programming patterns.
+        </p>
+      </article>
+    </main>
+
+    <footer>
+      <p>📅 Report Generated: November 25, 2025 at 3:19:45 PM</p>
+      <p style="margin-top: 5px;">Powered by AI Research Assistant</p>
+    </footer>
+  </div>
+</body>
+</html>
