@@ -1,0 +1,154 @@
+.comparison-report {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.report-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #4f46e5;
+}
+
+.report-header h1 {
+  color: #1e293b;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 1.2rem;
+}
+
+.action-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.generate-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-section {
+  text-align: center;
+  padding: 3rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  background-color: #fef2f2;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.report-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.report-body h1 {
+  color: #1e293b;
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.report-body h2 {
+  color: #334155;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.report-body h3 {
+  color: #475569;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.report-body p {
+  color: #475569;
+  line-height: 1.7;
+  margin: 0.5rem 0;
+}
+
+.report-body li {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0.3rem 0;
+  margin-left: 1.5rem;
+}
+
+.report-body strong {
+  color: #1e293b;
+}
+
+.citations-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.citations-section h3 {
+  color: #334155;
+  margin-bottom: 1rem;
+}
+
+.citations-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.citations-section li {
+  margin: 0.5rem 0;
+}
+
+.citations-section a {
+  color: #4f46e5;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.citations-section a:hover {
+  text-decoration: underline;
+}
+

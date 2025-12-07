@@ -24,6 +24,7 @@
     "@pinecone-database/pinecone": "^5.1.2",
     "@qdrant/js-client-rest": "^1.16.1",
     "@tavily/core": "^0.5.13",
+    "axios": "^1.13.2",
     "dotenv": "^17.2.3",
     "n8n": "^1.120.4",
     "n8n-nodes-mcp": "^0.1.33"

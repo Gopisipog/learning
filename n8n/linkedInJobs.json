@@ -148,11 +148,11 @@
             },
             {
               "name": "endpoint",
-              "value": "https://yaron-nofluff.app.n8n.cloud/webhook-test/8c42463d-a631-4a17-a084-4bcbbb3bfc68"
+              "value": "https://example.com"
             },
             {
               "name": "notify",
-              "value": "https://yaron-nofluff.app.n8n.cloud/webhook-test/8c42463d-a631-4a17-a084-4bcbbb3bfc68"
+              "value": "https://example.com"
             },
             {
               "name": "format",
@@ -650,7 +650,7 @@
       },
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "4RJOMlGAcB9ZoYfm",
+          "id": "",
           "name": "Google Sheets account 2"
         }
       },
@@ -682,132 +682,83 @@
       ],
       "parameters": {
         "color": 4,
-        "width": 940,
-        "height": 360,
-        "content": "Bright Data Getting Jobs\n"
-      },
-      "typeVersion": 1
-    },
-    {
-      "id": "cccb03cb-0432-43ff-9c3a-233de510a775",
-      "name": "Edit Fields",
-      "type": "n8n-nodes-base.set",
-      "position": [
-        1920,
-        580
-      ],
-      "parameters": {
-        "options": {},
-        "assignments": {
-          "assignments": [
-            {
-              "id": "12067869-0249-4cd2-b9e2-8e4055a0d917",
-              "name": "",
-              "type": "string",
-              "value": ""
-            }
-          ]
-        }
-      },
-      "typeVersion": 3.4
-    }
-  ],
-  "pinData": {},
-  "connections": {
-    "Edit Fields": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request- Post API call to Bright Data",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Snapshot Progress": {
-      "main": [
-        [
-          {
-            "node": "If - Checking status of Snapshot - if data is ready or not",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Code - Cleaning Up": {
-      "main": [
-        [
-          {
-            "node": "Google Sheets - Adding All Job Posts",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wait - Polling Bright Data": {
-      "main": [
-        [
-          {
-            "node": "Snapshot Progress",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "On form submission - Discover Jobs": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request- Post API call to Bright Data": {
-      "main": [
-        [
-          {
-            "node": "Wait - Polling Bright Data",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request - Getting data from Bright Data": {
-      "main": [
-        [
-          {
-            "node": "Code - Cleaning Up",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If - Checking status of Snapshot - if data is ready or not": {
-      "main": [
-        [
-          {
-            "node": "Wait - Polling Bright Data",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "HTTP Request - Getting data from Bright Data",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    }
-  }
+        "index": 0
+      }
+    ]
+  ]
+},
+"Code - Cleaning Up": {
+  "main": [
+    [
+      {
+        "node": "Google Sheets - Adding All Job Posts",
+        "type": "main",
+        "index": 0
+      }
+    ]
+  ]
+},
+"Wait - Polling Bright Data": {
+  "main": [
+    [
+      {
+        "node": "Snapshot Progress",
+        "type": "main",
+        "index": 0
+      }
+    ]
+  ]
+},
+"On form submission - Discover Jobs": {
+  "main": [
+    [
+      {
+        "node": "Edit Fields",
+        "type": "main",
+        "index": 0
+      }
+    ]
+  ]
+},
+"HTTP Request- Post API call to Bright Data": {
+  "main": [
+    [
+      {
+        "node": "Wait - Polling Bright Data",
+        "type": "main",
+        "index": 0
+      }
+    ]
+  ]
+},
+"HTTP Request - Getting data from Bright Data": {
+  "main": [
+    [
+      {
+        "node": "Code - Cleaning Up",
+        "type": "main",
+        "index": 0
+      }
+    ]
+  ]
+},
+"If - Checking status of Snapshot - if data is ready or not": {
+  "main": [
+    [
+      {
+        "node": "Wait - Polling Bright Data",
+        "type": "main",
+        "index": 0
+      }
+    ],
+    [
+      {
+        "node": "HTTP Request - Getting data from Bright Data",
+        "type": "main",
+        "index": 0
+      }
+    ]
+  ]
+}
+}
 }

@@ -1,0 +1,304 @@
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.upload-form {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.drop-zone {
+  border: 3px dashed #ccc;
+  border-radius: 12px;
+  padding: 50px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.drop-zone:hover {
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.drop-zone.has-file {
+  border-color: #667eea;
+  border-style: solid;
+  background: #f0f4ff;
+}
+
+.upload-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.drop-message p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.drop-message .hint {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.file-icon {
+  font-size: 3rem;
+}
+
+.file-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+  word-break: break-all;
+}
+
+.file-size {
+  background: #667eea;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.language-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-select label {
+  font-weight: 500;
+  color: #333;
+}
+
+.language-select select {
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  background: #fee;
+  color: #c00;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.progress-section {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.progress-section h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  height: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 8px;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progress-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-top: 15px;
+}
+
+.chunk-info {
+  color: #888;
+  margin-top: 10px;
+}
+
+.result-section {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.result-header h2 {
+  color: #27ae60;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.download-buttons button {
+  background: #f0f0f0;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.download-buttons button:hover {
+  background: #e0e0e0;
+}
+
+.transcript-box, .segments-box {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.transcript-box h3, .segments-box h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.transcript-text {
+  line-height: 1.8;
+  color: #444;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.segments-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.segment {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.segment .timestamp {
+  background: #667eea;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.segment .text {
+  color: #444;
+  line-height: 1.5;
+}
+
+.more-segments {
+  text-align: center;
+  color: #888;
+  margin-top: 15px;
+  font-style: italic;
+}
+

@@ -1,5 +1,15 @@
-import { useState, useCallback } from "react";
-import { summarize, getEstimatedChunks } from "./services/summarizer";
+import { useState, useCallback, useEffect, useRef } from "react";
+import { summarize, getEstimatedChunks, createChunks } from "./services/summarizer";
+import type { Checkpoint } from "./services/checkpoint";
+import {
+  loadCheckpoint,
+  saveCheckpoint,
+  clearCheckpoint,
+  createCheckpoint,
+  updateCheckpoint,
+  canResume,
+  downloadSummaries,
+} from "./services/checkpoint";
 import "./App.css";
 
 function App() {
@@ -14,6 +24,17 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState({ current: 0, total: 0 });
   const [error, setError] = useState("");
+  const [checkpoint, setCheckpoint] = useState<Checkpoint | null>(null);
+  const [partialSummaries, setPartialSummaries] = useState<string[]>([]);
+  const abortControllerRef = useRef<AbortController | null>(null);
+
+  // Load checkpoint on mount
+  useEffect(() => {
+    const saved = loadCheckpoint();
+    if (saved) {
+      setCheckpoint(saved);
+    }
+  }, []);
 
   const handleApiKeyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const key = e.target.value;
@@ -25,36 +46,109 @@ function App() {
     ? getEstimatedChunks(inputText, detail)
     : 0;
 
-  const handleSummarize = useCallback(async () => {
-    if (!apiKey) {
-      setError("Please enter your OpenAI API key");
-      return;
-    }
-    if (!inputText) {
-      setError("Please enter some text to summarize");
-      return;
-    }
+  const hasResumableCheckpoint =
+    checkpoint && inputText && canResume(checkpoint, inputText, detail, summarizeRecursively);
 
-    setIsLoading(true);
-    setError("");
-    setSummary("");
-    setProgress({ current: 0, total: 0 });
+  const handleSummarize = useCallback(
+    async (resumeFromCheckpoint = false) => {
+      if (!apiKey) {
+        setError("Please enter your OpenAI API key");
+        return;
+      }
+      if (!inputText) {
+        setError("Please enter some text to summarize");
+        return;
+      }
 
-    try {
-      const result = await summarize(apiKey, {
-        text: inputText,
-        detail,
-        additionalInstructions,
-        summarizeRecursively,
-        onProgress: (current, total) => setProgress({ current, total }),
-      });
-      setSummary(result);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-    } finally {
-      setIsLoading(false);
+      setIsLoading(true);
+      setError("");
+
+      // Create abort controller for cancellation
+      abortControllerRef.current = new AbortController();
+
+      let startChunk = 0;
+      let existingSummaries: string[] = [];
+      let currentCheckpoint: Checkpoint | null = null;
+
+      if (resumeFromCheckpoint && checkpoint) {
+        startChunk = checkpoint.completedChunks;
+        existingSummaries = checkpoint.summaries;
+        currentCheckpoint = checkpoint;
+        setPartialSummaries(existingSummaries);
+        setSummary(existingSummaries.join("\n\n"));
+      } else {
+        setSummary("");
+        setPartialSummaries([]);
+        // Create new checkpoint
+        const chunks = createChunks(inputText, detail);
+        currentCheckpoint = createCheckpoint(
+          inputText,
+          chunks,
+          detail,
+          summarizeRecursively,
+          additionalInstructions
+        );
+        saveCheckpoint(currentCheckpoint);
+        setCheckpoint(currentCheckpoint);
+      }
+
+      setProgress({ current: startChunk, total: currentCheckpoint?.totalChunks || 0 });
+
+      try {
+        const result = await summarize(apiKey, {
+          text: inputText,
+          detail,
+          additionalInstructions,
+          summarizeRecursively,
+          startFromChunk: startChunk,
+          existingSummaries,
+          abortSignal: abortControllerRef.current.signal,
+          onProgress: (current, total) => setProgress({ current, total }),
+          onChunkComplete: (chunkIndex, chunkSummary, allSummaries) => {
+            // Update checkpoint after each chunk
+            if (currentCheckpoint) {
+              currentCheckpoint = updateCheckpoint(currentCheckpoint, chunkIndex, chunkSummary);
+              setCheckpoint(currentCheckpoint);
+            }
+            setPartialSummaries([...allSummaries]);
+            setSummary(allSummaries.join("\n\n"));
+          },
+        });
+        setSummary(result);
+        // Clear checkpoint on success
+        clearCheckpoint();
+        setCheckpoint(null);
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "An error occurred";
+        if (message !== "Summarization cancelled") {
+          setError(message + " - Progress saved. You can resume from checkpoint.");
+        }
+      } finally {
+        setIsLoading(false);
+        abortControllerRef.current = null;
+      }
+    },
+    [apiKey, inputText, detail, additionalInstructions, summarizeRecursively, checkpoint]
+  );
+
+  const handleCancel = useCallback(() => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
     }
-  }, [apiKey, inputText, detail, additionalInstructions, summarizeRecursively]);
+  }, []);
+
+  const handleClearCheckpoint = useCallback(() => {
+    clearCheckpoint();
+    setCheckpoint(null);
+    setPartialSummaries([]);
+  }, []);
+
+  const handleDownload = useCallback(() => {
+    const summariesToDownload = partialSummaries.length > 0 ? partialSummaries : summary.split("\n\n");
+    if (summariesToDownload.length > 0 && summariesToDownload[0]) {
+      downloadSummaries(summariesToDownload, `summary_${Date.now()}.txt`);
+    }
+  }, [partialSummaries, summary]);
 
   return (
     <div className="app-container">
@@ -150,15 +244,44 @@ function App() {
               </label>
             </div>
 
-            <button
-              onClick={handleSummarize}
-              disabled={isLoading || !apiKey || !inputText}
-              className="summarize-btn"
-            >
-              {isLoading
-                ? `Summarizing... (${progress.current}/${progress.total})`
-                : "Summarize"}
-            </button>
+            <div className="button-row">
+              {!isLoading ? (
+                <>
+                  <button
+                    onClick={() => handleSummarize(false)}
+                    disabled={!apiKey || !inputText}
+                    className="summarize-btn"
+                  >
+                    {hasResumableCheckpoint ? "Start Fresh" : "Summarize"}
+                  </button>
+                  {hasResumableCheckpoint && (
+                    <button
+                      onClick={() => handleSummarize(true)}
+                      disabled={!apiKey || !inputText}
+                      className="summarize-btn resume-btn"
+                    >
+                      Resume ({checkpoint?.completedChunks}/{checkpoint?.totalChunks})
+                    </button>
+                  )}
+                </>
+              ) : (
+                <button onClick={handleCancel} className="summarize-btn cancel-btn">
+                  Cancel ({progress.current}/{progress.total})
+                </button>
+              )}
+            </div>
+
+            {hasResumableCheckpoint && !isLoading && (
+              <div className="checkpoint-info">
+                <span>
+                  📌 Checkpoint available: {checkpoint?.completedChunks} of{" "}
+                  {checkpoint?.totalChunks} chunks completed
+                </span>
+                <button onClick={handleClearCheckpoint} className="clear-checkpoint-btn">
+                  Clear
+                </button>
+              </div>
+            )}
 
             {error && <div className="error-message">{error}</div>}
           </div>
@@ -173,6 +296,11 @@ function App() {
                   (~{Math.ceil(summary.length / 4)} tokens)
                 </span>
               )}
+              {(summary || partialSummaries.length > 0) && (
+                <button onClick={handleDownload} className="download-btn">
+                  ⬇ Download
+                </button>
+              )}
             </label>
             <div className="summary-output">
               {summary || (
@@ -181,6 +309,11 @@ function App() {
                 </span>
               )}
             </div>
+            {partialSummaries.length > 0 && (
+              <div className="chunk-progress">
+                {partialSummaries.length} chunk summaries completed
+              </div>
+            )}
           </div>
         </div>
       </div>

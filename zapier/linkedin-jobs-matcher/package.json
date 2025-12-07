@@ -1,0 +1,33 @@
+{
+  "name": "linkedin-jobs-matcher",
+  "version": "1.0.0",
+  "description": "Zapier integration that retrieves LinkedIn jobs via BrightData API and matches them against your resume using AI",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --testTimeout 10000",
+    "validate": "zapier validate",
+    "push": "zapier push"
+  },
+  "keywords": [
+    "zapier",
+    "linkedin",
+    "jobs",
+    "brightdata",
+    "resume",
+    "matching",
+    "ai"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "zapier-platform-core": "18.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.6.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

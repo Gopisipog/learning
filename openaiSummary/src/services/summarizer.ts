@@ -1,13 +1,35 @@
 import OpenAI from "openai";
 
-// Simple tokenizer approximation (GPT-4 uses ~4 chars per token on average)
-function tokenize(text: string): number[] {
-  // Approximate tokenization by splitting into ~4 char chunks
-  const tokens: number[] = [];
-  for (let i = 0; i < text.length; i += 4) {
-    tokens.push(i);
+// Delay helper for rate limiting
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// Retry with exponential backoff for rate limit errors
+async function retryWithBackoff<T>(
+  fn: () => Promise<T>,
+  maxRetries: number = 5,
+  baseDelay: number = 1000
+): Promise<T> {
+  let lastError: Error | null = null;
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (error: unknown) {
+      lastError = error as Error;
+      const errorMessage = (error as Error).message || "";
+
+      // Check if it's a rate limit error
+      if (errorMessage.includes("Rate limit") || errorMessage.includes("429")) {
+        const waitTime = baseDelay * Math.pow(2, attempt);
+        console.log(`Rate limited. Waiting ${waitTime}ms before retry ${attempt + 1}/${maxRetries}`);
+        await delay(waitTime);
+      } else {
+        throw error; // Not a rate limit error, don't retry
+      }
+    }
   }
-  return tokens;
+  throw lastError;
 }
 
 function countTokens(text: string): number {
@@ -83,7 +105,36 @@ export interface SummarizeOptions {
   minimumChunkSize?: number;
   chunkDelimiter?: string;
   summarizeRecursively?: boolean;
-  onProgress?: (current: number, total: number) => void;
+  onProgress?: (current: number, total: number, summary?: string) => void;
+  onChunkComplete?: (chunkIndex: number, summary: string, allSummaries: string[]) => void;
+  startFromChunk?: number;
+  existingSummaries?: string[];
+  abortSignal?: AbortSignal;
+}
+
+// Maximum tokens to send in a single request (leaving room for response)
+const MAX_CONTEXT_TOKENS = 100000;
+const MAX_RECURSIVE_CONTEXT = 10000; // Limit accumulated summaries
+
+// Export chunk creation for checkpoint usage
+export function createChunks(
+  text: string,
+  detail: number,
+  minimumChunkSize: number = 500,
+  chunkDelimiter: string = ".\n"
+): string[] {
+  const clampedDetail = Math.max(0, Math.min(1, detail));
+  const safeChunkSize = Math.min(minimumChunkSize, MAX_CONTEXT_TOKENS);
+  const maxChunks = Math.ceil(countTokens(text) / safeChunkSize);
+  const minChunks = 1;
+  const numChunks = Math.max(
+    minChunks,
+    Math.round(minChunks + clampedDetail * (maxChunks - minChunks))
+  );
+  const documentLength = countTokens(text);
+  const targetChunkSize = Math.ceil(documentLength / numChunks);
+  const chunkSize = Math.min(targetChunkSize, MAX_CONTEXT_TOKENS);
+  return chunkOnDelimiter(text, chunkSize, chunkDelimiter);
 }
 
 export async function summarize(
@@ -99,24 +150,14 @@ export async function summarize(
     chunkDelimiter = ".\n",
     summarizeRecursively = false,
     onProgress,
+    onChunkComplete,
+    startFromChunk = 0,
+    existingSummaries = [],
+    abortSignal,
   } = options;
 
-  // Clamp detail to [0, 1]
-  const clampedDetail = Math.max(0, Math.min(1, detail));
-
-  // Interpolate chunk count based on detail level
-  const maxChunks = Math.ceil(countTokens(text) / minimumChunkSize);
-  const minChunks = 1;
-  const numChunks = Math.round(
-    minChunks + clampedDetail * (maxChunks - minChunks)
-  );
-
-  // Calculate chunk size
-  const documentLength = countTokens(text);
-  const chunkSize = Math.ceil(documentLength / numChunks);
-
   // Split into chunks
-  const textChunks = chunkOnDelimiter(text, chunkSize, chunkDelimiter);
+  const textChunks = createChunks(text, detail, minimumChunkSize, chunkDelimiter);
 
   const client = new OpenAI({
     apiKey,
@@ -127,32 +168,72 @@ export async function summarize(
     "Rewrite this text in summarized form." +
     (additionalInstructions ? ` ${additionalInstructions}` : "");
 
-  // Summarize chunks
-  const summaries: string[] = [];
-  let accumulatedSummaries: string[] = [];
+  // Summarize chunks with rate limiting
+  const summaries: string[] = [...existingSummaries];
+  let accumulatedSummaries: string[] = [...existingSummaries];
+  const delayBetweenCalls = 500; // 500ms delay between API calls
 
-  for (let i = 0; i < textChunks.length; i++) {
+  for (let i = startFromChunk; i < textChunks.length; i++) {
+    // Check for abort signal
+    if (abortSignal?.aborted) {
+      throw new Error("Summarization cancelled");
+    }
+
     const chunk = textChunks[i];
     onProgress?.(i + 1, textChunks.length);
 
     let contentToSummarize = chunk;
-    if (summarizeRecursively && accumulatedSummaries.length > 0) {
-      const accumulatedText = accumulatedSummaries.join("\n\n");
-      contentToSummarize = `Previous summaries:\n\n${accumulatedText}\n\nNew content to summarize:\n\n${chunk}`;
+
+    // Truncate chunk if it's too large
+    if (countTokens(chunk) > MAX_CONTEXT_TOKENS) {
+      const truncatedLength = MAX_CONTEXT_TOKENS * 4; // Approximate chars
+      contentToSummarize = chunk.slice(0, truncatedLength) + "\n\n[Content truncated due to length...]";
     }
 
-    const response = await client.chat.completions.create({
-      model,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: contentToSummarize },
-      ],
-      temperature: 0,
+    if (summarizeRecursively && accumulatedSummaries.length > 0) {
+      // Limit accumulated context to avoid exceeding token limits
+      let accumulatedText = accumulatedSummaries.join("\n\n");
+      if (countTokens(accumulatedText) > MAX_RECURSIVE_CONTEXT) {
+        // Keep only the most recent summaries that fit
+        const recentSummaries: string[] = [];
+        let tokenCount = 0;
+        for (let j = accumulatedSummaries.length - 1; j >= 0; j--) {
+          const summaryTokens = countTokens(accumulatedSummaries[j]);
+          if (tokenCount + summaryTokens > MAX_RECURSIVE_CONTEXT) break;
+          recentSummaries.unshift(accumulatedSummaries[j]);
+          tokenCount += summaryTokens;
+        }
+        accumulatedText = recentSummaries.join("\n\n");
+      }
+      contentToSummarize = `Previous summaries:\n\n${accumulatedText}\n\nNew content to summarize:\n\n${contentToSummarize}`;
+    }
+
+    // Use retry with backoff for rate limit handling
+    const response = await retryWithBackoff(async () => {
+      if (abortSignal?.aborted) {
+        throw new Error("Summarization cancelled");
+      }
+      return await client.chat.completions.create({
+        model,
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: contentToSummarize },
+        ],
+        temperature: 0,
+      });
     });
 
     const summary = response.choices[0]?.message?.content || "";
     summaries.push(summary);
     accumulatedSummaries.push(summary);
+
+    // Notify about completed chunk for checkpointing
+    onChunkComplete?.(i, summary, summaries);
+
+    // Add delay between calls to avoid rate limiting
+    if (i < textChunks.length - 1) {
+      await delay(delayBetweenCalls);
+    }
   }
 
   return summaries.join("\n\n");

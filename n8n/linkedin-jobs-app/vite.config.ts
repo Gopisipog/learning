@@ -10,12 +10,16 @@ export default defineConfig({
       },
     }),
   ],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:4001',
-        changeOrigin: true,
-      },
-    },
-  },
+	  server: {
+	    proxy: {
+	      '/api': {
+	        target: 'http://localhost:4001',
+	        changeOrigin: true,
+	      },
+	      '/axios-scraper': {
+	        target: 'http://localhost:4002',
+	        changeOrigin: true,
+	      },
+	    },
+	  },
 })

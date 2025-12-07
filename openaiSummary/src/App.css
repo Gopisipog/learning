@@ -203,3 +203,85 @@
 .api-key-input {
   max-width: 400px;
 }
+
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.button-row .summarize-btn {
+  flex: 1;
+  margin-top: 0;
+}
+
+.resume-btn {
+  background: linear-gradient(135deg, #4caf50, #45a049) !important;
+}
+
+.resume-btn:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4) !important;
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #ff5252, #f44336) !important;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4) !important;
+}
+
+.checkpoint-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4caf50;
+  border-radius: 8px;
+  color: #4caf50;
+  font-size: 0.9rem;
+}
+
+.clear-checkpoint-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  background: transparent;
+  border: 1px solid #4caf50;
+  color: #4caf50;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.clear-checkpoint-btn:hover {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.download-btn {
+  margin-left: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  background: #333;
+  border: 1px solid #555;
+  color: #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.download-btn:hover {
+  background: #444;
+  border-color: #646cff;
+}
+
+.chunk-progress {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  background: rgba(100, 108, 255, 0.1);
+  border-radius: 4px;
+}

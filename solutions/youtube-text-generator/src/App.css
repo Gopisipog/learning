@@ -16,7 +16,42 @@ body {
 
 .App {
   min-height: 100vh;
-  padding: 2rem 0;
+  padding: 1rem 0 2rem;
+}
+
+.app-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nav-tab {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.nav-tab:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  color: #fff;
+}
+
+.app-content {
+  padding: 0 1rem;
 }
 
 code {

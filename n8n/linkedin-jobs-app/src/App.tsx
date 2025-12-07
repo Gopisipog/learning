@@ -20,6 +20,9 @@ function App() {
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState<string | null>(null)
 	const [jobs, setJobs] = useState<Job[]>([])
+		const [urlScrapeLoading, setUrlScrapeLoading] = useState(false)
+		const [urlScrapeError, setUrlScrapeError] = useState<string | null>(null)
+		const [urlScrapeJobs, setUrlScrapeJobs] = useState<any[]>([])
 
 	const handleSubmit = async (event: FormEvent) => {
 		event.preventDefault()
@@ -42,6 +45,27 @@ function App() {
 			setLoading(false)
 		}
 	}
+
+		const handleUrlScrape = async () => {
+			setUrlScrapeLoading(true)
+			setUrlScrapeError(null)
+			try {
+				const response = await fetch('/axios-scraper/api/url-scrape', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({}),
+				})
+				const data = await response.json().catch(() => ({}))
+				if (!response.ok) {
+					throw new Error(data.error || `Request failed with status ${response.status}`)
+				}
+				setUrlScrapeJobs(Array.isArray(data.data) ? data.data : [])
+			} catch (err: any) {
+				setUrlScrapeError(err?.message || 'Unexpected error while running URL scraper')
+			} finally {
+				setUrlScrapeLoading(false)
+			}
+		}
 
 	return (
 		<div className="app">
@@ -109,6 +133,44 @@ function App() {
 					))}
 				</ul>
 			)}
+
+				<div className="card" style={{ marginTop: '2rem' }}>
+					<h2>LinkedIn URL scraper (Bright Data dataset)</h2>
+					<p className="subtitle">
+						This demo hits the axios-based Bright Data scraper server and runs a sample scrape on a few
+						LinkedIn job URLs.
+					</p>
+					<button type="button" onClick={handleUrlScrape} disabled={urlScrapeLoading}>
+						{urlScrapeLoading ? 'Running URL scraper…' : 'Run sample URL scraper'}
+					</button>
+					{urlScrapeError && <p className="error">Error: {urlScrapeError}</p>}
+					{!urlScrapeError && !urlScrapeLoading && urlScrapeJobs.length === 0 && (
+						<p className="hint">Click the button to run the sample LinkedIn URL scrape.</p>
+					)}
+					{!urlScrapeLoading && urlScrapeJobs.length > 0 && (
+						<ul className="job-list">
+							{urlScrapeJobs.slice(0, 10).map((job: any, index: number) => (
+								<li
+									key={job.job_posting_id || job.url || index}
+									className="card"
+								>
+									<h3>{job.job_title || 'Untitled role'}</h3>
+									<p className="job-meta">
+										<span>{job.company_name || 'Unknown company'}</span>
+										{job.job_location && <span> · {job.job_location}</span>}
+									</p>
+									{job.url && (
+										<p>
+											<a href={job.url} target="_blank" rel="noreferrer">
+												Open job on LinkedIn
+											</a>
+										</p>
+									)}
+								</li>
+							))}
+						</ul>
+					)}
+				</div>
 		</div>
 	)
 }
